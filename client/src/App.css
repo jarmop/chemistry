@@ -1,1 +1,22 @@
+table.periodicTable {
+  border-collapse: collapse;
+  border: 1px solid black;
+  th,
+  td {
+    border: 1px solid rgb(160 160 160);
+    padding: 8px 10px;
+  }
+}
 
+table.electronShells {
+  width: 100%;
+  border-collapse: collapse;
+  th,
+  td {
+    border: 1px solid rgb(160 160 160);
+  }
+
+  th {
+    width: 12px;
+  }
+}

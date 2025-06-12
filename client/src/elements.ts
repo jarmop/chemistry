@@ -1,0 +1,73 @@
+export const elements = [{
+  name: "Hydrogen",
+  symbol: "H",
+  protons: 1,
+  neutrons: 0,
+  electrons: [1],
+}, {
+  name: "Lithium",
+  symbol: "Li",
+  protons: 3,
+  neutrons: 4,
+  electrons: [2, 1],
+}, {
+  name: "Sodium",
+  symbol: "Na",
+  protons: 11,
+  neutrons: 12,
+  electrons: [2, 8, 1],
+}, {
+  name: "Potassium",
+  symbol: "K",
+  protons: 19,
+  neutrons: 20,
+  electrons: [2, 8, 8, 1],
+}, {
+  name: "Calcium",
+  symbol: "Ca",
+  protons: 20,
+  // neutrons: 20,
+  electrons: [2, 8, 8, 2],
+}, {
+  name: "Scandium",
+  symbol: "Ca",
+  protons: 21,
+  // neutrons: 20,
+  electrons: [2, 8, 9, 2],
+}, {
+  name: "Francium",
+  symbol: "Fr",
+  protons: 87,
+  neutrons: 136,
+  electrons: [2, 8, 18, 32, 18, 8, 1],
+}, {
+  name: "Carbon",
+  symbol: "C",
+  protons: 6,
+  neutrons: 6,
+  electrons: [2, 4],
+}, {
+  name: "Oxygen",
+  symbol: "O",
+  protons: 8,
+  neutrons: 8,
+  electrons: [2, 6],
+}, {
+  name: "Iron",
+  symbol: "Fe",
+  protons: 26,
+  neutrons: 30,
+  electrons: [2, 8, 14, 2],
+}, {
+  name: "Plutonium",
+  symbol: "Pu",
+  protons: 94,
+  neutrons: 145,
+  electrons: [2, 8, 18, 32, 24, 8, 2],
+}, {
+  name: "Oganesson",
+  symbol: "Og",
+  protons: 118,
+  neutrons: 176,
+  electrons: [2, 8, 18, 32, 32, 18, 8],
+}];

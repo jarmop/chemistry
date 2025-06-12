@@ -1,0 +1,119 @@
+Z	Sym.	Element	Block	Group	Period	Atomic weight	Origin	Specific heat capacity	Electro-negativity	Name origin	Abundance in Earth's crust	Metling point	Boiling point	Density	Phase
+1	H	Hydrogen	s-block	1	1	1.008	primordial	14.304	2.2	[k]	1400	14.01	20.28	0.00008988	gas
+2	He	Helium	s-block	18	1	4.0026	primordial	5.193	–	[l]	0.008	–[m]	4.22	0.0001785	gas
+3	Li	Lithium	s-block	1	2	6.94	primordial	3.582	0.98	[n]	20	453.69	1560	0.534	solid
+4	Be	Beryllium	s-block	2	2	9.0122	primordial	1.825	1.57	[o]	2.8	1560	2742	1.85	solid
+5	B	Boron	p-block	13	2	10.81	primordial	1.026	2.04	[p]	10	2349	4200	2.34	solid
+6	C	Carbon	p-block	14	2	12.011	primordial	0.709	2.55	[q]	200	>4000	4300	2.267	solid
+7	N	Nitrogen	p-block	15	2	14.007	primordial	1.04	3.04	[r]	19	63.15	77.36	0.0012506	gas
+8	O	Oxygen	p-block	16	2	15.999	primordial	0.918	3.44	[s]	461000	54.36	90.2	0.001429	gas
+9	F	Fluorine	p-block	17	2	18.998	primordial	0.824	3.98	[t]	585	53.53	85.03	0.001696	gas
+10	Ne	Neon	p-block	18	2	20.18	primordial	1.03	–	[u]	0.005	24.56	27.07	0.0009002	gas
+11	Na	Sodium	s-block	1	3	22.99	primordial	1.228	0.93	[v]	23600	370.87	1156	0.968	solid
+12	Mg	Magnesium	s-block	2	3	24.305	primordial	1.023	1.31	[w]	23300	923	1363	1.738	solid
+13	Al	Aluminium	p-block	13	3	26.982	primordial	0.897	1.61	[x]	82300	933.47	2792	2.7	solid
+14	Si	Silicon	p-block	14	3	28.085	primordial	0.705	1.9	[y]	282000	1687	3538	2.329	solid
+15	P	Phosphorus	p-block	15	3	30.974	primordial	0.769	2.19	[z]	1050	317.3	550	1.823	solid
+16	S	Sulfur	p-block	16	3	32.06	primordial	0.71	2.58	[aa]	350	388.36	717.87	2.07	solid
+17	Cl	Chlorine	p-block	17	3	35.45	primordial	0.479	3.16	[ab]	145	171.6	239.11	0.0032	gas
+18	Ar	Argon	p-block	18	3	39.95	primordial	0.52	–	[ac]	3.5	83.8	87.3	0.001784	gas
+19	K	Potassium	s-block	1	4	39.098	primordial	0.757	0.82	[ad]	20900	336.53	1032	0.89	solid
+20	Ca	Calcium	s-block	2	4	40.078	primordial	0.647	1	[ae]	41500	1115	1757	1.55	solid
+21	Sc	Scandium	d-block	3	4	44.956	primordial	0.568	1.36	[af]	22	1814	3109	2.985	solid
+22	Ti	Titanium	d-block	4	4	47.867	primordial	0.523	1.54	[ag]	5650	1941	3560	4.506	solid
+23	V	Vanadium	d-block	5	4	50.942	primordial	0.489	1.63	[ah]	120	2183	3680	6.11	solid
+24	Cr	Chromium	d-block	6	4	51.996	primordial	0.449	1.66	[ai]	102	2180	2944	7.15	solid
+25	Mn	Manganese	d-block	7	4	54.938	primordial	0.479	1.55	[aj]	950	1519	2334	7.21	solid
+26	Fe	Iron	d-block	8	4	55.845	primordial	0.449	1.83	[ak]	56300	1811	3134	7.874	solid
+27	Co	Cobalt	d-block	9	4	58.933	primordial	0.421	1.88	[al]	25	1768	3200	8.9	solid
+28	Ni	Nickel	d-block	10	4	58.693	primordial	0.444	1.91	[am]	84	1728	3186	8.908	solid
+29	Cu	Copper	d-block	11	4	63.546	primordial	0.385	1.9	[an]	60	1357.77	2835	8.96	solid
+30	Zn	Zinc	d-block	12	4	65.38	primordial	0.388	1.65	[ao]	70	692.88	1180	7.14	solid
+31	Ga	Gallium	p-block	13	4	69.723	primordial	0.371	1.81	[ap]	19	302.9146	2673	5.91	solid
+32	Ge	Germanium	p-block	14	4	72.63	primordial	0.32	2.01	[aq]	1.5	1211.4	3106	5.323	solid
+33	As	Arsenic	p-block	15	4	74.922	primordial	0.329	2.18	[ar]	1.8	1090	887	5.727	solid
+34	Se	Selenium	p-block	16	4	78.971	primordial	0.321	2.55	[at]	0.05	453	958	4.81	solid
+35	Br	Bromine	p-block	17	4	79.904	primordial	0.474	2.96	[au]	2.4	265.8	332	3.1028	liquid
+36	Kr	Krypton	p-block	18	4	83.798	primordial	0.248	3	[av]	1×10−4	115.79	119.93	0.003749	gas
+37	Rb	Rubidium	s-block	1	5	85.468	primordial	0.363	0.82	[aw]	90	312.46	961	1.532	solid
+38	Sr	Strontium	s-block	2	5	87.62	primordial	0.301	0.95	[ax]	370	1050	1655	2.64	solid
+39	Y	Yttrium	d-block	3	5	88.906	primordial	0.298	1.22	[ay]	33	1799	3609	4.472	solid
+40	Zr	Zirconium	d-block	4	5	91.224	primordial	0.278	1.33	[az]	165	2128	4682	6.52	solid
+41	Nb	Niobium	d-block	5	5	92.906	primordial	0.265	1.6	[ba]	20	2750	5017	8.57	solid
+42	Mo	Molybdenum	d-block	6	5	95.95	primordial	0.251	2.16	[bb]	1.2	2896	4912	10.28	solid
+43	Tc	Technetium	d-block	7	5	97	from decay	–	1.9	[bc]	~ 3×10−9	2430	4538	11	solid
+44	Ru	Ruthenium	d-block	8	5	101.07	primordial	0.238	2.2	[bd]	0.001	2607	4423	12.45	solid
+45	Rh	Rhodium	d-block	9	5	102.91	primordial	0.243	2.28	[be]	0.001	2237	3968	12.41	solid
+46	Pd	Palladium	d-block	10	5	106.42	primordial	0.244	2.2	[bf]	0.015	1828.05	3236	12.023	solid
+47	Ag	Silver	d-block	11	5	107.87	primordial	0.235	1.93	[bg]	0.075	1234.93	2435	10.49	solid
+48	Cd	Cadmium	d-block	12	5	112.41	primordial	0.232	1.69	[bh]	0.159	594.22	1040	8.65	solid
+49	In	Indium	p-block	13	5	114.82	primordial	0.233	1.78	[bi]	0.25	429.75	2345	7.31	solid
+50	Sn	Tin	p-block	14	5	118.71	primordial	0.228	1.96	[bj]	2.3	505.08	2875	7.265	solid
+51	Sb	Antimony	p-block	15	5	121.76	primordial	0.207	2.05	[bk]	0.2	903.78	1860	6.697	solid
+52	Te	Tellurium	p-block	16	5	127.6	primordial	0.202	2.1	[bl]	0.001	722.66	1261	6.24	solid
+53	I	Iodine	p-block	17	5	126.9	primordial	0.214	2.66	[bm]	0.45	386.85	457.4	4.933	solid
+54	Xe	Xenon	p-block	18	5	131.29	primordial	0.158	2.6	[bn]	3×10−5	161.4	165.03	0.005894	gas
+55	Cs	Caesium	s-block	1	6	132.91	primordial	0.242	0.79	[bo]	3	301.59	944	1.93	solid
+56	Ba	Barium	s-block	2	6	137.33	primordial	0.204	0.89	[bp]	425	1000	2170	3.51	solid
+57	La	Lanthanum	f-block	f-block groups	6	138.91	primordial	0.195	1.1	[bq]	39	1193	3737	6.162	solid
+58	Ce	Cerium	f-block	f-block groups	6	140.12	primordial	0.192	1.12	[br]	66.5	1068	3716	6.77	solid
+59	Pr	Praseodymium	f-block	f-block groups	6	140.91	primordial	0.193	1.13	[bs]	9.2	1208	3793	6.77	solid
+60	Nd	Neodymium	f-block	f-block groups	6	144.24	primordial	0.19	1.14	[bt]	41.5	1297	3347	7.01	solid
+61	Pm	Promethium	f-block	f-block groups	6	145	from decay	–	1.13	[bu]	2×10−19	1315	3273	7.26	solid
+62	Sm	Samarium	f-block	f-block groups	6	150.36	primordial	0.197	1.17	[bv]	7.05	1345	2067	7.52	solid
+63	Eu	Europium	f-block	f-block groups	6	151.96	primordial	0.182	1.2	[bw]	2	1099	1802	5.244	solid
+64	Gd	Gadolinium	f-block	f-block groups	6	157.25	primordial	0.236	1.2	[bx]	6.2	1585	3546	7.9	solid
+65	Tb	Terbium	f-block	f-block groups	6	158.93	primordial	0.182	1.2	[by]	1.2	1629	3503	8.23	solid
+66	Dy	Dysprosium	f-block	f-block groups	6	162.5	primordial	0.17	1.22	[bz]	5.2	1680	2840	8.54	solid
+67	Ho	Holmium	f-block	f-block groups	6	164.93	primordial	0.165	1.23	[ca]	1.3	1734	2993	8.79	solid
+68	Er	Erbium	f-block	f-block groups	6	167.26	primordial	0.168	1.24	[cb]	3.5	1802	3141	9.066	solid
+69	Tm	Thulium	f-block	f-block groups	6	168.93	primordial	0.16	1.25	[cc]	0.52	1818	2223	9.32	solid
+70	Yb	Ytterbium	f-block	f-block groups	6	173.05	primordial	0.155	1.1	[cd]	3.2	1097	1469	6.9	solid
+71	Lu	Lutetium	d-block	3	6	174.97	primordial	0.154	1.27	[ce]	0.8	1925	3675	9.841	solid
+72	Hf	Hafnium	d-block	4	6	178.49	primordial	0.144	1.3	[cf]	3	2506	4876	13.31	solid
+73	Ta	Tantalum	d-block	5	6	180.95	primordial	0.14	1.5	[cg]	2	3290	5731	16.69	solid
+74	W	Tungsten	d-block	6	6	183.84	primordial	0.132	2.36	[ch]	1.3	3695	6203	19.25	solid
+75	Re	Rhenium	d-block	7	6	186.21	primordial	0.137	1.9	[ci]	7×10−4	3459	5869	21.02	solid
+76	Os	Osmium	d-block	8	6	190.23	primordial	0.13	2.2	[cj]	0.002	3306	5285	22.59	solid
+77	Ir	Iridium	d-block	9	6	192.22	primordial	0.131	2.2	[ck]	0.001	2719	4701	22.56	solid
+78	Pt	Platinum	d-block	10	6	195.08	primordial	0.133	2.28	[cl]	0.005	2041.4	4098	21.45	solid
+79	Au	Gold	d-block	11	6	196.97	primordial	0.129	2.54	[cm]	0.004	1337.33	3129	19.3	solid
+80	Hg	Mercury	d-block	12	6	200.59	primordial	0.14	2	[cn]	0.085	234.43	629.88	13.534	liquid
+81	Tl	Thallium	p-block	13	6	204.38	primordial	0.129	1.62	[co]	0.85	577	1746	11.85	solid
+82	Pb	Lead	p-block	14	6	207.2	primordial	0.129	1.87 (2+), 2.33 (4+)	[cp]	14	600.61	2022	11.34	solid
+83	Bi	Bismuth	p-block	15	6	208.98	primordial	0.122	2.02	[cq]	0.009	544.7	1837	9.78	solid
+84	Po	Polonium	p-block	16	6	209	from decay	–	2	[cr]	2×10−10	527	1235	9.196	solid
+85	At	Astatine	p-block	17	6	210	from decay	–	2.2	[cs]	3×10−20	575	610	(8.91–8.95)	unknown phase
+86	Rn	Radon	p-block	18	6	222	from decay	0.094	2.2	[ct]	4×10−13	202	211.3	0.00973	gas
+87	Fr	Francium	s-block	1	7	223	from decay	–	>0.79[5]	[cu]	~ 1×10−18	281	890	-2.48	unknown phase
+88	Ra	Radium	s-block	2	7	226	from decay	0.094	0.9	[cv]	9×10−7	973	2010	5.5	solid
+89	Ac	Actinium	f-block	f-block groups	7	227	from decay	0.12	1.1	[cw]	5.5×10−10	1323	3471	10	solid
+90	Th	Thorium	f-block	f-block groups	7	232.04	primordial	0.113	1.3	[cx]	9.6	2115	5061	11.7	solid
+91	Pa	Protactinium	f-block	f-block groups	7	231.04	from decay	–	1.5	[cy]	1.4×10−6	1841	4300	15.37	solid
+92	U	Uranium	f-block	f-block groups	7	238.03	primordial	0.116	1.38	[cz]	2.7	1405.3	4404	19.1	solid
+93	Np	Neptunium	f-block	f-block groups	7	237	from decay	–	1.36	[da]	≤ 3×10−12	917	4273	20.45	solid
+94	Pu	Plutonium	f-block	f-block groups	7	244	from decay	–	1.28	[db]	≤ 3×10−11	912.5	3501	19.85	solid
+95	Am	Americium	f-block	f-block groups	7	243	synthetic	–	1.13	[dc]	–	1449	2880	12	solid
+96	Cm	Curium	f-block	f-block groups	7	247	synthetic	–	1.28	[dd]	–	1613	3383	13.51	solid
+97	Bk	Berkelium	f-block	f-block groups	7	247	synthetic	–	1.3	[de]	–	1259	2900	14.78	solid
+98	Cf	Californium	f-block	f-block groups	7	251	synthetic	–	1.3	[df]	–	1173	1743	15.1	solid
+99	Es	Einsteinium	f-block	f-block groups	7	252	synthetic	–	1.3	[dg]	–	1133	1269	8.84	solid
+100	Fm	Fermium	f-block	f-block groups	7	257	synthetic		1.3	[dh]	–	(1125) (1800)		-9.7	unknown phase
+101	Md	Mendelevium	f-block	f-block groups	7	258	synthetic	–	1.3	[di]	–	1100	–	-10.3	unknown phase
+102	No	Nobelium	f-block	f-block groups	7	259	synthetic	–	1.3	[dj]	–	1100	–	-9.9	unknown phase
+103	Lr	Lawrencium	d-block	3	7	266	synthetic	–	1.3	[dk]	–	1900	–	-14.4	unknown phase
+104	Rf	Rutherfordium	d-block	4	7	267	synthetic	–	–	[dl]	–	2400	5800	-17	unknown phase
+105	Db	Dubnium	d-block	5	7	268	synthetic	–	–	[dm]	–	–	–	-21.6	unknown phase
+106	Sg	Seaborgium	d-block	6	7	267	synthetic	–	–	[dn]	–	–	–	(23–24)	unknown phase
+107	Bh	Bohrium	d-block	7	7	270	synthetic	–	–	[do]	–	–	–	(26–27)	unknown phase
+108	Hs	Hassium	d-block	8	7	271	synthetic	–	–	[dp]	–	–	–	(27–29)	unknown phase
+109	Mt	Meitnerium	d-block	9	7	278	synthetic	–	–	[dq]	–	–	–	(27–28)	unknown phase
+110	Ds	Darmstadtium	d-block	10	7	281	synthetic	–	–	[dr]	–	–	–	(26–27)	unknown phase
+111	Rg	Roentgenium	d-block	11	7	282	synthetic	–	–	[ds]	–	–	–	(22–24)	unknown phase
+112	Cn	Copernicium	d-block	12	7	285	synthetic	–	–	[dt]	–	(283±11)	(340±10)[b]	-14	unknown phase
+113	Nh	Nihonium	p-block	13	7	286	synthetic	–	–	[du]	–	700	1400	-16	unknown phase
+114	Fl	Flerovium	p-block	14	7	289	synthetic	–	–	[dv]	–	(284±50)[b]	–	(11.4±0.3)	unknown phase
+115	Mc	Moscovium	p-block	15	7	290	synthetic	–	–	[dw]	–	700	1400	-13.5	unknown phase
+116	Lv	Livermorium	p-block	16	7	293	synthetic	–	–	[dx]	–	700	1100	-12.9	unknown phase
+117	Ts	Tennessine	p-block	17	7	294	synthetic	–	–	[dy]	–	700	883	(7.1–7.3)	unknown phase
+118	Og	Oganesson	p-block	18	7	294	synthetic	–	–	[dz]	–	(325±15)	(450±10)	-7	unknown phase
