@@ -87,3 +87,18 @@ export function Atom({ x = 300, y = 300 }) {
     </g>
   );
 }
+
+const svgWidth = 320;
+const svgHeight = 320;
+
+export function AtomView() {
+  return (
+    <svg
+      width={svgWidth}
+      height={svgHeight}
+      style={{ border: "1px solid black" }}
+    >
+      <Atom x={svgWidth / 2} y={svgHeight / 2} />
+    </svg>
+  );
+}
