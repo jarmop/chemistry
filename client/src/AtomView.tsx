@@ -33,7 +33,7 @@ function Electron({ x = 0, y = 0, isValence = false }) {
     <g
       transform={`translate(${x}, ${y})`}
     >
-      <circle r="6" fill={isValence ? "lightgreen" : "yellow"} />
+      <circle r="5" fill={isValence ? "lightgreen" : "yellow"} />
       <line x1="-3" y1="0" x2="3" y2="0" stroke="black" strokeWidth={2} />
     </g>
   );
@@ -70,16 +70,18 @@ export function Atom({ x = 300, y = 300 }) {
     ? element.electrons.slice(-1)
     : element.electrons;
 
+  const nucleusRadius = Math.sqrt(element.protons / Math.PI) * 10;
+
   return (
     <g transform={`translate(${x}, ${y})`} stroke="black" fill="transparent">
-      <circle r="10" fill="red" />
-      <line x1="-5" y1="0" x2="5" y2="0" stroke="black" strokeWidth={2} />
-      <line x1="0" y1="-5" x2="0" y2="5" stroke="black" strokeWidth={2} />
+      <circle r={nucleusRadius} fill="red" />
+      <line x1="-4" y1="0" x2="4" y2="0" stroke="black" strokeWidth={2} />
+      <line x1="0" y1="-4" x2="0" y2="4" stroke="black" strokeWidth={2} />
 
       {visibleShells.map((numEl, i) => (
         <Shell
           key={i}
-          r={10 + (i + 1) * 20}
+          r={nucleusRadius + (i + 1) * 14}
           electrons={numEl}
           isOuterShell={i === visibleShells.length - 1}
         />
@@ -88,8 +90,8 @@ export function Atom({ x = 300, y = 300 }) {
   );
 }
 
-const svgWidth = 320;
-const svgHeight = 320;
+const svgWidth = 340;
+const svgHeight = 340;
 
 export function AtomView() {
   return (
