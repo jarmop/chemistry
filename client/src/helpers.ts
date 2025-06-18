@@ -42,17 +42,24 @@
 
 export function getMaximumNumberOfElectronsPerShell(numberOfShells = 7) {
   const numberOfElectronsPerShell = [];
-  for (let e = 0; e < numberOfShells; e++) {
-    numberOfElectronsPerShell.push(2 * Math.pow(e + 1, 2));
+  for (let i = 0; i < numberOfShells; i++) {
+    numberOfElectronsPerShell.push(2 * Math.pow(i + 1, 2));
   }
 
   return numberOfElectronsPerShell;
 }
 
-export function getElectronsPerShell(numberOfElectrons: number) {
-  const electronsPerSubShell: Record<number, number[]> = [];
-  // const electronsPerSubShell: number[][] = [[]];
-  // console.log(electronsPerSubShell);
+export function getMaximumNumberOfElectronsPerSubShell(numberOfSubShells = 7) {
+  const numberOfElectronsPerSubShell = [];
+  for (let i = 0; i < numberOfSubShells; i++) {
+    numberOfElectronsPerSubShell.push(2 * (2 * i + 1));
+  }
+
+  return numberOfElectronsPerSubShell;
+}
+
+export function getElectronsPerSubShell(numberOfElectrons: number) {
+  const electronsPerSubShell: Record<number, number[]> = {};
 
   let totalElectrons = 0;
   let E = 1;
@@ -85,9 +92,11 @@ export function getElectronsPerShell(numberOfElectrons: number) {
     }
   }
 
-  // const electronsPerShell = electronsPerSubShell.map((arr) =>
-  //   arr.reduce((acc, curr) => acc + curr, 0)
-  // );
+  return electronsPerSubShell;
+}
+
+export function getElectronsPerShell(numberOfElectrons: number) {
+  const electronsPerSubShell = getElectronsPerSubShell(numberOfElectrons);
 
   const electronsPerShell: Record<number, number> = {};
   for (const [key, arr] of Object.entries(electronsPerSubShell)) {
@@ -95,5 +104,4 @@ export function getElectronsPerShell(numberOfElectrons: number) {
   }
 
   return electronsPerShell;
-  // return electronsPerSubShell;
 }

@@ -33,26 +33,38 @@ function Electron({ x = 0, y = 0, isValence = false }) {
     <g
       transform={`translate(${x}, ${y})`}
     >
+      {/* <circle r="5" fill={isValence ? "rgb(0,255,0)" : "yellow"} /> */}
       <circle r="5" fill={isValence ? "lightgreen" : "yellow"} />
       <line x1="-3" y1="0" x2="3" y2="0" stroke="black" strokeWidth={2} />
     </g>
   );
 }
 
-function Shell({ r = 0, electrons = 2, isOuterShell = false, fill = "" }) {
+function Shell({ r = 0, electrons = 2, isOuterShell = false, fill = "black" }) {
   const electronViews: React.ReactNode[] = [];
   const rad = 2 * Math.PI / electrons;
   for (let i = 0; i < electrons; i++) {
     const x = (r - 7) * Math.cos(i * rad);
     const y = -(r - 7) * Math.sin(i * rad);
     electronViews.push(
-      <Electron key={i} x={x} y={y} isValence={isOuterShell} />,
+      <Electron
+        key={i}
+        x={x}
+        y={y}
+        isValence={isOuterShell}
+      />,
     );
   }
 
   return (
     <g>
-      <circle r={r} fill={fill} strokeWidth="1" stroke="black" />
+      <circle
+        r={r}
+        fill={isOuterShell ? "lightgrey" : fill}
+        strokeWidth={isOuterShell ? 0 : 1}
+        // strokeWidth={1}
+        stroke="black"
+      />
       {electronViews}
     </g>
   );
@@ -66,9 +78,13 @@ export function Atom({ x = 300, y = 300 }) {
     return <div>Not found</div>;
   }
 
+  const electronsPerShell = element.electrons.map((perSubShell) =>
+    perSubShell.reduce((acc, curr) => acc + curr, 0)
+  );
+
   const visibleShells = valence
-    ? element.electrons.slice(-1)
-    : element.electrons;
+    ? electronsPerShell.slice(-1)
+    : electronsPerShell;
 
   const nucleusRadius = Math.sqrt(element.protons / Math.PI) * 10;
 
@@ -81,7 +97,7 @@ export function Atom({ x = 300, y = 300 }) {
         r={nucleusRadius + (i + 1) * 14}
         electrons={numEl}
         isOuterShell={i === visibleShells.length - 1}
-        fill={i % 2 == 0 ? "white" : "grey"}
+        // fill={i % 2 == 0 ? "white" : "grey"}
       />,
     );
   }

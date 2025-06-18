@@ -3,7 +3,7 @@ export type Element = {
   symbol: string;
   protons: number;
   neutrons: number;
-  electrons: number[];
+  electrons: number[][];
   block: string;
   group: string;
   period: string;

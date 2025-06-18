@@ -1,4 +1,4 @@
-import { getElectronsPerShell } from "../client/src/helpers.ts";
+import { getElectronsPerSubShell } from "../client/src/helpers.ts";
 
 const text = await Deno.readTextFile("chemical-elements.tsv");
 
@@ -14,7 +14,7 @@ const elements = rows.slice(1).map((row) => {
     protons,
     // atomic weight is in Daltons which is very close to the weight of a nucleon
     neutrons: Math.round(atomicWeight) - protons,
-    electrons: Object.values(getElectronsPerShell(protons)),
+    electrons: Object.values(getElectronsPerSubShell(protons)),
     block: cols[3],
     group: cols[4],
     period: cols[5],
