@@ -19,19 +19,21 @@ export function AtomData() {
     <div>
       <h1 style={{ margin: "6px 0" }}>{element.name}</h1>
       <table style={{ margin: "6px 0" }}>
-        <tr>
-          <td>Protons:</td>
-          <td>{element.protons}</td>
-        </tr>
-        <tr>
-          <td>Neutrons:</td>
-          <td>{element.neutrons}</td>
-        </tr>
-        <tr>
-          <td>Electrons:</td>
-          <td>{element.electrons.reduce((acc, curr) => acc + curr, 0)}</td>
-          {/* <td>{Math.sumPrecise(element.electrons)}</td> */}
-        </tr>
+        <tbody>
+          <tr>
+            <td>Protons:</td>
+            <td>{element.protons}</td>
+          </tr>
+          <tr>
+            <td>Neutrons:</td>
+            <td>{element.neutrons}</td>
+          </tr>
+          <tr>
+            <td>Electrons:</td>
+            <td>{element.electrons.reduce((acc, curr) => acc + curr, 0)}</td>
+            {/* <td>{Math.sumPrecise(element.electrons)}</td> */}
+          </tr>
+        </tbody>
       </table>
       <table className="electronShells">
         <tbody>
@@ -42,6 +44,7 @@ export function AtomData() {
             for (let e = 0; e < maxEl; e++) {
               arr.push(
                 <td
+                  key={e}
                   style={{ background: e < numEl ? "lightgreen" : "" }}
                 >
                 </td>,
@@ -49,7 +52,7 @@ export function AtomData() {
             }
 
             return (
-              <tr>
+              <tr key={i}>
                 <th>{n}</th>
                 <td
                   style={{

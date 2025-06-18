@@ -60,10 +60,6 @@ export function PeriodicTable(
                   return <td key={group}></td>;
                 }
 
-                if (selectedZ === element.protons) {
-                  console.log(element);
-                }
-
                 return (
                   <td
                     key={group}

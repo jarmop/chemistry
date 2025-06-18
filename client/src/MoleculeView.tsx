@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { inorganicMolecules, organicMolecules } from "./molecules.ts";
 
 const svgWidth = 800;
@@ -16,9 +16,9 @@ export function MoleculeBuilder() {
       >
         <g transform="translate(160, 160)" stroke="black" fill="transparent">
           <circle r="10" fill="red"></circle>
-          <line x1="-5" y1="0" x2="5" y2="0" stroke="black" stroke-width="2">
+          <line x1="-5" y1="0" x2="5" y2="0" stroke="black" strokeWidth="2">
           </line>
-          <line x1="0" y1="-5" x2="0" y2="5" stroke="black" stroke-width="2">
+          <line x1="0" y1="-5" x2="0" y2="5" stroke="black" strokeWidth="2">
           </line>
           <g>
             <circle r="30"></circle>
@@ -30,7 +30,7 @@ export function MoleculeBuilder() {
                 x2="3"
                 y2="0"
                 stroke="black"
-                stroke-width="2"
+                strokeWidth="2"
               >
               </line>
             </g>
@@ -48,7 +48,7 @@ export function MoleculeBuilder() {
 
           {inorganicMolecules.map(({ name, formula }) => {
             return (
-              <div title={name}>
+              <div key={name} title={name}>
                 <Formula formula={formula} />
               </div>
             );
@@ -58,7 +58,7 @@ export function MoleculeBuilder() {
           Organic molecules:
           {organicMolecules.map(({ name, formula }) => {
             return (
-              <div title={name}>
+              <div key={name} title={name}>
                 <Formula formula={formula} />
               </div>
             );
@@ -71,15 +71,15 @@ export function MoleculeBuilder() {
 
 function Formula({ formula = "H20" }) {
   const parts = formula.split(/(\d+|\D+)/).filter(Boolean);
-  const content = [];
+  const content: React.ReactNode[] = [];
   for (let i = 0; i < parts.length; i += 2) {
     const symbol = parts[i];
     const amount = parts[i + 1];
     content.push(
-      <>
+      <React.Fragment key={i}>
         <span>{symbol}</span>
         <sub>{amount}</sub>
-      </>,
+      </React.Fragment>,
     );
   }
 
