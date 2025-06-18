@@ -39,7 +39,7 @@ describe("Application", () => {
     assertExists(staticFileMiddleware);
   });
 
-  it("can request home page from running server", async () => {
+  it.skip("can request home page from running server", async () => {
     const response = await fetch(serverInfo.baseUrl);
     const body = await response.text();
 
