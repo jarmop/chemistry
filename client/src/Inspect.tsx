@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { PeriodicTable } from "./PeriodicTable.tsx";
 import { StateContext } from "./StateContext.ts";
-import { AtomView } from "./AtomView.tsx";
+// import { AtomView } from "./AtomView.tsx";
+// import { AtomView } from "./AtomView2.tsx";
+import { AtomView } from "./AtomView3.tsx";
 import { AtomData } from "./AtomData.tsx";
 
 // Mass number, A = protons + neutrons --> Isotopes
