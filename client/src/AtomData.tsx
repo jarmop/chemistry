@@ -24,14 +24,19 @@ export function AtomData() {
     perSubShell.reduce((acc, curr) => acc + curr, 0)
   );
 
-  const subShellLetters = ["s", "p", "d", "f"];
+  const subShells = [
+    { name: "s", size: 2, color: "pink" },
+    { name: "p", size: 6, color: "lightyellow" },
+    { name: "d", size: 10, color: "lightblue" },
+    { name: "f", size: 14, color: "lightgreen" },
+  ];
 
   const electronConfigNotation = element.electrons.map(
     (numElPerSubShell, shell) => {
       return numElPerSubShell.map((numEl, subShell) => (
         <span key={`${shell}-${subShell}`}>
           {shell + 1}
-          {subShellLetters[subShell]}
+          {subShells[subShell].name}
           <sup>{numEl}</sup>
         </span>
       ));
@@ -56,6 +61,10 @@ export function AtomData() {
             <td>Electrons:</td>
             <td>{electronsPerShell.reduce((acc, curr) => acc + curr, 0)}</td>
           </tr>
+          <tr>
+            <td>Block:</td>
+            <td>{element.block}</td>
+          </tr>
         </tbody>
       </table>
 
@@ -67,15 +76,14 @@ export function AtomData() {
           <tr>
             <th></th>
             <th></th>
-            <th colSpan={2} style={{ background: "pink" }}>s</th>
-            <th colSpan={6} style={{ background: "lightyellow" }}>p</th>
-            <th colSpan={10} style={{ background: "lightblue" }}>d</th>
-            <th colSpan={14} style={{ background: "lightgreen" }}>f</th>
-            {
-              /* <th colSpan={18} style={{ background: "violet" }}>g</th>
-            <th colSpan={22} style={{ background: "orange" }}>h</th>
-            <th colSpan={24} style={{ background: "beige" }}>j</th> */
-            }
+            {subShells.map(({ name, size, color }) => (
+              <th
+                colSpan={size}
+                style={{ background: color, width: `${size * 12}px` }}
+              >
+                {name}
+              </th>
+            ))}
           </tr>
         </thead>
         <tbody>
@@ -83,30 +91,25 @@ export function AtomData() {
             const n = i + 1;
             const numEl = electronsPerShell[n - 1] || 0;
             const arr: React.ReactNode[] = [];
-
             const numElPerSubShell = element.electrons[n - 1];
-
-            const colorPerSubshell = [
-              "pink",
-              "lightyellow",
-              "lightblue",
-              "lightgreen",
-            ];
 
             maxNumberOfElectronsPerSubShell.slice(0, 4).forEach(
               (maxElOnSubShell, subShell) => {
-                const color = colorPerSubshell[subShell];
                 const numElOnSubShell = numElPerSubShell?.[subShell];
 
                 if (numElOnSubShell !== undefined) {
                   for (let e = 0; e < maxElOnSubShell; e++) {
+                    const color = numElOnSubShell === undefined
+                      ? ""
+                      : e >= numElOnSubShell
+                      ? "lightgrey"
+                      : subShells[subShell].color;
+
                     arr.push(
                       <td
                         key={`${subShell}-${e}`}
                         style={{
-                          background: e >= numElOnSubShell
-                            ? "lightgrey"
-                            : color,
+                          background: color,
                         }}
                       >
                       </td>,

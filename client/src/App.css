@@ -4,16 +4,14 @@ table.periodicTable {
   th,
   td {
     border: 1px solid rgb(160 160 160);
-    padding: 8px 10px;
+    padding: 4px 5px;
   }
 }
 
 table.electronShells {
-  width: 100%;
   border-collapse: collapse;
   th,
   td {
-    /* border: 1px solid rgb(160 160 160); */
     border: 1px solid black;
   }
 

@@ -20,26 +20,30 @@ export function Inspect() {
 
   return (
     <StateContext value={state}>
-      <div style={{ marginBottom: "10px" }}>
-        <input
-          type="checkbox"
-          id="valence"
-          checked={state.valence}
-          onChange={(el) => setState({ ...state, valence: el.target.checked })}
-        />
-        <label htmlFor="valence">Show only the outermost shell</label>
-      </div>
       <div style={{ display: "flex" }}>
-        <div>
-          <AtomView />
+        <div style={{ marginRight: "20px", minWidth: "460px" }}>
           <AtomData />
         </div>
-        <div style={{ marginLeft: "20px" }}>
-          <PeriodicTable
-            onElementSelected={(element) =>
-              setState({ ...state, element: element.protons })}
-          />
+        <div>
+          <AtomView />
+          <div style={{ marginBottom: "10px" }}>
+            <input
+              type="checkbox"
+              id="valence"
+              checked={state.valence}
+              onChange={(el) =>
+                setState({ ...state, valence: el.target.checked })}
+            />
+            <label htmlFor="valence">Show only the outermost shell</label>
+          </div>
         </div>
+      </div>
+
+      <div style={{ marginTop: "20px" }}>
+        <PeriodicTable
+          onElementSelected={(element) =>
+            setState({ ...state, element: element.protons })}
+        />
       </div>
     </StateContext>
   );
