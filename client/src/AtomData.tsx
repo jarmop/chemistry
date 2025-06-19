@@ -24,7 +24,7 @@ export function AtomData() {
 
   const subShells = [
     { name: "s", size: 2, color: "pink" },
-    { name: "p", size: 6, color: "lightyellow" },
+    { name: "p", size: 6, color: "yellow" },
     { name: "d", size: 10, color: "lightblue" },
     { name: "f", size: 14, color: "lightgreen" },
   ];
@@ -51,6 +51,10 @@ export function AtomData() {
             <td>Block:</td>
             <td>{element.block}</td>
           </tr>
+          <tr>
+            <td>Electronegativity:</td>
+            <td>{element.electroNegativity}</td>
+          </tr>
         </tbody>
       </table>
 
@@ -67,7 +71,6 @@ export function AtomData() {
         <thead>
           <tr>
             <th></th>
-            <th></th>
             {subShells.map(({ name, size, color }) => (
               <th
                 key={name}
@@ -77,6 +80,7 @@ export function AtomData() {
                 {name}
               </th>
             ))}
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -86,21 +90,26 @@ export function AtomData() {
 
             return (
               <tr key={i}>
-                <th>{n}</th>
+                <th
+                  style={{
+                    padding: "2px 4px",
+                  }}
+                >
+                  {n}
+                </th>
+                <Orbitals
+                  numElPerSubShell={element.electrons[n - 1]}
+                  subShells={subShells}
+                />
                 <td
                   style={{
-                    padding: "0 4px",
-                    background: "rgba(0,0,0,0.1)",
+                    padding: "2px 4px",
                     fontSize: "14px",
                     width: "40px",
                   }}
                 >
                   {`${numEl} / ${maxEl}`}
                 </td>
-                <Orbitals
-                  numElPerSubShell={element.electrons[n - 1]}
-                  subShells={subShells}
-                />
               </tr>
             );
           })}
@@ -142,7 +151,6 @@ function Orbitals({ numElPerSubShell, subShells }: OrbitalsProps) {
                 padding: "0",
                 height: "18px",
                 verticalAlign: "top",
-                // background: orbitalFilled ? "grey" : "lightgrey",
               }}
             >
               <div
@@ -164,7 +172,7 @@ function Orbitals({ numElPerSubShell, subShells }: OrbitalsProps) {
             key={maxElOnSubShell}
             colSpan={maxElOnSubShell / 2}
             style={{
-              background: "",
+              // background: "rgba(0,0,0,0.2)",
             }}
           >
           </td>,

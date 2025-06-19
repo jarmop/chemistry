@@ -8,6 +8,8 @@ const elements = rows.slice(1).map((row) => {
   const cols = row.split("\t");
   const protons = parseInt(cols[0]);
   const atomicWeight = parseFloat(cols[6]);
+  const electroNegativity = parseFloat(cols[9]);
+
   const element = {
     name: cols[2],
     symbol: cols[1],
@@ -20,6 +22,7 @@ const elements = rows.slice(1).map((row) => {
     period: cols[5],
     atomicWeight: atomicWeight,
     origin: cols[7],
+    electroNegativity: isNaN(electroNegativity) ? 0 : electroNegativity,
   };
 
   return element;

@@ -9,7 +9,8 @@
     "group": "1",
     "period": "1",
     "atomicWeight": 1.008,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 2.2
   },
   {
     "name": "Helium",
@@ -21,7 +22,8 @@
     "group": "18",
     "period": "1",
     "atomicWeight": 4.0026,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 0
   },
   {
     "name": "Lithium",
@@ -33,7 +35,8 @@
     "group": "1",
     "period": "2",
     "atomicWeight": 6.94,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 0.98
   },
   {
     "name": "Beryllium",
@@ -45,7 +48,8 @@
     "group": "2",
     "period": "2",
     "atomicWeight": 9.0122,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.57
   },
   {
     "name": "Boron",
@@ -57,7 +61,8 @@
     "group": "13",
     "period": "2",
     "atomicWeight": 10.81,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 2.04
   },
   {
     "name": "Carbon",
@@ -69,7 +74,8 @@
     "group": "14",
     "period": "2",
     "atomicWeight": 12.011,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 2.55
   },
   {
     "name": "Nitrogen",
@@ -81,7 +87,8 @@
     "group": "15",
     "period": "2",
     "atomicWeight": 14.007,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 3.04
   },
   {
     "name": "Oxygen",
@@ -93,7 +100,8 @@
     "group": "16",
     "period": "2",
     "atomicWeight": 15.999,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 3.44
   },
   {
     "name": "Fluorine",
@@ -105,7 +113,8 @@
     "group": "17",
     "period": "2",
     "atomicWeight": 18.998,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 3.98
   },
   {
     "name": "Neon",
@@ -117,7 +126,8 @@
     "group": "18",
     "period": "2",
     "atomicWeight": 20.18,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 0
   },
   {
     "name": "Sodium",
@@ -129,7 +139,8 @@
     "group": "1",
     "period": "3",
     "atomicWeight": 22.99,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 0.93
   },
   {
     "name": "Magnesium",
@@ -141,7 +152,8 @@
     "group": "2",
     "period": "3",
     "atomicWeight": 24.305,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.31
   },
   {
     "name": "Aluminium",
@@ -153,7 +165,8 @@
     "group": "13",
     "period": "3",
     "atomicWeight": 26.982,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.61
   },
   {
     "name": "Silicon",
@@ -165,7 +178,8 @@
     "group": "14",
     "period": "3",
     "atomicWeight": 28.085,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.9
   },
   {
     "name": "Phosphorus",
@@ -177,7 +191,8 @@
     "group": "15",
     "period": "3",
     "atomicWeight": 30.974,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 2.19
   },
   {
     "name": "Sulfur",
@@ -189,7 +204,8 @@
     "group": "16",
     "period": "3",
     "atomicWeight": 32.06,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 2.58
   },
   {
     "name": "Chlorine",
@@ -201,7 +217,8 @@
     "group": "17",
     "period": "3",
     "atomicWeight": 35.45,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 3.16
   },
   {
     "name": "Argon",
@@ -213,7 +230,8 @@
     "group": "18",
     "period": "3",
     "atomicWeight": 39.95,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 0
   },
   {
     "name": "Potassium",
@@ -225,7 +243,8 @@
     "group": "1",
     "period": "4",
     "atomicWeight": 39.098,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 0.82
   },
   {
     "name": "Calcium",
@@ -237,7 +256,8 @@
     "group": "2",
     "period": "4",
     "atomicWeight": 40.078,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1
   },
   {
     "name": "Scandium",
@@ -249,7 +269,8 @@
     "group": "3",
     "period": "4",
     "atomicWeight": 44.956,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.36
   },
   {
     "name": "Titanium",
@@ -261,7 +282,8 @@
     "group": "4",
     "period": "4",
     "atomicWeight": 47.867,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.54
   },
   {
     "name": "Vanadium",
@@ -273,7 +295,8 @@
     "group": "5",
     "period": "4",
     "atomicWeight": 50.942,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.63
   },
   {
     "name": "Chromium",
@@ -285,7 +308,8 @@
     "group": "6",
     "period": "4",
     "atomicWeight": 51.996,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.66
   },
   {
     "name": "Manganese",
@@ -297,7 +321,8 @@
     "group": "7",
     "period": "4",
     "atomicWeight": 54.938,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.55
   },
   {
     "name": "Iron",
@@ -309,7 +334,8 @@
     "group": "8",
     "period": "4",
     "atomicWeight": 55.845,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.83
   },
   {
     "name": "Cobalt",
@@ -321,7 +347,8 @@
     "group": "9",
     "period": "4",
     "atomicWeight": 58.933,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.88
   },
   {
     "name": "Nickel",
@@ -333,7 +360,8 @@
     "group": "10",
     "period": "4",
     "atomicWeight": 58.693,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.91
   },
   {
     "name": "Copper",
@@ -345,7 +373,8 @@
     "group": "11",
     "period": "4",
     "atomicWeight": 63.546,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.9
   },
   {
     "name": "Zinc",
@@ -357,7 +386,8 @@
     "group": "12",
     "period": "4",
     "atomicWeight": 65.38,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.65
   },
   {
     "name": "Gallium",
@@ -369,7 +399,8 @@
     "group": "13",
     "period": "4",
     "atomicWeight": 69.723,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.81
   },
   {
     "name": "Germanium",
@@ -381,7 +412,8 @@
     "group": "14",
     "period": "4",
     "atomicWeight": 72.63,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 2.01
   },
   {
     "name": "Arsenic",
@@ -393,7 +425,8 @@
     "group": "15",
     "period": "4",
     "atomicWeight": 74.922,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 2.18
   },
   {
     "name": "Selenium",
@@ -405,7 +438,8 @@
     "group": "16",
     "period": "4",
     "atomicWeight": 78.971,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 2.55
   },
   {
     "name": "Bromine",
@@ -417,7 +451,8 @@
     "group": "17",
     "period": "4",
     "atomicWeight": 79.904,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 2.96
   },
   {
     "name": "Krypton",
@@ -429,7 +464,8 @@
     "group": "18",
     "period": "4",
     "atomicWeight": 83.798,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 3
   },
   {
     "name": "Rubidium",
@@ -441,7 +477,8 @@
     "group": "1",
     "period": "5",
     "atomicWeight": 85.468,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 0.82
   },
   {
     "name": "Strontium",
@@ -453,7 +490,8 @@
     "group": "2",
     "period": "5",
     "atomicWeight": 87.62,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 0.95
   },
   {
     "name": "Yttrium",
@@ -465,7 +503,8 @@
     "group": "3",
     "period": "5",
     "atomicWeight": 88.906,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.22
   },
   {
     "name": "Zirconium",
@@ -477,7 +516,8 @@
     "group": "4",
     "period": "5",
     "atomicWeight": 91.224,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.33
   },
   {
     "name": "Niobium",
@@ -489,7 +529,8 @@
     "group": "5",
     "period": "5",
     "atomicWeight": 92.906,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.6
   },
   {
     "name": "Molybdenum",
@@ -501,7 +542,8 @@
     "group": "6",
     "period": "5",
     "atomicWeight": 95.95,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 2.16
   },
   {
     "name": "Technetium",
@@ -513,7 +555,8 @@
     "group": "7",
     "period": "5",
     "atomicWeight": 97,
-    "origin": "from decay"
+    "origin": "from decay",
+    "electroNegativity": 1.9
   },
   {
     "name": "Ruthenium",
@@ -525,7 +568,8 @@
     "group": "8",
     "period": "5",
     "atomicWeight": 101.07,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 2.2
   },
   {
     "name": "Rhodium",
@@ -537,7 +581,8 @@
     "group": "9",
     "period": "5",
     "atomicWeight": 102.91,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 2.28
   },
   {
     "name": "Palladium",
@@ -549,7 +594,8 @@
     "group": "10",
     "period": "5",
     "atomicWeight": 106.42,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 2.2
   },
   {
     "name": "Silver",
@@ -561,7 +607,8 @@
     "group": "11",
     "period": "5",
     "atomicWeight": 107.87,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.93
   },
   {
     "name": "Cadmium",
@@ -573,7 +620,8 @@
     "group": "12",
     "period": "5",
     "atomicWeight": 112.41,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.69
   },
   {
     "name": "Indium",
@@ -585,7 +633,8 @@
     "group": "13",
     "period": "5",
     "atomicWeight": 114.82,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.78
   },
   {
     "name": "Tin",
@@ -597,7 +646,8 @@
     "group": "14",
     "period": "5",
     "atomicWeight": 118.71,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.96
   },
   {
     "name": "Antimony",
@@ -609,7 +659,8 @@
     "group": "15",
     "period": "5",
     "atomicWeight": 121.76,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 2.05
   },
   {
     "name": "Tellurium",
@@ -621,7 +672,8 @@
     "group": "16",
     "period": "5",
     "atomicWeight": 127.6,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 2.1
   },
   {
     "name": "Iodine",
@@ -633,7 +685,8 @@
     "group": "17",
     "period": "5",
     "atomicWeight": 126.9,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 2.66
   },
   {
     "name": "Xenon",
@@ -645,7 +698,8 @@
     "group": "18",
     "period": "5",
     "atomicWeight": 131.29,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 2.6
   },
   {
     "name": "Caesium",
@@ -657,7 +711,8 @@
     "group": "1",
     "period": "6",
     "atomicWeight": 132.91,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 0.79
   },
   {
     "name": "Barium",
@@ -669,7 +724,8 @@
     "group": "2",
     "period": "6",
     "atomicWeight": 137.33,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 0.89
   },
   {
     "name": "Lanthanum",
@@ -681,7 +737,8 @@
     "group": "f-block groups",
     "period": "6",
     "atomicWeight": 138.91,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.1
   },
   {
     "name": "Cerium",
@@ -693,7 +750,8 @@
     "group": "f-block groups",
     "period": "6",
     "atomicWeight": 140.12,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.12
   },
   {
     "name": "Praseodymium",
@@ -705,7 +763,8 @@
     "group": "f-block groups",
     "period": "6",
     "atomicWeight": 140.91,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.13
   },
   {
     "name": "Neodymium",
@@ -717,7 +776,8 @@
     "group": "f-block groups",
     "period": "6",
     "atomicWeight": 144.24,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.14
   },
   {
     "name": "Promethium",
@@ -729,7 +789,8 @@
     "group": "f-block groups",
     "period": "6",
     "atomicWeight": 145,
-    "origin": "from decay"
+    "origin": "from decay",
+    "electroNegativity": 1.13
   },
   {
     "name": "Samarium",
@@ -741,7 +802,8 @@
     "group": "f-block groups",
     "period": "6",
     "atomicWeight": 150.36,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.17
   },
   {
     "name": "Europium",
@@ -753,7 +815,8 @@
     "group": "f-block groups",
     "period": "6",
     "atomicWeight": 151.96,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.2
   },
   {
     "name": "Gadolinium",
@@ -765,7 +828,8 @@
     "group": "f-block groups",
     "period": "6",
     "atomicWeight": 157.25,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.2
   },
   {
     "name": "Terbium",
@@ -777,7 +841,8 @@
     "group": "f-block groups",
     "period": "6",
     "atomicWeight": 158.93,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.2
   },
   {
     "name": "Dysprosium",
@@ -789,7 +854,8 @@
     "group": "f-block groups",
     "period": "6",
     "atomicWeight": 162.5,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.22
   },
   {
     "name": "Holmium",
@@ -801,7 +867,8 @@
     "group": "f-block groups",
     "period": "6",
     "atomicWeight": 164.93,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.23
   },
   {
     "name": "Erbium",
@@ -813,7 +880,8 @@
     "group": "f-block groups",
     "period": "6",
     "atomicWeight": 167.26,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.24
   },
   {
     "name": "Thulium",
@@ -825,7 +893,8 @@
     "group": "f-block groups",
     "period": "6",
     "atomicWeight": 168.93,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.25
   },
   {
     "name": "Ytterbium",
@@ -837,7 +906,8 @@
     "group": "f-block groups",
     "period": "6",
     "atomicWeight": 173.05,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.1
   },
   {
     "name": "Lutetium",
@@ -849,7 +919,8 @@
     "group": "3",
     "period": "6",
     "atomicWeight": 174.97,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.27
   },
   {
     "name": "Hafnium",
@@ -861,7 +932,8 @@
     "group": "4",
     "period": "6",
     "atomicWeight": 178.49,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.3
   },
   {
     "name": "Tantalum",
@@ -873,7 +945,8 @@
     "group": "5",
     "period": "6",
     "atomicWeight": 180.95,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.5
   },
   {
     "name": "Tungsten",
@@ -885,7 +958,8 @@
     "group": "6",
     "period": "6",
     "atomicWeight": 183.84,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 2.36
   },
   {
     "name": "Rhenium",
@@ -897,7 +971,8 @@
     "group": "7",
     "period": "6",
     "atomicWeight": 186.21,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.9
   },
   {
     "name": "Osmium",
@@ -909,7 +984,8 @@
     "group": "8",
     "period": "6",
     "atomicWeight": 190.23,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 2.2
   },
   {
     "name": "Iridium",
@@ -921,7 +997,8 @@
     "group": "9",
     "period": "6",
     "atomicWeight": 192.22,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 2.2
   },
   {
     "name": "Platinum",
@@ -933,7 +1010,8 @@
     "group": "10",
     "period": "6",
     "atomicWeight": 195.08,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 2.28
   },
   {
     "name": "Gold",
@@ -945,7 +1023,8 @@
     "group": "11",
     "period": "6",
     "atomicWeight": 196.97,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 2.54
   },
   {
     "name": "Mercury",
@@ -957,7 +1036,8 @@
     "group": "12",
     "period": "6",
     "atomicWeight": 200.59,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 2
   },
   {
     "name": "Thallium",
@@ -969,7 +1049,8 @@
     "group": "13",
     "period": "6",
     "atomicWeight": 204.38,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.62
   },
   {
     "name": "Lead",
@@ -981,7 +1062,8 @@
     "group": "14",
     "period": "6",
     "atomicWeight": 207.2,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 2.33
   },
   {
     "name": "Bismuth",
@@ -993,7 +1075,8 @@
     "group": "15",
     "period": "6",
     "atomicWeight": 208.98,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 2.02
   },
   {
     "name": "Polonium",
@@ -1005,7 +1088,8 @@
     "group": "16",
     "period": "6",
     "atomicWeight": 209,
-    "origin": "from decay"
+    "origin": "from decay",
+    "electroNegativity": 2
   },
   {
     "name": "Astatine",
@@ -1017,7 +1101,8 @@
     "group": "17",
     "period": "6",
     "atomicWeight": 210,
-    "origin": "from decay"
+    "origin": "from decay",
+    "electroNegativity": 2.2
   },
   {
     "name": "Radon",
@@ -1029,7 +1114,8 @@
     "group": "18",
     "period": "6",
     "atomicWeight": 222,
-    "origin": "from decay"
+    "origin": "from decay",
+    "electroNegativity": 2.2
   },
   {
     "name": "Francium",
@@ -1049,7 +1135,8 @@
     "group": "1",
     "period": "7",
     "atomicWeight": 223,
-    "origin": "from decay"
+    "origin": "from decay",
+    "electroNegativity": 0.79
   },
   {
     "name": "Radium",
@@ -1069,7 +1156,8 @@
     "group": "2",
     "period": "7",
     "atomicWeight": 226,
-    "origin": "from decay"
+    "origin": "from decay",
+    "electroNegativity": 0.9
   },
   {
     "name": "Actinium",
@@ -1089,7 +1177,8 @@
     "group": "f-block groups",
     "period": "7",
     "atomicWeight": 227,
-    "origin": "from decay"
+    "origin": "from decay",
+    "electroNegativity": 1.1
   },
   {
     "name": "Thorium",
@@ -1109,7 +1198,8 @@
     "group": "f-block groups",
     "period": "7",
     "atomicWeight": 232.04,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.3
   },
   {
     "name": "Protactinium",
@@ -1129,7 +1219,8 @@
     "group": "f-block groups",
     "period": "7",
     "atomicWeight": 231.04,
-    "origin": "from decay"
+    "origin": "from decay",
+    "electroNegativity": 1.5
   },
   {
     "name": "Uranium",
@@ -1149,7 +1240,8 @@
     "group": "f-block groups",
     "period": "7",
     "atomicWeight": 238.03,
-    "origin": "primordial"
+    "origin": "primordial",
+    "electroNegativity": 1.38
   },
   {
     "name": "Neptunium",
@@ -1169,7 +1261,8 @@
     "group": "f-block groups",
     "period": "7",
     "atomicWeight": 237,
-    "origin": "from decay"
+    "origin": "from decay",
+    "electroNegativity": 1.36
   },
   {
     "name": "Plutonium",
@@ -1189,7 +1282,8 @@
     "group": "f-block groups",
     "period": "7",
     "atomicWeight": 244,
-    "origin": "from decay"
+    "origin": "from decay",
+    "electroNegativity": 1.28
   },
   {
     "name": "Americium",
@@ -1209,7 +1303,8 @@
     "group": "f-block groups",
     "period": "7",
     "atomicWeight": 243,
-    "origin": "synthetic"
+    "origin": "synthetic",
+    "electroNegativity": 1.13
   },
   {
     "name": "Curium",
@@ -1229,7 +1324,8 @@
     "group": "f-block groups",
     "period": "7",
     "atomicWeight": 247,
-    "origin": "synthetic"
+    "origin": "synthetic",
+    "electroNegativity": 1.28
   },
   {
     "name": "Berkelium",
@@ -1249,7 +1345,8 @@
     "group": "f-block groups",
     "period": "7",
     "atomicWeight": 247,
-    "origin": "synthetic"
+    "origin": "synthetic",
+    "electroNegativity": 1.3
   },
   {
     "name": "Californium",
@@ -1269,7 +1366,8 @@
     "group": "f-block groups",
     "period": "7",
     "atomicWeight": 251,
-    "origin": "synthetic"
+    "origin": "synthetic",
+    "electroNegativity": 1.3
   },
   {
     "name": "Einsteinium",
@@ -1289,7 +1387,8 @@
     "group": "f-block groups",
     "period": "7",
     "atomicWeight": 252,
-    "origin": "synthetic"
+    "origin": "synthetic",
+    "electroNegativity": 1.3
   },
   {
     "name": "Fermium",
@@ -1309,7 +1408,8 @@
     "group": "f-block groups",
     "period": "7",
     "atomicWeight": 257,
-    "origin": "synthetic"
+    "origin": "synthetic",
+    "electroNegativity": 1.3
   },
   {
     "name": "Mendelevium",
@@ -1329,7 +1429,8 @@
     "group": "f-block groups",
     "period": "7",
     "atomicWeight": 258,
-    "origin": "synthetic"
+    "origin": "synthetic",
+    "electroNegativity": 1.3
   },
   {
     "name": "Nobelium",
@@ -1349,7 +1450,8 @@
     "group": "f-block groups",
     "period": "7",
     "atomicWeight": 259,
-    "origin": "synthetic"
+    "origin": "synthetic",
+    "electroNegativity": 1.3
   },
   {
     "name": "Lawrencium",
@@ -1369,7 +1471,8 @@
     "group": "3",
     "period": "7",
     "atomicWeight": 266,
-    "origin": "synthetic"
+    "origin": "synthetic",
+    "electroNegativity": 1.3
   },
   {
     "name": "Rutherfordium",
@@ -1389,7 +1492,8 @@
     "group": "4",
     "period": "7",
     "atomicWeight": 267,
-    "origin": "synthetic"
+    "origin": "synthetic",
+    "electroNegativity": 0
   },
   {
     "name": "Dubnium",
@@ -1409,7 +1513,8 @@
     "group": "5",
     "period": "7",
     "atomicWeight": 268,
-    "origin": "synthetic"
+    "origin": "synthetic",
+    "electroNegativity": 0
   },
   {
     "name": "Seaborgium",
@@ -1429,7 +1534,8 @@
     "group": "6",
     "period": "7",
     "atomicWeight": 267,
-    "origin": "synthetic"
+    "origin": "synthetic",
+    "electroNegativity": 0
   },
   {
     "name": "Bohrium",
@@ -1449,7 +1555,8 @@
     "group": "7",
     "period": "7",
     "atomicWeight": 270,
-    "origin": "synthetic"
+    "origin": "synthetic",
+    "electroNegativity": 0
   },
   {
     "name": "Hassium",
@@ -1469,7 +1576,8 @@
     "group": "8",
     "period": "7",
     "atomicWeight": 271,
-    "origin": "synthetic"
+    "origin": "synthetic",
+    "electroNegativity": 0
   },
   {
     "name": "Meitnerium",
@@ -1489,7 +1597,8 @@
     "group": "9",
     "period": "7",
     "atomicWeight": 278,
-    "origin": "synthetic"
+    "origin": "synthetic",
+    "electroNegativity": 0
   },
   {
     "name": "Darmstadtium",
@@ -1509,7 +1618,8 @@
     "group": "10",
     "period": "7",
     "atomicWeight": 281,
-    "origin": "synthetic"
+    "origin": "synthetic",
+    "electroNegativity": 0
   },
   {
     "name": "Roentgenium",
@@ -1529,7 +1639,8 @@
     "group": "11",
     "period": "7",
     "atomicWeight": 282,
-    "origin": "synthetic"
+    "origin": "synthetic",
+    "electroNegativity": 0
   },
   {
     "name": "Copernicium",
@@ -1549,7 +1660,8 @@
     "group": "12",
     "period": "7",
     "atomicWeight": 285,
-    "origin": "synthetic"
+    "origin": "synthetic",
+    "electroNegativity": 0
   },
   {
     "name": "Nihonium",
@@ -1569,7 +1681,8 @@
     "group": "13",
     "period": "7",
     "atomicWeight": 286,
-    "origin": "synthetic"
+    "origin": "synthetic",
+    "electroNegativity": 0
   },
   {
     "name": "Flerovium",
@@ -1589,7 +1702,8 @@
     "group": "14",
     "period": "7",
     "atomicWeight": 289,
-    "origin": "synthetic"
+    "origin": "synthetic",
+    "electroNegativity": 0
   },
   {
     "name": "Moscovium",
@@ -1609,7 +1723,8 @@
     "group": "15",
     "period": "7",
     "atomicWeight": 290,
-    "origin": "synthetic"
+    "origin": "synthetic",
+    "electroNegativity": 0
   },
   {
     "name": "Livermorium",
@@ -1629,7 +1744,8 @@
     "group": "16",
     "period": "7",
     "atomicWeight": 293,
-    "origin": "synthetic"
+    "origin": "synthetic",
+    "electroNegativity": 0
   },
   {
     "name": "Tennessine",
@@ -1649,7 +1765,8 @@
     "group": "17",
     "period": "7",
     "atomicWeight": 294,
-    "origin": "synthetic"
+    "origin": "synthetic",
+    "electroNegativity": 0
   },
   {
     "name": "Oganesson",
@@ -1669,6 +1786,7 @@
     "group": "18",
     "period": "7",
     "atomicWeight": 294,
-    "origin": "synthetic"
+    "origin": "synthetic",
+    "electroNegativity": 0
   }
 ]

@@ -9,4 +9,5 @@ export type Element = {
   period: string;
   atomicWeight: number;
   origin: string;
+  electroNegativity: number;
 };
