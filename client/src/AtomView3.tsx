@@ -3,25 +3,6 @@
  * Allowed values of ml is (2 x l + 1)
  * number of allowed values of l is the same as n
  *
- * n = 1
- * l = 0
- * ml = 0
- * electrons per subshell = [2]
- *
- * n = 2
- * l = 0, 1,
- * ml = -1, 0, 1
- * electrons per subshell = [2, 2+6=8]
- *
- * n = 3
- * l = 0, 1, 2
- * ml = -2, -1, 0, 1, 2
- * electrons per subshell = [2, 2+6=8, 2+6+10=18]
- *
- * n = 4
- * l = 0, 1, 2, 3
- * ml = -3, -2, -1, 0, 1, 2, 3
- * electrons per subshell = [2, 2+6=8, 2+6+10=18, 2+6+10+14=32]
  */
 
 import { useContext } from "react";

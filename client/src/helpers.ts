@@ -105,3 +105,7 @@ export function getElectronsPerShell(numberOfElectrons: number) {
 
   return electronsPerShell;
 }
+
+export function sum(arr: number[]) {
+  return arr.reduce((acc, curr) => acc + curr, 0);
+}
