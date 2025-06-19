@@ -21,7 +21,7 @@ export function Inspect() {
   return (
     <StateContext value={state}>
       <div style={{ display: "flex" }}>
-        <div style={{ marginRight: "20px", minWidth: "460px" }}>
+        <div style={{ marginRight: "20px" }}>
           <AtomData />
         </div>
         <div>
