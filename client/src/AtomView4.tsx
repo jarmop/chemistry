@@ -13,13 +13,27 @@ function getRadius(n = 0) {
 
 function ValenceElectrons({ r = 0, electrons = 2 }) {
   const electronViews: React.ReactNode[] = [];
-  const rad = 2 * Math.PI / electrons;
-  for (let i = 0; i < electrons; i++) {
-    const x = (r - 8) * Math.cos(i * rad);
-    const y = -(r - 8) * Math.sin(i * rad);
+  const electronPairs = Math.max(0, electrons - 4);
+  const lonelyElectrons = electrons - electronPairs * 2;
+  const pairRadOffset = 1 / r * 6;
+
+  function addElectron(rad: number) {
+    const x = r * Math.cos(rad);
+    const y = -r * Math.sin(rad);
     electronViews.push(
-      <circle key={i} cx={x} cy={y} r={electronRadius} fill="yellow" />,
+      <circle key={rad} cx={x} cy={y} r={electronRadius} fill="yellow" />,
     );
+  }
+
+  let rad = 0;
+  for (let i = 0; i < electronPairs; i++) {
+    rad = rad + Math.PI / 2;
+    addElectron(rad - pairRadOffset);
+    addElectron(rad + pairRadOffset);
+  }
+  for (let i = 0; i < lonelyElectrons; i++) {
+    rad = rad + Math.PI / 2;
+    addElectron(rad);
   }
 
   return electronViews;
@@ -47,7 +61,7 @@ export function Atom({ x = 300, y = 300 }) {
   return (
     <g transform={`translate(${x}, ${y})`} stroke="black" fill="transparent">
       <ValenceElectrons
-        r={nonValenceElectronRadius + 14}
+        r={nonValenceElectronRadius + electronRadius + 1}
         electrons={valenceElectrons}
       />
       <circle r={nonValenceElectronRadius} fill="lightgreen" />
