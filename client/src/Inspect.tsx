@@ -4,7 +4,8 @@ import { StateContext } from "./StateContext.ts";
 // import { AtomView } from "./AtomView.tsx";
 // import { AtomView } from "./AtomView2.tsx";
 // import { AtomView } from "./AtomView3.tsx";
-import { AtomView } from "./AtomView4.tsx";
+// import { AtomView } from "./AtomView4.tsx";
+import { AtomView } from "./AtomView5.tsx";
 import { AtomData } from "./AtomData.tsx";
 
 // Mass number, A = protons + neutrons --> Isotopes
@@ -23,11 +24,18 @@ export function Inspect() {
     <StateContext value={state}>
       <div style={{ display: "flex" }}>
         <div style={{ marginRight: "20px" }}>
+          <PeriodicTable
+            onElementSelected={(element) =>
+              setState({ ...state, element: element.protons })}
+          />
+        </div>
+        <div style={{ marginRight: "20px" }}>
           <AtomData />
         </div>
         <div>
           <AtomView />
-          <div style={{ marginBottom: "10px" }}>
+          {
+            /* <div style={{ marginBottom: "10px" }}>
             <input
               type="checkbox"
               id="valence"
@@ -36,15 +44,9 @@ export function Inspect() {
                 setState({ ...state, valence: el.target.checked })}
             />
             <label htmlFor="valence">Show only the outermost shell</label>
-          </div>
+          </div> */
+          }
         </div>
-      </div>
-
-      <div style={{ marginTop: "20px" }}>
-        <PeriodicTable
-          onElementSelected={(element) =>
-            setState({ ...state, element: element.protons })}
-        />
       </div>
     </StateContext>
   );

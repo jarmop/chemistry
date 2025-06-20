@@ -3,13 +3,11 @@ import { StateContext } from "./StateContext.ts";
 import elements from "./elements.json" with { type: "json" };
 import { sum } from "./helpers.ts";
 
-const electronRadius = 5;
+/**
+ * Lewis structure
+ */
 
-function getRadius(n = 0) {
-  return Math.sqrt(
-    n * Math.pow(electronRadius, 2),
-  );
-}
+const electronRadius = 2;
 
 function ValenceElectrons({ r = 0, electrons = 2, isHelium = false }) {
   const electronViews: React.ReactNode[] = [];
@@ -21,7 +19,7 @@ function ValenceElectrons({ r = 0, electrons = 2, isHelium = false }) {
     const x = r * Math.cos(rad);
     const y = -r * Math.sin(rad);
     electronViews.push(
-      <circle key={rad} cx={x} cy={y} r={electronRadius} fill="yellow" />,
+      <circle key={rad} cx={x} cy={y} r={electronRadius} fill="black" />,
     );
   }
 
@@ -54,21 +52,24 @@ export function Atom({ x = 300, y = 300 }) {
   );
 
   const valenceElectrons = sum(electronsPerShell.slice(-1));
-  const nonValenceElectrons = sum(electronsPerShell.slice(0, -1));
-
-  const nucleusRadius = getRadius(element.protons);
-  const nonValenceElectronRadius = nucleusRadius +
-    getRadius(nonValenceElectrons);
+  const atomRadius = 22;
 
   return (
     <g transform={`translate(${x}, ${y})`} stroke="black" fill="transparent">
       <ValenceElectrons
-        r={nonValenceElectronRadius + electronRadius + 1}
+        r={atomRadius}
         electrons={valenceElectrons}
         isHelium={element.name === "Helium"}
       />
-      <circle r={nonValenceElectronRadius} fill="lightgreen" />
-      <circle r={nucleusRadius} fill="red" />
+      <text
+        y={9}
+        fill="black"
+        fontSize="28px"
+        textAnchor="middle"
+        fontFamily="Roboto Condensed"
+      >
+        {element.symbol}
+      </text>
     </g>
   );
 }
