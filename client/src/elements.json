@@ -10,7 +10,8 @@
     "period": "1",
     "atomicWeight": 1.008,
     "origin": "primordial",
-    "electroNegativity": 2.2
+    "electroNegativity": 2.2,
+    "abundanceOnEarthCrust": 1400
   },
   {
     "name": "Helium",
@@ -23,7 +24,8 @@
     "period": "1",
     "atomicWeight": 4.0026,
     "origin": "primordial",
-    "electroNegativity": 0
+    "electroNegativity": 0,
+    "abundanceOnEarthCrust": 0.008
   },
   {
     "name": "Lithium",
@@ -36,7 +38,8 @@
     "period": "2",
     "atomicWeight": 6.94,
     "origin": "primordial",
-    "electroNegativity": 0.98
+    "electroNegativity": 0.98,
+    "abundanceOnEarthCrust": 20
   },
   {
     "name": "Beryllium",
@@ -49,7 +52,8 @@
     "period": "2",
     "atomicWeight": 9.0122,
     "origin": "primordial",
-    "electroNegativity": 1.57
+    "electroNegativity": 1.57,
+    "abundanceOnEarthCrust": 2.8
   },
   {
     "name": "Boron",
@@ -62,7 +66,8 @@
     "period": "2",
     "atomicWeight": 10.81,
     "origin": "primordial",
-    "electroNegativity": 2.04
+    "electroNegativity": 2.04,
+    "abundanceOnEarthCrust": 10
   },
   {
     "name": "Carbon",
@@ -75,7 +80,8 @@
     "period": "2",
     "atomicWeight": 12.011,
     "origin": "primordial",
-    "electroNegativity": 2.55
+    "electroNegativity": 2.55,
+    "abundanceOnEarthCrust": 200
   },
   {
     "name": "Nitrogen",
@@ -88,7 +94,8 @@
     "period": "2",
     "atomicWeight": 14.007,
     "origin": "primordial",
-    "electroNegativity": 3.04
+    "electroNegativity": 3.04,
+    "abundanceOnEarthCrust": 19
   },
   {
     "name": "Oxygen",
@@ -101,7 +108,8 @@
     "period": "2",
     "atomicWeight": 15.999,
     "origin": "primordial",
-    "electroNegativity": 3.44
+    "electroNegativity": 3.44,
+    "abundanceOnEarthCrust": 461000
   },
   {
     "name": "Fluorine",
@@ -114,7 +122,8 @@
     "period": "2",
     "atomicWeight": 18.998,
     "origin": "primordial",
-    "electroNegativity": 3.98
+    "electroNegativity": 3.98,
+    "abundanceOnEarthCrust": 585
   },
   {
     "name": "Neon",
@@ -127,7 +136,8 @@
     "period": "2",
     "atomicWeight": 20.18,
     "origin": "primordial",
-    "electroNegativity": 0
+    "electroNegativity": 0,
+    "abundanceOnEarthCrust": 0.005
   },
   {
     "name": "Sodium",
@@ -140,7 +150,8 @@
     "period": "3",
     "atomicWeight": 22.99,
     "origin": "primordial",
-    "electroNegativity": 0.93
+    "electroNegativity": 0.93,
+    "abundanceOnEarthCrust": 23600
   },
   {
     "name": "Magnesium",
@@ -153,7 +164,8 @@
     "period": "3",
     "atomicWeight": 24.305,
     "origin": "primordial",
-    "electroNegativity": 1.31
+    "electroNegativity": 1.31,
+    "abundanceOnEarthCrust": 23300
   },
   {
     "name": "Aluminium",
@@ -166,7 +178,8 @@
     "period": "3",
     "atomicWeight": 26.982,
     "origin": "primordial",
-    "electroNegativity": 1.61
+    "electroNegativity": 1.61,
+    "abundanceOnEarthCrust": 82300
   },
   {
     "name": "Silicon",
@@ -179,7 +192,8 @@
     "period": "3",
     "atomicWeight": 28.085,
     "origin": "primordial",
-    "electroNegativity": 1.9
+    "electroNegativity": 1.9,
+    "abundanceOnEarthCrust": 282000
   },
   {
     "name": "Phosphorus",
@@ -192,7 +206,8 @@
     "period": "3",
     "atomicWeight": 30.974,
     "origin": "primordial",
-    "electroNegativity": 2.19
+    "electroNegativity": 2.19,
+    "abundanceOnEarthCrust": 1050
   },
   {
     "name": "Sulfur",
@@ -205,7 +220,8 @@
     "period": "3",
     "atomicWeight": 32.06,
     "origin": "primordial",
-    "electroNegativity": 2.58
+    "electroNegativity": 2.58,
+    "abundanceOnEarthCrust": 350
   },
   {
     "name": "Chlorine",
@@ -218,7 +234,8 @@
     "period": "3",
     "atomicWeight": 35.45,
     "origin": "primordial",
-    "electroNegativity": 3.16
+    "electroNegativity": 3.16,
+    "abundanceOnEarthCrust": 145
   },
   {
     "name": "Argon",
@@ -231,7 +248,8 @@
     "period": "3",
     "atomicWeight": 39.95,
     "origin": "primordial",
-    "electroNegativity": 0
+    "electroNegativity": 0,
+    "abundanceOnEarthCrust": 3.5
   },
   {
     "name": "Potassium",
@@ -244,7 +262,8 @@
     "period": "4",
     "atomicWeight": 39.098,
     "origin": "primordial",
-    "electroNegativity": 0.82
+    "electroNegativity": 0.82,
+    "abundanceOnEarthCrust": 20900
   },
   {
     "name": "Calcium",
@@ -257,7 +276,8 @@
     "period": "4",
     "atomicWeight": 40.078,
     "origin": "primordial",
-    "electroNegativity": 1
+    "electroNegativity": 1,
+    "abundanceOnEarthCrust": 41500
   },
   {
     "name": "Scandium",
@@ -270,7 +290,8 @@
     "period": "4",
     "atomicWeight": 44.956,
     "origin": "primordial",
-    "electroNegativity": 1.36
+    "electroNegativity": 1.36,
+    "abundanceOnEarthCrust": 22
   },
   {
     "name": "Titanium",
@@ -283,7 +304,8 @@
     "period": "4",
     "atomicWeight": 47.867,
     "origin": "primordial",
-    "electroNegativity": 1.54
+    "electroNegativity": 1.54,
+    "abundanceOnEarthCrust": 5650
   },
   {
     "name": "Vanadium",
@@ -296,7 +318,8 @@
     "period": "4",
     "atomicWeight": 50.942,
     "origin": "primordial",
-    "electroNegativity": 1.63
+    "electroNegativity": 1.63,
+    "abundanceOnEarthCrust": 120
   },
   {
     "name": "Chromium",
@@ -309,7 +332,8 @@
     "period": "4",
     "atomicWeight": 51.996,
     "origin": "primordial",
-    "electroNegativity": 1.66
+    "electroNegativity": 1.66,
+    "abundanceOnEarthCrust": 102
   },
   {
     "name": "Manganese",
@@ -322,7 +346,8 @@
     "period": "4",
     "atomicWeight": 54.938,
     "origin": "primordial",
-    "electroNegativity": 1.55
+    "electroNegativity": 1.55,
+    "abundanceOnEarthCrust": 950
   },
   {
     "name": "Iron",
@@ -335,7 +360,8 @@
     "period": "4",
     "atomicWeight": 55.845,
     "origin": "primordial",
-    "electroNegativity": 1.83
+    "electroNegativity": 1.83,
+    "abundanceOnEarthCrust": 56300
   },
   {
     "name": "Cobalt",
@@ -348,7 +374,8 @@
     "period": "4",
     "atomicWeight": 58.933,
     "origin": "primordial",
-    "electroNegativity": 1.88
+    "electroNegativity": 1.88,
+    "abundanceOnEarthCrust": 25
   },
   {
     "name": "Nickel",
@@ -361,7 +388,8 @@
     "period": "4",
     "atomicWeight": 58.693,
     "origin": "primordial",
-    "electroNegativity": 1.91
+    "electroNegativity": 1.91,
+    "abundanceOnEarthCrust": 84
   },
   {
     "name": "Copper",
@@ -374,7 +402,8 @@
     "period": "4",
     "atomicWeight": 63.546,
     "origin": "primordial",
-    "electroNegativity": 1.9
+    "electroNegativity": 1.9,
+    "abundanceOnEarthCrust": 60
   },
   {
     "name": "Zinc",
@@ -387,7 +416,8 @@
     "period": "4",
     "atomicWeight": 65.38,
     "origin": "primordial",
-    "electroNegativity": 1.65
+    "electroNegativity": 1.65,
+    "abundanceOnEarthCrust": 70
   },
   {
     "name": "Gallium",
@@ -400,7 +430,8 @@
     "period": "4",
     "atomicWeight": 69.723,
     "origin": "primordial",
-    "electroNegativity": 1.81
+    "electroNegativity": 1.81,
+    "abundanceOnEarthCrust": 19
   },
   {
     "name": "Germanium",
@@ -413,7 +444,8 @@
     "period": "4",
     "atomicWeight": 72.63,
     "origin": "primordial",
-    "electroNegativity": 2.01
+    "electroNegativity": 2.01,
+    "abundanceOnEarthCrust": 1.5
   },
   {
     "name": "Arsenic",
@@ -426,7 +458,8 @@
     "period": "4",
     "atomicWeight": 74.922,
     "origin": "primordial",
-    "electroNegativity": 2.18
+    "electroNegativity": 2.18,
+    "abundanceOnEarthCrust": 1.8
   },
   {
     "name": "Selenium",
@@ -439,7 +472,8 @@
     "period": "4",
     "atomicWeight": 78.971,
     "origin": "primordial",
-    "electroNegativity": 2.55
+    "electroNegativity": 2.55,
+    "abundanceOnEarthCrust": 0.05
   },
   {
     "name": "Bromine",
@@ -452,7 +486,8 @@
     "period": "4",
     "atomicWeight": 79.904,
     "origin": "primordial",
-    "electroNegativity": 2.96
+    "electroNegativity": 2.96,
+    "abundanceOnEarthCrust": 2.4
   },
   {
     "name": "Krypton",
@@ -465,7 +500,8 @@
     "period": "4",
     "atomicWeight": 83.798,
     "origin": "primordial",
-    "electroNegativity": 3
+    "electroNegativity": 3,
+    "abundanceOnEarthCrust": 1
   },
   {
     "name": "Rubidium",
@@ -478,7 +514,8 @@
     "period": "5",
     "atomicWeight": 85.468,
     "origin": "primordial",
-    "electroNegativity": 0.82
+    "electroNegativity": 0.82,
+    "abundanceOnEarthCrust": 90
   },
   {
     "name": "Strontium",
@@ -491,7 +528,8 @@
     "period": "5",
     "atomicWeight": 87.62,
     "origin": "primordial",
-    "electroNegativity": 0.95
+    "electroNegativity": 0.95,
+    "abundanceOnEarthCrust": 370
   },
   {
     "name": "Yttrium",
@@ -504,7 +542,8 @@
     "period": "5",
     "atomicWeight": 88.906,
     "origin": "primordial",
-    "electroNegativity": 1.22
+    "electroNegativity": 1.22,
+    "abundanceOnEarthCrust": 33
   },
   {
     "name": "Zirconium",
@@ -517,7 +556,8 @@
     "period": "5",
     "atomicWeight": 91.224,
     "origin": "primordial",
-    "electroNegativity": 1.33
+    "electroNegativity": 1.33,
+    "abundanceOnEarthCrust": 165
   },
   {
     "name": "Niobium",
@@ -530,7 +570,8 @@
     "period": "5",
     "atomicWeight": 92.906,
     "origin": "primordial",
-    "electroNegativity": 1.6
+    "electroNegativity": 1.6,
+    "abundanceOnEarthCrust": 20
   },
   {
     "name": "Molybdenum",
@@ -543,7 +584,8 @@
     "period": "5",
     "atomicWeight": 95.95,
     "origin": "primordial",
-    "electroNegativity": 2.16
+    "electroNegativity": 2.16,
+    "abundanceOnEarthCrust": 1.2
   },
   {
     "name": "Technetium",
@@ -556,7 +598,8 @@
     "period": "5",
     "atomicWeight": 97,
     "origin": "from decay",
-    "electroNegativity": 1.9
+    "electroNegativity": 1.9,
+    "abundanceOnEarthCrust": 0
   },
   {
     "name": "Ruthenium",
@@ -569,7 +612,8 @@
     "period": "5",
     "atomicWeight": 101.07,
     "origin": "primordial",
-    "electroNegativity": 2.2
+    "electroNegativity": 2.2,
+    "abundanceOnEarthCrust": 0.001
   },
   {
     "name": "Rhodium",
@@ -582,7 +626,8 @@
     "period": "5",
     "atomicWeight": 102.91,
     "origin": "primordial",
-    "electroNegativity": 2.28
+    "electroNegativity": 2.28,
+    "abundanceOnEarthCrust": 0.001
   },
   {
     "name": "Palladium",
@@ -595,7 +640,8 @@
     "period": "5",
     "atomicWeight": 106.42,
     "origin": "primordial",
-    "electroNegativity": 2.2
+    "electroNegativity": 2.2,
+    "abundanceOnEarthCrust": 0.015
   },
   {
     "name": "Silver",
@@ -608,7 +654,8 @@
     "period": "5",
     "atomicWeight": 107.87,
     "origin": "primordial",
-    "electroNegativity": 1.93
+    "electroNegativity": 1.93,
+    "abundanceOnEarthCrust": 0.075
   },
   {
     "name": "Cadmium",
@@ -621,7 +668,8 @@
     "period": "5",
     "atomicWeight": 112.41,
     "origin": "primordial",
-    "electroNegativity": 1.69
+    "electroNegativity": 1.69,
+    "abundanceOnEarthCrust": 0.159
   },
   {
     "name": "Indium",
@@ -634,7 +682,8 @@
     "period": "5",
     "atomicWeight": 114.82,
     "origin": "primordial",
-    "electroNegativity": 1.78
+    "electroNegativity": 1.78,
+    "abundanceOnEarthCrust": 0.25
   },
   {
     "name": "Tin",
@@ -647,7 +696,8 @@
     "period": "5",
     "atomicWeight": 118.71,
     "origin": "primordial",
-    "electroNegativity": 1.96
+    "electroNegativity": 1.96,
+    "abundanceOnEarthCrust": 2.3
   },
   {
     "name": "Antimony",
@@ -660,7 +710,8 @@
     "period": "5",
     "atomicWeight": 121.76,
     "origin": "primordial",
-    "electroNegativity": 2.05
+    "electroNegativity": 2.05,
+    "abundanceOnEarthCrust": 0.2
   },
   {
     "name": "Tellurium",
@@ -673,7 +724,8 @@
     "period": "5",
     "atomicWeight": 127.6,
     "origin": "primordial",
-    "electroNegativity": 2.1
+    "electroNegativity": 2.1,
+    "abundanceOnEarthCrust": 0.001
   },
   {
     "name": "Iodine",
@@ -686,7 +738,8 @@
     "period": "5",
     "atomicWeight": 126.9,
     "origin": "primordial",
-    "electroNegativity": 2.66
+    "electroNegativity": 2.66,
+    "abundanceOnEarthCrust": 0.45
   },
   {
     "name": "Xenon",
@@ -699,7 +752,8 @@
     "period": "5",
     "atomicWeight": 131.29,
     "origin": "primordial",
-    "electroNegativity": 2.6
+    "electroNegativity": 2.6,
+    "abundanceOnEarthCrust": 3
   },
   {
     "name": "Caesium",
@@ -712,7 +766,8 @@
     "period": "6",
     "atomicWeight": 132.91,
     "origin": "primordial",
-    "electroNegativity": 0.79
+    "electroNegativity": 0.79,
+    "abundanceOnEarthCrust": 3
   },
   {
     "name": "Barium",
@@ -725,7 +780,8 @@
     "period": "6",
     "atomicWeight": 137.33,
     "origin": "primordial",
-    "electroNegativity": 0.89
+    "electroNegativity": 0.89,
+    "abundanceOnEarthCrust": 425
   },
   {
     "name": "Lanthanum",
@@ -738,7 +794,8 @@
     "period": "6",
     "atomicWeight": 138.91,
     "origin": "primordial",
-    "electroNegativity": 1.1
+    "electroNegativity": 1.1,
+    "abundanceOnEarthCrust": 39
   },
   {
     "name": "Cerium",
@@ -751,7 +808,8 @@
     "period": "6",
     "atomicWeight": 140.12,
     "origin": "primordial",
-    "electroNegativity": 1.12
+    "electroNegativity": 1.12,
+    "abundanceOnEarthCrust": 66.5
   },
   {
     "name": "Praseodymium",
@@ -764,7 +822,8 @@
     "period": "6",
     "atomicWeight": 140.91,
     "origin": "primordial",
-    "electroNegativity": 1.13
+    "electroNegativity": 1.13,
+    "abundanceOnEarthCrust": 9.2
   },
   {
     "name": "Neodymium",
@@ -777,7 +836,8 @@
     "period": "6",
     "atomicWeight": 144.24,
     "origin": "primordial",
-    "electroNegativity": 1.14
+    "electroNegativity": 1.14,
+    "abundanceOnEarthCrust": 41.5
   },
   {
     "name": "Promethium",
@@ -790,7 +850,8 @@
     "period": "6",
     "atomicWeight": 145,
     "origin": "from decay",
-    "electroNegativity": 1.13
+    "electroNegativity": 1.13,
+    "abundanceOnEarthCrust": 2
   },
   {
     "name": "Samarium",
@@ -803,7 +864,8 @@
     "period": "6",
     "atomicWeight": 150.36,
     "origin": "primordial",
-    "electroNegativity": 1.17
+    "electroNegativity": 1.17,
+    "abundanceOnEarthCrust": 7.05
   },
   {
     "name": "Europium",
@@ -816,7 +878,8 @@
     "period": "6",
     "atomicWeight": 151.96,
     "origin": "primordial",
-    "electroNegativity": 1.2
+    "electroNegativity": 1.2,
+    "abundanceOnEarthCrust": 2
   },
   {
     "name": "Gadolinium",
@@ -829,7 +892,8 @@
     "period": "6",
     "atomicWeight": 157.25,
     "origin": "primordial",
-    "electroNegativity": 1.2
+    "electroNegativity": 1.2,
+    "abundanceOnEarthCrust": 6.2
   },
   {
     "name": "Terbium",
@@ -842,7 +906,8 @@
     "period": "6",
     "atomicWeight": 158.93,
     "origin": "primordial",
-    "electroNegativity": 1.2
+    "electroNegativity": 1.2,
+    "abundanceOnEarthCrust": 1.2
   },
   {
     "name": "Dysprosium",
@@ -855,7 +920,8 @@
     "period": "6",
     "atomicWeight": 162.5,
     "origin": "primordial",
-    "electroNegativity": 1.22
+    "electroNegativity": 1.22,
+    "abundanceOnEarthCrust": 5.2
   },
   {
     "name": "Holmium",
@@ -868,7 +934,8 @@
     "period": "6",
     "atomicWeight": 164.93,
     "origin": "primordial",
-    "electroNegativity": 1.23
+    "electroNegativity": 1.23,
+    "abundanceOnEarthCrust": 1.3
   },
   {
     "name": "Erbium",
@@ -881,7 +948,8 @@
     "period": "6",
     "atomicWeight": 167.26,
     "origin": "primordial",
-    "electroNegativity": 1.24
+    "electroNegativity": 1.24,
+    "abundanceOnEarthCrust": 3.5
   },
   {
     "name": "Thulium",
@@ -894,7 +962,8 @@
     "period": "6",
     "atomicWeight": 168.93,
     "origin": "primordial",
-    "electroNegativity": 1.25
+    "electroNegativity": 1.25,
+    "abundanceOnEarthCrust": 0.52
   },
   {
     "name": "Ytterbium",
@@ -907,7 +976,8 @@
     "period": "6",
     "atomicWeight": 173.05,
     "origin": "primordial",
-    "electroNegativity": 1.1
+    "electroNegativity": 1.1,
+    "abundanceOnEarthCrust": 3.2
   },
   {
     "name": "Lutetium",
@@ -920,7 +990,8 @@
     "period": "6",
     "atomicWeight": 174.97,
     "origin": "primordial",
-    "electroNegativity": 1.27
+    "electroNegativity": 1.27,
+    "abundanceOnEarthCrust": 0.8
   },
   {
     "name": "Hafnium",
@@ -933,7 +1004,8 @@
     "period": "6",
     "atomicWeight": 178.49,
     "origin": "primordial",
-    "electroNegativity": 1.3
+    "electroNegativity": 1.3,
+    "abundanceOnEarthCrust": 3
   },
   {
     "name": "Tantalum",
@@ -946,7 +1018,8 @@
     "period": "6",
     "atomicWeight": 180.95,
     "origin": "primordial",
-    "electroNegativity": 1.5
+    "electroNegativity": 1.5,
+    "abundanceOnEarthCrust": 2
   },
   {
     "name": "Tungsten",
@@ -959,7 +1032,8 @@
     "period": "6",
     "atomicWeight": 183.84,
     "origin": "primordial",
-    "electroNegativity": 2.36
+    "electroNegativity": 2.36,
+    "abundanceOnEarthCrust": 1.3
   },
   {
     "name": "Rhenium",
@@ -972,7 +1046,8 @@
     "period": "6",
     "atomicWeight": 186.21,
     "origin": "primordial",
-    "electroNegativity": 1.9
+    "electroNegativity": 1.9,
+    "abundanceOnEarthCrust": 7
   },
   {
     "name": "Osmium",
@@ -985,7 +1060,8 @@
     "period": "6",
     "atomicWeight": 190.23,
     "origin": "primordial",
-    "electroNegativity": 2.2
+    "electroNegativity": 2.2,
+    "abundanceOnEarthCrust": 0.002
   },
   {
     "name": "Iridium",
@@ -998,7 +1074,8 @@
     "period": "6",
     "atomicWeight": 192.22,
     "origin": "primordial",
-    "electroNegativity": 2.2
+    "electroNegativity": 2.2,
+    "abundanceOnEarthCrust": 0.001
   },
   {
     "name": "Platinum",
@@ -1011,7 +1088,8 @@
     "period": "6",
     "atomicWeight": 195.08,
     "origin": "primordial",
-    "electroNegativity": 2.28
+    "electroNegativity": 2.28,
+    "abundanceOnEarthCrust": 0.005
   },
   {
     "name": "Gold",
@@ -1024,7 +1102,8 @@
     "period": "6",
     "atomicWeight": 196.97,
     "origin": "primordial",
-    "electroNegativity": 2.54
+    "electroNegativity": 2.54,
+    "abundanceOnEarthCrust": 0.004
   },
   {
     "name": "Mercury",
@@ -1037,7 +1116,8 @@
     "period": "6",
     "atomicWeight": 200.59,
     "origin": "primordial",
-    "electroNegativity": 2
+    "electroNegativity": 2,
+    "abundanceOnEarthCrust": 0.085
   },
   {
     "name": "Thallium",
@@ -1050,7 +1130,8 @@
     "period": "6",
     "atomicWeight": 204.38,
     "origin": "primordial",
-    "electroNegativity": 1.62
+    "electroNegativity": 1.62,
+    "abundanceOnEarthCrust": 0.85
   },
   {
     "name": "Lead",
@@ -1063,7 +1144,8 @@
     "period": "6",
     "atomicWeight": 207.2,
     "origin": "primordial",
-    "electroNegativity": 2.33
+    "electroNegativity": 2.33,
+    "abundanceOnEarthCrust": 14
   },
   {
     "name": "Bismuth",
@@ -1076,7 +1158,8 @@
     "period": "6",
     "atomicWeight": 208.98,
     "origin": "primordial",
-    "electroNegativity": 2.02
+    "electroNegativity": 2.02,
+    "abundanceOnEarthCrust": 0.009
   },
   {
     "name": "Polonium",
@@ -1089,7 +1172,8 @@
     "period": "6",
     "atomicWeight": 209,
     "origin": "from decay",
-    "electroNegativity": 2
+    "electroNegativity": 2,
+    "abundanceOnEarthCrust": 2
   },
   {
     "name": "Astatine",
@@ -1102,7 +1186,8 @@
     "period": "6",
     "atomicWeight": 210,
     "origin": "from decay",
-    "electroNegativity": 2.2
+    "electroNegativity": 2.2,
+    "abundanceOnEarthCrust": 3
   },
   {
     "name": "Radon",
@@ -1115,7 +1200,8 @@
     "period": "6",
     "atomicWeight": 222,
     "origin": "from decay",
-    "electroNegativity": 2.2
+    "electroNegativity": 2.2,
+    "abundanceOnEarthCrust": 4
   },
   {
     "name": "Francium",
@@ -1136,7 +1222,8 @@
     "period": "7",
     "atomicWeight": 223,
     "origin": "from decay",
-    "electroNegativity": 0.79
+    "electroNegativity": 0.79,
+    "abundanceOnEarthCrust": 0
   },
   {
     "name": "Radium",
@@ -1157,7 +1244,8 @@
     "period": "7",
     "atomicWeight": 226,
     "origin": "from decay",
-    "electroNegativity": 0.9
+    "electroNegativity": 0.9,
+    "abundanceOnEarthCrust": 9
   },
   {
     "name": "Actinium",
@@ -1178,7 +1266,8 @@
     "period": "7",
     "atomicWeight": 227,
     "origin": "from decay",
-    "electroNegativity": 1.1
+    "electroNegativity": 1.1,
+    "abundanceOnEarthCrust": 5.5
   },
   {
     "name": "Thorium",
@@ -1199,7 +1288,8 @@
     "period": "7",
     "atomicWeight": 232.04,
     "origin": "primordial",
-    "electroNegativity": 1.3
+    "electroNegativity": 1.3,
+    "abundanceOnEarthCrust": 9.6
   },
   {
     "name": "Protactinium",
@@ -1220,7 +1310,8 @@
     "period": "7",
     "atomicWeight": 231.04,
     "origin": "from decay",
-    "electroNegativity": 1.5
+    "electroNegativity": 1.5,
+    "abundanceOnEarthCrust": 1.4
   },
   {
     "name": "Uranium",
@@ -1241,7 +1332,8 @@
     "period": "7",
     "atomicWeight": 238.03,
     "origin": "primordial",
-    "electroNegativity": 1.38
+    "electroNegativity": 1.38,
+    "abundanceOnEarthCrust": 2.7
   },
   {
     "name": "Neptunium",
@@ -1262,7 +1354,8 @@
     "period": "7",
     "atomicWeight": 237,
     "origin": "from decay",
-    "electroNegativity": 1.36
+    "electroNegativity": 1.36,
+    "abundanceOnEarthCrust": 0
   },
   {
     "name": "Plutonium",
@@ -1283,7 +1376,8 @@
     "period": "7",
     "atomicWeight": 244,
     "origin": "from decay",
-    "electroNegativity": 1.28
+    "electroNegativity": 1.28,
+    "abundanceOnEarthCrust": 0
   },
   {
     "name": "Americium",
@@ -1304,7 +1398,8 @@
     "period": "7",
     "atomicWeight": 243,
     "origin": "synthetic",
-    "electroNegativity": 1.13
+    "electroNegativity": 1.13,
+    "abundanceOnEarthCrust": 0
   },
   {
     "name": "Curium",
@@ -1325,7 +1420,8 @@
     "period": "7",
     "atomicWeight": 247,
     "origin": "synthetic",
-    "electroNegativity": 1.28
+    "electroNegativity": 1.28,
+    "abundanceOnEarthCrust": 0
   },
   {
     "name": "Berkelium",
@@ -1346,7 +1442,8 @@
     "period": "7",
     "atomicWeight": 247,
     "origin": "synthetic",
-    "electroNegativity": 1.3
+    "electroNegativity": 1.3,
+    "abundanceOnEarthCrust": 0
   },
   {
     "name": "Californium",
@@ -1367,7 +1464,8 @@
     "period": "7",
     "atomicWeight": 251,
     "origin": "synthetic",
-    "electroNegativity": 1.3
+    "electroNegativity": 1.3,
+    "abundanceOnEarthCrust": 0
   },
   {
     "name": "Einsteinium",
@@ -1388,7 +1486,8 @@
     "period": "7",
     "atomicWeight": 252,
     "origin": "synthetic",
-    "electroNegativity": 1.3
+    "electroNegativity": 1.3,
+    "abundanceOnEarthCrust": 0
   },
   {
     "name": "Fermium",
@@ -1409,7 +1508,8 @@
     "period": "7",
     "atomicWeight": 257,
     "origin": "synthetic",
-    "electroNegativity": 1.3
+    "electroNegativity": 1.3,
+    "abundanceOnEarthCrust": 0
   },
   {
     "name": "Mendelevium",
@@ -1430,7 +1530,8 @@
     "period": "7",
     "atomicWeight": 258,
     "origin": "synthetic",
-    "electroNegativity": 1.3
+    "electroNegativity": 1.3,
+    "abundanceOnEarthCrust": 0
   },
   {
     "name": "Nobelium",
@@ -1451,7 +1552,8 @@
     "period": "7",
     "atomicWeight": 259,
     "origin": "synthetic",
-    "electroNegativity": 1.3
+    "electroNegativity": 1.3,
+    "abundanceOnEarthCrust": 0
   },
   {
     "name": "Lawrencium",
@@ -1472,7 +1574,8 @@
     "period": "7",
     "atomicWeight": 266,
     "origin": "synthetic",
-    "electroNegativity": 1.3
+    "electroNegativity": 1.3,
+    "abundanceOnEarthCrust": 0
   },
   {
     "name": "Rutherfordium",
@@ -1493,7 +1596,8 @@
     "period": "7",
     "atomicWeight": 267,
     "origin": "synthetic",
-    "electroNegativity": 0
+    "electroNegativity": 0,
+    "abundanceOnEarthCrust": 0
   },
   {
     "name": "Dubnium",
@@ -1514,7 +1618,8 @@
     "period": "7",
     "atomicWeight": 268,
     "origin": "synthetic",
-    "electroNegativity": 0
+    "electroNegativity": 0,
+    "abundanceOnEarthCrust": 0
   },
   {
     "name": "Seaborgium",
@@ -1535,7 +1640,8 @@
     "period": "7",
     "atomicWeight": 267,
     "origin": "synthetic",
-    "electroNegativity": 0
+    "electroNegativity": 0,
+    "abundanceOnEarthCrust": 0
   },
   {
     "name": "Bohrium",
@@ -1556,7 +1662,8 @@
     "period": "7",
     "atomicWeight": 270,
     "origin": "synthetic",
-    "electroNegativity": 0
+    "electroNegativity": 0,
+    "abundanceOnEarthCrust": 0
   },
   {
     "name": "Hassium",
@@ -1577,7 +1684,8 @@
     "period": "7",
     "atomicWeight": 271,
     "origin": "synthetic",
-    "electroNegativity": 0
+    "electroNegativity": 0,
+    "abundanceOnEarthCrust": 0
   },
   {
     "name": "Meitnerium",
@@ -1598,7 +1706,8 @@
     "period": "7",
     "atomicWeight": 278,
     "origin": "synthetic",
-    "electroNegativity": 0
+    "electroNegativity": 0,
+    "abundanceOnEarthCrust": 0
   },
   {
     "name": "Darmstadtium",
@@ -1619,7 +1728,8 @@
     "period": "7",
     "atomicWeight": 281,
     "origin": "synthetic",
-    "electroNegativity": 0
+    "electroNegativity": 0,
+    "abundanceOnEarthCrust": 0
   },
   {
     "name": "Roentgenium",
@@ -1640,7 +1750,8 @@
     "period": "7",
     "atomicWeight": 282,
     "origin": "synthetic",
-    "electroNegativity": 0
+    "electroNegativity": 0,
+    "abundanceOnEarthCrust": 0
   },
   {
     "name": "Copernicium",
@@ -1661,7 +1772,8 @@
     "period": "7",
     "atomicWeight": 285,
     "origin": "synthetic",
-    "electroNegativity": 0
+    "electroNegativity": 0,
+    "abundanceOnEarthCrust": 0
   },
   {
     "name": "Nihonium",
@@ -1682,7 +1794,8 @@
     "period": "7",
     "atomicWeight": 286,
     "origin": "synthetic",
-    "electroNegativity": 0
+    "electroNegativity": 0,
+    "abundanceOnEarthCrust": 0
   },
   {
     "name": "Flerovium",
@@ -1703,7 +1816,8 @@
     "period": "7",
     "atomicWeight": 289,
     "origin": "synthetic",
-    "electroNegativity": 0
+    "electroNegativity": 0,
+    "abundanceOnEarthCrust": 0
   },
   {
     "name": "Moscovium",
@@ -1724,7 +1838,8 @@
     "period": "7",
     "atomicWeight": 290,
     "origin": "synthetic",
-    "electroNegativity": 0
+    "electroNegativity": 0,
+    "abundanceOnEarthCrust": 0
   },
   {
     "name": "Livermorium",
@@ -1745,7 +1860,8 @@
     "period": "7",
     "atomicWeight": 293,
     "origin": "synthetic",
-    "electroNegativity": 0
+    "electroNegativity": 0,
+    "abundanceOnEarthCrust": 0
   },
   {
     "name": "Tennessine",
@@ -1766,7 +1882,8 @@
     "period": "7",
     "atomicWeight": 294,
     "origin": "synthetic",
-    "electroNegativity": 0
+    "electroNegativity": 0,
+    "abundanceOnEarthCrust": 0
   },
   {
     "name": "Oganesson",
@@ -1787,6 +1904,7 @@
     "period": "7",
     "atomicWeight": 294,
     "origin": "synthetic",
-    "electroNegativity": 0
+    "electroNegativity": 0,
+    "abundanceOnEarthCrust": 0
   }
 ]

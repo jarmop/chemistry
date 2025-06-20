@@ -41,6 +41,13 @@ export function PeriodicTable(
   const groups = Object.keys(elementsByPeriodAndGroup[6]);
   const periods = Object.keys(elementsByPeriodAndGroup);
 
+  // const abundanceValues = elements.map((el) => el.abundanceOnEarthCrust);
+  // const maxAbundance = Math.max(...abundanceValues);
+  // function getColor(abundance: number) {
+  //   const relativeAbundance = abundance / maxAbundance;
+  //   return `rgba(255,0,0,${relativeAbundance})`;
+  // }
+
   return (
     <>
       <table className="periodicTable">

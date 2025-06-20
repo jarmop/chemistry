@@ -55,6 +55,14 @@ export function AtomData() {
             <td>Electronegativity:</td>
             <td>{element.electroNegativity}</td>
           </tr>
+          <tr>
+            <td>Origin:</td>
+            <td>{element.origin}</td>
+          </tr>
+          {/* <tr>
+            <td>Abundance:</td>
+            <td>{element.abundanceOnEarthCrust}</td>
+          </tr> */}
         </tbody>
       </table>
 

@@ -9,6 +9,7 @@ const elements = rows.slice(1).map((row) => {
   const protons = parseInt(cols[0]);
   const atomicWeight = parseFloat(cols[6]);
   const electroNegativity = parseFloat(cols[9]);
+  const abundanceOnEarthCrust = parseFloat(cols[11]);
 
   const element = {
     name: cols[2],
@@ -23,6 +24,9 @@ const elements = rows.slice(1).map((row) => {
     atomicWeight: atomicWeight,
     origin: cols[7],
     electroNegativity: isNaN(electroNegativity) ? 0 : electroNegativity,
+    abundanceOnEarthCrust: isNaN(abundanceOnEarthCrust)
+      ? 0
+      : abundanceOnEarthCrust,
   };
 
   return element;

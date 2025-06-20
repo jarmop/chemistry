@@ -10,4 +10,5 @@ export type Element = {
   atomicWeight: number;
   origin: string;
   electroNegativity: number;
+  abundanceOnEarthCrust: number;
 };
