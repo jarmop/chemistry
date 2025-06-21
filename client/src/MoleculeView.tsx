@@ -179,10 +179,7 @@ function MoleculeSvg({ molecule = "ethanol" }) {
         {moleculeStructures[molecule].map((row, i) => {
           const parts = row.replace(/\./g, "0").split("").filter(Boolean);
 
-          console.log(parts);
-
           const startX = -parts.length * rowSize / 2;
-          // console.log("startX", startX);
 
           return (
             <g
@@ -190,12 +187,10 @@ function MoleculeSvg({ molecule = "ethanol" }) {
               transform={`translate(0, ${i * rowSize})`}
             >
               {parts.map((part, j) => {
-                // console.log("********");
-                // console.log("x", j * rowSize - parts.length * rowSize / 2);
-
                 if (isNaN(Number(part))) {
                   return (
                     <text
+                      key={j}
                       x={startX + j * rowSize}
                       y={0}
                       textAnchor="middle"
@@ -206,9 +201,6 @@ function MoleculeSvg({ molecule = "ethanol" }) {
                   );
                 }
 
-                // const startX = j * rowSize - parts.length * rowSize / 2 -
-                //   rowSize / 2;
-
                 if (part === "0") {
                   return null;
                 }
@@ -217,6 +209,7 @@ function MoleculeSvg({ molecule = "ethanol" }) {
                   const foo = startX + j * rowSize - 10;
                   return (
                     <line
+                      key={j}
                       x1={foo}
                       y1={-2}
                       x2={foo + rowSize}
@@ -228,6 +221,7 @@ function MoleculeSvg({ molecule = "ethanol" }) {
                   const foo = startX + j * rowSize;
                   return (
                     <line
+                      key={j}
                       x1={foo}
                       y1={-7}
                       x2={foo}
