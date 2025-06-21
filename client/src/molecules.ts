@@ -9,6 +9,9 @@ export const inorganicMolecules = [{
   name: "Carbon Dioxide",
   formula: "CO2",
 }, {
+  name: "Carbon Monoxide",
+  formula: "CO",
+}, {
   name: "Ammonia",
   formula: "NH3",
 }, {

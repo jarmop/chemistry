@@ -1,13 +1,16 @@
 import "./App.css";
 import { Inspect } from "./Inspect.tsx";
-import { MoleculeBuilder } from "./MoleculeView.tsx";
+import { MoleculeView } from "./MoleculeView.tsx";
 
 function App() {
   return (
-    <>
-      <MoleculeBuilder />
-      <Inspect />
-    </>
+    <div>
+      <MoleculeView />
+
+      <div style={{ marginTop: "20px" }}>
+        <Inspect />
+      </div>
+    </div>
   );
 }
 
