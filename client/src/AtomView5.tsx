@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { StateContext } from "./StateContext.ts";
-import elements from "./elements.json" with { type: "json" };
+import elements from "./data/elements.json" with { type: "json" };
 import { sum } from "./helpers.ts";
 
 /**

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import elements from "./elements.json" with { type: "json" };
+import elements from "./data/elements.json" with { type: "json" };
 import { StateContext } from "./StateContext.ts";
 
 const color: Record<string, string> = {

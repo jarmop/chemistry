@@ -34,6 +34,6 @@ const elements = rows.slice(1).map((row) => {
 
 const elementsJson = JSON.stringify(elements);
 
-await Deno.writeTextFile("../client/src/elements.json", elementsJson);
+await Deno.writeTextFile("../client/src/data/elements.json", elementsJson);
 
 // console.log(elements[0]);

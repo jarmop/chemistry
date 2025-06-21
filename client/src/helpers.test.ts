@@ -1,6 +1,6 @@
 import { assertEquals } from "jsr:@std/assert";
 import { getElectronsPerShell, getElectronsPerSubShell } from "./helpers.ts";
-import elements from "./elements.json" with { type: "json" };
+import elements from "./data/elements.json" with { type: "json" };
 
 const testCases = elements.map((element) => {
   const electronsPerShell: Record<number, number> = {};

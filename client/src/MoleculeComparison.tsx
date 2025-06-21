@@ -1,4 +1,4 @@
-import { inorganicMolecules, organicMolecules } from "./molecules.ts";
+import { inorganicMolecules, organicMolecules } from "./data/molecules.ts";
 
 function MoleculeComparison() {
   return (

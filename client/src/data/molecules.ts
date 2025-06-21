@@ -67,12 +67,16 @@ export const inorganicMolecules = [{
   name: "Calcium Sulfate",
   formula: "CaSO4",
   molarMass: 136.14,
+  uses: ["cement", "gypsum"],
+  compositions: ["calcium", "sulfur", "oxygen"],
   image:
     "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/CaSO4simple.svg/220px-CaSO4simple.svg.png",
 }, {
   name: "Silicon dioxide",
   formula: "SiO2",
   molarMass: 60.08,
+  uses: ["glass", "ceramics", "silicon"],
+  compositions: ["quartz"],
   image:
     "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/SiO2repeat.png/250px-SiO2repeat.png",
 }];
