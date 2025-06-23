@@ -1,4 +1,6 @@
 import { inorganicMolecules, organicMolecules } from "./data/molecules.ts";
+import elements from "./data/elements.json" with { type: "json" };
+import { calculateMolarMassFormatted } from "./library/helpers.ts";
 
 function MoleculeComparison() {
   return (
@@ -52,7 +54,11 @@ function MoleculeList({ molecules }: { molecules: typeof inorganicMolecules }) {
                 <td style={{ textWrap: "nowrap" }}>
                   Molar Mass:
                 </td>
-                <td>{molecule.molarMass}</td>
+                <td>
+                  {molecule.molarMass
+                    ? molecule.molarMass
+                    : calculateMolarMassFormatted(molecule.formula, elements)}
+                </td>
               </tr>
             </tbody>
           </table>
