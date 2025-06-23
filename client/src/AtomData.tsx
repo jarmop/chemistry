@@ -4,8 +4,8 @@ import elements from "./data/elements.json" with { type: "json" };
 import {
   getMaximumNumberOfElectronsPerShell,
   getMaximumNumberOfElectronsPerSubShell,
-} from "./helpers.ts";
-import { Element } from "./types.ts";
+} from "./library/helpers.ts";
+import { Element } from "./library/types.ts";
 
 export function AtomData() {
   const { element: selectedZ } = useContext(StateContext);

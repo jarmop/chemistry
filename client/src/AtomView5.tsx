@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { StateContext } from "./StateContext.ts";
 import elements from "./data/elements.json" with { type: "json" };
-import { sum } from "./helpers.ts";
+import { sum } from "./library/helpers.ts";
 
 /**
  * Lewis structure

@@ -1,4 +1,4 @@
-import { getElectronsPerSubShell } from "../client/src/helpers.ts";
+import { getElectronsPerSubShell } from "../client/src/library/helpers.ts";
 
 const text = await Deno.readTextFile("chemical-elements.tsv");
 
