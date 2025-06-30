@@ -13,4 +13,5 @@ export type Element = {
   abundanceOnEarthCrust: number;
   phase: string;
   density: number;
+  image?: string;
 };

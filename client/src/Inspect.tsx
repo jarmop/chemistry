@@ -7,6 +7,7 @@ import { StateContext } from "./StateContext.ts";
 import { AtomView } from "./AtomView4.tsx";
 // import { AtomView } from "./AtomView5.tsx";
 import { AtomData } from "./AtomData.tsx";
+import elements from "./data/elements.ts";
 
 // Mass number, A = protons + neutrons --> Isotopes
 // Atomic numer, Z, = protons
@@ -19,6 +20,8 @@ const defaultState = { valence: false, element: 118 };
 
 export function Inspect() {
   const [state, setState] = useState(defaultState);
+
+  const element = elements.find((el) => el.protons === state.element);
 
   return (
     <StateContext value={state}>
@@ -34,18 +37,19 @@ export function Inspect() {
         </div>
         <div>
           <AtomView />
-          {
-            /* <div style={{ marginBottom: "10px" }}>
-            <input
-              type="checkbox"
-              id="valence"
-              checked={state.valence}
-              onChange={(el) =>
-                setState({ ...state, valence: el.target.checked })}
-            />
-            <label htmlFor="valence">Show only the outermost shell</label>
-          </div> */
-          }
+          {element?.image && (
+            <div>
+              <img
+                src={element?.image}
+                alt=""
+                style={{
+                  width: "240px",
+                  border: "1px solid black",
+                  marginTop: "10px",
+                }}
+              />
+            </div>
+          )}
         </div>
       </div>
     </StateContext>

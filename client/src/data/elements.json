@@ -13,7 +13,8 @@
     "electroNegativity": 2.2,
     "abundanceOnEarthCrust": 1400,
     "phase": "gas",
-    "density": 0.00008988
+    "density": 0.00008988,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Hydrogen_discharge_tube.jpg/500px-Hydrogen_discharge_tube.jpg"
   },
   {
     "name": "Helium",
@@ -29,7 +30,8 @@
     "electroNegativity": 0,
     "abundanceOnEarthCrust": 0.008,
     "phase": "gas",
-    "density": 0.0001785
+    "density": 0.0001785,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Helium_discharge_tube.jpg/250px-Helium_discharge_tube.jpg"
   },
   {
     "name": "Lithium",
@@ -45,7 +47,8 @@
     "electroNegativity": 0.98,
     "abundanceOnEarthCrust": 20,
     "phase": "solid",
-    "density": 0.534
+    "density": 0.534,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Lithiumcut_cropped.jpg/250px-Lithiumcut_cropped.jpg"
   },
   {
     "name": "Beryllium",
@@ -61,7 +64,8 @@
     "electroNegativity": 1.57,
     "abundanceOnEarthCrust": 2.8,
     "phase": "solid",
-    "density": 1.85
+    "density": 1.85,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Be-140g.jpg/250px-Be-140g.jpg"
   },
   {
     "name": "Boron",
@@ -77,7 +81,8 @@
     "electroNegativity": 2.04,
     "abundanceOnEarthCrust": 10,
     "phase": "solid",
-    "density": 2.34
+    "density": 2.34,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Boron_R105.jpg/250px-Boron_R105.jpg"
   },
   {
     "name": "Carbon",
@@ -93,7 +98,8 @@
     "electroNegativity": 2.55,
     "abundanceOnEarthCrust": 200,
     "phase": "solid",
-    "density": 2.267
+    "density": 2.267,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Graphite-and-diamond-with-scale.jpg/250px-Graphite-and-diamond-with-scale.jpg"
   },
   {
     "name": "Nitrogen",
@@ -109,7 +115,8 @@
     "electroNegativity": 3.04,
     "abundanceOnEarthCrust": 19,
     "phase": "gas",
-    "density": 0.0012506
+    "density": 0.0012506,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Fluessiger_Stickstoff.jpg/250px-Fluessiger_Stickstoff.jpg"
   },
   {
     "name": "Oxygen",
@@ -125,7 +132,8 @@
     "electroNegativity": 3.44,
     "abundanceOnEarthCrust": 461000,
     "phase": "gas",
-    "density": 0.001429
+    "density": 0.001429,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Liquid_oxygen_in_a_beaker_4.jpg/500px-Liquid_oxygen_in_a_beaker_4.jpg"
   },
   {
     "name": "Fluorine",
@@ -141,7 +149,8 @@
     "electroNegativity": 3.98,
     "abundanceOnEarthCrust": 585,
     "phase": "gas",
-    "density": 0.001696
+    "density": 0.001696,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Fluoro_liquido_a_-196%C2%B0C_1.jpg/250px-Fluoro_liquido_a_-196%C2%B0C_1.jpg"
   },
   {
     "name": "Neon",
@@ -157,7 +166,8 @@
     "electroNegativity": 0,
     "abundanceOnEarthCrust": 0.005,
     "phase": "gas",
-    "density": 0.0009002
+    "density": 0.0009002,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Neon_discharge_tube.jpg/250px-Neon_discharge_tube.jpg"
   },
   {
     "name": "Sodium",
@@ -173,7 +183,8 @@
     "electroNegativity": 0.93,
     "abundanceOnEarthCrust": 23600,
     "phase": "solid",
-    "density": 0.968
+    "density": 0.968,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Na_%28Sodium%29.jpg/250px-Na_%28Sodium%29.jpg"
   },
   {
     "name": "Magnesium",
@@ -189,7 +200,8 @@
     "electroNegativity": 1.31,
     "abundanceOnEarthCrust": 23300,
     "phase": "solid",
-    "density": 1.738
+    "density": 1.738,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/CSIRO_ScienceImage_2893_Crystalised_magnesium.jpg/250px-CSIRO_ScienceImage_2893_Crystalised_magnesium.jpg"
   },
   {
     "name": "Aluminium",
@@ -205,7 +217,8 @@
     "electroNegativity": 1.61,
     "abundanceOnEarthCrust": 82300,
     "phase": "solid",
-    "density": 2.7
+    "density": 2.7,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Aluminium-4.jpg/250px-Aluminium-4.jpg"
   },
   {
     "name": "Silicon",
@@ -221,7 +234,8 @@
     "electroNegativity": 1.9,
     "abundanceOnEarthCrust": 282000,
     "phase": "solid",
-    "density": 2.329
+    "density": 2.329,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/SiliconCroda.jpg/250px-SiliconCroda.jpg"
   },
   {
     "name": "Phosphorus",
@@ -237,7 +251,8 @@
     "electroNegativity": 2.19,
     "abundanceOnEarthCrust": 1050,
     "phase": "solid",
-    "density": 1.823
+    "density": 1.823,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Wei%C3%9Fer_Phosphor.JPG/120px-Wei%C3%9Fer_Phosphor.JPG"
   },
   {
     "name": "Sulfur",
@@ -253,7 +268,8 @@
     "electroNegativity": 2.58,
     "abundanceOnEarthCrust": 350,
     "phase": "solid",
-    "density": 2.07
+    "density": 2.07,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Sulfur_-_El_Desierto_mine%2C_San_Pablo_de_Napa%2C_Daniel_Campos_Province%2C_Potos%C3%AD%2C_Bolivia.jpg/250px-Sulfur_-_El_Desierto_mine%2C_San_Pablo_de_Napa%2C_Daniel_Campos_Province%2C_Potos%C3%AD%2C_Bolivia.jpg"
   },
   {
     "name": "Chlorine",
@@ -269,7 +285,8 @@
     "electroNegativity": 3.16,
     "abundanceOnEarthCrust": 145,
     "phase": "gas",
-    "density": 0.0032
+    "density": 0.0032,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Chlorine_in_bottle.jpg/250px-Chlorine_in_bottle.jpg"
   },
   {
     "name": "Argon",
@@ -285,7 +302,8 @@
     "electroNegativity": 0,
     "abundanceOnEarthCrust": 3.5,
     "phase": "gas",
-    "density": 0.001784
+    "density": 0.001784,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Argon_discharge_tube.jpg/250px-Argon_discharge_tube.jpg"
   },
   {
     "name": "Potassium",
@@ -301,7 +319,8 @@
     "electroNegativity": 0.82,
     "abundanceOnEarthCrust": 20900,
     "phase": "solid",
-    "density": 0.89
+    "density": 0.89,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Potassium-2.jpg/250px-Potassium-2.jpg"
   },
   {
     "name": "Calcium",
@@ -317,7 +336,8 @@
     "electroNegativity": 1,
     "abundanceOnEarthCrust": 41500,
     "phase": "solid",
-    "density": 1.55
+    "density": 1.55,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Calcium_unter_Argon_Schutzgasatmosph%C3%A4re.jpg/250px-Calcium_unter_Argon_Schutzgasatmosph%C3%A4re.jpg"
   },
   {
     "name": "Scandium",
@@ -333,7 +353,8 @@
     "electroNegativity": 1.36,
     "abundanceOnEarthCrust": 22,
     "phase": "solid",
-    "density": 2.985
+    "density": 2.985,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Scandium_sublimed_dendritic_and_1cm3_cube.jpg/250px-Scandium_sublimed_dendritic_and_1cm3_cube.jpg"
   },
   {
     "name": "Titanium",
@@ -349,7 +370,8 @@
     "electroNegativity": 1.54,
     "abundanceOnEarthCrust": 5650,
     "phase": "solid",
-    "density": 4.506
+    "density": 4.506,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Titan-crystal_bar.JPG/250px-Titan-crystal_bar.JPG"
   },
   {
     "name": "Vanadium",
@@ -365,7 +387,8 @@
     "electroNegativity": 1.63,
     "abundanceOnEarthCrust": 120,
     "phase": "solid",
-    "density": 6.11
+    "density": 6.11,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vanadium_crystal_bar_and_1cm3_cube.jpg/250px-Vanadium_crystal_bar_and_1cm3_cube.jpg"
   },
   {
     "name": "Chromium",
@@ -381,7 +404,8 @@
     "electroNegativity": 1.66,
     "abundanceOnEarthCrust": 102,
     "phase": "solid",
-    "density": 7.15
+    "density": 7.15,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Chromium_crystals_and_1cm3_cube.jpg/250px-Chromium_crystals_and_1cm3_cube.jpg"
   },
   {
     "name": "Manganese",
@@ -397,7 +421,8 @@
     "electroNegativity": 1.55,
     "abundanceOnEarthCrust": 950,
     "phase": "solid",
-    "density": 7.21
+    "density": 7.21,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Manganese_electrolytic_and_1cm3_cube.jpg/250px-Manganese_electrolytic_and_1cm3_cube.jpg"
   },
   {
     "name": "Iron",
@@ -413,7 +438,8 @@
     "electroNegativity": 1.83,
     "abundanceOnEarthCrust": 56300,
     "phase": "solid",
-    "density": 7.874
+    "density": 7.874,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Iron_electrolytic_and_1cm3_cube.jpg/250px-Iron_electrolytic_and_1cm3_cube.jpg"
   },
   {
     "name": "Cobalt",
@@ -429,7 +455,8 @@
     "electroNegativity": 1.88,
     "abundanceOnEarthCrust": 25,
     "phase": "solid",
-    "density": 8.9
+    "density": 8.9,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Kobalt_electrolytic_and_1cm3_cube.jpg/250px-Kobalt_electrolytic_and_1cm3_cube.jpg"
   },
   {
     "name": "Nickel",
@@ -445,7 +472,8 @@
     "electroNegativity": 1.91,
     "abundanceOnEarthCrust": 84,
     "phase": "solid",
-    "density": 8.908
+    "density": 8.908,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Nickel_electrolytic_and_1cm3_cube.jpg/250px-Nickel_electrolytic_and_1cm3_cube.jpg"
   },
   {
     "name": "Copper",
@@ -461,7 +489,8 @@
     "electroNegativity": 1.9,
     "abundanceOnEarthCrust": 60,
     "phase": "solid",
-    "density": 8.96
+    "density": 8.96,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/NatCopper.jpg/250px-NatCopper.jpg"
   },
   {
     "name": "Zinc",
@@ -477,7 +506,8 @@
     "electroNegativity": 1.65,
     "abundanceOnEarthCrust": 70,
     "phase": "solid",
-    "density": 7.14
+    "density": 7.14,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Zinc_fragment_sublimed_and_1cm3_cube.jpg/250px-Zinc_fragment_sublimed_and_1cm3_cube.jpg"
   },
   {
     "name": "Gallium",
@@ -493,7 +523,8 @@
     "electroNegativity": 1.81,
     "abundanceOnEarthCrust": 19,
     "phase": "solid",
-    "density": 5.91
+    "density": 5.91,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Gallium_crystals.jpg/250px-Gallium_crystals.jpg"
   },
   {
     "name": "Germanium",
@@ -509,7 +540,8 @@
     "electroNegativity": 2.01,
     "abundanceOnEarthCrust": 1.5,
     "phase": "solid",
-    "density": 5.323
+    "density": 5.323,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Polycrystalline-germanium.jpg/250px-Polycrystalline-germanium.jpg"
   },
   {
     "name": "Arsenic",
@@ -525,7 +557,8 @@
     "electroNegativity": 2.18,
     "abundanceOnEarthCrust": 1.8,
     "phase": "solid",
-    "density": 5.727
+    "density": 5.727,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Arsen_1a.jpg/250px-Arsen_1a.jpg"
   },
   {
     "name": "Selenium",
@@ -541,7 +574,8 @@
     "electroNegativity": 2.55,
     "abundanceOnEarthCrust": 0.05,
     "phase": "solid",
-    "density": 4.81
+    "density": 4.81,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/SeBlackRed.jpg/250px-SeBlackRed.jpg"
   },
   {
     "name": "Bromine",
@@ -557,7 +591,8 @@
     "electroNegativity": 2.96,
     "abundanceOnEarthCrust": 2.4,
     "phase": "liquid",
-    "density": 3.1028
+    "density": 3.1028,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Bromine_vial_in_acrylic_cube.jpg/250px-Bromine_vial_in_acrylic_cube.jpg"
   },
   {
     "name": "Krypton",
@@ -573,7 +608,8 @@
     "electroNegativity": 3,
     "abundanceOnEarthCrust": 1,
     "phase": "gas",
-    "density": 0.003749
+    "density": 0.003749,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Krypton_discharge_tube.jpg/250px-Krypton_discharge_tube.jpg"
   },
   {
     "name": "Rubidium",
@@ -589,7 +625,8 @@
     "electroNegativity": 0.82,
     "abundanceOnEarthCrust": 90,
     "phase": "solid",
-    "density": 1.532
+    "density": 1.532,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Rb5.JPG/250px-Rb5.JPG"
   },
   {
     "name": "Strontium",
@@ -605,7 +642,8 @@
     "electroNegativity": 0.95,
     "abundanceOnEarthCrust": 370,
     "phase": "solid",
-    "density": 2.64
+    "density": 2.64,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Strontium_destilled_crystals.jpg/250px-Strontium_destilled_crystals.jpg"
   },
   {
     "name": "Yttrium",
@@ -621,7 +659,8 @@
     "electroNegativity": 1.22,
     "abundanceOnEarthCrust": 33,
     "phase": "solid",
-    "density": 4.472
+    "density": 4.472,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Yttrium_sublimed_dendritic_and_1cm3_cube.jpg/250px-Yttrium_sublimed_dendritic_and_1cm3_cube.jpg"
   },
   {
     "name": "Zirconium",
@@ -637,7 +676,8 @@
     "electroNegativity": 1.33,
     "abundanceOnEarthCrust": 165,
     "phase": "solid",
-    "density": 6.52
+    "density": 6.52,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Zirconium_crystal_bar_and_1cm3_cube.jpg/250px-Zirconium_crystal_bar_and_1cm3_cube.jpg"
   },
   {
     "name": "Niobium",
@@ -653,7 +693,8 @@
     "electroNegativity": 1.6,
     "abundanceOnEarthCrust": 20,
     "phase": "solid",
-    "density": 8.57
+    "density": 8.57,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Niobium_crystals_and_1cm3_cube.jpg/250px-Niobium_crystals_and_1cm3_cube.jpg"
   },
   {
     "name": "Molybdenum",
@@ -669,7 +710,8 @@
     "electroNegativity": 2.16,
     "abundanceOnEarthCrust": 1.2,
     "phase": "solid",
-    "density": 10.28
+    "density": 10.28,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Molybdenum_crystaline_fragment_and_1cm3_cube.jpg/250px-Molybdenum_crystaline_fragment_and_1cm3_cube.jpg"
   },
   {
     "name": "Technetium",
@@ -685,7 +727,8 @@
     "electroNegativity": 1.9,
     "abundanceOnEarthCrust": 0,
     "phase": "solid",
-    "density": 11
+    "density": 11,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Technetium-sample-cropped.jpg/250px-Technetium-sample-cropped.jpg"
   },
   {
     "name": "Ruthenium",
@@ -701,7 +744,8 @@
     "electroNegativity": 2.2,
     "abundanceOnEarthCrust": 0.001,
     "phase": "solid",
-    "density": 12.45
+    "density": 12.45,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Ruthenium_a_half_bar.jpg/250px-Ruthenium_a_half_bar.jpg"
   },
   {
     "name": "Rhodium",
@@ -717,7 +761,8 @@
     "electroNegativity": 2.28,
     "abundanceOnEarthCrust": 0.001,
     "phase": "solid",
-    "density": 12.41
+    "density": 12.41,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Rhodium_powder_pressed_melted.jpg/250px-Rhodium_powder_pressed_melted.jpg"
   },
   {
     "name": "Palladium",
@@ -733,7 +778,8 @@
     "electroNegativity": 2.2,
     "abundanceOnEarthCrust": 0.015,
     "phase": "solid",
-    "density": 12.023
+    "density": 12.023,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Palladium_%2846_Pd%29.jpg/250px-Palladium_%2846_Pd%29.jpg"
   },
   {
     "name": "Silver",
@@ -749,7 +795,8 @@
     "electroNegativity": 1.93,
     "abundanceOnEarthCrust": 0.075,
     "phase": "solid",
-    "density": 10.49
+    "density": 10.49,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Silver_crystal.jpg/250px-Silver_crystal.jpg"
   },
   {
     "name": "Cadmium",
@@ -765,7 +812,8 @@
     "electroNegativity": 1.69,
     "abundanceOnEarthCrust": 0.159,
     "phase": "solid",
-    "density": 8.65
+    "density": 8.65,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Cadmium-crystal_bar.jpg/250px-Cadmium-crystal_bar.jpg"
   },
   {
     "name": "Indium",
@@ -781,7 +829,8 @@
     "electroNegativity": 1.78,
     "abundanceOnEarthCrust": 0.25,
     "phase": "solid",
-    "density": 7.31
+    "density": 7.31,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Indium.jpg/250px-Indium.jpg"
   },
   {
     "name": "Tin",
@@ -797,7 +846,8 @@
     "electroNegativity": 1.96,
     "abundanceOnEarthCrust": 2.3,
     "phase": "solid",
-    "density": 7.265
+    "density": 7.265,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Sn-Alpha-Beta.jpg/250px-Sn-Alpha-Beta.jpg"
   },
   {
     "name": "Antimony",
@@ -813,7 +863,8 @@
     "electroNegativity": 2.05,
     "abundanceOnEarthCrust": 0.2,
     "phase": "solid",
-    "density": 6.697
+    "density": 6.697,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Antimony-4.jpg/250px-Antimony-4.jpg"
   },
   {
     "name": "Tellurium",
@@ -829,7 +880,8 @@
     "electroNegativity": 2.1,
     "abundanceOnEarthCrust": 0.001,
     "phase": "solid",
-    "density": 6.24
+    "density": 6.24,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Tellurium2.jpg/250px-Tellurium2.jpg"
   },
   {
     "name": "Iodine",
@@ -845,7 +897,8 @@
     "electroNegativity": 2.66,
     "abundanceOnEarthCrust": 0.45,
     "phase": "solid",
-    "density": 4.933
+    "density": 4.933,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Sample_of_iodine.jpg/250px-Sample_of_iodine.jpg"
   },
   {
     "name": "Xenon",
@@ -861,7 +914,8 @@
     "electroNegativity": 2.6,
     "abundanceOnEarthCrust": 3,
     "phase": "gas",
-    "density": 0.005894
+    "density": 0.005894,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Xenon_discharge_tube.jpg/250px-Xenon_discharge_tube.jpg"
   },
   {
     "name": "Caesium",
@@ -877,7 +931,8 @@
     "electroNegativity": 0.79,
     "abundanceOnEarthCrust": 3,
     "phase": "solid",
-    "density": 1.93
+    "density": 1.93,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Cesium.jpg/250px-Cesium.jpg"
   },
   {
     "name": "Barium",
@@ -893,7 +948,8 @@
     "electroNegativity": 0.89,
     "abundanceOnEarthCrust": 425,
     "phase": "solid",
-    "density": 3.51
+    "density": 3.51,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Barium_unter_Argon_Schutzgas_Atmosph%C3%A4re.jpg/250px-Barium_unter_Argon_Schutzgas_Atmosph%C3%A4re.jpg"
   },
   {
     "name": "Lanthanum",
@@ -909,7 +965,8 @@
     "electroNegativity": 1.1,
     "abundanceOnEarthCrust": 39,
     "phase": "solid",
-    "density": 6.162
+    "density": 6.162,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Lanthanum-2.jpg/250px-Lanthanum-2.jpg"
   },
   {
     "name": "Cerium",
@@ -925,7 +982,8 @@
     "electroNegativity": 1.12,
     "abundanceOnEarthCrust": 66.5,
     "phase": "solid",
-    "density": 6.77
+    "density": 6.77,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Cerium2.jpg/250px-Cerium2.jpg"
   },
   {
     "name": "Praseodymium",
@@ -941,7 +999,8 @@
     "electroNegativity": 1.13,
     "abundanceOnEarthCrust": 9.2,
     "phase": "solid",
-    "density": 6.77
+    "density": 6.77,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Praseodymium.jpg/250px-Praseodymium.jpg"
   },
   {
     "name": "Neodymium",
@@ -957,7 +1016,8 @@
     "electroNegativity": 1.14,
     "abundanceOnEarthCrust": 41.5,
     "phase": "solid",
-    "density": 7.01
+    "density": 7.01,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Neodymium2.jpg/250px-Neodymium2.jpg"
   },
   {
     "name": "Promethium",
@@ -973,7 +1033,8 @@
     "electroNegativity": 1.13,
     "abundanceOnEarthCrust": 2,
     "phase": "solid",
-    "density": 7.26
+    "density": 7.26,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Promethium-147_solution.jpg/250px-Promethium-147_solution.jpg"
   },
   {
     "name": "Samarium",
@@ -989,7 +1050,8 @@
     "electroNegativity": 1.17,
     "abundanceOnEarthCrust": 7.05,
     "phase": "solid",
-    "density": 7.52
+    "density": 7.52,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Samarium-2.jpg/250px-Samarium-2.jpg"
   },
   {
     "name": "Europium",
@@ -1005,7 +1067,8 @@
     "electroNegativity": 1.2,
     "abundanceOnEarthCrust": 2,
     "phase": "solid",
-    "density": 5.244
+    "density": 5.244,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Europium.jpg/250px-Europium.jpg"
   },
   {
     "name": "Gadolinium",
@@ -1021,7 +1084,8 @@
     "electroNegativity": 1.2,
     "abundanceOnEarthCrust": 6.2,
     "phase": "solid",
-    "density": 7.9
+    "density": 7.9,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Gadolinium-4.jpg/250px-Gadolinium-4.jpg"
   },
   {
     "name": "Terbium",
@@ -1037,7 +1101,8 @@
     "electroNegativity": 1.2,
     "abundanceOnEarthCrust": 1.2,
     "phase": "solid",
-    "density": 8.23
+    "density": 8.23,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Terbium-2.jpg/250px-Terbium-2.jpg"
   },
   {
     "name": "Dysprosium",
@@ -1053,7 +1118,8 @@
     "electroNegativity": 1.22,
     "abundanceOnEarthCrust": 5.2,
     "phase": "solid",
-    "density": 8.54
+    "density": 8.54,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Dy_chips.jpg/250px-Dy_chips.jpg"
   },
   {
     "name": "Holmium",
@@ -1069,7 +1135,8 @@
     "electroNegativity": 1.23,
     "abundanceOnEarthCrust": 1.3,
     "phase": "solid",
-    "density": 8.79
+    "density": 8.79,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Holmium2.jpg/250px-Holmium2.jpg"
   },
   {
     "name": "Erbium",
@@ -1085,7 +1152,8 @@
     "electroNegativity": 1.24,
     "abundanceOnEarthCrust": 3.5,
     "phase": "solid",
-    "density": 9.066
+    "density": 9.066,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Erbium_%2868_Er%29.jpg/250px-Erbium_%2868_Er%29.jpg"
   },
   {
     "name": "Thulium",
@@ -1101,7 +1169,8 @@
     "electroNegativity": 1.25,
     "abundanceOnEarthCrust": 0.52,
     "phase": "solid",
-    "density": 9.32
+    "density": 9.32,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Thulium_sublimed_dendritic_and_1cm3_cube.jpg/250px-Thulium_sublimed_dendritic_and_1cm3_cube.jpg"
   },
   {
     "name": "Ytterbium",
@@ -1117,7 +1186,8 @@
     "electroNegativity": 1.1,
     "abundanceOnEarthCrust": 3.2,
     "phase": "solid",
-    "density": 6.9
+    "density": 6.9,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Ytterbium-3.jpg/250px-Ytterbium-3.jpg"
   },
   {
     "name": "Lutetium",
@@ -1133,7 +1203,8 @@
     "electroNegativity": 1.27,
     "abundanceOnEarthCrust": 0.8,
     "phase": "solid",
-    "density": 9.841
+    "density": 9.841,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Lutetium_sublimed_dendritic_and_1cm3_cube.jpg/250px-Lutetium_sublimed_dendritic_and_1cm3_cube.jpg"
   },
   {
     "name": "Hafnium",
@@ -1149,7 +1220,8 @@
     "electroNegativity": 1.3,
     "abundanceOnEarthCrust": 3,
     "phase": "solid",
-    "density": 13.31
+    "density": 13.31,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Hf-crystal_bar.jpg/250px-Hf-crystal_bar.jpg"
   },
   {
     "name": "Tantalum",
@@ -1165,7 +1237,8 @@
     "electroNegativity": 1.5,
     "abundanceOnEarthCrust": 2,
     "phase": "solid",
-    "density": 16.69
+    "density": 16.69,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Tantalum_single_crystal_and_1cm3_cube.jpg/250px-Tantalum_single_crystal_and_1cm3_cube.jpg"
   },
   {
     "name": "Tungsten",
@@ -1181,7 +1254,8 @@
     "electroNegativity": 2.36,
     "abundanceOnEarthCrust": 1.3,
     "phase": "solid",
-    "density": 19.25
+    "density": 19.25,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Wolfram_evaporated_crystals_and_1cm3_cube.jpg/250px-Wolfram_evaporated_crystals_and_1cm3_cube.jpg"
   },
   {
     "name": "Rhenium",
@@ -1197,7 +1271,8 @@
     "electroNegativity": 1.9,
     "abundanceOnEarthCrust": 7,
     "phase": "solid",
-    "density": 21.02
+    "density": 21.02,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Rhenium_single_crystal_bar_and_1cm3_cube.jpg/250px-Rhenium_single_crystal_bar_and_1cm3_cube.jpg"
   },
   {
     "name": "Osmium",
@@ -1213,7 +1288,8 @@
     "electroNegativity": 2.2,
     "abundanceOnEarthCrust": 0.002,
     "phase": "solid",
-    "density": 22.59
+    "density": 22.59,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Osmium_cluster.jpg/250px-Osmium_cluster.jpg"
   },
   {
     "name": "Iridium",
@@ -1229,7 +1305,8 @@
     "electroNegativity": 2.2,
     "abundanceOnEarthCrust": 0.001,
     "phase": "solid",
-    "density": 22.56
+    "density": 22.56,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Iridium-2.jpg/250px-Iridium-2.jpg"
   },
   {
     "name": "Platinum",
@@ -1245,7 +1322,8 @@
     "electroNegativity": 2.28,
     "abundanceOnEarthCrust": 0.005,
     "phase": "solid",
-    "density": 21.45
+    "density": 21.45,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Platinum_crystals.jpg/250px-Platinum_crystals.jpg"
   },
   {
     "name": "Gold",
@@ -1261,7 +1339,8 @@
     "electroNegativity": 2.54,
     "abundanceOnEarthCrust": 0.004,
     "phase": "solid",
-    "density": 19.3
+    "density": 19.3,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Gold-crystals.jpg/250px-Gold-crystals.jpg"
   },
   {
     "name": "Mercury",
@@ -1277,7 +1356,8 @@
     "electroNegativity": 2,
     "abundanceOnEarthCrust": 0.085,
     "phase": "liquid",
-    "density": 13.534
+    "density": 13.534,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Pouring_liquid_mercury_bionerd.jpg/250px-Pouring_liquid_mercury_bionerd.jpg"
   },
   {
     "name": "Thallium",
@@ -1293,7 +1373,8 @@
     "electroNegativity": 1.62,
     "abundanceOnEarthCrust": 0.85,
     "phase": "solid",
-    "density": 11.85
+    "density": 11.85,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Thallium_pieces_in_ampoule.jpg/250px-Thallium_pieces_in_ampoule.jpg"
   },
   {
     "name": "Lead",
@@ -1309,7 +1390,8 @@
     "electroNegativity": 2.33,
     "abundanceOnEarthCrust": 14,
     "phase": "solid",
-    "density": 11.34
+    "density": 11.34,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Lead_electrolytic_and_1cm3_cube.jpg/250px-Lead_electrolytic_and_1cm3_cube.jpg"
   },
   {
     "name": "Bismuth",
@@ -1325,7 +1407,8 @@
     "electroNegativity": 2.02,
     "abundanceOnEarthCrust": 0.009,
     "phase": "solid",
-    "density": 9.78
+    "density": 9.78,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Bismuth_crystals_and_1cm3_cube.jpg/250px-Bismuth_crystals_and_1cm3_cube.jpg"
   },
   {
     "name": "Polonium",
@@ -1341,7 +1424,8 @@
     "electroNegativity": 2,
     "abundanceOnEarthCrust": 2,
     "phase": "solid",
-    "density": 9.196
+    "density": 9.196,
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/6/66/Polonium.jpg/250px-Polonium.jpg"
   },
   {
     "name": "Astatine",
@@ -1421,7 +1505,8 @@
     "electroNegativity": 0.9,
     "abundanceOnEarthCrust": 9,
     "phase": "solid",
-    "density": 5.5
+    "density": 5.5,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Radium226.jpg/250px-Radium226.jpg"
   },
   {
     "name": "Actinium",
@@ -1445,7 +1530,8 @@
     "electroNegativity": 1.1,
     "abundanceOnEarthCrust": 5.5,
     "phase": "solid",
-    "density": 10
+    "density": 10,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Actinium_sample_%2831481701837%29.png/250px-Actinium_sample_%2831481701837%29.png"
   },
   {
     "name": "Thorium",
@@ -1469,7 +1555,8 @@
     "electroNegativity": 1.3,
     "abundanceOnEarthCrust": 9.6,
     "phase": "solid",
-    "density": 11.7
+    "density": 11.7,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Thorium_sample_0.1g.jpg/250px-Thorium_sample_0.1g.jpg"
   },
   {
     "name": "Protactinium",
@@ -1493,7 +1580,8 @@
     "electroNegativity": 1.5,
     "abundanceOnEarthCrust": 1.4,
     "phase": "solid",
-    "density": 15.37
+    "density": 15.37,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Protactinium_%28Element_-_91%29_2.jpg/250px-Protactinium_%28Element_-_91%29_2.jpg"
   },
   {
     "name": "Uranium",
@@ -1517,7 +1605,8 @@
     "electroNegativity": 1.38,
     "abundanceOnEarthCrust": 2.7,
     "phase": "solid",
-    "density": 19.1
+    "density": 19.1,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/HEUraniumC.jpg/250px-HEUraniumC.jpg"
   },
   {
     "name": "Neptunium",
@@ -1541,7 +1630,8 @@
     "electroNegativity": 1.36,
     "abundanceOnEarthCrust": 0,
     "phase": "solid",
-    "density": 20.45
+    "density": 20.45,
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a3/1g_of_neptunium_metal.jpg/250px-1g_of_neptunium_metal.jpg"
   },
   {
     "name": "Plutonium",
@@ -1565,7 +1655,8 @@
     "electroNegativity": 1.28,
     "abundanceOnEarthCrust": 0,
     "phase": "solid",
-    "density": 19.85
+    "density": 19.85,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Plutonium_ring.jpg/250px-Plutonium_ring.jpg"
   },
   {
     "name": "Americium",
@@ -1589,7 +1680,8 @@
     "electroNegativity": 1.13,
     "abundanceOnEarthCrust": 0,
     "phase": "solid",
-    "density": 12
+    "density": 12,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Americium_microscope.jpg/250px-Americium_microscope.jpg"
   },
   {
     "name": "Curium",
@@ -1613,7 +1705,8 @@
     "electroNegativity": 1.28,
     "abundanceOnEarthCrust": 0,
     "phase": "solid",
-    "density": 13.51
+    "density": 13.51,
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/6/69/Curium.jpg/250px-Curium.jpg"
   },
   {
     "name": "Berkelium",
@@ -1637,7 +1730,8 @@
     "electroNegativity": 1.3,
     "abundanceOnEarthCrust": 0,
     "phase": "solid",
-    "density": 14.78
+    "density": 14.78,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Berkelium_metal.jpg/250px-Berkelium_metal.jpg"
   },
   {
     "name": "Californium",
@@ -1661,7 +1755,8 @@
     "electroNegativity": 1.3,
     "abundanceOnEarthCrust": 0,
     "phase": "solid",
-    "density": 15.1
+    "density": 15.1,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/9/93/Californium.jpg"
   },
   {
     "name": "Einsteinium",
@@ -1685,7 +1780,8 @@
     "electroNegativity": 1.3,
     "abundanceOnEarthCrust": 0,
     "phase": "solid",
-    "density": 8.84
+    "density": 8.84,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Einsteinium.jpg/250px-Einsteinium.jpg"
   },
   {
     "name": "Fermium",

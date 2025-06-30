@@ -1,4 +1,7 @@
 import { getElectronsPerSubShell } from "../client/src/library/helpers.ts";
+import oldElements from "../client/src/data/elements.json" with {
+  type: "json",
+};
 
 const text = await Deno.readTextFile("chemical-elements.tsv");
 
@@ -32,7 +35,10 @@ const elements = rows.slice(1).map((row) => {
     density: phase === "unknown phase" ? 0 : parseFloat(cols[14]),
   };
 
-  return element;
+  return {
+    ...oldElements.find((el) => el.protons === protons),
+    ...element,
+  };
 });
 
 const elementsJson = JSON.stringify(elements);
