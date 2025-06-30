@@ -4,7 +4,8 @@ table.periodicTable {
   th,
   td {
     border: 1px solid rgb(160 160 160);
-    padding: 4px 5px;
+    padding: 4px 0;
+    width: 27px;
   }
 }
 

@@ -112,11 +112,25 @@ export function PeriodicTable(
                     onClick={() => onElementSelected(element)}
                     style={{
                       cursor: "pointer",
-                      background: selectedZ === element.protons
-                        ? "lightgrey"
-                        : getCellColor(element),
+                      background: getCellColor(element),
+                      position: "relative",
+                      textAlign: "center",
                     }}
                   >
+                    {selectedZ === element.protons && (
+                      <div
+                        style={{
+                          position: "absolute",
+                          top: 0,
+                          left: 0,
+                          right: 0,
+                          bottom: 0,
+                          background: "rgba(0,0,0,0.1)",
+                          pointerEvents: "none",
+                          zIndex: 1,
+                        }}
+                      />
+                    )}
                     {element.symbol}
                   </td>
                 );
@@ -150,11 +164,25 @@ export function PeriodicTable(
                       onClick={() => onElementSelected(element)}
                       style={{
                         cursor: "pointer",
-                        background: selectedZ === element.protons
-                          ? "lightgrey"
-                          : getCellColor(element),
+                        background: getCellColor(element),
+                        position: "relative",
+                        textAlign: "center",
                       }}
                     >
+                      {selectedZ === element.protons && (
+                        <div
+                          style={{
+                            position: "absolute",
+                            top: 0,
+                            left: 0,
+                            right: 0,
+                            bottom: 0,
+                            background: "rgba(0,0,0,0.1)",
+                            pointerEvents: "none",
+                            zIndex: 1,
+                          }}
+                        />
+                      )}
                       {element.symbol}
                     </td>
                   );
