@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { StateContext } from "./StateContext.ts";
-import elements from "./data/elements.json" with { type: "json" };
+import elements from "./data/elements.ts";
 import {
   getMaximumNumberOfElectronsPerShell,
   getMaximumNumberOfElectronsPerSubShell,
@@ -12,6 +12,7 @@ export function AtomData() {
   const element = elements.find((el) => el.protons === selectedZ) as
     | Element
     | undefined;
+
   if (!element) {
     return;
   }
@@ -59,10 +60,10 @@ export function AtomData() {
             <td>Origin:</td>
             <td>{element.origin}</td>
           </tr>
-          {/* <tr>
-            <td>Abundance:</td>
-            <td>{element.abundanceOnEarthCrust}</td>
-          </tr> */}
+          <tr>
+            <td>Phase:</td>
+            <td>{element.phase}</td>
+          </tr>
         </tbody>
       </table>
 

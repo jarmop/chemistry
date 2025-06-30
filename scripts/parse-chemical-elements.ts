@@ -27,6 +27,7 @@ const elements = rows.slice(1).map((row) => {
     abundanceOnEarthCrust: isNaN(abundanceOnEarthCrust)
       ? 0
       : abundanceOnEarthCrust,
+    phase: cols[15].replace("\r", ""),
   };
 
   return element;

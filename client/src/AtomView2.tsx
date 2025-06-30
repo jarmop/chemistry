@@ -26,7 +26,7 @@
 
 import { useContext } from "react";
 import { StateContext } from "./StateContext.ts";
-import elements from "./data/elements.json" with { type: "json" };
+import elements from "./data/elements.ts";
 
 function Electron({ x = 0, y = 0, isValence = false }) {
   return (

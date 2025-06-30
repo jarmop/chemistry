@@ -1,5 +1,5 @@
 import { inorganicMolecules, organicMolecules } from "./data/molecules.ts";
-import elements from "./data/elements.json" with { type: "json" };
+import elements from "./data/elements.ts";
 import { calculateMolarMassFormatted } from "./library/helpers.ts";
 
 function MoleculeComparison() {

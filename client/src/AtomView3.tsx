@@ -2,12 +2,11 @@
  * Electrons per subshell is 2 x [allowed values of ml]
  * Allowed values of ml is (2 x l + 1)
  * number of allowed values of l is the same as n
- *
  */
 
 import { useContext } from "react";
 import { StateContext } from "./StateContext.ts";
-import elements from "./data/elements.json" with { type: "json" };
+import elements from "./data/elements.ts";
 
 function Electron({ x = 0, y = 0, isValence = false }) {
   return (

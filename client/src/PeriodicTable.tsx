@@ -1,15 +1,21 @@
-import { useContext } from "react";
-import elements from "./data/elements.json" with { type: "json" };
+import { useContext, useState } from "react";
+import elements from "./data/elements.ts";
 import { StateContext } from "./StateContext.ts";
+import { Element } from "./library/types.ts";
 
-const color: Record<string, string> = {
+const blockColor: Record<string, string> = {
   "s-block": "pink",
   "f-block": "lightgreen",
   "d-block": "lightblue",
   "p-block": "lightyellow",
 };
 
-type Element = typeof elements[number];
+const phaseColor: Record<string, string> = {
+  "solid": "lightgreen",
+  "liquid": "lightblue",
+  "gas": "lightyellow",
+  "unknown phase": "lightgrey",
+};
 
 interface PeriodicTableProps {
   onElementSelected: (element: Element) => void;
@@ -20,6 +26,7 @@ export function PeriodicTable(
 ) {
   const { element: selectedZ } = useContext(StateContext);
 
+  const [colorMode, setColorMode] = useState<"block" | "phase">("block");
   const elementsByPeriodAndGroup: Record<string, Record<string, Element>> = {};
   const fBlockGroups: Record<string, Record<string, Element>> = {};
 
@@ -48,8 +55,40 @@ export function PeriodicTable(
   //   return `rgba(255,0,0,${relativeAbundance})`;
   // }
 
+  function getCellColor(element: Element) {
+    if (colorMode === "block") {
+      return blockColor[element.block];
+    } else {
+      return phaseColor[element.phase];
+    }
+  }
+
   return (
     <>
+      {/* Color mode selector */}
+      <div style={{ marginBottom: "10px" }}>
+        <span>Color by:</span>
+        <label style={{ marginRight: "10px" }}>
+          <input
+            type="radio"
+            name="colorMode"
+            value="block"
+            checked={colorMode === "block"}
+            onChange={() => setColorMode("block")}
+          />
+          Block
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="colorMode"
+            value="phase"
+            checked={colorMode === "phase"}
+            onChange={() => setColorMode("phase")}
+          />
+          Phase
+        </label>
+      </div>
       <table className="periodicTable">
         <thead>
           <tr>
@@ -75,7 +114,7 @@ export function PeriodicTable(
                       cursor: "pointer",
                       background: selectedZ === element.protons
                         ? "lightgrey"
-                        : color[element.block],
+                        : getCellColor(element),
                     }}
                   >
                     {element.symbol}
@@ -113,7 +152,7 @@ export function PeriodicTable(
                         cursor: "pointer",
                         background: selectedZ === element.protons
                           ? "lightgrey"
-                          : color[element.block],
+                          : getCellColor(element),
                       }}
                     >
                       {element.symbol}

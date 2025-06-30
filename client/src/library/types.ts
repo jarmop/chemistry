@@ -11,4 +11,5 @@ export type Element = {
   origin: string;
   electroNegativity: number;
   abundanceOnEarthCrust: number;
+  phase: string;
 };
