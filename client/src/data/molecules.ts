@@ -81,34 +81,128 @@ export const inorganicMolecules = [{
     "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/SiO2repeat.png/250px-SiO2repeat.png",
 }];
 
-export const organicMolecules = [{
-  name: "Glucose",
-  formula: "C6H12O6",
-  molarMass: 180.16,
-  image:
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Alpha-D-Glucopyranose.svg/120px-Alpha-D-Glucopyranose.svg.png",
-}, {
-  name: "Methane",
-  formula: "CH4",
-  molarMass: 16.04,
-  image:
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Methane-2D-dimensions.svg/250px-Methane-2D-dimensions.svg.png",
-}, {
-  name: "Ethanol",
-  formula: "C2H5OH",
-  molarMass: 46.07,
-  image:
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Ethanol-2D-flat.svg/120px-Ethanol-2D-flat.svg.png",
-}, {
-  name: "Acetic Acid",
-  formula: "CH3COOH",
-  molarMass: 60.05,
-  image:
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Essigs%C3%A4ure_-_Acetic_acid.svg/120px-Essigs%C3%A4ure_-_Acetic_acid.svg.png",
-}, {
-  name: "Acetone",
-  formula: "C3H6O",
-  molarMass: 58.08,
-  image:
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Acetone-CRC-MW-ED-dimensions-2D-Vector.svg/250px-Acetone-CRC-MW-ED-dimensions-2D-Vector.svg.png",
-}];
+const monosaccharides = [
+  {
+    name: "Glucose",
+    formula: "C6H12O6",
+    molarMass: 180.16,
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Alpha-D-Glucopyranose.svg/120px-Alpha-D-Glucopyranose.svg.png",
+  },
+  {
+    name: "Fructose",
+    formula: "",
+    molarMass: 180.16,
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Alpha-D-Glucopyranose.svg/120px-Alpha-D-Glucopyranose.svg.png",
+  },
+];
+
+const disaccharides = [
+  {
+    name: "Sucrose",
+    formula: "C12H22O11",
+    molarMass: 342.30,
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Alpha-D-Glucopyranose.svg/120px-Alpha-D-Glucopyranose.svg.png",
+  },
+  {
+    name: "Maltose",
+    formula: "C12H22O11",
+    molarMass: 342.30,
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Alpha-D-Glucopyranose.svg/120px-Alpha-D-Glucopyranose.svg.png",
+  },
+  {
+    name: "Lactose",
+    formula: "C12H22O11",
+    molarMass: 342.30,
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Alpha-D-Glucopyranose.svg/120px-Alpha-D-Glucopyranose.svg.png",
+  },
+];
+
+const sugars = [
+  ...monosaccharides,
+  ...disaccharides,
+];
+
+const alcohols = [
+  {
+    name: "Ethanol",
+    formula: "C2H5OH",
+    molarMass: 46.07,
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Ethanol-2D-flat.svg/120px-Ethanol-2D-flat.svg.png",
+  },
+  {
+    name: "Methanol",
+    formula: "CH3OH",
+    molarMass: 32.04,
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Ethanol-2D-flat.svg/120px-Ethanol-2D-flat.svg.png",
+  },
+  {
+    name: "Propanol",
+    formula: "C3H7OH",
+    molarMass: 60.10,
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Ethanol-2D-flat.svg/120px-Ethanol-2D-flat.svg.png",
+  },
+  {
+    name: "Butanol",
+    formula: "C4H9OH",
+    molarMass: 74.12,
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Ethanol-2D-flat.svg/120px-Ethanol-2D-flat.svg.png",
+  },
+];
+
+const acids = [
+  {
+    name: "Acetic Acid",
+    formula: "CH3COOH",
+    molarMass: 60.05,
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Essigs%C3%A4ure_-_Acetic_acid.svg/120px-Essigs%C3%A4ure_-_Acetic_acid.svg.png",
+  },
+];
+
+export const organicMolecules = [
+  ...sugars,
+  ...alcohols,
+  ...acids,
+  {
+    name: "Methane",
+    formula: "CH4",
+    molarMass: 16.04,
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Methane-2D-dimensions.svg/250px-Methane-2D-dimensions.svg.png",
+  },
+  {
+    name: "Acetone",
+    formula: "C3H6O",
+    molarMass: 58.08,
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Acetone-CRC-MW-ED-dimensions-2D-Vector.svg/250px-Acetone-CRC-MW-ED-dimensions-2D-Vector.svg.png",
+  },
+  {
+    name: "PG5",
+    formula: "",
+    molarMass: 200000000,
+    type: "dendrimer",
+    diameter: 10e-9,
+    length: 5e-9,
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/PG5_structure.png/1280px-PG5_structure.png",
+  },
+  {
+    name: "DNA",
+    formula: "",
+    molarMass: 200000000,
+    type: "nucleic acid",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Double_helix_of_DNA.svg/1280px-Double_helix_of_DNA.svg.png",
+  },
+  
+];

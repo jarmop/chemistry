@@ -11,4 +11,12 @@ export const compounds = [
     name: "Natural gas",
     formula: "CnH2n+2",
   },
+  {
+    name: "Sucrose",
+    formula: "C12H22O11",
+  },
+  {
+    name: "Glucose",
+    formula: "C6H12O6",
+  },
 ];
