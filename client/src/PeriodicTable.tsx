@@ -26,7 +26,9 @@ export function PeriodicTable(
 ) {
   const { element: selectedZ } = useContext(StateContext);
 
-  const [colorMode, setColorMode] = useState<"block" | "phase">("block");
+  const [colorMode, setColorMode] = useState<"block" | "phase" | "density">(
+    "block",
+  );
   const elementsByPeriodAndGroup: Record<string, Record<string, Element>> = {};
   const fBlockGroups: Record<string, Record<string, Element>> = {};
 
@@ -55,11 +57,20 @@ export function PeriodicTable(
   //   return `rgba(255,0,0,${relativeAbundance})`;
   // }
 
+  const densityValues = elements.map((el) => el.density);
+  const maxDensity = Math.max(...densityValues);
+  function getDensityColor(density: number) {
+    const relativeDensity = density / maxDensity;
+    return `rgba(0,0,255,${relativeDensity})`;
+  }
+
   function getCellColor(element: Element) {
     if (colorMode === "block") {
       return blockColor[element.block];
-    } else {
+    } else if (colorMode === "phase") {
       return phaseColor[element.phase];
+    } else {
+      return getDensityColor(element.density);
     }
   }
 
@@ -87,6 +98,16 @@ export function PeriodicTable(
             onChange={() => setColorMode("phase")}
           />
           Phase
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="colorMode"
+            value="density"
+            checked={colorMode === "density"}
+            onChange={() => setColorMode("density")}
+          />
+          Density
         </label>
       </div>
       <table className="periodicTable">

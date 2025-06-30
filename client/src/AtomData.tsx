@@ -64,6 +64,10 @@ export function AtomData() {
             <td>Phase:</td>
             <td>{element.phase}</td>
           </tr>
+          <tr>
+            <td>Density:</td>
+            <td>{element.density}</td>
+          </tr>
         </tbody>
       </table>
 

@@ -6,8 +6,8 @@ import { MoleculeView } from "./MoleculeView.tsx";
 function App() {
   return (
     <div>
-      <MoleculeComparison />
-      <MoleculeView />
+      {/* <MoleculeComparison /> */}
+      {/* <MoleculeView /> */}
 
       <div style={{ marginTop: "20px" }}>
         <Inspect />

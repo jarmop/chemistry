@@ -12,4 +12,5 @@ export type Element = {
   electroNegativity: number;
   abundanceOnEarthCrust: number;
   phase: string;
+  density: number;
 };
