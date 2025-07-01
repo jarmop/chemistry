@@ -1,106 +1,88 @@
-/**
- * Electrons per subshell is 2 x [allowed values of ml]
- * Allowed values of ml is (2 x l + 1)
- * number of allowed values of l is the same as n
- *
- * n = 1
- * l = 0
- * ml = 0
- * electrons per subshell = [2]
- *
- * n = 2
- * l = 0, 1,
- * ml = -1, 0, 1
- * electrons per subshell = [2, 2+6=8]
- *
- * n = 3
- * l = 0, 1, 2
- * ml = -2, -1, 0, 1, 2
- * electrons per subshell = [2, 2+6=8, 2+6+10=18]
- *
- * n = 4
- * l = 0, 1, 2, 3
- * ml = -3, -2, -1, 0, 1, 2, 3
- * electrons per subshell = [2, 2+6=8, 2+6+10=18, 2+6+10+14=32]
- */
-
 import { useContext } from "react";
 import { StateContext } from "./StateContext.ts";
 import elements from "./data/elements.ts";
+import { sum } from "./library/helpers.ts";
 
-function Electron({ x = 0, y = 0, isValence = false }) {
-  return (
-    <g
-      transform={`translate(${x}, ${y})`}
-    >
-      <circle r="5" fill={isValence ? "lightgreen" : "yellow"} />
-      <line x1="-3" y1="0" x2="3" y2="0" stroke="black" strokeWidth={2} />
-    </g>
+const electronRadius = 5;
+
+function getRadius(n = 0) {
+  return Math.sqrt(
+    n * Math.pow(electronRadius, 2),
   );
 }
 
-function Shell({ r = 0, electrons = 2, isOuterShell = false }) {
+function ValenceElectrons({ r = 0, electrons = 2, isHelium = false }) {
   const electronViews: React.ReactNode[] = [];
-  const rad = 2 * Math.PI / electrons;
-  for (let i = 0; i < electrons; i++) {
-    const x = r * Math.cos(i * rad);
-    const y = -r * Math.sin(i * rad);
+  const electronPairs = isHelium ? 1 : Math.max(0, electrons - 4);
+  const lonelyElectrons = electrons - electronPairs * 2;
+  const pairRadOffset = 1 / r * 6;
+
+  function addElectron(rad: number) {
+    const x = r * Math.cos(rad);
+    const y = -r * Math.sin(rad);
     electronViews.push(
-      <Electron key={i} x={x} y={y} isValence={isOuterShell} />,
+      <circle key={rad} cx={x} cy={y} r={electronRadius} fill="yellow" />,
     );
   }
 
-  return (
-    <g>
-      <circle r={r} />
-      {electronViews}
-    </g>
-  );
+  const radStep = electrons === 2 ? Math.PI : Math.PI / 2;
+  let rad = electronPairs === 0 || isHelium ? 0 : radStep;
+
+  for (let i = 0; i < electronPairs; i++) {
+    addElectron(rad - pairRadOffset);
+    addElectron(rad + pairRadOffset);
+    rad += radStep;
+  }
+  for (let i = 0; i < lonelyElectrons; i++) {
+    addElectron(rad);
+    rad += radStep;
+  }
+
+  return electronViews;
 }
 
 export function Atom({ x = 300, y = 300 }) {
-  const { valence, element: protons } = useContext(StateContext);
+  const { element: protons } = useContext(StateContext);
 
   const element = elements.find((el) => el.protons === protons);
   if (!element) {
     return <div>Not found</div>;
   }
 
-  const visibleShells = valence
-    ? element.electrons.slice(-1)
-    : element.electrons;
+  const electronsPerShell = element.electrons.map((perSubShell) =>
+    perSubShell.reduce((acc, curr) => acc + curr, 0)
+  );
 
-  const nucleusRadius = Math.sqrt(element.protons / Math.PI) * 10;
+  const valenceElectrons = sum(electronsPerShell.slice(-1));
+  const nonValenceElectrons = sum(electronsPerShell.slice(0, -1));
+
+  const nucleusRadius = getRadius(element.protons);
+  const nonValenceElectronRadius = nucleusRadius +
+    getRadius(nonValenceElectrons);
 
   return (
     <g transform={`translate(${x}, ${y})`} stroke="black" fill="transparent">
+      <ValenceElectrons
+        r={nonValenceElectronRadius + electronRadius + 1}
+        electrons={valenceElectrons}
+        isHelium={element.name === "Helium"}
+      />
+      <circle r={nonValenceElectronRadius} fill="lightgreen" />
       <circle r={nucleusRadius} fill="red" />
-      <line x1="-4" y1="0" x2="4" y2="0" stroke="black" strokeWidth={2} />
-      <line x1="0" y1="-4" x2="0" y2="4" stroke="black" strokeWidth={2} />
-
-      {visibleShells.map((numEl, i) => (
-        <Shell
-          key={i}
-          r={nucleusRadius + (i + 1) * 14}
-          electrons={numEl}
-          isOuterShell={i === visibleShells.length - 1}
-        />
-      ))}
     </g>
   );
 }
 
-const svgWidth = 340;
-const svgHeight = 340;
+const svgSize = 240;
 
 export function AtomView() {
   return (
     <svg
-      width={svgWidth}
-      height={svgHeight}
+      width={svgSize}
+      height={svgSize}
       style={{ border: "1px solid black" }}
     >
-      <Atom x={svgWidth / 2} y={svgHeight / 2} />
+      <Atom x={svgSize / 2} y={svgSize / 2} />
     </svg>
   );
 }

@@ -1,11 +1,8 @@
 import { useState } from "react";
 import { PeriodicTable } from "./PeriodicTable.tsx";
 import { StateContext } from "./StateContext.ts";
-// import { AtomView } from "./AtomView.tsx";
-// import { AtomView } from "./AtomView2.tsx";
-// import { AtomView } from "./AtomView3.tsx";
-import { AtomView } from "./AtomView4.tsx";
-// import { AtomView } from "./AtomView5.tsx";
+import { AtomView } from "./AtomView.tsx";
+// import { AtomView } from "./LewisStructure.tsx";
 import { AtomData } from "./AtomData.tsx";
 import elements from "./data/elements.ts";
 
