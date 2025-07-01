@@ -1,11 +1,11 @@
 table.periodicTable {
   border-collapse: collapse;
-  border: 1px solid black;
   th,
   td {
     border: 1px solid rgb(160 160 160);
-    padding: 4px 0;
-    width: 27px;
+  }
+  th {
+    padding: 4px 5px;
   }
 }
 

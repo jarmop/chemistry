@@ -21,6 +21,8 @@ export function Element({
         background: getCellColor(element),
         position: "relative",
         textAlign: "center",
+        padding: "4px 0",
+        width: "27px",
       }}
     >
       {isSelected && (

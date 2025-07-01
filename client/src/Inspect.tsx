@@ -22,31 +22,35 @@ export function Inspect() {
 
   return (
     <StateContext value={state}>
-      <div style={{ display: "flex" }}>
-        <div style={{ marginRight: "20px" }}>
+      <div style={{ display: "flex", flexDirection: "column" }}>
+        <div style={{ marginBottom: "20px" }}>
           <PeriodicTable
             onElementSelected={(element) =>
               setState({ ...state, element: element.protons })}
           />
         </div>
-        <div style={{ marginRight: "20px" }}>
-          <AtomData />
-        </div>
-        <div>
-          <AtomView />
-          {element?.image && (
-            <div>
-              <img
-                src={element?.image}
-                alt=""
-                style={{
-                  width: "240px",
-                  border: "1px solid black",
-                  marginTop: "10px",
-                }}
-              />
-            </div>
-          )}
+        <div
+          style={{ display: "flex", flexDirection: "row", marginTop: "20px" }}
+        >
+          <div style={{ marginRight: "20px" }}>
+            <AtomData />
+          </div>
+          <div>
+            <AtomView />
+            {element?.image && (
+              <div>
+                <img
+                  src={element?.image}
+                  alt=""
+                  style={{
+                    width: "240px",
+                    border: "1px solid black",
+                    marginTop: "10px",
+                  }}
+                />
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </StateContext>

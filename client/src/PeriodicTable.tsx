@@ -3,6 +3,7 @@ import elements from "./data/elements.ts";
 import { StateContext } from "./StateContext.ts";
 import { Element as ElementType } from "./library/types.ts";
 import { Element } from "./Element.tsx";
+import { ElementDetailed } from "./ElementDetailed.tsx";
 
 const blockColor: Record<string, string> = {
   "s-block": "pink",
@@ -29,6 +30,9 @@ export function PeriodicTable(
 
   const [colorMode, setColorMode] = useState<"block" | "phase" | "density">(
     "phase",
+  );
+  const [elementView, setElementView] = useState<"simple" | "detailed">(
+    "simple",
   );
   const elementsByPeriodAndGroup: Record<string, Record<string, ElementType>> =
     {};
@@ -76,8 +80,56 @@ export function PeriodicTable(
     }
   }
 
+  function renderElementCell(element: ElementType, key: string | number) {
+    if (elementView === "detailed") {
+      return (
+        <ElementDetailed
+          key={key}
+          element={element}
+          isSelected={selectedZ === element.protons}
+          getCellColor={getCellColor}
+          onElementSelected={onElementSelected}
+        />
+      );
+    } else {
+      return (
+        <Element
+          key={key}
+          element={element}
+          isSelected={selectedZ === element.protons}
+          getCellColor={getCellColor}
+          onElementSelected={onElementSelected}
+        />
+      );
+    }
+  }
+
   return (
     <>
+      {/* Element view selector */}
+      <div style={{ marginBottom: "10px" }}>
+        <span>Element view:</span>
+        <label style={{ marginRight: "10px" }}>
+          <input
+            type="radio"
+            name="elementView"
+            value="simple"
+            checked={elementView === "simple"}
+            onChange={() => setElementView("simple")}
+          />
+          Simple
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="elementView"
+            value="detailed"
+            checked={elementView === "detailed"}
+            onChange={() => setElementView("detailed")}
+          />
+          Detailed
+        </label>
+      </div>
       {/* Color mode selector */}
       <div style={{ marginBottom: "10px" }}>
         <span>Color by:</span>
@@ -91,7 +143,7 @@ export function PeriodicTable(
           />
           Block
         </label>
-        <label>
+        <label style={{ marginRight: "10px" }}>
           <input
             type="radio"
             name="colorMode"
@@ -128,16 +180,7 @@ export function PeriodicTable(
                 if (!element) {
                   return <td key={group}></td>;
                 }
-
-                return (
-                  <Element
-                    key={group}
-                    element={element}
-                    isSelected={selectedZ === element.protons}
-                    getCellColor={getCellColor}
-                    onElementSelected={onElementSelected}
-                  />
-                );
+                return renderElementCell(element, group);
               })}
             </tr>
           ))}
@@ -162,15 +205,7 @@ export function PeriodicTable(
                   if (!element) {
                     return <td key={protons}></td>;
                   }
-                  return (
-                    <Element
-                      key={protons}
-                      element={element}
-                      isSelected={selectedZ === element.protons}
-                      getCellColor={getCellColor}
-                      onElementSelected={onElementSelected}
-                    />
-                  );
+                  return renderElementCell(element, protons);
                 })}
             </tr>
           ))}
