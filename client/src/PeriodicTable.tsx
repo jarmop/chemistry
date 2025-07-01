@@ -4,6 +4,7 @@ import { StateContext } from "./StateContext.ts";
 import { Element as ElementType } from "./library/types.ts";
 import { Element } from "./Element.tsx";
 import { ElementDetailed } from "./ElementDetailed.tsx";
+import { ElementImage } from "./ElementImage.tsx";
 
 const blockColor: Record<string, string> = {
   "s-block": "pink",
@@ -31,9 +32,9 @@ export function PeriodicTable(
   const [colorMode, setColorMode] = useState<"block" | "phase" | "density">(
     "phase",
   );
-  const [elementView, setElementView] = useState<"simple" | "detailed">(
-    "simple",
-  );
+  const [elementView, setElementView] = useState<
+    "simple" | "detailed" | "image"
+  >("simple");
   const elementsByPeriodAndGroup: Record<string, Record<string, ElementType>> =
     {};
   const fBlockGroups: Record<string, Record<string, ElementType>> = {};
@@ -91,6 +92,15 @@ export function PeriodicTable(
           onElementSelected={onElementSelected}
         />
       );
+    } else if (elementView === "image") {
+      return (
+        <ElementImage
+          key={key}
+          element={element}
+          isSelected={selectedZ === element.protons}
+          onElementSelected={onElementSelected}
+        />
+      );
     } else {
       return (
         <Element
@@ -119,7 +129,7 @@ export function PeriodicTable(
           />
           Simple
         </label>
-        <label>
+        <label style={{ marginRight: "10px" }}>
           <input
             type="radio"
             name="elementView"
@@ -128,6 +138,16 @@ export function PeriodicTable(
             onChange={() => setElementView("detailed")}
           />
           Detailed
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="elementView"
+            value="image"
+            checked={elementView === "image"}
+            onChange={() => setElementView("image")}
+          />
+          Image
         </label>
       </div>
       {/* Color mode selector */}

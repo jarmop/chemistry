@@ -1,5 +1,6 @@
 table.periodicTable {
   border-collapse: collapse;
+  width: max-content;
   th,
   td {
     border: 1px solid rgb(160 160 160);
