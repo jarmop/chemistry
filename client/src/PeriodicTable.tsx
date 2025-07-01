@@ -30,7 +30,7 @@ export function PeriodicTable(
   const { element: selectedZ } = useContext(StateContext);
 
   const [colorMode, setColorMode] = useState<"block" | "phase" | "density">(
-    "phase",
+    "block",
   );
   const [elementView, setElementView] = useState<
     "simple" | "detailed" | "image"

@@ -22,8 +22,8 @@ export function ElementImage({
         position: "relative",
         textAlign: "center",
         padding: "2px",
-        width: "120px",
-        height: "120px",
+        width: "80px",
+        height: "80px",
         border: "1px solid #ccc",
         verticalAlign: "top",
       }}

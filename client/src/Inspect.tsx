@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { PeriodicTable } from "./PeriodicTable.tsx";
-import { StateContext } from "./StateContext.ts";
+import { defaultState, StateContext } from "./StateContext.ts";
 import { AtomView } from "./AtomView.tsx";
 // import { AtomView } from "./LewisStructure.tsx";
 import { AtomData } from "./AtomData.tsx";
@@ -13,8 +13,6 @@ import elements from "./data/elements.ts";
 // Group = Same amount of valence electrons
 // Period = Same amount of electron shells
 
-const defaultState = { valence: false, element: 118 };
-
 export function Inspect() {
   const [state, setState] = useState(defaultState);
 
@@ -22,42 +20,64 @@ export function Inspect() {
 
   return (
     <StateContext value={state}>
-      <div style={{ display: "flex", flexDirection: "column" }}>
-        <div style={{ marginBottom: "20px" }}>
-          <PeriodicTable
-            onElementSelected={(element) =>
-              setState({ ...state, element: element.protons })}
-          />
-        </div>
+      <div
+        style={{ display: "flex", flexDirection: "row", maxHeight: "100vh" }}
+      >
         <div
-          style={{ display: "flex", flexDirection: "row", marginTop: "20px" }}
+          style={{
+            overflow: "auto",
+            padding: "10px",
+            borderRight: "1px solid black",
+          }}
         >
-          <div style={{ marginRight: "20px" }}>
-            <AtomData />
-          </div>
           <div>
-            <AtomView />
-            {element?.thumbnail && (
-              <div>
-                <a
-                  href={element?.image}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src={element?.thumbnail}
-                    alt=""
-                    style={{
-                      width: "240px",
-                      border: "1px solid black",
-                      marginTop: "10px",
-                    }}
-                  />
-                </a>
-              </div>
-            )}
+            <PeriodicTable
+              onElementSelected={(element) =>
+                setState({
+                  ...state,
+                  element: state.element === element.protons
+                    ? undefined
+                    : element.protons,
+                })}
+            />
           </div>
         </div>
+        {element && (
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              marginLeft: "20px",
+            }}
+          >
+            <div>
+              <AtomData />
+            </div>
+            <div style={{ marginTop: "14px" }}>
+              <AtomView />
+              {element?.thumbnail && (
+                <div>
+                  <a
+                    href={element?.image}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ textDecoration: "none" }}
+                  >
+                    <img
+                      src={element?.thumbnail}
+                      alt=""
+                      style={{
+                        width: "240px",
+                        border: "1px solid black",
+                        marginTop: "10px",
+                      }}
+                    />
+                  </a>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
       </div>
     </StateContext>
   );

@@ -1,3 +1,7 @@
+body {
+  margin: 0;
+}
+
 table.periodicTable {
   border-collapse: collapse;
   width: max-content;

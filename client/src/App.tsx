@@ -9,7 +9,7 @@ function App() {
       {/* <MoleculeComparison /> */}
       {/* <MoleculeView /> */}
 
-      <div style={{ marginTop: "20px" }}>
+      <div>
         <Inspect />
       </div>
     </div>
