@@ -1,7 +1,8 @@
 import { useContext, useState } from "react";
 import elements from "./data/elements.ts";
 import { StateContext } from "./StateContext.ts";
-import { Element } from "./library/types.ts";
+import { Element as ElementType } from "./library/types.ts";
+import { Element } from "./Element.tsx";
 
 const blockColor: Record<string, string> = {
   "s-block": "pink",
@@ -18,7 +19,7 @@ const phaseColor: Record<string, string> = {
 };
 
 interface PeriodicTableProps {
-  onElementSelected: (element: Element) => void;
+  onElementSelected: (element: ElementType) => void;
 }
 
 export function PeriodicTable(
@@ -27,10 +28,11 @@ export function PeriodicTable(
   const { element: selectedZ } = useContext(StateContext);
 
   const [colorMode, setColorMode] = useState<"block" | "phase" | "density">(
-    "block",
+    "phase",
   );
-  const elementsByPeriodAndGroup: Record<string, Record<string, Element>> = {};
-  const fBlockGroups: Record<string, Record<string, Element>> = {};
+  const elementsByPeriodAndGroup: Record<string, Record<string, ElementType>> =
+    {};
+  const fBlockGroups: Record<string, Record<string, ElementType>> = {};
 
   elements.forEach((el) => {
     if (el.block === "f-block") {
@@ -64,7 +66,7 @@ export function PeriodicTable(
     return `rgba(0,0,255,${relativeDensity})`;
   }
 
-  function getCellColor(element: Element) {
+  function getCellColor(element: ElementType) {
     if (colorMode === "block") {
       return blockColor[element.block];
     } else if (colorMode === "phase") {
@@ -128,32 +130,13 @@ export function PeriodicTable(
                 }
 
                 return (
-                  <td
+                  <Element
                     key={group}
-                    onClick={() => onElementSelected(element)}
-                    style={{
-                      cursor: "pointer",
-                      background: getCellColor(element),
-                      position: "relative",
-                      textAlign: "center",
-                    }}
-                  >
-                    {selectedZ === element.protons && (
-                      <div
-                        style={{
-                          position: "absolute",
-                          top: 0,
-                          left: 0,
-                          right: 0,
-                          bottom: 0,
-                          background: "rgba(0,0,0,0.1)",
-                          pointerEvents: "none",
-                          zIndex: 1,
-                        }}
-                      />
-                    )}
-                    {element.symbol}
-                  </td>
+                    element={element}
+                    isSelected={selectedZ === element.protons}
+                    getCellColor={getCellColor}
+                    onElementSelected={onElementSelected}
+                  />
                 );
               })}
             </tr>
@@ -180,32 +163,13 @@ export function PeriodicTable(
                     return <td key={protons}></td>;
                   }
                   return (
-                    <td
+                    <Element
                       key={protons}
-                      onClick={() => onElementSelected(element)}
-                      style={{
-                        cursor: "pointer",
-                        background: getCellColor(element),
-                        position: "relative",
-                        textAlign: "center",
-                      }}
-                    >
-                      {selectedZ === element.protons && (
-                        <div
-                          style={{
-                            position: "absolute",
-                            top: 0,
-                            left: 0,
-                            right: 0,
-                            bottom: 0,
-                            background: "rgba(0,0,0,0.1)",
-                            pointerEvents: "none",
-                            zIndex: 1,
-                          }}
-                        />
-                      )}
-                      {element.symbol}
-                    </td>
+                      element={element}
+                      isSelected={selectedZ === element.protons}
+                      getCellColor={getCellColor}
+                      onElementSelected={onElementSelected}
+                    />
                   );
                 })}
             </tr>
