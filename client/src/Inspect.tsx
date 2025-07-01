@@ -37,17 +37,23 @@ export function Inspect() {
           </div>
           <div>
             <AtomView />
-            {element?.image && (
+            {element?.thumbnail && (
               <div>
-                <img
-                  src={element?.image}
-                  alt=""
-                  style={{
-                    width: "240px",
-                    border: "1px solid black",
-                    marginTop: "10px",
-                  }}
-                />
+                <a
+                  href={element?.image}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={element?.thumbnail}
+                    alt=""
+                    style={{
+                      width: "240px",
+                      border: "1px solid black",
+                      marginTop: "10px",
+                    }}
+                  />
+                </a>
               </div>
             )}
           </div>

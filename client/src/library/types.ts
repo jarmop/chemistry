@@ -14,4 +14,5 @@ export type Element = {
   phase: string;
   density: number;
   image?: string;
+  thumbnail?: string;
 };

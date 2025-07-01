@@ -11,8 +11,8 @@ export function ElementImage({
   isSelected,
   onElementSelected,
 }: ElementImageProps) {
-  const imgUrl = element.image && element.image.length > 0
-    ? element.image
+  const imgUrl = element.thumbnail && element.thumbnail.length > 0
+    ? element.thumbnail
     : undefined;
   return (
     <td
