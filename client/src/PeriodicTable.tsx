@@ -15,6 +15,9 @@ const colorModes = [
 ] as const;
 type ColorMode = (typeof colorModes)[number];
 
+const viewModes = ["simple", "detailed", "image"] as const;
+type ViewMode = (typeof viewModes)[number];
+
 const blockColor: Record<string, string> = {
   "s-block": "pink",
   "f-block": "lightgreen",
@@ -39,9 +42,7 @@ export function PeriodicTable(
   const { element: selectedZ } = useContext(StateContext);
 
   const [colorMode, setColorMode] = useState<ColorMode>("block");
-  const [elementView, setElementView] = useState<
-    "simple" | "detailed" | "image"
-  >("simple");
+  const [viewMode, setViewMode] = useState<ViewMode>("simple");
   const elementsByPeriodAndGroup: Record<string, Record<string, ElementType>> =
     {};
   const fBlockGroups: Record<string, Record<string, ElementType>> = {};
@@ -101,7 +102,7 @@ export function PeriodicTable(
   }
 
   function renderElementCell(element: ElementType, key: string | number) {
-    if (elementView === "detailed") {
+    if (viewMode === "detailed") {
       return (
         <ElementDetailed
           key={key}
@@ -111,7 +112,7 @@ export function PeriodicTable(
           onElementSelected={onElementSelected}
         />
       );
-    } else if (elementView === "image") {
+    } else if (viewMode === "image") {
       return (
         <ElementImage
           key={key}
@@ -138,36 +139,18 @@ export function PeriodicTable(
       {/* Element view selector */}
       <div style={{ marginBottom: "10px" }}>
         <span>Element view:</span>
-        <label style={{ marginRight: "10px" }}>
-          <input
-            type="radio"
-            name="elementView"
-            value="simple"
-            checked={elementView === "simple"}
-            onChange={() => setElementView("simple")}
-          />
-          Simple
-        </label>
-        <label style={{ marginRight: "10px" }}>
-          <input
-            type="radio"
-            name="elementView"
-            value="detailed"
-            checked={elementView === "detailed"}
-            onChange={() => setElementView("detailed")}
-          />
-          Detailed
-        </label>
-        <label>
-          <input
-            type="radio"
-            name="elementView"
-            value="image"
-            checked={elementView === "image"}
-            onChange={() => setElementView("image")}
-          />
-          Image
-        </label>
+        {viewModes.map((mode) => (
+          <label key={mode}>
+            <input
+              type="radio"
+              name="viewMode"
+              value={mode}
+              checked={viewMode === mode}
+              onChange={() => setViewMode(mode)}
+            />
+            {mode}
+          </label>
+        ))}
       </div>
       {/* Color mode selector */}
       <div style={{ marginBottom: "10px" }}>
