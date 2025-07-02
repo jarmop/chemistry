@@ -1,0 +1,540 @@
+[
+  { "atomicNumber": 1, "symbol": "H", "name": "Hydrogen", "atomicRadius": 25 },
+  { "atomicNumber": 2, "symbol": "He", "name": "Helium", "atomicRadius": 120 },
+  { "atomicNumber": 3, "symbol": "Li", "name": "Lithium", "atomicRadius": 145 },
+  {
+    "atomicNumber": 4,
+    "symbol": "Be",
+    "name": "Beryllium",
+    "atomicRadius": 105
+  },
+  { "atomicNumber": 5, "symbol": "B", "name": "Boron", "atomicRadius": 85 },
+  { "atomicNumber": 6, "symbol": "C", "name": "Carbon", "atomicRadius": 70 },
+  { "atomicNumber": 7, "symbol": "N", "name": "Nitrogen", "atomicRadius": 65 },
+  { "atomicNumber": 8, "symbol": "O", "name": "Oxygen", "atomicRadius": 60 },
+  { "atomicNumber": 9, "symbol": "F", "name": "Fluorine", "atomicRadius": 50 },
+  { "atomicNumber": 10, "symbol": "Ne", "name": "Neon", "atomicRadius": 160 },
+  { "atomicNumber": 11, "symbol": "Na", "name": "Sodium", "atomicRadius": 180 },
+  {
+    "atomicNumber": 12,
+    "symbol": "Mg",
+    "name": "Magnesium",
+    "atomicRadius": 150
+  },
+  {
+    "atomicNumber": 13,
+    "symbol": "Al",
+    "name": "Aluminium",
+    "atomicRadius": 125
+  },
+  {
+    "atomicNumber": 14,
+    "symbol": "Si",
+    "name": "Silicon",
+    "atomicRadius": 110
+  },
+  {
+    "atomicNumber": 15,
+    "symbol": "P",
+    "name": "Phosphorus",
+    "atomicRadius": 100
+  },
+  { "atomicNumber": 16, "symbol": "S", "name": "Sulfur", "atomicRadius": 100 },
+  {
+    "atomicNumber": 17,
+    "symbol": "Cl",
+    "name": "Chlorine",
+    "atomicRadius": 100
+  },
+  { "atomicNumber": 18, "symbol": "Ar", "name": "Argon", "atomicRadius": 71 },
+  {
+    "atomicNumber": 19,
+    "symbol": "K",
+    "name": "Potassium",
+    "atomicRadius": 220
+  },
+  {
+    "atomicNumber": 20,
+    "symbol": "Ca",
+    "name": "Calcium",
+    "atomicRadius": 180
+  },
+  {
+    "atomicNumber": 21,
+    "symbol": "Sc",
+    "name": "Scandium",
+    "atomicRadius": 160
+  },
+  {
+    "atomicNumber": 22,
+    "symbol": "Ti",
+    "name": "Titanium",
+    "atomicRadius": 140
+  },
+  {
+    "atomicNumber": 23,
+    "symbol": "V",
+    "name": "Vanadium",
+    "atomicRadius": 135
+  },
+  {
+    "atomicNumber": 24,
+    "symbol": "Cr",
+    "name": "Chromium",
+    "atomicRadius": 140
+  },
+  {
+    "atomicNumber": 25,
+    "symbol": "Mn",
+    "name": "Manganese",
+    "atomicRadius": 140
+  },
+  { "atomicNumber": 26, "symbol": "Fe", "name": "Iron", "atomicRadius": 140 },
+  { "atomicNumber": 27, "symbol": "Co", "name": "Cobalt", "atomicRadius": 135 },
+  { "atomicNumber": 28, "symbol": "Ni", "name": "Nickel", "atomicRadius": 135 },
+  { "atomicNumber": 29, "symbol": "Cu", "name": "Copper", "atomicRadius": 135 },
+  { "atomicNumber": 30, "symbol": "Zn", "name": "Zinc", "atomicRadius": 135 },
+  {
+    "atomicNumber": 31,
+    "symbol": "Ga",
+    "name": "Gallium",
+    "atomicRadius": 130
+  },
+  {
+    "atomicNumber": 32,
+    "symbol": "Ge",
+    "name": "Germanium",
+    "atomicRadius": 125
+  },
+  {
+    "atomicNumber": 33,
+    "symbol": "As",
+    "name": "Arsenic",
+    "atomicRadius": 115
+  },
+  {
+    "atomicNumber": 34,
+    "symbol": "Se",
+    "name": "Selenium",
+    "atomicRadius": 115
+  },
+  {
+    "atomicNumber": 35,
+    "symbol": "Br",
+    "name": "Bromine",
+    "atomicRadius": 115
+  },
+  { "atomicNumber": 36, "symbol": "Kr", "name": "Krypton", "atomicRadius": 88 },
+  {
+    "atomicNumber": 37,
+    "symbol": "Rb",
+    "name": "Rubidium",
+    "atomicRadius": 235
+  },
+  {
+    "atomicNumber": 38,
+    "symbol": "Sr",
+    "name": "Strontium",
+    "atomicRadius": 200
+  },
+  { "atomicNumber": 39, "symbol": "Y", "name": "Yttrium", "atomicRadius": 180 },
+  {
+    "atomicNumber": 40,
+    "symbol": "Zr",
+    "name": "Zirconium",
+    "atomicRadius": 155
+  },
+  {
+    "atomicNumber": 41,
+    "symbol": "Nb",
+    "name": "Niobium",
+    "atomicRadius": 145
+  },
+  {
+    "atomicNumber": 42,
+    "symbol": "Mo",
+    "name": "Molybdenum",
+    "atomicRadius": 145
+  },
+  {
+    "atomicNumber": 43,
+    "symbol": "Tc",
+    "name": "Technetium",
+    "atomicRadius": 135
+  },
+  {
+    "atomicNumber": 44,
+    "symbol": "Ru",
+    "name": "Ruthenium",
+    "atomicRadius": 130
+  },
+  {
+    "atomicNumber": 45,
+    "symbol": "Rh",
+    "name": "Rhodium",
+    "atomicRadius": 135
+  },
+  {
+    "atomicNumber": 46,
+    "symbol": "Pd",
+    "name": "Palladium",
+    "atomicRadius": 140
+  },
+  { "atomicNumber": 47, "symbol": "Ag", "name": "Silver", "atomicRadius": 160 },
+  {
+    "atomicNumber": 48,
+    "symbol": "Cd",
+    "name": "Cadmium",
+    "atomicRadius": 155
+  },
+  { "atomicNumber": 49, "symbol": "In", "name": "Indium", "atomicRadius": 155 },
+  { "atomicNumber": 50, "symbol": "Sn", "name": "Tin", "atomicRadius": 145 },
+  {
+    "atomicNumber": 51,
+    "symbol": "Sb",
+    "name": "Antimony",
+    "atomicRadius": 145
+  },
+  {
+    "atomicNumber": 52,
+    "symbol": "Te",
+    "name": "Tellurium",
+    "atomicRadius": 140
+  },
+  { "atomicNumber": 53, "symbol": "I", "name": "Iodine", "atomicRadius": 140 },
+  { "atomicNumber": 54, "symbol": "Xe", "name": "Xenon", "atomicRadius": 108 },
+  {
+    "atomicNumber": 55,
+    "symbol": "Cs",
+    "name": "Caesium",
+    "atomicRadius": 260
+  },
+  { "atomicNumber": 56, "symbol": "Ba", "name": "Barium", "atomicRadius": 215 },
+  {
+    "atomicNumber": 57,
+    "symbol": "La",
+    "name": "Lanthanum",
+    "atomicRadius": 195
+  },
+  { "atomicNumber": 58, "symbol": "Ce", "name": "Cerium", "atomicRadius": 185 },
+  {
+    "atomicNumber": 59,
+    "symbol": "Pr",
+    "name": "Praseodymium",
+    "atomicRadius": 185
+  },
+  {
+    "atomicNumber": 60,
+    "symbol": "Nd",
+    "name": "Neodymium",
+    "atomicRadius": 185
+  },
+  {
+    "atomicNumber": 61,
+    "symbol": "Pm",
+    "name": "Promethium",
+    "atomicRadius": 185
+  },
+  {
+    "atomicNumber": 62,
+    "symbol": "Sm",
+    "name": "Samarium",
+    "atomicRadius": 185
+  },
+  {
+    "atomicNumber": 63,
+    "symbol": "Eu",
+    "name": "Europium",
+    "atomicRadius": 185
+  },
+  {
+    "atomicNumber": 64,
+    "symbol": "Gd",
+    "name": "Gadolinium",
+    "atomicRadius": 180
+  },
+  {
+    "atomicNumber": 65,
+    "symbol": "Tb",
+    "name": "Terbium",
+    "atomicRadius": 175
+  },
+  {
+    "atomicNumber": 66,
+    "symbol": "Dy",
+    "name": "Dysprosium",
+    "atomicRadius": 175
+  },
+  {
+    "atomicNumber": 67,
+    "symbol": "Ho",
+    "name": "Holmium",
+    "atomicRadius": 175
+  },
+  { "atomicNumber": 68, "symbol": "Er", "name": "Erbium", "atomicRadius": 175 },
+  {
+    "atomicNumber": 69,
+    "symbol": "Tm",
+    "name": "Thulium",
+    "atomicRadius": 175
+  },
+  {
+    "atomicNumber": 70,
+    "symbol": "Yb",
+    "name": "Ytterbium",
+    "atomicRadius": 175
+  },
+  {
+    "atomicNumber": 71,
+    "symbol": "Lu",
+    "name": "Lutetium",
+    "atomicRadius": 175
+  },
+  {
+    "atomicNumber": 72,
+    "symbol": "Hf",
+    "name": "Hafnium",
+    "atomicRadius": 155
+  },
+  {
+    "atomicNumber": 73,
+    "symbol": "Ta",
+    "name": "Tantalum",
+    "atomicRadius": 145
+  },
+  {
+    "atomicNumber": 74,
+    "symbol": "W",
+    "name": "Tungsten",
+    "atomicRadius": 135
+  },
+  {
+    "atomicNumber": 75,
+    "symbol": "Re",
+    "name": "Rhenium",
+    "atomicRadius": 135
+  },
+  { "atomicNumber": 76, "symbol": "Os", "name": "Osmium", "atomicRadius": 130 },
+  {
+    "atomicNumber": 77,
+    "symbol": "Ir",
+    "name": "Iridium",
+    "atomicRadius": 135
+  },
+  {
+    "atomicNumber": 78,
+    "symbol": "Pt",
+    "name": "Platinum",
+    "atomicRadius": 135
+  },
+  { "atomicNumber": 79, "symbol": "Au", "name": "Gold", "atomicRadius": 135 },
+  {
+    "atomicNumber": 80,
+    "symbol": "Hg",
+    "name": "Mercury",
+    "atomicRadius": 150
+  },
+  {
+    "atomicNumber": 81,
+    "symbol": "Tl",
+    "name": "Thallium",
+    "atomicRadius": 190
+  },
+  { "atomicNumber": 82, "symbol": "Pb", "name": "Lead", "atomicRadius": 180 },
+  {
+    "atomicNumber": 83,
+    "symbol": "Bi",
+    "name": "Bismuth",
+    "atomicRadius": 160
+  },
+  {
+    "atomicNumber": 84,
+    "symbol": "Po",
+    "name": "Polonium",
+    "atomicRadius": 190
+  },
+  {
+    "atomicNumber": 85,
+    "symbol": "At",
+    "name": "Astatine",
+    "atomicRadius": 190
+  },
+  { "atomicNumber": 86, "symbol": "Rn", "name": "Radon", "atomicRadius": 120 },
+  {
+    "atomicNumber": 87,
+    "symbol": "Fr",
+    "name": "Francium",
+    "atomicRadius": 270
+  },
+  { "atomicNumber": 88, "symbol": "Ra", "name": "Radium", "atomicRadius": 215 },
+  {
+    "atomicNumber": 89,
+    "symbol": "Ac",
+    "name": "Actinium",
+    "atomicRadius": 195
+  },
+  {
+    "atomicNumber": 90,
+    "symbol": "Th",
+    "name": "Thorium",
+    "atomicRadius": 180
+  },
+  {
+    "atomicNumber": 91,
+    "symbol": "Pa",
+    "name": "Protactinium",
+    "atomicRadius": 180
+  },
+  { "atomicNumber": 92, "symbol": "U", "name": "Uranium", "atomicRadius": 175 },
+  {
+    "atomicNumber": 93,
+    "symbol": "Np",
+    "name": "Neptunium",
+    "atomicRadius": 175
+  },
+  {
+    "atomicNumber": 94,
+    "symbol": "Pu",
+    "name": "Plutonium",
+    "atomicRadius": 175
+  },
+  {
+    "atomicNumber": 95,
+    "symbol": "Am",
+    "name": "Americium",
+    "atomicRadius": 175
+  },
+  { "atomicNumber": 96, "symbol": "Cm", "name": "Curium", "atomicRadius": 175 },
+  {
+    "atomicNumber": 97,
+    "symbol": "Bk",
+    "name": "Berkelium",
+    "atomicRadius": 170
+  },
+  {
+    "atomicNumber": 98,
+    "symbol": "Cf",
+    "name": "Californium",
+    "atomicRadius": 170
+  },
+  {
+    "atomicNumber": 99,
+    "symbol": "Es",
+    "name": "Einsteinium",
+    "atomicRadius": 170
+  },
+  {
+    "atomicNumber": 100,
+    "symbol": "Fm",
+    "name": "Fermium",
+    "atomicRadius": 170
+  },
+  {
+    "atomicNumber": 101,
+    "symbol": "Md",
+    "name": "Mendelevium",
+    "atomicRadius": 170
+  },
+  {
+    "atomicNumber": 102,
+    "symbol": "No",
+    "name": "Nobelium",
+    "atomicRadius": 170
+  },
+  {
+    "atomicNumber": 103,
+    "symbol": "Lr",
+    "name": "Lawrencium",
+    "atomicRadius": 170
+  },
+  {
+    "atomicNumber": 104,
+    "symbol": "Rf",
+    "name": "Rutherfordium",
+    "atomicRadius": null
+  },
+  {
+    "atomicNumber": 105,
+    "symbol": "Db",
+    "name": "Dubnium",
+    "atomicRadius": null
+  },
+  {
+    "atomicNumber": 106,
+    "symbol": "Sg",
+    "name": "Seaborgium",
+    "atomicRadius": null
+  },
+  {
+    "atomicNumber": 107,
+    "symbol": "Bh",
+    "name": "Bohrium",
+    "atomicRadius": null
+  },
+  {
+    "atomicNumber": 108,
+    "symbol": "Hs",
+    "name": "Hassium",
+    "atomicRadius": null
+  },
+  {
+    "atomicNumber": 109,
+    "symbol": "Mt",
+    "name": "Meitnerium",
+    "atomicRadius": null
+  },
+  {
+    "atomicNumber": 110,
+    "symbol": "Ds",
+    "name": "Darmstadtium",
+    "atomicRadius": null
+  },
+  {
+    "atomicNumber": 111,
+    "symbol": "Rg",
+    "name": "Roentgenium",
+    "atomicRadius": null
+  },
+  {
+    "atomicNumber": 112,
+    "symbol": "Cn",
+    "name": "Copernicium",
+    "atomicRadius": null
+  },
+  {
+    "atomicNumber": 113,
+    "symbol": "Nh",
+    "name": "Nihonium",
+    "atomicRadius": null
+  },
+  {
+    "atomicNumber": 114,
+    "symbol": "Fl",
+    "name": "Flerovium",
+    "atomicRadius": null
+  },
+  {
+    "atomicNumber": 115,
+    "symbol": "Mc",
+    "name": "Moscovium",
+    "atomicRadius": null
+  },
+  {
+    "atomicNumber": 116,
+    "symbol": "Lv",
+    "name": "Livermorium",
+    "atomicRadius": null
+  },
+  {
+    "atomicNumber": 117,
+    "symbol": "Ts",
+    "name": "Tennessine",
+    "atomicRadius": null
+  },
+  {
+    "atomicNumber": 118,
+    "symbol": "Og",
+    "name": "Oganesson",
+    "atomicRadius": null
+  }
+]
