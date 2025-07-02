@@ -1,10 +1,11 @@
 import { useContext, useState } from "react";
-import elements from "./data/elements.ts";
-import { StateContext } from "./StateContext.ts";
-import { Element as ElementType } from "./library/types.ts";
+import elements from "../data/elements.ts";
+import { StateContext } from "../StateContext.ts";
+import { Element as ElementType } from "../library/types.ts";
 import { Element } from "./Element.tsx";
 import { ElementDetailed } from "./ElementDetailed.tsx";
 import { ElementImage } from "./ElementImage.tsx";
+import { getCellColor } from "./getCellColor.ts";
 
 const colorModes = [
   "block",
@@ -18,20 +19,6 @@ type ColorMode = (typeof colorModes)[number];
 
 const viewModes = ["simple", "detailed", "image"] as const;
 type ViewMode = (typeof viewModes)[number];
-
-const blockColor: Record<string, string> = {
-  "s-block": "pink",
-  "f-block": "lightgreen",
-  "d-block": "lightblue",
-  "p-block": "lightyellow",
-};
-
-const phaseColor: Record<string, string> = {
-  "solid": "lightgreen",
-  "liquid": "lightblue",
-  "gas": "lightyellow",
-  "unknown phase": "lightgrey",
-};
 
 interface PeriodicTableProps {
   onElementSelected: (element: ElementType) => void;
@@ -66,52 +53,6 @@ export function PeriodicTable(
   const groups = Object.keys(elementsByPeriodAndGroup[6]);
   const periods = Object.keys(elementsByPeriodAndGroup);
 
-  const densityValues = elements.map((el) => el.density);
-  const maxDensity = Math.max(...densityValues);
-  function getDensityColor(density: number) {
-    const relativeDensity = density / maxDensity;
-    return `rgba(0,0,255,${relativeDensity})`;
-  }
-
-  const abundanceValues = elements
-    .map((el) => el.abundanceOnEarthCrust)
-    .sort((a, b) => a - b);
-
-  const maxAbundance = Math.max(...abundanceValues);
-  function getAbundanceColor(abundance: number) {
-    const relativeAbundance = abundance / maxAbundance;
-    return `rgba(255,0,0,${relativeAbundance})`;
-  }
-
-  function getAbundanceRank(abundance: number) {
-    const rank = abundanceValues.indexOf(abundance);
-    return `rgba(255,0,0,${rank / abundanceValues.length})`;
-  }
-
-  const electronegativityValues = elements.map((el) => el.electronegativity);
-  const maxElectronegativity = Math.max(...electronegativityValues);
-  function getElectronegativityColor(electronegativity: number) {
-    const relativeElectronegativity = electronegativity / maxElectronegativity;
-    return `rgba(0,0,255,${relativeElectronegativity})`;
-  }
-
-  function getCellColor(element: ElementType) {
-    if (colorMode === "block") {
-      return blockColor[element.block];
-    } else if (colorMode === "phase") {
-      return phaseColor[element.phase];
-    } else if (colorMode === "density") {
-      return getDensityColor(element.density);
-    } else if (colorMode === "abundance") {
-      return getAbundanceColor(element.abundanceOnEarthCrust);
-    } else if (colorMode === "abundance rank") {
-      return getAbundanceRank(element.abundanceOnEarthCrust);
-    } else if (colorMode === "electronegativity") {
-      return getElectronegativityColor(element.electronegativity);
-    }
-    return "white";
-  }
-
   function renderElementCell(element: ElementType, key: string | number) {
     if (viewMode === "detailed") {
       return (
@@ -119,7 +60,7 @@ export function PeriodicTable(
           key={key}
           element={element}
           isSelected={selectedZ === element.protons}
-          getCellColor={getCellColor}
+          color={getCellColor(element, colorMode)}
           onElementSelected={onElementSelected}
         />
       );
@@ -138,7 +79,7 @@ export function PeriodicTable(
           key={key}
           element={element}
           isSelected={selectedZ === element.protons}
-          getCellColor={getCellColor}
+          color={getCellColor(element, colorMode)}
           onElementSelected={onElementSelected}
         />
       );

@@ -1,16 +1,16 @@
-import { Element as ElementType } from "./library/types.ts";
+import { Element as ElementType } from "../library/types.ts";
 
 interface ElementProps {
   element: ElementType;
   isSelected: boolean;
-  getCellColor: (element: ElementType) => string;
+  color: string;
   onElementSelected: (element: ElementType) => void;
 }
 
 export function Element({
   element,
   isSelected,
-  getCellColor,
+  color,
   onElementSelected,
 }: ElementProps) {
   return (
@@ -18,7 +18,7 @@ export function Element({
       onClick={() => onElementSelected(element)}
       style={{
         cursor: "pointer",
-        background: getCellColor(element),
+        background: color,
         position: "relative",
         textAlign: "center",
         padding: "4px 0",

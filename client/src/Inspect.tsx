@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { PeriodicTable } from "./PeriodicTable.tsx";
+import { PeriodicTable } from "./PeriodicTable/PeriodicTable.tsx";
 import { defaultState, StateContext } from "./StateContext.ts";
 import { AtomView } from "./AtomView.tsx";
 // import { AtomView } from "./LewisStructure.tsx";
