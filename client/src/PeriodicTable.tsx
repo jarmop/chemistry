@@ -6,7 +6,13 @@ import { Element } from "./Element.tsx";
 import { ElementDetailed } from "./ElementDetailed.tsx";
 import { ElementImage } from "./ElementImage.tsx";
 
-const colorModes = ["block", "phase", "density", "abundance"] as const;
+const colorModes = [
+  "block",
+  "phase",
+  "density",
+  "abundance",
+  "abundance rank",
+] as const;
 type ColorMode = (typeof colorModes)[number];
 
 const blockColor: Record<string, string> = {
@@ -65,11 +71,19 @@ export function PeriodicTable(
     return `rgba(0,0,255,${relativeDensity})`;
   }
 
-  const abundanceValues = elements.map((el) => el.abundanceOnEarthCrust);
+  const abundanceValues = elements
+    .map((el) => el.abundanceOnEarthCrust)
+    .sort((a, b) => a - b);
+
   const maxAbundance = Math.max(...abundanceValues);
   function getAbundanceColor(abundance: number) {
     const relativeAbundance = abundance / maxAbundance;
     return `rgba(255,0,0,${relativeAbundance})`;
+  }
+
+  function getAbundanceRank(abundance: number) {
+    const rank = abundanceValues.indexOf(abundance);
+    return `rgba(255,0,0,${rank / abundanceValues.length})`;
   }
 
   function getCellColor(element: ElementType) {
@@ -79,8 +93,11 @@ export function PeriodicTable(
       return phaseColor[element.phase];
     } else if (colorMode === "density") {
       return getDensityColor(element.density);
+    } else if (colorMode === "abundance") {
+      return getAbundanceColor(element.abundanceOnEarthCrust);
+    } else {
+      return getAbundanceRank(element.abundanceOnEarthCrust);
     }
-    return getAbundanceColor(element.abundanceOnEarthCrust);
   }
 
   function renderElementCell(element: ElementType, key: string | number) {
