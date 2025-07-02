@@ -68,6 +68,10 @@ export function AtomData() {
             <td>Density:</td>
             <td>{element.density}</td>
           </tr>
+          <tr>
+            <td>Abundance:</td>
+            <td>{element.abundanceOnEarthCrust}</td>
+          </tr>
         </tbody>
       </table>
 

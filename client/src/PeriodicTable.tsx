@@ -6,6 +6,9 @@ import { Element } from "./Element.tsx";
 import { ElementDetailed } from "./ElementDetailed.tsx";
 import { ElementImage } from "./ElementImage.tsx";
 
+const colorModes = ["block", "phase", "density", "abundance"] as const;
+type ColorMode = (typeof colorModes)[number];
+
 const blockColor: Record<string, string> = {
   "s-block": "pink",
   "f-block": "lightgreen",
@@ -29,9 +32,7 @@ export function PeriodicTable(
 ) {
   const { element: selectedZ } = useContext(StateContext);
 
-  const [colorMode, setColorMode] = useState<"block" | "phase" | "density">(
-    "block",
-  );
+  const [colorMode, setColorMode] = useState<ColorMode>("block");
   const [elementView, setElementView] = useState<
     "simple" | "detailed" | "image"
   >("simple");
@@ -57,13 +58,6 @@ export function PeriodicTable(
   const groups = Object.keys(elementsByPeriodAndGroup[6]);
   const periods = Object.keys(elementsByPeriodAndGroup);
 
-  // const abundanceValues = elements.map((el) => el.abundanceOnEarthCrust);
-  // const maxAbundance = Math.max(...abundanceValues);
-  // function getColor(abundance: number) {
-  //   const relativeAbundance = abundance / maxAbundance;
-  //   return `rgba(255,0,0,${relativeAbundance})`;
-  // }
-
   const densityValues = elements.map((el) => el.density);
   const maxDensity = Math.max(...densityValues);
   function getDensityColor(density: number) {
@@ -71,14 +65,22 @@ export function PeriodicTable(
     return `rgba(0,0,255,${relativeDensity})`;
   }
 
+  const abundanceValues = elements.map((el) => el.abundanceOnEarthCrust);
+  const maxAbundance = Math.max(...abundanceValues);
+  function getAbundanceColor(abundance: number) {
+    const relativeAbundance = abundance / maxAbundance;
+    return `rgba(255,0,0,${relativeAbundance})`;
+  }
+
   function getCellColor(element: ElementType) {
     if (colorMode === "block") {
       return blockColor[element.block];
     } else if (colorMode === "phase") {
       return phaseColor[element.phase];
-    } else {
+    } else if (colorMode === "density") {
       return getDensityColor(element.density);
     }
+    return getAbundanceColor(element.abundanceOnEarthCrust);
   }
 
   function renderElementCell(element: ElementType, key: string | number) {
@@ -153,36 +155,18 @@ export function PeriodicTable(
       {/* Color mode selector */}
       <div style={{ marginBottom: "10px" }}>
         <span>Color by:</span>
-        <label style={{ marginRight: "10px" }}>
-          <input
-            type="radio"
-            name="colorMode"
-            value="block"
-            checked={colorMode === "block"}
-            onChange={() => setColorMode("block")}
-          />
-          Block
-        </label>
-        <label style={{ marginRight: "10px" }}>
-          <input
-            type="radio"
-            name="colorMode"
-            value="phase"
-            checked={colorMode === "phase"}
-            onChange={() => setColorMode("phase")}
-          />
-          Phase
-        </label>
-        <label>
-          <input
-            type="radio"
-            name="colorMode"
-            value="density"
-            checked={colorMode === "density"}
-            onChange={() => setColorMode("density")}
-          />
-          Density
-        </label>
+        {colorModes.map((mode) => (
+          <label key={mode}>
+            <input
+              type="radio"
+              name="colorMode"
+              value={mode}
+              checked={colorMode === mode}
+              onChange={() => setColorMode(mode)}
+            />
+            {mode}
+          </label>
+        ))}
       </div>
       <table className="periodicTable">
         <thead>
