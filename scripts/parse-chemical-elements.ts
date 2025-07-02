@@ -11,7 +11,7 @@ const elements = rows.slice(1).map((row) => {
   const cols = row.split("\t");
   const protons = parseInt(cols[0]);
   const atomicWeight = parseFloat(cols[6]);
-  const electroNegativity = parseFloat(cols[9]);
+  const electronegativity = parseFloat(cols[9]);
   const abundanceOnEarthCrust = parseFloat(cols[11]);
   const phase = cols[15].replace("\r", "");
 
@@ -27,7 +27,7 @@ const elements = rows.slice(1).map((row) => {
     period: cols[5],
     atomicWeight: atomicWeight,
     origin: cols[7],
-    electroNegativity: isNaN(electroNegativity) ? 0 : electroNegativity,
+    electronegativity: isNaN(electronegativity) ? 0 : electronegativity,
     abundanceOnEarthCrust: isNaN(abundanceOnEarthCrust)
       ? 0
       : abundanceOnEarthCrust,

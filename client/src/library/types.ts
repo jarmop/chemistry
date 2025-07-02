@@ -9,7 +9,7 @@ export type Element = {
   period: string;
   atomicWeight: number;
   origin: string;
-  electroNegativity: number;
+  electronegativity: number;
   abundanceOnEarthCrust: number;
   phase: string;
   density: number;

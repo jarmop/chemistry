@@ -12,6 +12,7 @@ const colorModes = [
   "density",
   "abundance",
   "abundance rank",
+  "electronegativity",
 ] as const;
 type ColorMode = (typeof colorModes)[number];
 
@@ -87,6 +88,13 @@ export function PeriodicTable(
     return `rgba(255,0,0,${rank / abundanceValues.length})`;
   }
 
+  const electronegativityValues = elements.map((el) => el.electronegativity);
+  const maxElectronegativity = Math.max(...electronegativityValues);
+  function getElectronegativityColor(electronegativity: number) {
+    const relativeElectronegativity = electronegativity / maxElectronegativity;
+    return `rgba(0,0,255,${relativeElectronegativity})`;
+  }
+
   function getCellColor(element: ElementType) {
     if (colorMode === "block") {
       return blockColor[element.block];
@@ -96,9 +104,12 @@ export function PeriodicTable(
       return getDensityColor(element.density);
     } else if (colorMode === "abundance") {
       return getAbundanceColor(element.abundanceOnEarthCrust);
-    } else {
+    } else if (colorMode === "abundance rank") {
       return getAbundanceRank(element.abundanceOnEarthCrust);
+    } else if (colorMode === "electronegativity") {
+      return getElectronegativityColor(element.electronegativity);
     }
+    return "white";
   }
 
   function renderElementCell(element: ElementType, key: string | number) {

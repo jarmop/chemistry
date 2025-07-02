@@ -54,7 +54,7 @@ export function AtomData() {
           </tr>
           <tr>
             <td>Electronegativity:</td>
-            <td>{element.electroNegativity}</td>
+            <td>{element.electronegativity}</td>
           </tr>
           <tr>
             <td>Origin:</td>
