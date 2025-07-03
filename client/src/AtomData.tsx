@@ -92,6 +92,14 @@ export function AtomData() {
             <td>Ionization energy:</td>
             <td>{element.ionizationEnergy}</td>
           </tr>
+          <tr>
+            <td>Atomic radius:</td>
+            <td>{element.atomicRadius}</td>
+          </tr>
+          <tr>
+            <td>Abundance rank:</td>
+            <td>{element.abundanceRank}</td>
+          </tr>
         </tbody>
       </table>
 

@@ -5,18 +5,8 @@ import { Element as ElementType } from "../library/types.ts";
 import { Element } from "./Element.tsx";
 import { ElementDetailed } from "./ElementDetailed.tsx";
 import { ElementImage } from "./ElementImage.tsx";
-import { getCellColor } from "./getCellColor.ts";
+import { type ColorMode, colorModes, getCellColor } from "./getCellColor.ts";
 import { TableBody } from "./TableBody.tsx";
-
-const colorModes = [
-  "block",
-  "phase",
-  "density",
-  "abundance",
-  "abundance rank",
-  "electronegativity",
-] as const;
-type ColorMode = (typeof colorModes)[number];
 
 const viewModes = ["simple", "detailed", "image"] as const;
 type ViewMode = (typeof viewModes)[number];
@@ -101,18 +91,15 @@ export function PeriodicTable(
       {/* Color mode selector */}
       <div style={{ marginBottom: "10px" }}>
         <span>Color by:</span>
-        {colorModes.map((mode) => (
-          <label key={mode}>
-            <input
-              type="radio"
-              name="colorMode"
-              value={mode}
-              checked={colorMode === mode}
-              onChange={() => setColorMode(mode)}
-            />
-            {mode}
-          </label>
-        ))}
+        <select
+          value={colorMode}
+          onChange={(e) => setColorMode(e.target.value as ColorMode)}
+          style={{ marginLeft: "8px" }}
+        >
+          {colorModes.map((mode) => (
+            <option key={mode} value={mode}>{mode}</option>
+          ))}
+        </select>
       </div>
       <table className="periodicTable">
         <thead>

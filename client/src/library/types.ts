@@ -11,6 +11,7 @@ export type Element = {
   origin: string;
   electronegativity: number;
   abundanceOnEarthCrust: number;
+  abundanceRank: number;
   phase: string;
   density: number;
   image?: string;

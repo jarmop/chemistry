@@ -1,6 +1,20 @@
 import elements from "../data/elements.ts";
 import { Element as ElementType } from "../library/types.ts";
 
+export const colorModes = [
+  "block",
+  "phase",
+  "density",
+  "abundance",
+  "abundance rank",
+  "electronegativity",
+  "electron affinity",
+  "ionization energy",
+  "atomic radius",
+  "origin",
+] as const;
+export type ColorMode = (typeof colorModes)[number];
+
 const blockColor: Record<string, string> = {
   "s-block": "pink",
   "f-block": "lightgreen",
@@ -15,48 +29,45 @@ const phaseColor: Record<string, string> = {
   "unknown phase": "lightgrey",
 };
 
-const densityValues = elements.map((el) => el.density);
-const maxDensity = Math.max(...densityValues);
-function getDensityColor(density: number) {
-  const relativeDensity = density / maxDensity;
-  return `rgba(0,0,255,${relativeDensity})`;
+function createColorGetter(
+  property: keyof ElementType,
+  invert: boolean = false,
+) {
+  const values = elements.map((el) => el[property]) as number[];
+  const max = Math.max(...values);
+  return (element: ElementType) => {
+    return `rgba(0,0,255,${
+      invert
+        ? 1 - (element[property] as number) / max
+        : (element[property] as number) / max
+    })`;
+  };
 }
 
-const abundanceValues = elements
-  .map((el) => el.abundanceOnEarthCrust)
-  .sort((a, b) => a - b);
+const colorGetters = {
+  abundance: createColorGetter("abundanceOnEarthCrust"),
+  "abundance rank": createColorGetter("abundanceRank", true),
+  density: createColorGetter("density"),
+  electronegativity: createColorGetter("electronegativity"),
+  "electron affinity": createColorGetter("electronAffinity"),
+  "ionization energy": createColorGetter("ionizationEnergy"),
+  "atomic radius": createColorGetter("atomicRadius"),
+  origin: createColorGetter("origin"),
+};
 
-const maxAbundance = Math.max(...abundanceValues);
-function getAbundanceColor(abundance: number) {
-  const relativeAbundance = abundance / maxAbundance;
-  return `rgba(255,0,0,${relativeAbundance})`;
-}
-
-function getAbundanceRank(abundance: number) {
-  const rank = abundanceValues.indexOf(abundance);
-  return `rgba(255,0,0,${rank / abundanceValues.length})`;
-}
-
-const electronegativityValues = elements.map((el) => el.electronegativity);
-const maxElectronegativity = Math.max(...electronegativityValues);
-function getElectronegativityColor(electronegativity: number) {
-  const relativeElectronegativity = electronegativity / maxElectronegativity;
-  return `rgba(0,0,255,${relativeElectronegativity})`;
-}
-
-export function getCellColor(element: ElementType, colorMode: string) {
+export function getCellColor(element: ElementType, colorMode: ColorMode) {
   if (colorMode === "block") {
     return blockColor[element.block];
   } else if (colorMode === "phase") {
     return phaseColor[element.phase];
-  } else if (colorMode === "density") {
-    return getDensityColor(element.density);
-  } else if (colorMode === "abundance") {
-    return getAbundanceColor(element.abundanceOnEarthCrust);
-  } else if (colorMode === "abundance rank") {
-    return getAbundanceRank(element.abundanceOnEarthCrust);
-  } else if (colorMode === "electronegativity") {
-    return getElectronegativityColor(element.electronegativity);
+  } else if (colorMode === "origin") {
+    return element.origin === "primordial"
+      ? "lightgreen"
+      : element.origin === "synthetic"
+      ? "lightblue"
+      : "lightyellow";
+  } else if (colorGetters[colorMode]) {
+    return colorGetters[colorMode](element);
   }
   return "white";
 }
