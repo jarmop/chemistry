@@ -3,9 +3,16 @@ import { StateContext } from "./StateContext.ts";
 import elements from "./data/elements.ts";
 import {
   getMaximumNumberOfElectronsPerShell,
-  getMaximumNumberOfElectronsPerSubShell,
+  maximumNumberOfElectronsPerSubShell,
 } from "./library/helpers.ts";
 import { Element } from "./library/types.ts";
+
+const subShells = [
+  { name: "s", size: 2, color: "pink" },
+  { name: "p", size: 6, color: "yellow" },
+  { name: "d", size: 10, color: "lightblue" },
+  { name: "f", size: 14, color: "lightgreen" },
+];
 
 export function AtomData() {
   const { element: selectedZ } = useContext(StateContext);
@@ -22,13 +29,6 @@ export function AtomData() {
   const electronsPerShell = element.electrons.map((perSubShell) =>
     perSubShell.reduce((acc, curr) => acc + curr, 0)
   );
-
-  const subShells = [
-    { name: "s", size: 2, color: "pink" },
-    { name: "p", size: 6, color: "yellow" },
-    { name: "d", size: 10, color: "lightblue" },
-    { name: "f", size: 14, color: "lightgreen" },
-  ];
 
   return (
     <div>
@@ -72,17 +72,28 @@ export function AtomData() {
             <td>Abundance:</td>
             <td>{element.abundanceOnEarthCrust}</td>
           </tr>
+          <tr>
+            <td>
+              Electron configuration:
+            </td>
+            {element.electronConfigurationConfirmed
+              ? <td>{element.electronConfiguration}</td>
+              : (
+                <td style={{ color: "gray" }} title="unconfirmed">
+                  {element.electronConfiguration}
+                </td>
+              )}
+          </tr>
+          <tr>
+            <td>Electron affinity:</td>
+            <td>{element.electronAffinity}</td>
+          </tr>
+          <tr>
+            <td>Ionization energy:</td>
+            <td>{element.ionizationEnergy}</td>
+          </tr>
         </tbody>
       </table>
-
-      {
-        /* <div>
-        <ElectronConfigNotation
-          electrons={element.electrons}
-          subShells={subShells}
-        />
-      </div> */
-      }
 
       <table className="electronShells">
         <thead>
@@ -116,7 +127,6 @@ export function AtomData() {
                 </th>
                 <Orbitals
                   numElPerSubShell={element.electrons[n - 1]}
-                  subShells={subShells}
                 />
                 <td
                   style={{
@@ -138,49 +148,50 @@ export function AtomData() {
 
 interface OrbitalsProps {
   numElPerSubShell: Element["electrons"][number];
-  subShells: { name: string; size: number; color: string }[];
 }
 
-function Orbitals({ numElPerSubShell, subShells }: OrbitalsProps) {
-  const maxNumberOfElectronsPerSubShell =
-    getMaximumNumberOfElectronsPerSubShell();
+function Orbitals({ numElPerSubShell }: OrbitalsProps) {
   const orbitals: React.ReactNode[] = [];
 
-  maxNumberOfElectronsPerSubShell.slice(0, 4).forEach(
+  maximumNumberOfElectronsPerSubShell.forEach(
     (maxElOnSubShell, subShell) => {
       const numElOnSubShell = numElPerSubShell?.[subShell];
 
       if (numElOnSubShell !== undefined) {
-        for (let e = 0; e < maxElOnSubShell; e += 2) {
-          const color = subShells[subShell].color;
-          // 0 | 1 | 2
-          const orbitalFilled = Math.min(
-            Math.max(numElOnSubShell - e, 0),
-            2,
-          );
-          const height = orbitalFilled * 50 +
-            "%";
+        const color = subShells[subShell].color;
 
+        const fullOrbitals = Math.max(
+          numElOnSubShell - maxElOnSubShell / 2,
+          0,
+        );
+        for (let o = 0; o < fullOrbitals; o++) {
           orbitals.push(
-            <td
-              key={`${subShell}-${e}`}
-              style={{
-                padding: "0",
-                height: "18px",
-                verticalAlign: "top",
-              }}
-            >
-              <div
-                style={{
-                  width: "100%",
-                  height: height,
-                  background: color,
-                  borderBottom: orbitalFilled === 1 ? "1px solid black" : "",
-                  // boxSizing: "border-box",
-                }}
-              >
-              </div>
-            </td>,
+            <Orbital
+              key={`full-${subShell}-${o}`}
+              height="100%"
+              color={color}
+            />,
+          );
+        }
+
+        const halfOrbitals = numElOnSubShell - fullOrbitals * 2;
+        for (let o = 0; o < halfOrbitals; o++) {
+          orbitals.push(
+            <Orbital
+              key={`half-${subShell}-${o}`}
+              height="50%"
+              color={color}
+            />,
+          );
+        }
+
+        const emptyOrbitals = maxElOnSubShell / 2 - fullOrbitals - halfOrbitals;
+        for (let o = 0; o < emptyOrbitals; o++) {
+          orbitals.push(
+            <Orbital
+              key={`empty-${subShell}-${o}`}
+              color={color}
+            />,
           );
         }
       } else {
@@ -188,9 +199,6 @@ function Orbitals({ numElPerSubShell, subShells }: OrbitalsProps) {
           <td
             key={maxElOnSubShell}
             colSpan={maxElOnSubShell / 2}
-            style={{
-              // background: "rgba(0,0,0,0.2)",
-            }}
           >
           </td>,
         );
@@ -201,25 +209,31 @@ function Orbitals({ numElPerSubShell, subShells }: OrbitalsProps) {
   return orbitals;
 }
 
-interface ElectronConfigNotationProps {
-  electrons: Element["electrons"];
-  subShells: { name: string; size: number; color: string }[];
+interface OrbitalProps {
+  height?: string;
+  color: string;
 }
 
-function ElectronConfigNotation(
-  { electrons, subShells }: ElectronConfigNotationProps,
-) {
-  const electronConfigNotation = electrons.map(
-    (numElPerSubShell, shell) => {
-      return numElPerSubShell.map((numEl, subShell) => (
-        <span key={`${shell}-${subShell}`}>
-          {shell + 1}
-          {subShells[subShell].name}
-          <sup>{numEl}</sup>
-        </span>
-      ));
-    },
+function Orbital({ height, color }: OrbitalProps) {
+  return (
+    <td
+      style={{
+        padding: "0",
+        height: "18px",
+        verticalAlign: "top",
+      }}
+    >
+      {height && (
+        <div
+          style={{
+            width: "100%",
+            height: height,
+            background: color,
+            borderBottom: "1px solid black",
+          }}
+        >
+        </div>
+      )}
+    </td>
   );
-
-  return electronConfigNotation;
 }

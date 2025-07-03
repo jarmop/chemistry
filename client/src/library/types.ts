@@ -15,4 +15,9 @@ export type Element = {
   density: number;
   image?: string;
   thumbnail?: string;
+  electronAffinity: number;
+  ionizationEnergy: number;
+  atomicRadius: number;
+  electronConfiguration: string;
+  electronConfigurationConfirmed: boolean;
 };

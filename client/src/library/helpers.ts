@@ -49,7 +49,7 @@ export function getMaximumNumberOfElectronsPerShell(numberOfShells = 7) {
   return numberOfElectronsPerShell;
 }
 
-export function getMaximumNumberOfElectronsPerSubShell(numberOfSubShells = 7) {
+function getMaximumNumberOfElectronsPerSubShell(numberOfSubShells = 7) {
   const numberOfElectronsPerSubShell = [];
   for (let i = 0; i < numberOfSubShells; i++) {
     numberOfElectronsPerSubShell.push(2 * (2 * i + 1));
@@ -57,6 +57,9 @@ export function getMaximumNumberOfElectronsPerSubShell(numberOfSubShells = 7) {
 
   return numberOfElectronsPerSubShell;
 }
+
+export const maximumNumberOfElectronsPerSubShell =
+  getMaximumNumberOfElectronsPerSubShell().slice(0, 4);
 
 export function getElectronsPerSubShell(numberOfElectrons: number) {
   const electronsPerSubShell: Record<number, number[]> = {};

@@ -1,6 +1,7 @@
 // scripts/add_atomic_radii.js
 // Usage: node scripts/add_atomic_radii.js
 // This script updates client/src/data/elements.json with atomicRadius values from scripts/atomic_radii.json
+// Contents of the atomic_radii.json file are from https://en.wikipedia.org/wiki/Atomic_radii_of_the_elements_(data_page)
 
 const fs = require("fs");
 const path = require("path");

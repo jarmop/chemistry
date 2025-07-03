@@ -18,7 +18,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Hydrogen_discharge_tube.jpg/500px-Hydrogen_discharge_tube.jpg",
     "electronAffinity": 72.769,
     "ionizationEnergy": 1312,
-    "atomicRadius": 25
+    "atomicRadius": 25,
+    "electronConfiguration": "1s1",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Helium",
@@ -39,7 +41,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Helium_discharge_tube.jpg/250px-Helium_discharge_tube.jpg",
     "electronAffinity": -48,
     "ionizationEnergy": 2372.3,
-    "atomicRadius": 120
+    "atomicRadius": 120,
+    "electronConfiguration": "1s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Lithium",
@@ -60,7 +64,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Lithiumcut_cropped.jpg/250px-Lithiumcut_cropped.jpg",
     "electronAffinity": 59.6326,
     "ionizationEnergy": 520.2,
-    "atomicRadius": 145
+    "atomicRadius": 145,
+    "electronConfiguration": "[He] 2s1",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Beryllium",
@@ -81,7 +87,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Be-140g.jpg/250px-Be-140g.jpg",
     "electronAffinity": -48,
     "ionizationEnergy": 899.5,
-    "atomicRadius": 105
+    "atomicRadius": 105,
+    "electronConfiguration": "[He] 2s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Boron",
@@ -102,7 +110,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Boron_R105.jpg/250px-Boron_R105.jpg",
     "electronAffinity": 26.989,
     "ionizationEnergy": 800.6,
-    "atomicRadius": 85
+    "atomicRadius": 85,
+    "electronConfiguration": "[He] 2s2 2p1",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Carbon",
@@ -123,7 +133,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Graphite-and-diamond-with-scale.jpg/250px-Graphite-and-diamond-with-scale.jpg",
     "electronAffinity": 121.7763,
     "ionizationEnergy": 1086.5,
-    "atomicRadius": 70
+    "atomicRadius": 70,
+    "electronConfiguration": "[He] 2s2 2p2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Nitrogen",
@@ -144,7 +156,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Fluessiger_Stickstoff.jpg/250px-Fluessiger_Stickstoff.jpg",
     "electronAffinity": -6.8,
     "ionizationEnergy": 1402.3,
-    "atomicRadius": 65
+    "atomicRadius": 65,
+    "electronConfiguration": "[He] 2s2 2p3",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Oxygen",
@@ -165,7 +179,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Liquid_oxygen_in_a_beaker_4.jpg/500px-Liquid_oxygen_in_a_beaker_4.jpg",
     "electronAffinity": 140.976,
     "ionizationEnergy": 1313.9,
-    "atomicRadius": 60
+    "atomicRadius": 60,
+    "electronConfiguration": "[He] 2s2 2p4",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Fluorine",
@@ -186,7 +202,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Fluoro_liquido_a_-196%C2%B0C_1.jpg/250px-Fluoro_liquido_a_-196%C2%B0C_1.jpg",
     "electronAffinity": 328.1649,
     "ionizationEnergy": 1681,
-    "atomicRadius": 50
+    "atomicRadius": 50,
+    "electronConfiguration": "[He] 2s2 2p5",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Neon",
@@ -207,7 +225,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Neon_discharge_tube.jpg/250px-Neon_discharge_tube.jpg",
     "electronAffinity": -116,
     "ionizationEnergy": 2080.7,
-    "atomicRadius": 160
+    "atomicRadius": 160,
+    "electronConfiguration": "[He] 2s2 2p6",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Sodium",
@@ -228,7 +248,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Na_%28Sodium%29.jpg/250px-Na_%28Sodium%29.jpg",
     "electronAffinity": 52.867,
     "ionizationEnergy": 495.8,
-    "atomicRadius": 180
+    "atomicRadius": 180,
+    "electronConfiguration": "[Ne] 3s1",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Magnesium",
@@ -249,7 +271,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/CSIRO_ScienceImage_2893_Crystalised_magnesium.jpg/250px-CSIRO_ScienceImage_2893_Crystalised_magnesium.jpg",
     "electronAffinity": -40,
     "ionizationEnergy": 737.7,
-    "atomicRadius": 150
+    "atomicRadius": 150,
+    "electronConfiguration": "[Ne] 3s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Aluminium",
@@ -270,7 +294,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Aluminium-4.jpg/250px-Aluminium-4.jpg",
     "electronAffinity": 41.762,
     "ionizationEnergy": 577.5,
-    "atomicRadius": 125
+    "atomicRadius": 125,
+    "electronConfiguration": "[Ne] 3s2 3p1",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Silicon",
@@ -291,7 +317,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/SiliconCroda.jpg/250px-SiliconCroda.jpg",
     "electronAffinity": 134.0684,
     "ionizationEnergy": 786.5,
-    "atomicRadius": 110
+    "atomicRadius": 110,
+    "electronConfiguration": "[Ne] 3s2 3p2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Phosphorus",
@@ -312,7 +340,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Wei%C3%9Fer_Phosphor.JPG/120px-Wei%C3%9Fer_Phosphor.JPG",
     "electronAffinity": 72.037,
     "ionizationEnergy": 1011.8,
-    "atomicRadius": 100
+    "atomicRadius": 100,
+    "electronConfiguration": "[Ne] 3s2 3p3",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Sulfur",
@@ -333,7 +363,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Sulfur_-_El_Desierto_mine%2C_San_Pablo_de_Napa%2C_Daniel_Campos_Province%2C_Potos%C3%AD%2C_Bolivia.jpg/250px-Sulfur_-_El_Desierto_mine%2C_San_Pablo_de_Napa%2C_Daniel_Campos_Province%2C_Potos%C3%AD%2C_Bolivia.jpg",
     "electronAffinity": 200.4101,
     "ionizationEnergy": 999.6,
-    "atomicRadius": 100
+    "atomicRadius": 100,
+    "electronConfiguration": "[Ne] 3s2 3p4",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Chlorine",
@@ -354,7 +386,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Chlorine_in_bottle.jpg/250px-Chlorine_in_bottle.jpg",
     "electronAffinity": 348.575,
     "ionizationEnergy": 1251.2,
-    "atomicRadius": 100
+    "atomicRadius": 100,
+    "electronConfiguration": "[Ne] 3s2 3p5",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Argon",
@@ -375,7 +409,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Argon_discharge_tube.jpg/250px-Argon_discharge_tube.jpg",
     "electronAffinity": -96,
     "ionizationEnergy": 1520.6,
-    "atomicRadius": 71
+    "atomicRadius": 71,
+    "electronConfiguration": "[Ne] 3s2 3p6",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Potassium",
@@ -396,7 +432,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Potassium-2.jpg/250px-Potassium-2.jpg",
     "electronAffinity": 48.383,
     "ionizationEnergy": 418.8,
-    "atomicRadius": 220
+    "atomicRadius": 220,
+    "electronConfiguration": "[Ar] 4s1",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Calcium",
@@ -417,7 +455,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Calcium_unter_Argon_Schutzgasatmosph%C3%A4re.jpg/250px-Calcium_unter_Argon_Schutzgasatmosph%C3%A4re.jpg",
     "electronAffinity": 2.37,
     "ionizationEnergy": 589.8,
-    "atomicRadius": 180
+    "atomicRadius": 180,
+    "electronConfiguration": "[Ar] 4s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Scandium",
@@ -438,7 +478,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Scandium_sublimed_dendritic_and_1cm3_cube.jpg/250px-Scandium_sublimed_dendritic_and_1cm3_cube.jpg",
     "electronAffinity": 18,
     "ionizationEnergy": 633.1,
-    "atomicRadius": 160
+    "atomicRadius": 160,
+    "electronConfiguration": "[Ar] 3d1 4s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Titanium",
@@ -459,7 +501,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Titan-crystal_bar.JPG/250px-Titan-crystal_bar.JPG",
     "electronAffinity": 7.289,
     "ionizationEnergy": 658.8,
-    "atomicRadius": 140
+    "atomicRadius": 140,
+    "electronConfiguration": "[Ar] 3d2 4s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Vanadium",
@@ -480,14 +524,16 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vanadium_crystal_bar_and_1cm3_cube.jpg/250px-Vanadium_crystal_bar_and_1cm3_cube.jpg",
     "electronAffinity": 50.911,
     "ionizationEnergy": 650.9,
-    "atomicRadius": 135
+    "atomicRadius": 135,
+    "electronConfiguration": "[Ar] 3d3 4s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Chromium",
     "symbol": "Cr",
     "protons": 24,
     "neutrons": 28,
-    "electrons": [[2], [2, 6], [2, 6, 4], [2]],
+    "electrons": [[2], [2, 6], [2, 6, 5], [1]],
     "block": "d-block",
     "group": "6",
     "period": "4",
@@ -501,7 +547,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Chromium_crystals_and_1cm3_cube.jpg/250px-Chromium_crystals_and_1cm3_cube.jpg",
     "electronAffinity": 65.21,
     "ionizationEnergy": 652.9,
-    "atomicRadius": 140
+    "atomicRadius": 140,
+    "electronConfiguration": "[Ar] 3d5 4s1",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Manganese",
@@ -522,7 +570,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Manganese_electrolytic_and_1cm3_cube.jpg/250px-Manganese_electrolytic_and_1cm3_cube.jpg",
     "electronAffinity": -50,
     "ionizationEnergy": 717.3,
-    "atomicRadius": 140
+    "atomicRadius": 140,
+    "electronConfiguration": "[Ar] 3d5 4s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Iron",
@@ -543,7 +593,9 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Iron_electrolytic_and_1cm3_cube.jpg",
     "electronAffinity": 14.785,
     "ionizationEnergy": 762.5,
-    "atomicRadius": 140
+    "atomicRadius": 140,
+    "electronConfiguration": "[Ar] 3d6 4s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Cobalt",
@@ -564,7 +616,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Kobalt_electrolytic_and_1cm3_cube.jpg/250px-Kobalt_electrolytic_and_1cm3_cube.jpg",
     "electronAffinity": 63.898,
     "ionizationEnergy": 760.4,
-    "atomicRadius": 135
+    "atomicRadius": 135,
+    "electronConfiguration": "[Ar] 3d7 4s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Nickel",
@@ -585,14 +639,16 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Nickel_electrolytic_and_1cm3_cube.jpg/250px-Nickel_electrolytic_and_1cm3_cube.jpg",
     "electronAffinity": 111.65,
     "ionizationEnergy": 737.1,
-    "atomicRadius": 135
+    "atomicRadius": 135,
+    "electronConfiguration": "[Ar] 3d8 4s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Copper",
     "symbol": "Cu",
     "protons": 29,
     "neutrons": 35,
-    "electrons": [[2], [2, 6], [2, 6, 9], [2]],
+    "electrons": [[2], [2, 6], [2, 6, 10], [1]],
     "block": "d-block",
     "group": "11",
     "period": "4",
@@ -606,7 +662,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/NatCopper.jpg/250px-NatCopper.jpg",
     "electronAffinity": 119.235,
     "ionizationEnergy": 745.5,
-    "atomicRadius": 135
+    "atomicRadius": 135,
+    "electronConfiguration": "[Ar] 3d10 4s1",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Zinc",
@@ -627,7 +685,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Zinc_fragment_sublimed_and_1cm3_cube.jpg/250px-Zinc_fragment_sublimed_and_1cm3_cube.jpg",
     "electronAffinity": -58,
     "ionizationEnergy": 906.4,
-    "atomicRadius": 135
+    "atomicRadius": 135,
+    "electronConfiguration": "[Ar] 3d10 4s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Gallium",
@@ -648,7 +708,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Gallium_crystals.jpg/250px-Gallium_crystals.jpg",
     "electronAffinity": 41,
     "ionizationEnergy": 578.8,
-    "atomicRadius": 130
+    "atomicRadius": 130,
+    "electronConfiguration": "[Ar] 3d10 4s2 4p1",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Germanium",
@@ -669,7 +731,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Polycrystalline-germanium.jpg/250px-Polycrystalline-germanium.jpg",
     "electronAffinity": 118.9352,
     "ionizationEnergy": 762,
-    "atomicRadius": 125
+    "atomicRadius": 125,
+    "electronConfiguration": "[Ar] 3d10 4s2 4p2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Arsenic",
@@ -690,7 +754,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Arsen_1a.jpg/250px-Arsen_1a.jpg",
     "electronAffinity": 77.65,
     "ionizationEnergy": 947,
-    "atomicRadius": 115
+    "atomicRadius": 115,
+    "electronConfiguration": "[Ar] 3d10 4s2 4p3",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Selenium",
@@ -711,7 +777,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/SeBlackRed.jpg/250px-SeBlackRed.jpg",
     "electronAffinity": 194.9587,
     "ionizationEnergy": 941,
-    "atomicRadius": 115
+    "atomicRadius": 115,
+    "electronConfiguration": "[Ar] 3d10 4s2 4p4",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Bromine",
@@ -732,7 +800,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Bromine_vial_in_acrylic_cube.jpg/250px-Bromine_vial_in_acrylic_cube.jpg",
     "electronAffinity": 324.537,
     "ionizationEnergy": 1139.9,
-    "atomicRadius": 115
+    "atomicRadius": 115,
+    "electronConfiguration": "[Ar] 3d10 4s2 4p5",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Krypton",
@@ -753,7 +823,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Krypton_discharge_tube.jpg/250px-Krypton_discharge_tube.jpg",
     "electronAffinity": -96,
     "ionizationEnergy": 1350.8,
-    "atomicRadius": 88
+    "atomicRadius": 88,
+    "electronConfiguration": "[Ar] 3d10 4s2 4p6",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Rubidium",
@@ -774,7 +846,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Rb5.JPG/250px-Rb5.JPG",
     "electronAffinity": 46.884,
     "ionizationEnergy": 403,
-    "atomicRadius": 235
+    "atomicRadius": 235,
+    "electronConfiguration": "[Kr] 5s1",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Strontium",
@@ -795,7 +869,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Strontium_destilled_crystals.jpg/250px-Strontium_destilled_crystals.jpg",
     "electronAffinity": 5.023,
     "ionizationEnergy": 549.5,
-    "atomicRadius": 200
+    "atomicRadius": 200,
+    "electronConfiguration": "[Kr] 5s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Yttrium",
@@ -816,7 +892,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Yttrium_sublimed_dendritic_and_1cm3_cube.jpg/250px-Yttrium_sublimed_dendritic_and_1cm3_cube.jpg",
     "electronAffinity": 29.6,
     "ionizationEnergy": 600,
-    "atomicRadius": 180
+    "atomicRadius": 180,
+    "electronConfiguration": "[Kr] 4d1 5s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Zirconium",
@@ -837,14 +915,16 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Zirconium_crystal_bar_and_1cm3_cube.jpg/250px-Zirconium_crystal_bar_and_1cm3_cube.jpg",
     "electronAffinity": 41.806,
     "ionizationEnergy": 640.1,
-    "atomicRadius": 155
+    "atomicRadius": 155,
+    "electronConfiguration": "[Kr] 4d2 5s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Niobium",
     "symbol": "Nb",
     "protons": 41,
     "neutrons": 52,
-    "electrons": [[2], [2, 6], [2, 6, 10], [2, 6, 3], [2]],
+    "electrons": [[2], [2, 6], [2, 6, 10], [2, 6, 4], [1]],
     "block": "d-block",
     "group": "5",
     "period": "5",
@@ -858,14 +938,16 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Niobium_crystals_and_1cm3_cube.jpg/250px-Niobium_crystals_and_1cm3_cube.jpg",
     "electronAffinity": 88.516,
     "ionizationEnergy": 652.1,
-    "atomicRadius": 145
+    "atomicRadius": 145,
+    "electronConfiguration": "[Kr] 4d4 5s1",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Molybdenum",
     "symbol": "Mo",
     "protons": 42,
     "neutrons": 54,
-    "electrons": [[2], [2, 6], [2, 6, 10], [2, 6, 4], [2]],
+    "electrons": [[2], [2, 6], [2, 6, 10], [2, 6, 5], [1]],
     "block": "d-block",
     "group": "6",
     "period": "5",
@@ -879,7 +961,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Molybdenum_crystaline_fragment_and_1cm3_cube.jpg/250px-Molybdenum_crystaline_fragment_and_1cm3_cube.jpg",
     "electronAffinity": 72.1,
     "ionizationEnergy": 684.3,
-    "atomicRadius": 145
+    "atomicRadius": 145,
+    "electronConfiguration": "[Kr] 4d5 5s1",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Technetium",
@@ -900,14 +984,16 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Technetium-sample-cropped.jpg/250px-Technetium-sample-cropped.jpg",
     "electronAffinity": 53,
     "ionizationEnergy": 702,
-    "atomicRadius": 135
+    "atomicRadius": 135,
+    "electronConfiguration": "[Kr] 4d5 5s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Ruthenium",
     "symbol": "Ru",
     "protons": 44,
     "neutrons": 57,
-    "electrons": [[2], [2, 6], [2, 6, 10], [2, 6, 6], [2]],
+    "electrons": [[2], [2, 6], [2, 6, 10], [2, 6, 7], [1]],
     "block": "d-block",
     "group": "8",
     "period": "5",
@@ -921,14 +1007,16 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Ruthenium_a_half_bar.jpg/250px-Ruthenium_a_half_bar.jpg",
     "electronAffinity": 100.96,
     "ionizationEnergy": 710.2,
-    "atomicRadius": 130
+    "atomicRadius": 130,
+    "electronConfiguration": "[Kr] 4d7 5s1",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Rhodium",
     "symbol": "Rh",
     "protons": 45,
     "neutrons": 58,
-    "electrons": [[2], [2, 6], [2, 6, 10], [2, 6, 7], [2]],
+    "electrons": [[2], [2, 6], [2, 6, 10], [2, 6, 8], [1]],
     "block": "d-block",
     "group": "9",
     "period": "5",
@@ -942,14 +1030,16 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Rhodium_powder_pressed_melted.jpg/250px-Rhodium_powder_pressed_melted.jpg",
     "electronAffinity": 110.27,
     "ionizationEnergy": 719.7,
-    "atomicRadius": 135
+    "atomicRadius": 135,
+    "electronConfiguration": "[Kr] 4d8 5s1",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Palladium",
     "symbol": "Pd",
     "protons": 46,
     "neutrons": 60,
-    "electrons": [[2], [2, 6], [2, 6, 10], [2, 6, 8], [2]],
+    "electrons": [[2], [2, 6], [2, 6, 10], [2, 6, 10]],
     "block": "d-block",
     "group": "10",
     "period": "5",
@@ -963,14 +1053,16 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Palladium_%2846_Pd%29.jpg/250px-Palladium_%2846_Pd%29.jpg",
     "electronAffinity": 54.24,
     "ionizationEnergy": 804.4,
-    "atomicRadius": 140
+    "atomicRadius": 140,
+    "electronConfiguration": "[Kr] 4d10",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Silver",
     "symbol": "Ag",
     "protons": 47,
     "neutrons": 61,
-    "electrons": [[2], [2, 6], [2, 6, 10], [2, 6, 9], [2]],
+    "electrons": [[2], [2, 6], [2, 6, 10], [2, 6, 10], [1]],
     "block": "d-block",
     "group": "11",
     "period": "5",
@@ -984,7 +1076,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Silver_crystal.jpg/250px-Silver_crystal.jpg",
     "electronAffinity": 125.862,
     "ionizationEnergy": 731,
-    "atomicRadius": 160
+    "atomicRadius": 160,
+    "electronConfiguration": "[Kr] 4d10 5s1",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Cadmium",
@@ -1005,7 +1099,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Cadmium-crystal_bar.jpg/250px-Cadmium-crystal_bar.jpg",
     "electronAffinity": -68,
     "ionizationEnergy": 867.8,
-    "atomicRadius": 155
+    "atomicRadius": 155,
+    "electronConfiguration": "[Kr] 4d10 5s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Indium",
@@ -1026,7 +1122,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Indium.jpg/250px-Indium.jpg",
     "electronAffinity": 37.043,
     "ionizationEnergy": 558.3,
-    "atomicRadius": 155
+    "atomicRadius": 155,
+    "electronConfiguration": "[Kr] 4d10 5s2 5p1",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Tin",
@@ -1047,7 +1145,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Sn-Alpha-Beta.jpg/250px-Sn-Alpha-Beta.jpg",
     "electronAffinity": 107.2984,
     "ionizationEnergy": 708.6,
-    "atomicRadius": 145
+    "atomicRadius": 145,
+    "electronConfiguration": "[Kr] 4d10 5s2 5p2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Antimony",
@@ -1068,7 +1168,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Antimony-4.jpg/250px-Antimony-4.jpg",
     "electronAffinity": 101.059,
     "ionizationEnergy": 834,
-    "atomicRadius": 145
+    "atomicRadius": 145,
+    "electronConfiguration": "[Kr] 4d10 5s2 5p3",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Tellurium",
@@ -1089,7 +1191,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Tellurium2.jpg/250px-Tellurium2.jpg",
     "electronAffinity": 190.161,
     "ionizationEnergy": 869.3,
-    "atomicRadius": 140
+    "atomicRadius": 140,
+    "electronConfiguration": "[Kr] 4d10 5s2 5p4",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Iodine",
@@ -1110,7 +1214,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Sample_of_iodine.jpg/250px-Sample_of_iodine.jpg",
     "electronAffinity": 295.1531,
     "ionizationEnergy": 1008.4,
-    "atomicRadius": 140
+    "atomicRadius": 140,
+    "electronConfiguration": "[Kr] 4d10 5s2 5p5",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Xenon",
@@ -1131,7 +1237,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Xenon_discharge_tube.jpg/250px-Xenon_discharge_tube.jpg",
     "electronAffinity": -77,
     "ionizationEnergy": 1170.4,
-    "atomicRadius": 108
+    "atomicRadius": 108,
+    "electronConfiguration": "[Kr] 4d10 5s2 5p6",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Caesium",
@@ -1152,7 +1260,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Cesium.jpg/250px-Cesium.jpg",
     "electronAffinity": 45.505,
     "ionizationEnergy": 375.7,
-    "atomicRadius": 260
+    "atomicRadius": 260,
+    "electronConfiguration": "[Xe] 6s1",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Barium",
@@ -1173,14 +1283,16 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Barium_unter_Argon_Schutzgas_Atmosph%C3%A4re.jpg/250px-Barium_unter_Argon_Schutzgas_Atmosph%C3%A4re.jpg",
     "electronAffinity": 13.954,
     "ionizationEnergy": 502.9,
-    "atomicRadius": 215
+    "atomicRadius": 215,
+    "electronConfiguration": "[Xe] 6s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Lanthanum",
     "symbol": "La",
     "protons": 57,
     "neutrons": 82,
-    "electrons": [[2], [2, 6], [2, 6, 10], [2, 6, 10, 1], [2, 6], [2]],
+    "electrons": [[2], [2, 6], [2, 6, 10], [2, 6, 10], [2, 6, 1], [2]],
     "block": "f-block",
     "group": "f-block groups",
     "period": "6",
@@ -1194,14 +1306,16 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Lanthanum-2.jpg/250px-Lanthanum-2.jpg",
     "electronAffinity": 53,
     "ionizationEnergy": 538.1,
-    "atomicRadius": 195
+    "atomicRadius": 195,
+    "electronConfiguration": "[Xe] 5d16s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Cerium",
     "symbol": "Ce",
     "protons": 58,
     "neutrons": 82,
-    "electrons": [[2], [2, 6], [2, 6, 10], [2, 6, 10, 2], [2, 6], [2]],
+    "electrons": [[2], [2, 6], [2, 6, 10], [2, 6, 10, 1], [2, 6, 1], [2]],
     "block": "f-block",
     "group": "f-block groups",
     "period": "6",
@@ -1215,7 +1329,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Cerium2.jpg/250px-Cerium2.jpg",
     "electronAffinity": 55,
     "ionizationEnergy": 534.4,
-    "atomicRadius": 185
+    "atomicRadius": 185,
+    "electronConfiguration": "[Xe] 4f1 5d1 6s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Praseodymium",
@@ -1236,7 +1352,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Praseodymium.jpg/250px-Praseodymium.jpg",
     "electronAffinity": 93,
     "ionizationEnergy": 527,
-    "atomicRadius": 185
+    "atomicRadius": 185,
+    "electronConfiguration": "[Xe] 4f3 6s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Neodymium",
@@ -1257,7 +1375,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Neodymium2.jpg/250px-Neodymium2.jpg",
     "electronAffinity": 184.87,
     "ionizationEnergy": 533.1,
-    "atomicRadius": 185
+    "atomicRadius": 185,
+    "electronConfiguration": "[Xe] 4f4 6s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Promethium",
@@ -1278,7 +1398,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Promethium-147_solution.jpg/250px-Promethium-147_solution.jpg",
     "electronAffinity": 12.45,
     "ionizationEnergy": 540,
-    "atomicRadius": 185
+    "atomicRadius": 185,
+    "electronConfiguration": "[Xe] 4f5 6s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Samarium",
@@ -1299,7 +1421,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Samarium-2.jpg/250px-Samarium-2.jpg",
     "electronAffinity": 15.63,
     "ionizationEnergy": 544.5,
-    "atomicRadius": 185
+    "atomicRadius": 185,
+    "electronConfiguration": "[Xe] 4f6 6s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Europium",
@@ -1320,14 +1444,16 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Europium.jpg/250px-Europium.jpg",
     "electronAffinity": 11.2,
     "ionizationEnergy": 547.1,
-    "atomicRadius": 185
+    "atomicRadius": 185,
+    "electronConfiguration": "[Xe] 4f7 6s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Gadolinium",
     "symbol": "Gd",
     "protons": 64,
     "neutrons": 93,
-    "electrons": [[2], [2, 6], [2, 6, 10], [2, 6, 10, 8], [2, 6], [2]],
+    "electrons": [[2], [2, 6], [2, 6, 10], [2, 6, 10, 7], [2, 6, 1], [2]],
     "block": "f-block",
     "group": "f-block groups",
     "period": "6",
@@ -1341,7 +1467,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Gadolinium-4.jpg/250px-Gadolinium-4.jpg",
     "electronAffinity": 13.22,
     "ionizationEnergy": 593.4,
-    "atomicRadius": 180
+    "atomicRadius": 180,
+    "electronConfiguration": "[Xe] 4f7 5d1 6s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Terbium",
@@ -1362,7 +1490,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Terbium-2.jpg/250px-Terbium-2.jpg",
     "electronAffinity": 112.4,
     "ionizationEnergy": 565.8,
-    "atomicRadius": 175
+    "atomicRadius": 175,
+    "electronConfiguration": "[Xe] 4f9 6s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Dysprosium",
@@ -1383,7 +1513,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Dy_chips.jpg/250px-Dy_chips.jpg",
     "electronAffinity": 33.96,
     "ionizationEnergy": 573,
-    "atomicRadius": 175
+    "atomicRadius": 175,
+    "electronConfiguration": "[Xe] 4f10 6s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Holmium",
@@ -1404,7 +1536,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Holmium2.jpg/250px-Holmium2.jpg",
     "electronAffinity": 32.61,
     "ionizationEnergy": 581,
-    "atomicRadius": 175
+    "atomicRadius": 175,
+    "electronConfiguration": "[Xe] 4f11 6s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Erbium",
@@ -1425,7 +1559,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Erbium_%2868_Er%29.jpg/250px-Erbium_%2868_Er%29.jpg",
     "electronAffinity": 30.1,
     "ionizationEnergy": 589.3,
-    "atomicRadius": 175
+    "atomicRadius": 175,
+    "electronConfiguration": "[Xe] 4f12 6s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Thulium",
@@ -1446,7 +1582,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Thulium_sublimed_dendritic_and_1cm3_cube.jpg/250px-Thulium_sublimed_dendritic_and_1cm3_cube.jpg",
     "electronAffinity": 99,
     "ionizationEnergy": 596.7,
-    "atomicRadius": 175
+    "atomicRadius": 175,
+    "electronConfiguration": "[Xe] 4f13 6s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Ytterbium",
@@ -1467,7 +1605,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Ytterbium-3.jpg/250px-Ytterbium-3.jpg",
     "electronAffinity": -1.93,
     "ionizationEnergy": 603.4,
-    "atomicRadius": 175
+    "atomicRadius": 175,
+    "electronConfiguration": "[Xe] 4f14 6s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Lutetium",
@@ -1488,7 +1628,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Lutetium_sublimed_dendritic_and_1cm3_cube.jpg/250px-Lutetium_sublimed_dendritic_and_1cm3_cube.jpg",
     "electronAffinity": 33.4,
     "ionizationEnergy": 523.5,
-    "atomicRadius": 175
+    "atomicRadius": 175,
+    "electronConfiguration": "[Xe] 4f14 5d1 6s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Hafnium",
@@ -1509,7 +1651,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Hf-crystal_bar.jpg/250px-Hf-crystal_bar.jpg",
     "electronAffinity": 17.18,
     "ionizationEnergy": 658.5,
-    "atomicRadius": 155
+    "atomicRadius": 155,
+    "electronConfiguration": "[Xe] 4f14 5d2 6s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Tantalum",
@@ -1530,7 +1674,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Tantalum_single_crystal_and_1cm3_cube.jpg/250px-Tantalum_single_crystal_and_1cm3_cube.jpg",
     "electronAffinity": 31,
     "ionizationEnergy": 761,
-    "atomicRadius": 145
+    "atomicRadius": 145,
+    "electronConfiguration": "[Xe] 4f14 5d3 6s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Tungsten",
@@ -1551,7 +1697,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Wolfram_evaporated_crystals_and_1cm3_cube.jpg/250px-Wolfram_evaporated_crystals_and_1cm3_cube.jpg",
     "electronAffinity": 78.76,
     "ionizationEnergy": 770,
-    "atomicRadius": 135
+    "atomicRadius": 135,
+    "electronConfiguration": "[Xe] 4f14 5d4 6s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Rhenium",
@@ -1572,7 +1720,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Rhenium_single_crystal_bar_and_1cm3_cube.jpg/250px-Rhenium_single_crystal_bar_and_1cm3_cube.jpg",
     "electronAffinity": 5.8273,
     "ionizationEnergy": 760,
-    "atomicRadius": 135
+    "atomicRadius": 135,
+    "electronConfiguration": "[Xe] 4f14 5d5 6s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Osmium",
@@ -1593,7 +1743,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Osmium_cluster.jpg/250px-Osmium_cluster.jpg",
     "electronAffinity": 103.99,
     "ionizationEnergy": 840,
-    "atomicRadius": 130
+    "atomicRadius": 130,
+    "electronConfiguration": "[Xe] 4f14 5d6 6s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Iridium",
@@ -1614,14 +1766,16 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Iridium-2.jpg/250px-Iridium-2.jpg",
     "electronAffinity": 150.94,
     "ionizationEnergy": 880,
-    "atomicRadius": 135
+    "atomicRadius": 135,
+    "electronConfiguration": "[Xe] 4f14 5d7 6s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Platinum",
     "symbol": "Pt",
     "protons": 78,
     "neutrons": 117,
-    "electrons": [[2], [2, 6], [2, 6, 10], [2, 6, 10, 14], [2, 6, 8], [2]],
+    "electrons": [[2], [2, 6], [2, 6, 10], [2, 6, 10, 14], [2, 6, 9], [1]],
     "block": "d-block",
     "group": "10",
     "period": "6",
@@ -1635,14 +1789,16 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Platinum_crystals.jpg/250px-Platinum_crystals.jpg",
     "electronAffinity": 205.041,
     "ionizationEnergy": 870,
-    "atomicRadius": 135
+    "atomicRadius": 135,
+    "electronConfiguration": "[Xe] 4f14 5d9 6s1",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Gold",
     "symbol": "Au",
     "protons": 79,
     "neutrons": 118,
-    "electrons": [[2], [2, 6], [2, 6, 10], [2, 6, 10, 14], [2, 6, 9], [2]],
+    "electrons": [[2], [2, 6], [2, 6, 10], [2, 6, 10, 14], [2, 6, 10], [1]],
     "block": "d-block",
     "group": "11",
     "period": "6",
@@ -1656,7 +1812,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Gold-crystals.jpg/250px-Gold-crystals.jpg",
     "electronAffinity": 222.747,
     "ionizationEnergy": 890.1,
-    "atomicRadius": 135
+    "atomicRadius": 135,
+    "electronConfiguration": "[Xe] 4f14 5d10 6s1",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Mercury",
@@ -1677,7 +1835,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Pouring_liquid_mercury_bionerd.jpg/250px-Pouring_liquid_mercury_bionerd.jpg",
     "electronAffinity": -48,
     "ionizationEnergy": 1007.1,
-    "atomicRadius": 150
+    "atomicRadius": 150,
+    "electronConfiguration": "[Xe] 4f14 5d10 6s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Thallium",
@@ -1698,7 +1858,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Thallium_pieces_in_ampoule.jpg/250px-Thallium_pieces_in_ampoule.jpg",
     "electronAffinity": 36.4,
     "ionizationEnergy": 589.4,
-    "atomicRadius": 190
+    "atomicRadius": 190,
+    "electronConfiguration": "[Xe] 4f14 5d10 6s2 6p1",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Lead",
@@ -1719,7 +1881,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Lead_electrolytic_and_1cm3_cube.jpg/250px-Lead_electrolytic_and_1cm3_cube.jpg",
     "electronAffinity": 34.4204,
     "ionizationEnergy": 715.6,
-    "atomicRadius": 180
+    "atomicRadius": 180,
+    "electronConfiguration": "[Xe] 4f14 5d10 6s2 6p2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Bismuth",
@@ -1740,7 +1904,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Bismuth_crystals_and_1cm3_cube.jpg/250px-Bismuth_crystals_and_1cm3_cube.jpg",
     "electronAffinity": 90.924,
     "ionizationEnergy": 703,
-    "atomicRadius": 160
+    "atomicRadius": 160,
+    "electronConfiguration": "[Xe] 4f14 5d10 6s2 6p3",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Polonium",
@@ -1761,7 +1927,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/en/thumb/6/66/Polonium.jpg/250px-Polonium.jpg",
     "electronAffinity": 136,
     "ionizationEnergy": 812.1,
-    "atomicRadius": 190
+    "atomicRadius": 190,
+    "electronConfiguration": "[Xe] 4f14 5d10 6s2 6p4",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Astatine",
@@ -1780,7 +1948,9 @@
     "density": 0,
     "electronAffinity": 233,
     "ionizationEnergy": 899.003,
-    "atomicRadius": 190
+    "atomicRadius": 190,
+    "electronConfiguration": "[Xe] 4f14 5d10 6s2 6p5",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Radon",
@@ -1799,7 +1969,9 @@
     "density": 0.00973,
     "electronAffinity": -68,
     "ionizationEnergy": 1037,
-    "atomicRadius": 120
+    "atomicRadius": 120,
+    "electronConfiguration": "[Xe] 4f14 5d10 6s2 6p6",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Francium",
@@ -1826,7 +1998,9 @@
     "density": 0,
     "electronAffinity": 46.89,
     "ionizationEnergy": 380,
-    "atomicRadius": 270
+    "atomicRadius": 270,
+    "electronConfiguration": "[Rn] 7s1",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Radium",
@@ -1855,7 +2029,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Radium226.jpg/250px-Radium226.jpg",
     "electronAffinity": 9.6485,
     "ionizationEnergy": 509.3,
-    "atomicRadius": 215
+    "atomicRadius": 215,
+    "electronConfiguration": "[Rn] 7s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Actinium",
@@ -1867,8 +2043,8 @@
       [2, 6],
       [2, 6, 10],
       [2, 6, 10, 14],
-      [2, 6, 10, 1],
-      [2, 6],
+      [2, 6, 10],
+      [2, 6, 1],
       [2]
     ],
     "block": "f-block",
@@ -1884,7 +2060,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Actinium_sample_%2831481701837%29.png/250px-Actinium_sample_%2831481701837%29.png",
     "electronAffinity": 33.77,
     "ionizationEnergy": 499,
-    "atomicRadius": 195
+    "atomicRadius": 195,
+    "electronConfiguration": "[Rn] 6d1 7s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Thorium",
@@ -1896,8 +2074,8 @@
       [2, 6],
       [2, 6, 10],
       [2, 6, 10, 14],
-      [2, 6, 10, 2],
-      [2, 6],
+      [2, 6, 10],
+      [2, 6, 2],
       [2]
     ],
     "block": "f-block",
@@ -1913,7 +2091,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Thorium_sample_0.1g.jpg/250px-Thorium_sample_0.1g.jpg",
     "electronAffinity": 112.72,
     "ionizationEnergy": 587,
-    "atomicRadius": 180
+    "atomicRadius": 180,
+    "electronConfiguration": "[Rn] 6d2 7s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Protactinium",
@@ -1925,8 +2105,8 @@
       [2, 6],
       [2, 6, 10],
       [2, 6, 10, 14],
-      [2, 6, 10, 3],
-      [2, 6],
+      [2, 6, 10, 2],
+      [2, 6, 1],
       [2]
     ],
     "block": "f-block",
@@ -1942,7 +2122,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Protactinium_%28Element_-_91%29_2.jpg/250px-Protactinium_%28Element_-_91%29_2.jpg",
     "electronAffinity": 53.03,
     "ionizationEnergy": 568,
-    "atomicRadius": 180
+    "atomicRadius": 180,
+    "electronConfiguration": "[Rn] 5f2 6d1 7s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Uranium",
@@ -1954,8 +2136,8 @@
       [2, 6],
       [2, 6, 10],
       [2, 6, 10, 14],
-      [2, 6, 10, 4],
-      [2, 6],
+      [2, 6, 10, 3],
+      [2, 6, 1],
       [2]
     ],
     "block": "f-block",
@@ -1971,7 +2153,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/HEUraniumC.jpg/250px-HEUraniumC.jpg",
     "electronAffinity": 50.94,
     "ionizationEnergy": 597.6,
-    "atomicRadius": 175
+    "atomicRadius": 175,
+    "electronConfiguration": "[Rn] 5f3 6d1 7s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Neptunium",
@@ -1983,8 +2167,8 @@
       [2, 6],
       [2, 6, 10],
       [2, 6, 10, 14],
-      [2, 6, 10, 5],
-      [2, 6],
+      [2, 6, 10, 4],
+      [2, 6, 1],
       [2]
     ],
     "block": "f-block",
@@ -2000,7 +2184,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a3/1g_of_neptunium_metal.jpg/250px-1g_of_neptunium_metal.jpg",
     "electronAffinity": 45.85,
     "ionizationEnergy": 604.5,
-    "atomicRadius": 175
+    "atomicRadius": 175,
+    "electronConfiguration": "[Rn] 5f4 6d1 7s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Plutonium",
@@ -2029,7 +2215,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Plutonium_ring.jpg/250px-Plutonium_ring.jpg",
     "electronAffinity": -48.33,
     "ionizationEnergy": 584.7,
-    "atomicRadius": 175
+    "atomicRadius": 175,
+    "electronConfiguration": "[Rn] 5f6 7s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Americium",
@@ -2058,7 +2246,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Americium_microscope.jpg/250px-Americium_microscope.jpg",
     "electronAffinity": 9.93,
     "ionizationEnergy": 578,
-    "atomicRadius": 175
+    "atomicRadius": 175,
+    "electronConfiguration": "[Rn] 5f7 7s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Curium",
@@ -2070,8 +2260,8 @@
       [2, 6],
       [2, 6, 10],
       [2, 6, 10, 14],
-      [2, 6, 10, 8],
-      [2, 6],
+      [2, 6, 10, 7],
+      [2, 6, 1],
       [2]
     ],
     "block": "f-block",
@@ -2087,7 +2277,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/en/thumb/6/69/Curium.jpg/250px-Curium.jpg",
     "electronAffinity": 27.17,
     "ionizationEnergy": 581,
-    "atomicRadius": 175
+    "atomicRadius": 175,
+    "electronConfiguration": "[Rn] 5f7 6d1 7s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Berkelium",
@@ -2116,7 +2308,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Berkelium_metal.jpg/250px-Berkelium_metal.jpg",
     "electronAffinity": -165.24,
     "ionizationEnergy": 601,
-    "atomicRadius": 170
+    "atomicRadius": 170,
+    "electronConfiguration": "[Rn] 5f9 7s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Californium",
@@ -2144,7 +2338,9 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/9/93/Californium.jpg",
     "electronAffinity": -97.31,
     "ionizationEnergy": 608,
-    "atomicRadius": 170
+    "atomicRadius": 170,
+    "electronConfiguration": "[Rn] 5f10 7s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Einsteinium",
@@ -2173,7 +2369,9 @@
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Einsteinium.jpg/250px-Einsteinium.jpg",
     "electronAffinity": -28.6,
     "ionizationEnergy": 619,
-    "atomicRadius": 170
+    "atomicRadius": 170,
+    "electronConfiguration": "[Rn] 5f11 7s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Fermium",
@@ -2200,7 +2398,9 @@
     "density": 0,
     "electronAffinity": 33.96,
     "ionizationEnergy": 627,
-    "atomicRadius": 170
+    "atomicRadius": 170,
+    "electronConfiguration": "[Rn] 5f12 7s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Mendelevium",
@@ -2227,7 +2427,9 @@
     "density": 0,
     "electronAffinity": 93.91,
     "ionizationEnergy": 635,
-    "atomicRadius": 170
+    "atomicRadius": 170,
+    "electronConfiguration": "[Rn] 5f13 7s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Nobelium",
@@ -2254,7 +2456,9 @@
     "density": 0,
     "electronAffinity": -223.22,
     "ionizationEnergy": 642,
-    "atomicRadius": 170
+    "atomicRadius": 170,
+    "electronConfiguration": "[Rn] 5f14 7s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Lawrencium",
@@ -2267,8 +2471,8 @@
       [2, 6, 10],
       [2, 6, 10, 14],
       [2, 6, 10, 14],
-      [2, 6, 1],
-      [2]
+      [2, 6],
+      [2, 1]
     ],
     "block": "d-block",
     "group": "3",
@@ -2281,7 +2485,9 @@
     "density": 0,
     "electronAffinity": -30.04,
     "ionizationEnergy": 470,
-    "atomicRadius": 170
+    "atomicRadius": 170,
+    "electronConfiguration": "[Rn] 5f14 7s2 7p1",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Rutherfordium",
@@ -2308,7 +2514,9 @@
     "density": 0,
     "electronAffinity": null,
     "ionizationEnergy": 580,
-    "atomicRadius": null
+    "atomicRadius": null,
+    "electronConfiguration": "[Rn] 5f14 6d2 7s2",
+    "electronConfigurationConfirmed": true
   },
   {
     "name": "Dubnium",
@@ -2334,7 +2542,10 @@
     "phase": "unknown phase",
     "density": 0,
     "electronAffinity": null,
-    "atomicRadius": null
+    "atomicRadius": null,
+    "electronConfiguration": "[Rn] 5f14 6d3 7s2",
+    "electronConfigurationConfirmed": false,
+    "ionizationEnergy": null
   },
   {
     "name": "Seaborgium",
@@ -2360,7 +2571,10 @@
     "phase": "unknown phase",
     "density": 0,
     "electronAffinity": null,
-    "atomicRadius": null
+    "atomicRadius": null,
+    "electronConfiguration": "[Rn] 5f14 6d4 7s2",
+    "electronConfigurationConfirmed": false,
+    "ionizationEnergy": null
   },
   {
     "name": "Bohrium",
@@ -2386,7 +2600,10 @@
     "phase": "unknown phase",
     "density": 0,
     "electronAffinity": null,
-    "atomicRadius": null
+    "atomicRadius": null,
+    "electronConfiguration": "[Rn] 5f14 6d5 7s2",
+    "electronConfigurationConfirmed": false,
+    "ionizationEnergy": null
   },
   {
     "name": "Hassium",
@@ -2412,7 +2629,10 @@
     "phase": "unknown phase",
     "density": 0,
     "electronAffinity": null,
-    "atomicRadius": null
+    "atomicRadius": null,
+    "electronConfiguration": "[Rn] 5f14 6d6 7s2",
+    "electronConfigurationConfirmed": false,
+    "ionizationEnergy": null
   },
   {
     "name": "Meitnerium",
@@ -2438,7 +2658,10 @@
     "phase": "unknown phase",
     "density": 0,
     "electronAffinity": null,
-    "atomicRadius": null
+    "atomicRadius": null,
+    "electronConfiguration": "[Rn] 5f14 6d7 7s2",
+    "electronConfigurationConfirmed": false,
+    "ionizationEnergy": null
   },
   {
     "name": "Darmstadtium",
@@ -2464,7 +2687,10 @@
     "phase": "unknown phase",
     "density": 0,
     "electronAffinity": null,
-    "atomicRadius": null
+    "atomicRadius": null,
+    "electronConfiguration": "[Rn] 5f14 6d9 7s1",
+    "electronConfigurationConfirmed": false,
+    "ionizationEnergy": null
   },
   {
     "name": "Roentgenium",
@@ -2490,7 +2716,10 @@
     "phase": "unknown phase",
     "density": 0,
     "electronAffinity": 151,
-    "atomicRadius": null
+    "atomicRadius": null,
+    "electronConfiguration": "[Rn] 5f14 6d10 7s1",
+    "electronConfigurationConfirmed": false,
+    "ionizationEnergy": null
   },
   {
     "name": "Copernicium",
@@ -2516,7 +2745,10 @@
     "phase": "unknown phase",
     "density": 0,
     "electronAffinity": null,
-    "atomicRadius": null
+    "atomicRadius": null,
+    "electronConfiguration": "[Rn] 5f14 6d10 7s2",
+    "electronConfigurationConfirmed": false,
+    "ionizationEnergy": null
   },
   {
     "name": "Nihonium",
@@ -2542,7 +2774,10 @@
     "phase": "unknown phase",
     "density": 0,
     "electronAffinity": 66.6,
-    "atomicRadius": null
+    "atomicRadius": null,
+    "electronConfiguration": "[Rn] 5f14 6d10 7s2 7p1",
+    "electronConfigurationConfirmed": false,
+    "ionizationEnergy": null
   },
   {
     "name": "Flerovium",
@@ -2568,7 +2803,10 @@
     "phase": "unknown phase",
     "density": 0,
     "electronAffinity": null,
-    "atomicRadius": null
+    "atomicRadius": null,
+    "electronConfiguration": "[Rn] 5f14 6d10 7s2 7p2",
+    "electronConfigurationConfirmed": false,
+    "ionizationEnergy": null
   },
   {
     "name": "Moscovium",
@@ -2594,7 +2832,10 @@
     "phase": "unknown phase",
     "density": 0,
     "electronAffinity": 35.3,
-    "atomicRadius": null
+    "atomicRadius": null,
+    "electronConfiguration": "[Rn] 5f14 6d10 7s2 7p3",
+    "electronConfigurationConfirmed": false,
+    "ionizationEnergy": null
   },
   {
     "name": "Livermorium",
@@ -2620,7 +2861,10 @@
     "phase": "unknown phase",
     "density": 0,
     "electronAffinity": 74.9,
-    "atomicRadius": null
+    "atomicRadius": null,
+    "electronConfiguration": "[Rn] 5f14 6d10 7s2 7p4",
+    "electronConfigurationConfirmed": false,
+    "ionizationEnergy": null
   },
   {
     "name": "Tennessine",
@@ -2646,7 +2890,10 @@
     "phase": "unknown phase",
     "density": 0,
     "electronAffinity": 165.9,
-    "atomicRadius": null
+    "atomicRadius": null,
+    "electronConfiguration": "[Rn] 5f14 6d10 7s2 7p5",
+    "electronConfigurationConfirmed": false,
+    "ionizationEnergy": null
   },
   {
     "name": "Oganesson",
@@ -2672,6 +2919,9 @@
     "phase": "unknown phase",
     "density": 0,
     "electronAffinity": 5.40318,
-    "atomicRadius": null
+    "atomicRadius": null,
+    "electronConfiguration": "[Rn] 5f14 6d10 7s2 7p6",
+    "electronConfigurationConfirmed": false,
+    "ionizationEnergy": null
   }
 ]
