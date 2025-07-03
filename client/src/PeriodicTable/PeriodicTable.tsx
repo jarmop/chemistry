@@ -6,6 +6,7 @@ import { Element } from "./Element.tsx";
 import { ElementDetailed } from "./ElementDetailed.tsx";
 import { ElementImage } from "./ElementImage.tsx";
 import { getCellColor } from "./getCellColor.ts";
+import { TableBody } from "./TableBody.tsx";
 
 const colorModes = [
   "block",
@@ -31,27 +32,20 @@ export function PeriodicTable(
 
   const [colorMode, setColorMode] = useState<ColorMode>("block");
   const [viewMode, setViewMode] = useState<ViewMode>("simple");
-  const elementsByPeriodAndGroup: Record<string, Record<string, ElementType>> =
-    {};
-  const fBlockGroups: Record<string, Record<string, ElementType>> = {};
 
-  elements.forEach((el) => {
-    if (el.block === "f-block") {
-      if (!fBlockGroups[el.period]) {
-        fBlockGroups[el.period] = {};
-      }
-      fBlockGroups[el.period][el.protons] = el;
-    } else {
-      if (!elementsByPeriodAndGroup[el.period]) {
-        elementsByPeriodAndGroup[el.period] = {};
-      }
-
-      elementsByPeriodAndGroup[el.period][el.group] = el;
-    }
+  const mainElements: ElementType[][] = [];
+  for (let i = 0; i < 7; i++) {
+    mainElements[i] = Array(18).fill(null);
+  }
+  elements.filter((el) => el.block !== "f-block").forEach((el) => {
+    mainElements[parseInt(el.period) - 1][parseInt(el.group) - 1] = el;
   });
 
-  const groups = Object.keys(elementsByPeriodAndGroup[6]);
-  const periods = Object.keys(elementsByPeriodAndGroup);
+  const fBlockElementsArray = elements.filter((el) => el.block === "f-block");
+  const fBlockElements = [
+    fBlockElementsArray.slice(0, fBlockElementsArray.length / 2),
+    fBlockElementsArray.slice(fBlockElementsArray.length / 2),
+  ];
 
   function renderElementCell(element: ElementType, key: string | number) {
     if (viewMode === "detailed") {
@@ -124,48 +118,31 @@ export function PeriodicTable(
         <thead>
           <tr>
             <th></th>
-            {groups.map((group) => <th key={group}>{group}</th>)}
+            {mainElements[0].map((_, i) => <th key={i}>{i + 1}</th>)}
           </tr>
         </thead>
-        <tbody>
-          {periods.map((period) => (
-            <tr key={period}>
-              <th>{period}</th>
-              {groups.map((group) => {
-                const element = elementsByPeriodAndGroup[period][group];
-                if (!element) {
-                  return <td key={group}></td>;
-                }
-                return renderElementCell(element, group);
-              })}
-            </tr>
-          ))}
-        </tbody>
+        <TableBody
+          elements={mainElements}
+          rowTitles={mainElements.map((_, i) => i + 1)}
+          selectedZ={selectedZ}
+          onElementSelected={onElementSelected}
+          renderElementCell={renderElementCell}
+        />
       </table>
       <table className="periodicTable" style={{ marginTop: "20px" }}>
         <thead>
           <tr>
             <th></th>
-            <th colSpan={Object.keys(fBlockGroups[6]).length}>
-              F-block groups
-            </th>
+            <th colSpan={fBlockElements[0].length}>F-block groups</th>
           </tr>
         </thead>
-        <tbody>
-          {[6, 7].map((period) => (
-            <tr key={period}>
-              <th>{period}</th>
-              {fBlockGroups[period] &&
-                Object.keys(fBlockGroups[period]).map((protons) => {
-                  const element = fBlockGroups[period][protons];
-                  if (!element) {
-                    return <td key={protons}></td>;
-                  }
-                  return renderElementCell(element, protons);
-                })}
-            </tr>
-          ))}
-        </tbody>
+        <TableBody
+          elements={fBlockElements}
+          rowTitles={[6, 7]}
+          selectedZ={selectedZ}
+          onElementSelected={onElementSelected}
+          renderElementCell={renderElementCell}
+        />
       </table>
     </>
   );
