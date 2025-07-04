@@ -1,4 +1,4 @@
-// Usage: node scripts/fix_element_images.js
+// Usage: node scripts/fix-element-images.js
 
 const fs = require("fs");
 const path = require("path");

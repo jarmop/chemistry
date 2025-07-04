@@ -69,10 +69,6 @@ export function AtomData() {
             <td>{element.density}</td>
           </tr>
           <tr>
-            <td>Abundance:</td>
-            <td>{element.abundanceOnEarthCrust}</td>
-          </tr>
-          <tr>
             <td>
               Electron configuration:
             </td>
@@ -97,8 +93,32 @@ export function AtomData() {
             <td>{element.atomicRadius}</td>
           </tr>
           <tr>
-            <td>Abundance rank:</td>
+            <th
+              colSpan={2}
+              style={{ textAlign: "left", paddingTop: "10px" }}
+            >
+              Abundance
+            </th>
+          </tr>
+          <tr>
+            <td>On earth's crust:</td>
+            <td>{element.abundanceOnEarthCrust} ppm</td>
+          </tr>
+          <tr>
+            <td>On earth's crust rank:</td>
             <td>{element.abundanceRank}</td>
+          </tr>
+          <tr>
+            <td>Mass in human body:</td>
+            <td>{element.massInHumanBody} %</td>
+          </tr>
+          <tr>
+            <td>Atoms in human body:</td>
+            <td>{element.atomsInHumanBody} %</td>
+          </tr>
+          <tr>
+            <td>In Milky Way:</td>
+            <td>{element.abundanceInMilkyWay} %</td>
           </tr>
         </tbody>
       </table>

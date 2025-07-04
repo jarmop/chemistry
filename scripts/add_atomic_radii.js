@@ -7,7 +7,7 @@ const fs = require("fs");
 const path = require("path");
 
 const elementsPath = path.join(__dirname, "../client/src/data/elements.json");
-const radiiPath = path.join(__dirname, "atomic_radii.json");
+const radiiPath = path.join(__dirname, "./data/atomic_radii.json");
 
 const elements = JSON.parse(fs.readFileSync(elementsPath, "utf8"));
 const radii = JSON.parse(fs.readFileSync(radiiPath, "utf8"));

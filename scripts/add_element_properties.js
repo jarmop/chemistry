@@ -7,7 +7,10 @@ const fs = require("fs");
 const path = require("path");
 
 const elementsPath = path.join(__dirname, "../client/src/data/elements.json");
-const periodicTablePath = path.join(__dirname, "Periodic-Table-JSON.json"); // Download from https://github.com/Bowserinator/Periodic-Table-JSON
+const periodicTablePath = path.join(
+  __dirname,
+  "./data/Periodic-Table-JSON.json",
+); // Download from https://github.com/Bowserinator/Periodic-Table-JSON
 
 const oldElements = JSON.parse(fs.readFileSync(elementsPath, "utf8"));
 const periodicTable =

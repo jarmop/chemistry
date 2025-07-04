@@ -1,0 +1,62 @@
+[
+  {
+    "atomic_number": 1,
+    "element": "Hydrogen",
+    "mass_fraction_ppm": 739000,
+    "percentage": 73.97
+  },
+  {
+    "atomic_number": 2,
+    "element": "Helium",
+    "mass_fraction_ppm": 240000,
+    "percentage": 24.02
+  },
+  {
+    "atomic_number": 8,
+    "element": "Oxygen",
+    "mass_fraction_ppm": 10400,
+    "percentage": 1.04
+  },
+  {
+    "atomic_number": 6,
+    "element": "Carbon",
+    "mass_fraction_ppm": 4600,
+    "percentage": 0.46
+  },
+  {
+    "atomic_number": 10,
+    "element": "Neon",
+    "mass_fraction_ppm": 1340,
+    "percentage": 0.13
+  },
+  {
+    "atomic_number": 26,
+    "element": "Iron",
+    "mass_fraction_ppm": 1090,
+    "percentage": 0.11
+  },
+  {
+    "atomic_number": 7,
+    "element": "Nitrogen",
+    "mass_fraction_ppm": 960,
+    "percentage": 0.10
+  },
+  {
+    "atomic_number": 14,
+    "element": "Silicon",
+    "mass_fraction_ppm": 650,
+    "percentage": 0.07
+  },
+  {
+    "atomic_number": 12,
+    "element": "Magnesium",
+    "mass_fraction_ppm": 580,
+    "percentage": 0.06
+  },
+  {
+    "atomic_number": 16,
+    "element": "Sulfur",
+    "mass_fraction_ppm": 440,
+    "percentage": 0.04
+  }
+]

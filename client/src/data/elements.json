@@ -20,7 +20,10 @@
     "ionizationEnergy": 1312,
     "atomicRadius": 25,
     "electronConfiguration": "1s1",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 10,
+    "atomsInHumanBody": 63,
+    "abundanceInMilkyWay": 73.97
   },
   {
     "name": "Helium",
@@ -43,7 +46,10 @@
     "ionizationEnergy": 2372.3,
     "atomicRadius": 120,
     "electronConfiguration": "1s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 2.039e-11,
+    "atomsInHumanBody": 0.0001,
+    "abundanceInMilkyWay": 24.02
   },
   {
     "name": "Lithium",
@@ -66,7 +72,10 @@
     "ionizationEnergy": 520.2,
     "atomicRadius": 145,
     "electronConfiguration": "[He] 2s1",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 3.1e-8,
+    "atomsInHumanBody": 0.0001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Beryllium",
@@ -89,7 +98,10 @@
     "ionizationEnergy": 899.5,
     "atomicRadius": 105,
     "electronConfiguration": "[He] 2s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 3.6e-8,
+    "atomsInHumanBody": 0.0001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Boron",
@@ -112,7 +124,10 @@
     "ionizationEnergy": 800.6,
     "atomicRadius": 85,
     "electronConfiguration": "[He] 2s2 2p1",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 6.9e-7,
+    "atomsInHumanBody": 0.001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Carbon",
@@ -135,7 +150,10 @@
     "ionizationEnergy": 1086.5,
     "atomicRadius": 70,
     "electronConfiguration": "[He] 2s2 2p2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 18,
+    "atomsInHumanBody": 9.5,
+    "abundanceInMilkyWay": 0.46
   },
   {
     "name": "Nitrogen",
@@ -158,7 +176,10 @@
     "ionizationEnergy": 1402.3,
     "atomicRadius": 65,
     "electronConfiguration": "[He] 2s2 2p3",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 2.6,
+    "atomsInHumanBody": 1.1,
+    "abundanceInMilkyWay": 0.1
   },
   {
     "name": "Oxygen",
@@ -181,7 +202,10 @@
     "ionizationEnergy": 1313.9,
     "atomicRadius": 60,
     "electronConfiguration": "[He] 2s2 2p4",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 65,
+    "atomsInHumanBody": 26,
+    "abundanceInMilkyWay": 1.04
   },
   {
     "name": "Fluorine",
@@ -204,7 +228,10 @@
     "ionizationEnergy": 1681,
     "atomicRadius": 50,
     "electronConfiguration": "[He] 2s2 2p5",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0.000037,
+    "atomsInHumanBody": 0.01,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Neon",
@@ -227,7 +254,10 @@
     "ionizationEnergy": 2080.7,
     "atomicRadius": 160,
     "electronConfiguration": "[He] 2s2 2p6",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 8.5e-12,
+    "atomsInHumanBody": 0.0001,
+    "abundanceInMilkyWay": 0.13
   },
   {
     "name": "Sodium",
@@ -250,7 +280,10 @@
     "ionizationEnergy": 495.8,
     "atomicRadius": 180,
     "electronConfiguration": "[Ne] 3s1",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0.1,
+    "atomsInHumanBody": 0.041,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Magnesium",
@@ -273,7 +306,10 @@
     "ionizationEnergy": 737.7,
     "atomicRadius": 150,
     "electronConfiguration": "[Ne] 3s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0.05,
+    "atomsInHumanBody": 0.01,
+    "abundanceInMilkyWay": 0.06
   },
   {
     "name": "Aluminium",
@@ -296,7 +332,10 @@
     "ionizationEnergy": 577.5,
     "atomicRadius": 125,
     "electronConfiguration": "[Ne] 3s2 3p1",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 8.7e-7,
+    "atomsInHumanBody": 0.001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Silicon",
@@ -319,7 +358,10 @@
     "ionizationEnergy": 786.5,
     "atomicRadius": 110,
     "electronConfiguration": "[Ne] 3s2 3p2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0.00002,
+    "atomsInHumanBody": 0.01,
+    "abundanceInMilkyWay": 0.07
   },
   {
     "name": "Phosphorus",
@@ -342,7 +384,10 @@
     "ionizationEnergy": 1011.8,
     "atomicRadius": 100,
     "electronConfiguration": "[Ne] 3s2 3p3",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0.6,
+    "atomsInHumanBody": 0.12,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Sulfur",
@@ -365,7 +410,10 @@
     "ionizationEnergy": 999.6,
     "atomicRadius": 100,
     "electronConfiguration": "[Ne] 3s2 3p4",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0.2,
+    "atomsInHumanBody": 0.049,
+    "abundanceInMilkyWay": 0.04
   },
   {
     "name": "Chlorine",
@@ -388,7 +436,10 @@
     "ionizationEnergy": 1251.2,
     "atomicRadius": 100,
     "electronConfiguration": "[Ne] 3s2 3p5",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0.2,
+    "atomsInHumanBody": 0.027,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Argon",
@@ -411,7 +462,10 @@
     "ionizationEnergy": 1520.6,
     "atomicRadius": 71,
     "electronConfiguration": "[Ne] 3s2 3p6",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 4.25e-12,
+    "atomsInHumanBody": 0.0001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Potassium",
@@ -434,7 +488,10 @@
     "ionizationEnergy": 418.8,
     "atomicRadius": 220,
     "electronConfiguration": "[Ar] 4s1",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0.2,
+    "atomsInHumanBody": 0.029,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Calcium",
@@ -457,7 +514,10 @@
     "ionizationEnergy": 589.8,
     "atomicRadius": 180,
     "electronConfiguration": "[Ar] 4s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 1.5,
+    "atomsInHumanBody": 0.21,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Scandium",
@@ -480,7 +540,10 @@
     "ionizationEnergy": 633.1,
     "atomicRadius": 160,
     "electronConfiguration": "[Ar] 3d1 4s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 2e-7,
+    "atomsInHumanBody": 0.0001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Titanium",
@@ -503,7 +566,10 @@
     "ionizationEnergy": 658.8,
     "atomicRadius": 140,
     "electronConfiguration": "[Ar] 3d2 4s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 1.3e-7,
+    "atomsInHumanBody": 0.001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Vanadium",
@@ -526,7 +592,10 @@
     "ionizationEnergy": 650.9,
     "atomicRadius": 135,
     "electronConfiguration": "[Ar] 3d3 4s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 2.6e-7,
+    "atomsInHumanBody": 0.0001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Chromium",
@@ -549,7 +618,10 @@
     "ionizationEnergy": 652.9,
     "atomicRadius": 140,
     "electronConfiguration": "[Ar] 3d5 4s1",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 2.4e-8,
+    "atomsInHumanBody": 0.0001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Manganese",
@@ -572,7 +644,10 @@
     "ionizationEnergy": 717.3,
     "atomicRadius": 140,
     "electronConfiguration": "[Ar] 3d5 4s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 1.7e-7,
+    "atomsInHumanBody": 0.0001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Iron",
@@ -595,7 +670,10 @@
     "ionizationEnergy": 762.5,
     "atomicRadius": 140,
     "electronConfiguration": "[Ar] 3d6 4s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0.0042,
+    "atomsInHumanBody": 0.01,
+    "abundanceInMilkyWay": 0.11
   },
   {
     "name": "Cobalt",
@@ -618,7 +696,10 @@
     "ionizationEnergy": 760.4,
     "atomicRadius": 135,
     "electronConfiguration": "[Ar] 3d7 4s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 2.1e-8,
+    "atomsInHumanBody": 0.0001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Nickel",
@@ -641,7 +722,10 @@
     "ionizationEnergy": 737.1,
     "atomicRadius": 135,
     "electronConfiguration": "[Ar] 3d8 4s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 1.4e-7,
+    "atomsInHumanBody": 0.0001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Copper",
@@ -664,7 +748,10 @@
     "ionizationEnergy": 745.5,
     "atomicRadius": 135,
     "electronConfiguration": "[Ar] 3d10 4s1",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0.000001,
+    "atomsInHumanBody": 0.001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Zinc",
@@ -687,7 +774,10 @@
     "ionizationEnergy": 906.4,
     "atomicRadius": 135,
     "electronConfiguration": "[Ar] 3d10 4s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0.000032,
+    "atomsInHumanBody": 0.01,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Gallium",
@@ -710,7 +800,10 @@
     "ionizationEnergy": 578.8,
     "atomicRadius": 130,
     "electronConfiguration": "[Ar] 3d10 4s2 4p1",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0.0000049,
+    "atomsInHumanBody": 0.01,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Germanium",
@@ -733,7 +826,10 @@
     "ionizationEnergy": 762,
     "atomicRadius": 125,
     "electronConfiguration": "[Ar] 3d10 4s2 4p2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Arsenic",
@@ -756,7 +852,10 @@
     "ionizationEnergy": 947,
     "atomicRadius": 115,
     "electronConfiguration": "[Ar] 3d10 4s2 4p3",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 2.6e-7,
+    "atomsInHumanBody": 0.0001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Selenium",
@@ -779,7 +878,10 @@
     "ionizationEnergy": 941,
     "atomicRadius": 115,
     "electronConfiguration": "[Ar] 3d10 4s2 4p4",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 1.9e-7,
+    "atomsInHumanBody": 0.001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Bromine",
@@ -802,7 +904,10 @@
     "ionizationEnergy": 1139.9,
     "atomicRadius": 115,
     "electronConfiguration": "[Ar] 3d10 4s2 4p5",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0.0000029,
+    "atomsInHumanBody": 0.001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Krypton",
@@ -825,7 +930,10 @@
     "ionizationEnergy": 1350.8,
     "atomicRadius": 88,
     "electronConfiguration": "[Ar] 3d10 4s2 4p6",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 2.125e-12,
+    "atomsInHumanBody": 0.0001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Rubidium",
@@ -848,7 +956,10 @@
     "ionizationEnergy": 403,
     "atomicRadius": 235,
     "electronConfiguration": "[Kr] 5s1",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0.0000046,
+    "atomsInHumanBody": 0.01,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Strontium",
@@ -871,7 +982,10 @@
     "ionizationEnergy": 549.5,
     "atomicRadius": 200,
     "electronConfiguration": "[Kr] 5s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0.0000046,
+    "atomsInHumanBody": 0.001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Yttrium",
@@ -894,7 +1008,10 @@
     "ionizationEnergy": 600,
     "atomicRadius": 180,
     "electronConfiguration": "[Kr] 4d1 5s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 6e-7,
+    "atomsInHumanBody": 0.0001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Zirconium",
@@ -917,7 +1034,10 @@
     "ionizationEnergy": 640.1,
     "atomicRadius": 155,
     "electronConfiguration": "[Kr] 4d2 5s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 6e-9,
+    "atomsInHumanBody": 0.0001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Niobium",
@@ -940,7 +1060,10 @@
     "ionizationEnergy": 652.1,
     "atomicRadius": 145,
     "electronConfiguration": "[Kr] 4d4 5s1",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0.0000016,
+    "atomsInHumanBody": 0.0001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Molybdenum",
@@ -963,7 +1086,10 @@
     "ionizationEnergy": 684.3,
     "atomicRadius": 145,
     "electronConfiguration": "[Kr] 4d5 5s1",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 1.3e-7,
+    "atomsInHumanBody": 0.0001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Technetium",
@@ -986,7 +1112,10 @@
     "ionizationEnergy": 702,
     "atomicRadius": 135,
     "electronConfiguration": "[Kr] 4d5 5s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Ruthenium",
@@ -1009,7 +1138,10 @@
     "ionizationEnergy": 710.2,
     "atomicRadius": 130,
     "electronConfiguration": "[Kr] 4d7 5s1",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 2.2e-8,
+    "atomsInHumanBody": 0.0001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Rhodium",
@@ -1032,7 +1164,10 @@
     "ionizationEnergy": 719.7,
     "atomicRadius": 135,
     "electronConfiguration": "[Kr] 4d8 5s1",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Palladium",
@@ -1055,7 +1190,10 @@
     "ionizationEnergy": 804.4,
     "atomicRadius": 140,
     "electronConfiguration": "[Kr] 4d10",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Silver",
@@ -1078,7 +1216,10 @@
     "ionizationEnergy": 731,
     "atomicRadius": 160,
     "electronConfiguration": "[Kr] 4d10 5s1",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 1e-8,
+    "atomsInHumanBody": 0.0001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Cadmium",
@@ -1101,7 +1242,10 @@
     "ionizationEnergy": 867.8,
     "atomicRadius": 155,
     "electronConfiguration": "[Kr] 4d10 5s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 7.2e-7,
+    "atomsInHumanBody": 0.001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Indium",
@@ -1124,7 +1268,10 @@
     "ionizationEnergy": 558.3,
     "atomicRadius": 155,
     "electronConfiguration": "[Kr] 4d10 5s2 5p1",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 4e-7,
+    "atomsInHumanBody": 0.0001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Tin",
@@ -1147,7 +1294,10 @@
     "ionizationEnergy": 708.6,
     "atomicRadius": 145,
     "electronConfiguration": "[Kr] 4d10 5s2 5p2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 2.4e-7,
+    "atomsInHumanBody": 0.001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Antimony",
@@ -1170,7 +1320,10 @@
     "ionizationEnergy": 834,
     "atomicRadius": 145,
     "electronConfiguration": "[Kr] 4d10 5s2 5p3",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 1.1e-7,
+    "atomsInHumanBody": 0.0001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Tellurium",
@@ -1193,7 +1346,10 @@
     "ionizationEnergy": 869.3,
     "atomicRadius": 140,
     "electronConfiguration": "[Kr] 4d10 5s2 5p4",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 1.2e-7,
+    "atomsInHumanBody": 0.0001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Iodine",
@@ -1216,7 +1372,10 @@
     "ionizationEnergy": 1008.4,
     "atomicRadius": 140,
     "electronConfiguration": "[Kr] 4d10 5s2 5p5",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 1.6e-7,
+    "atomsInHumanBody": 0.001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Xenon",
@@ -1239,7 +1398,10 @@
     "ionizationEnergy": 1170.4,
     "atomicRadius": 108,
     "electronConfiguration": "[Kr] 4d10 5s2 5p6",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Caesium",
@@ -1262,7 +1424,10 @@
     "ionizationEnergy": 375.7,
     "atomicRadius": 260,
     "electronConfiguration": "[Xe] 6s1",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 2.1e-8,
+    "atomsInHumanBody": 0.0001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Barium",
@@ -1285,7 +1450,10 @@
     "ionizationEnergy": 502.9,
     "atomicRadius": 215,
     "electronConfiguration": "[Xe] 6s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 3.1e-7,
+    "atomsInHumanBody": 0.001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Lanthanum",
@@ -1308,7 +1476,10 @@
     "ionizationEnergy": 538.1,
     "atomicRadius": 195,
     "electronConfiguration": "[Xe] 5d16s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0.00000137,
+    "atomsInHumanBody": 0.0001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Cerium",
@@ -1331,7 +1502,10 @@
     "ionizationEnergy": 534.4,
     "atomicRadius": 185,
     "electronConfiguration": "[Xe] 4f1 5d1 6s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 5.7e-7,
+    "atomsInHumanBody": 0.001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Praseodymium",
@@ -1354,7 +1528,10 @@
     "ionizationEnergy": 527,
     "atomicRadius": 185,
     "electronConfiguration": "[Xe] 4f3 6s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Neodymium",
@@ -1377,7 +1554,10 @@
     "ionizationEnergy": 533.1,
     "atomicRadius": 185,
     "electronConfiguration": "[Xe] 4f4 6s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Promethium",
@@ -1400,7 +1580,10 @@
     "ionizationEnergy": 540,
     "atomicRadius": 185,
     "electronConfiguration": "[Xe] 4f5 6s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Samarium",
@@ -1423,7 +1606,10 @@
     "ionizationEnergy": 544.5,
     "atomicRadius": 185,
     "electronConfiguration": "[Xe] 4f6 6s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 5e-8,
+    "atomsInHumanBody": 0.0001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Europium",
@@ -1446,7 +1632,10 @@
     "ionizationEnergy": 547.1,
     "atomicRadius": 185,
     "electronConfiguration": "[Xe] 4f7 6s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Gadolinium",
@@ -1469,7 +1658,10 @@
     "ionizationEnergy": 593.4,
     "atomicRadius": 180,
     "electronConfiguration": "[Xe] 4f7 5d1 6s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Terbium",
@@ -1492,7 +1684,10 @@
     "ionizationEnergy": 565.8,
     "atomicRadius": 175,
     "electronConfiguration": "[Xe] 4f9 6s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Dysprosium",
@@ -1515,7 +1710,10 @@
     "ionizationEnergy": 573,
     "atomicRadius": 175,
     "electronConfiguration": "[Xe] 4f10 6s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Holmium",
@@ -1538,7 +1736,10 @@
     "ionizationEnergy": 581,
     "atomicRadius": 175,
     "electronConfiguration": "[Xe] 4f11 6s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Erbium",
@@ -1561,7 +1762,10 @@
     "ionizationEnergy": 589.3,
     "atomicRadius": 175,
     "electronConfiguration": "[Xe] 4f12 6s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Thulium",
@@ -1584,7 +1788,10 @@
     "ionizationEnergy": 596.7,
     "atomicRadius": 175,
     "electronConfiguration": "[Xe] 4f13 6s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Ytterbium",
@@ -1607,7 +1814,10 @@
     "ionizationEnergy": 603.4,
     "atomicRadius": 175,
     "electronConfiguration": "[Xe] 4f14 6s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Lutetium",
@@ -1630,7 +1840,10 @@
     "ionizationEnergy": 523.5,
     "atomicRadius": 175,
     "electronConfiguration": "[Xe] 4f14 5d1 6s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Hafnium",
@@ -1653,7 +1866,10 @@
     "ionizationEnergy": 658.5,
     "atomicRadius": 155,
     "electronConfiguration": "[Xe] 4f14 5d2 6s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Tantalum",
@@ -1676,7 +1892,10 @@
     "ionizationEnergy": 761,
     "atomicRadius": 145,
     "electronConfiguration": "[Xe] 4f14 5d3 6s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 2e-7,
+    "atomsInHumanBody": 0.0001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Tungsten",
@@ -1699,7 +1918,10 @@
     "ionizationEnergy": 770,
     "atomicRadius": 135,
     "electronConfiguration": "[Xe] 4f14 5d4 6s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 2e-8,
+    "atomsInHumanBody": 0.0001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Rhenium",
@@ -1722,7 +1944,10 @@
     "ionizationEnergy": 760,
     "atomicRadius": 135,
     "electronConfiguration": "[Xe] 4f14 5d5 6s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Osmium",
@@ -1745,7 +1970,10 @@
     "ionizationEnergy": 840,
     "atomicRadius": 130,
     "electronConfiguration": "[Xe] 4f14 5d6 6s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Iridium",
@@ -1768,7 +1996,10 @@
     "ionizationEnergy": 880,
     "atomicRadius": 135,
     "electronConfiguration": "[Xe] 4f14 5d7 6s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Platinum",
@@ -1791,7 +2022,10 @@
     "ionizationEnergy": 870,
     "atomicRadius": 135,
     "electronConfiguration": "[Xe] 4f14 5d9 6s1",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Gold",
@@ -1814,7 +2048,10 @@
     "ionizationEnergy": 890.1,
     "atomicRadius": 135,
     "electronConfiguration": "[Xe] 4f14 5d10 6s1",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 3e-9,
+    "atomsInHumanBody": 0.0001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Mercury",
@@ -1837,7 +2074,10 @@
     "ionizationEnergy": 1007.1,
     "atomicRadius": 150,
     "electronConfiguration": "[Xe] 4f14 5d10 6s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 1.9e-7,
+    "atomsInHumanBody": 0.0001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Thallium",
@@ -1860,7 +2100,10 @@
     "ionizationEnergy": 589.4,
     "atomicRadius": 190,
     "electronConfiguration": "[Xe] 4f14 5d10 6s2 6p1",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 5e-7,
+    "atomsInHumanBody": 0.0001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Lead",
@@ -1883,7 +2126,10 @@
     "ionizationEnergy": 715.6,
     "atomicRadius": 180,
     "electronConfiguration": "[Xe] 4f14 5d10 6s2 6p2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0.0000017,
+    "atomsInHumanBody": 0.001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Bismuth",
@@ -1906,7 +2152,10 @@
     "ionizationEnergy": 703,
     "atomicRadius": 160,
     "electronConfiguration": "[Xe] 4f14 5d10 6s2 6p3",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 5e-7,
+    "atomsInHumanBody": 0.0001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Polonium",
@@ -1929,7 +2178,10 @@
     "ionizationEnergy": 812.1,
     "atomicRadius": 190,
     "electronConfiguration": "[Xe] 4f14 5d10 6s2 6p4",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Astatine",
@@ -1950,7 +2202,10 @@
     "ionizationEnergy": 899.003,
     "atomicRadius": 190,
     "electronConfiguration": "[Xe] 4f14 5d10 6s2 6p5",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Radon",
@@ -1971,7 +2226,10 @@
     "ionizationEnergy": 1037,
     "atomicRadius": 120,
     "electronConfiguration": "[Xe] 4f14 5d10 6s2 6p6",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Francium",
@@ -2000,7 +2258,10 @@
     "ionizationEnergy": 380,
     "atomicRadius": 270,
     "electronConfiguration": "[Rn] 7s1",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Radium",
@@ -2031,7 +2292,10 @@
     "ionizationEnergy": 509.3,
     "atomicRadius": 215,
     "electronConfiguration": "[Rn] 7s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 3e-11,
+    "atomsInHumanBody": 0.0001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Actinium",
@@ -2062,7 +2326,10 @@
     "ionizationEnergy": 499,
     "atomicRadius": 195,
     "electronConfiguration": "[Rn] 6d1 7s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Thorium",
@@ -2093,7 +2360,10 @@
     "ionizationEnergy": 587,
     "atomicRadius": 180,
     "electronConfiguration": "[Rn] 6d2 7s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 1e-7,
+    "atomsInHumanBody": 0.0001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Protactinium",
@@ -2124,7 +2394,10 @@
     "ionizationEnergy": 568,
     "atomicRadius": 180,
     "electronConfiguration": "[Rn] 5f2 6d1 7s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Uranium",
@@ -2155,7 +2428,10 @@
     "ionizationEnergy": 597.6,
     "atomicRadius": 175,
     "electronConfiguration": "[Rn] 5f3 6d1 7s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 1e-7,
+    "atomsInHumanBody": 0.0001,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Neptunium",
@@ -2186,7 +2462,10 @@
     "ionizationEnergy": 604.5,
     "atomicRadius": 175,
     "electronConfiguration": "[Rn] 5f4 6d1 7s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Plutonium",
@@ -2217,7 +2496,10 @@
     "ionizationEnergy": 584.7,
     "atomicRadius": 175,
     "electronConfiguration": "[Rn] 5f6 7s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Americium",
@@ -2248,7 +2530,10 @@
     "ionizationEnergy": 578,
     "atomicRadius": 175,
     "electronConfiguration": "[Rn] 5f7 7s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Curium",
@@ -2279,7 +2564,10 @@
     "ionizationEnergy": 581,
     "atomicRadius": 175,
     "electronConfiguration": "[Rn] 5f7 6d1 7s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Berkelium",
@@ -2310,7 +2598,10 @@
     "ionizationEnergy": 601,
     "atomicRadius": 170,
     "electronConfiguration": "[Rn] 5f9 7s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Californium",
@@ -2340,7 +2631,10 @@
     "ionizationEnergy": 608,
     "atomicRadius": 170,
     "electronConfiguration": "[Rn] 5f10 7s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Einsteinium",
@@ -2371,7 +2665,10 @@
     "ionizationEnergy": 619,
     "atomicRadius": 170,
     "electronConfiguration": "[Rn] 5f11 7s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Fermium",
@@ -2400,7 +2697,10 @@
     "ionizationEnergy": 627,
     "atomicRadius": 170,
     "electronConfiguration": "[Rn] 5f12 7s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Mendelevium",
@@ -2429,7 +2729,10 @@
     "ionizationEnergy": 635,
     "atomicRadius": 170,
     "electronConfiguration": "[Rn] 5f13 7s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Nobelium",
@@ -2458,7 +2761,10 @@
     "ionizationEnergy": 642,
     "atomicRadius": 170,
     "electronConfiguration": "[Rn] 5f14 7s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Lawrencium",
@@ -2487,7 +2793,10 @@
     "ionizationEnergy": 470,
     "atomicRadius": 170,
     "electronConfiguration": "[Rn] 5f14 7s2 7p1",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Rutherfordium",
@@ -2516,7 +2825,10 @@
     "ionizationEnergy": 580,
     "atomicRadius": null,
     "electronConfiguration": "[Rn] 5f14 6d2 7s2",
-    "electronConfigurationConfirmed": true
+    "electronConfigurationConfirmed": true,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Dubnium",
@@ -2545,7 +2857,10 @@
     "atomicRadius": null,
     "electronConfiguration": "[Rn] 5f14 6d3 7s2",
     "electronConfigurationConfirmed": false,
-    "ionizationEnergy": null
+    "ionizationEnergy": null,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Seaborgium",
@@ -2574,7 +2889,10 @@
     "atomicRadius": null,
     "electronConfiguration": "[Rn] 5f14 6d4 7s2",
     "electronConfigurationConfirmed": false,
-    "ionizationEnergy": null
+    "ionizationEnergy": null,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Bohrium",
@@ -2603,7 +2921,10 @@
     "atomicRadius": null,
     "electronConfiguration": "[Rn] 5f14 6d5 7s2",
     "electronConfigurationConfirmed": false,
-    "ionizationEnergy": null
+    "ionizationEnergy": null,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Hassium",
@@ -2632,7 +2953,10 @@
     "atomicRadius": null,
     "electronConfiguration": "[Rn] 5f14 6d6 7s2",
     "electronConfigurationConfirmed": false,
-    "ionizationEnergy": null
+    "ionizationEnergy": null,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Meitnerium",
@@ -2661,7 +2985,10 @@
     "atomicRadius": null,
     "electronConfiguration": "[Rn] 5f14 6d7 7s2",
     "electronConfigurationConfirmed": false,
-    "ionizationEnergy": null
+    "ionizationEnergy": null,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Darmstadtium",
@@ -2690,7 +3017,10 @@
     "atomicRadius": null,
     "electronConfiguration": "[Rn] 5f14 6d9 7s1",
     "electronConfigurationConfirmed": false,
-    "ionizationEnergy": null
+    "ionizationEnergy": null,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Roentgenium",
@@ -2719,7 +3049,10 @@
     "atomicRadius": null,
     "electronConfiguration": "[Rn] 5f14 6d10 7s1",
     "electronConfigurationConfirmed": false,
-    "ionizationEnergy": null
+    "ionizationEnergy": null,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Copernicium",
@@ -2748,7 +3081,10 @@
     "atomicRadius": null,
     "electronConfiguration": "[Rn] 5f14 6d10 7s2",
     "electronConfigurationConfirmed": false,
-    "ionizationEnergy": null
+    "ionizationEnergy": null,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Nihonium",
@@ -2777,7 +3113,10 @@
     "atomicRadius": null,
     "electronConfiguration": "[Rn] 5f14 6d10 7s2 7p1",
     "electronConfigurationConfirmed": false,
-    "ionizationEnergy": null
+    "ionizationEnergy": null,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Flerovium",
@@ -2806,7 +3145,10 @@
     "atomicRadius": null,
     "electronConfiguration": "[Rn] 5f14 6d10 7s2 7p2",
     "electronConfigurationConfirmed": false,
-    "ionizationEnergy": null
+    "ionizationEnergy": null,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Moscovium",
@@ -2835,7 +3177,10 @@
     "atomicRadius": null,
     "electronConfiguration": "[Rn] 5f14 6d10 7s2 7p3",
     "electronConfigurationConfirmed": false,
-    "ionizationEnergy": null
+    "ionizationEnergy": null,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Livermorium",
@@ -2864,7 +3209,10 @@
     "atomicRadius": null,
     "electronConfiguration": "[Rn] 5f14 6d10 7s2 7p4",
     "electronConfigurationConfirmed": false,
-    "ionizationEnergy": null
+    "ionizationEnergy": null,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Tennessine",
@@ -2893,7 +3241,10 @@
     "atomicRadius": null,
     "electronConfiguration": "[Rn] 5f14 6d10 7s2 7p5",
     "electronConfigurationConfirmed": false,
-    "ionizationEnergy": null
+    "ionizationEnergy": null,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   },
   {
     "name": "Oganesson",
@@ -2922,6 +3273,9 @@
     "atomicRadius": null,
     "electronConfiguration": "[Rn] 5f14 6d10 7s2 7p6",
     "electronConfigurationConfirmed": false,
-    "ionizationEnergy": null
+    "ionizationEnergy": null,
+    "massInHumanBody": 0,
+    "atomsInHumanBody": 0,
+    "abundanceInMilkyWay": 0
   }
 ]

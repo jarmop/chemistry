@@ -3,7 +3,7 @@ import oldElements from "../client/src/data/elements.json" with {
   type: "json",
 };
 
-const text = await Deno.readTextFile("chemical-elements.tsv");
+const text = await Deno.readTextFile("./data/chemical-elements.tsv");
 
 const rows = text.split("\n");
 

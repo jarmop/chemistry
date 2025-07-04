@@ -5,13 +5,16 @@ export const colorModes = [
   "block",
   "phase",
   "density",
-  "abundance",
-  "abundance rank",
   "electronegativity",
   "electron affinity",
   "ionization energy",
   "atomic radius",
   "origin",
+  "abundance on earth's crust",
+  "abundance on earth's crust rank",
+  "mass in human body",
+  "atoms in human body",
+  "abundance in milky way",
 ] as const;
 export type ColorMode = (typeof colorModes)[number];
 
@@ -45,14 +48,17 @@ function createColorGetter(
 }
 
 const colorGetters = {
-  abundance: createColorGetter("abundanceOnEarthCrust"),
-  "abundance rank": createColorGetter("abundanceRank", true),
+  "abundance on earth's crust": createColorGetter("abundanceOnEarthCrust"),
+  "abundance on earth's crust rank": createColorGetter("abundanceRank", true),
   density: createColorGetter("density"),
   electronegativity: createColorGetter("electronegativity"),
   "electron affinity": createColorGetter("electronAffinity"),
   "ionization energy": createColorGetter("ionizationEnergy"),
   "atomic radius": createColorGetter("atomicRadius"),
   origin: createColorGetter("origin"),
+  "mass in human body": createColorGetter("massInHumanBody"),
+  "atoms in human body": createColorGetter("atomsInHumanBody"),
+  "abundance in milky way": createColorGetter("abundanceInMilkyWay"),
 };
 
 export function getCellColor(element: ElementType, colorMode: ColorMode) {

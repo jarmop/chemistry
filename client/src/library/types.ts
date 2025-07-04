@@ -21,4 +21,7 @@ export type Element = {
   atomicRadius: number;
   electronConfiguration: string;
   electronConfigurationConfirmed: boolean;
+  massInHumanBody: number;
+  atomsInHumanBody: number;
+  abundanceInMilkyWay: number;
 };
