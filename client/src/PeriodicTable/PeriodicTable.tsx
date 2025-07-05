@@ -13,6 +13,7 @@ import {
 } from "./getCellColor.ts";
 import { TableBody } from "./TableBody.tsx";
 import { ComparisonTable } from "./ComparisonTable.tsx";
+import { ColorDescription } from "./ColorDescription.tsx";
 
 const viewModes = ["simple", "detailed", "image"] as const;
 type ViewMode = (typeof viewModes)[number];
@@ -137,9 +138,9 @@ export function PeriodicTable(
           renderElementCell={renderElementCell}
         />
       </table>
-      {colorMode && !discreteColorModes.includes(colorMode) && (
-        <ComparisonTable colorMode={colorMode} />
-      )}
+      {discreteColorModes.includes(colorMode)
+        ? <ColorDescription colorMode={colorMode} />
+        : <ComparisonTable colorMode={colorMode} />}
     </>
   );
 }

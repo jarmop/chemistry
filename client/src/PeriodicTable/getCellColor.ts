@@ -20,18 +20,32 @@ export type ColorMode = keyof typeof colorModes;
 
 export const discreteColorModes: ColorMode[] = ["block", "phase", "origin"];
 
-const blockColor: Record<string, string> = {
+type Colors = Record<string, string>;
+
+const blockColors: Colors = {
   "s-block": "pink",
   "f-block": "lightgreen",
   "d-block": "lightblue",
   "p-block": "lightyellow",
 };
 
-const phaseColor: Record<string, string> = {
+const phaseColors: Colors = {
   "solid": "lightgreen",
   "liquid": "lightblue",
   "gas": "lightyellow",
   "unknown phase": "lightgrey",
+};
+
+const originColors: Colors = {
+  "primordial": "lightgreen",
+  "synthetic": "lightblue",
+  "from decay": "lightyellow",
+};
+
+export const colorsByMode: Partial<Record<ColorMode, Colors>> = {
+  block: blockColors,
+  phase: phaseColors,
+  origin: originColors,
 };
 
 function createColorGetter(
@@ -68,15 +82,11 @@ const colorGetters: Partial<Record<ColorMode, (element: ElementType) => string>>
 
 export function getCellColor(element: ElementType, colorMode: ColorMode) {
   if (colorMode === "block") {
-    return blockColor[element.block];
+    return blockColors[element.block];
   } else if (colorMode === "phase") {
-    return phaseColor[element.phase];
+    return phaseColors[element.phase];
   } else if (colorMode === "origin") {
-    return element.origin === "primordial"
-      ? "lightgreen"
-      : element.origin === "synthetic"
-      ? "lightblue"
-      : "lightyellow";
+    return originColors[element.origin];
   } else if (colorGetters[colorMode]) {
     return colorGetters[colorMode](element);
   }
