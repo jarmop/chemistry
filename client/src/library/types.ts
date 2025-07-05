@@ -24,4 +24,5 @@ export type Element = {
   massInHumanBody: number;
   atomsInHumanBody: number;
   abundanceInMilkyWay: number;
+  category: string;
 };

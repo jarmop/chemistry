@@ -66,6 +66,7 @@ for (const oldElement of oldElements) {
       electronConfiguration: electronConfiguration ?? null,
       electronConfigurationConfirmed: electronConfigurationConfirmed ?? null,
       electrons: electrons ?? null,
+      category: elementData.category.split(",")[0],
     });
   }
 }

@@ -27,8 +27,11 @@ export function PeriodicTable(
 ) {
   const { element: selectedZ } = useContext(StateContext);
 
-  const [colorMode, setColorMode] = useState<ColorMode>("block");
+  const [colorMode, setColorMode] = useState<ColorMode>("category");
   const [viewMode, setViewMode] = useState<ViewMode>("simple");
+  const [highlightValue, setHighlightValue] = useState<string | null>(
+    "alkali metal",
+  );
 
   const mainElements: ElementType[][] = [];
   for (let i = 0; i < 7; i++) {
@@ -44,6 +47,12 @@ export function PeriodicTable(
     fBlockElementsArray.slice(fBlockElementsArray.length / 2),
   ];
 
+  function maybeCellColor(element: ElementType) {
+    return (highlightValue && element[colorMode] !== highlightValue)
+      ? undefined
+      : getCellColor(element, colorMode);
+  }
+
   function renderElementCell(element: ElementType, key: string | number) {
     if (viewMode === "detailed") {
       return (
@@ -51,7 +60,7 @@ export function PeriodicTable(
           key={key}
           element={element}
           isSelected={selectedZ === element.protons}
-          color={getCellColor(element, colorMode)}
+          color={maybeCellColor(element)}
           onElementSelected={onElementSelected}
         />
       );
@@ -70,7 +79,7 @@ export function PeriodicTable(
           key={key}
           element={element}
           isSelected={selectedZ === element.protons}
-          color={getCellColor(element, colorMode)}
+          color={maybeCellColor(element)}
           onElementSelected={onElementSelected}
         />
       );
@@ -139,8 +148,19 @@ export function PeriodicTable(
         />
       </table>
       {discreteColorModes.includes(colorMode)
-        ? <ColorDescription colorMode={colorMode} />
-        : <ComparisonTable colorMode={colorMode} />}
+        ? (
+          <ColorDescription
+            colorMode={colorMode}
+            onSelectValue={setHighlightValue}
+          />
+        )
+        : (
+          <ComparisonTable
+            colorMode={colorMode === "abundanceOnEarthCrustRank"
+              ? "abundanceOnEarthCrust"
+              : colorMode}
+          />
+        )}
     </>
   );
 }

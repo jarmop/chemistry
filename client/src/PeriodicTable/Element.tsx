@@ -3,7 +3,7 @@ import { Element as ElementType } from "../library/types.ts";
 interface ElementProps {
   element: ElementType;
   isSelected: boolean;
-  color: string;
+  color: string | undefined;
   onElementSelected: (element: ElementType) => void;
 }
 

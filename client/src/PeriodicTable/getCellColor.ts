@@ -2,6 +2,7 @@ import elements from "../data/elements.ts";
 import { Element as ElementType } from "../library/types.ts";
 
 export const colorModes: Partial<Record<keyof ElementType, string>> = {
+  category: "category",
   block: "block",
   phase: "phase",
   origin: "origin",
@@ -18,7 +19,12 @@ export const colorModes: Partial<Record<keyof ElementType, string>> = {
 };
 export type ColorMode = keyof typeof colorModes;
 
-export const discreteColorModes: ColorMode[] = ["block", "phase", "origin"];
+export const discreteColorModes: ColorMode[] = [
+  "block",
+  "category",
+  "phase",
+  "origin",
+];
 
 type Colors = Record<string, string>;
 
@@ -42,10 +48,25 @@ const originColors: Colors = {
   "from decay": "lightyellow",
 };
 
+export const categoryColors: Colors = {
+  "transition metal": "lightblue",
+  "post-transition metal": "lightgreen",
+  "metalloid": "violet",
+  "polyatomic nonmetal": "orange",
+  "diatomic nonmetal": "darkseagreen",
+  "noble gas": "deepskyblue",
+  "alkali metal": "yellow",
+  "alkaline earth metal": "pink",
+  "lanthanide": "rosybrown",
+  "actinide": "turquoise",
+  "unknown": "lightgrey",
+};
+
 export const colorsByMode: Partial<Record<ColorMode, Colors>> = {
   block: blockColors,
   phase: phaseColors,
   origin: originColors,
+  category: categoryColors,
 };
 
 function createColorGetter(
@@ -63,7 +84,9 @@ function createColorGetter(
   };
 }
 
-const colorGetters: Partial<Record<ColorMode, (element: ElementType) => string>> = {
+const colorGetters: Partial<
+  Record<ColorMode, (element: ElementType) => string>
+> = {
   abundanceOnEarthCrust: createColorGetter("abundanceOnEarthCrust"),
   abundanceOnEarthCrustRank: createColorGetter(
     "abundanceOnEarthCrustRank",
@@ -81,12 +104,10 @@ const colorGetters: Partial<Record<ColorMode, (element: ElementType) => string>>
 };
 
 export function getCellColor(element: ElementType, colorMode: ColorMode) {
-  if (colorMode === "block") {
-    return blockColors[element.block];
-  } else if (colorMode === "phase") {
-    return phaseColors[element.phase];
-  } else if (colorMode === "origin") {
-    return originColors[element.origin];
+  if (discreteColorModes.includes(colorMode)) {
+    const colors = colorsByMode[colorMode];
+    const value = element[colorMode] as string;
+    return colors && colors[value];
   } else if (colorGetters[colorMode]) {
     return colorGetters[colorMode](element);
   }

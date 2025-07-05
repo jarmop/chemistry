@@ -8,9 +8,9 @@ const elements = elementsJSON
       ...el,
       abundanceOnEarthCrustRank: i + 1,
     };
-  }).sort((a, b) => a.protons - b.protons);
+  }).sort((a, b) => a.protons - b.protons) as unknown as Element[];
 
-export default elements as unknown as Element[];
+export default elements;
 
 export const elementUnits: Partial<Record<keyof Element, string>> = {
   abundanceOnEarthCrust: "ppm",
