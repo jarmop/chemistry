@@ -8,6 +8,6 @@ const elements = elementsJSON
       ...el,
       abundanceRank: i + 1,
     };
-  });
+  }).sort((a, b) => a.protons - b.protons);
 
 export default elements as unknown as Element[];
