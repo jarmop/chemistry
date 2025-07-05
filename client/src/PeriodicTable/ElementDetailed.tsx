@@ -3,7 +3,7 @@ import { Element as ElementType } from "../library/types.ts";
 interface ElementDetailedProps {
   element: ElementType;
   isSelected: boolean;
-  color: string;
+  color: string | undefined;
   onElementSelected: (element: ElementType) => void;
 }
 
@@ -22,8 +22,8 @@ export function ElementDetailed({
         position: "relative",
         textAlign: "center",
         padding: "2px",
-        width: "80px",
-        height: "80px",
+        width: "76px",
+        height: "76px",
         // fontSize: "10px",
         border: "1px solid rgb(160 160 160)",
         verticalAlign: "top",

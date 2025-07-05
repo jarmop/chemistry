@@ -48,6 +48,9 @@ export function Inspect() {
               display: "flex",
               flexDirection: "column",
               marginLeft: "20px",
+              overflowY: "scroll",
+              minWidth: "330px",
+              height: "100vh",
             }}
           >
             <div>

@@ -34,7 +34,7 @@ export function AtomData() {
     <div>
       <h1 style={{ margin: " 0" }}>{element.name}</h1>
 
-      <table style={{ margin: "6px 0" }}>
+      <table style={{ margin: "6px 0" }} className="dataTable">
         <tbody>
           <tr>
             <td>Protons:</td>
@@ -47,6 +47,10 @@ export function AtomData() {
           <tr>
             <td>Electrons:</td>
             <td>{electronsPerShell.reduce((acc, curr) => acc + curr, 0)}</td>
+          </tr>
+          <tr>
+            <td>Category:</td>
+            <td>{element.category}</td>
           </tr>
           <tr>
             <td>Block:</td>

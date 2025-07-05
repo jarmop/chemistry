@@ -34,3 +34,9 @@ table.comparisonTable {
     padding: 4px 5px;
   }
 }
+
+table.dataTable {
+  td {
+    text-wrap: nowrap;
+  }
+}

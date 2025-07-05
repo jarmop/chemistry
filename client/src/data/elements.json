@@ -23,7 +23,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 10,
     "atomsInHumanBody": 63,
-    "abundanceInMilkyWay": 73.97
+    "abundanceInMilkyWay": 73.97,
+    "category": "diatomic nonmetal"
   },
   {
     "name": "Helium",
@@ -49,7 +50,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 2.039e-11,
     "atomsInHumanBody": 0.0001,
-    "abundanceInMilkyWay": 24.02
+    "abundanceInMilkyWay": 24.02,
+    "category": "noble gas"
   },
   {
     "name": "Lithium",
@@ -75,7 +77,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 3.1e-8,
     "atomsInHumanBody": 0.0001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "alkali metal"
   },
   {
     "name": "Beryllium",
@@ -101,7 +104,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 3.6e-8,
     "atomsInHumanBody": 0.0001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "alkaline earth metal"
   },
   {
     "name": "Boron",
@@ -127,7 +131,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 6.9e-7,
     "atomsInHumanBody": 0.001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "metalloid"
   },
   {
     "name": "Carbon",
@@ -153,7 +158,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 18,
     "atomsInHumanBody": 9.5,
-    "abundanceInMilkyWay": 0.46
+    "abundanceInMilkyWay": 0.46,
+    "category": "polyatomic nonmetal"
   },
   {
     "name": "Nitrogen",
@@ -179,7 +185,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 2.6,
     "atomsInHumanBody": 1.1,
-    "abundanceInMilkyWay": 0.1
+    "abundanceInMilkyWay": 0.1,
+    "category": "diatomic nonmetal"
   },
   {
     "name": "Oxygen",
@@ -205,7 +212,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 65,
     "atomsInHumanBody": 26,
-    "abundanceInMilkyWay": 1.04
+    "abundanceInMilkyWay": 1.04,
+    "category": "diatomic nonmetal"
   },
   {
     "name": "Fluorine",
@@ -231,7 +239,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0.000037,
     "atomsInHumanBody": 0.01,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "diatomic nonmetal"
   },
   {
     "name": "Neon",
@@ -257,7 +266,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 8.5e-12,
     "atomsInHumanBody": 0.0001,
-    "abundanceInMilkyWay": 0.13
+    "abundanceInMilkyWay": 0.13,
+    "category": "noble gas"
   },
   {
     "name": "Sodium",
@@ -283,7 +293,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0.1,
     "atomsInHumanBody": 0.041,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "alkali metal"
   },
   {
     "name": "Magnesium",
@@ -309,7 +320,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0.05,
     "atomsInHumanBody": 0.01,
-    "abundanceInMilkyWay": 0.06
+    "abundanceInMilkyWay": 0.06,
+    "category": "alkaline earth metal"
   },
   {
     "name": "Aluminium",
@@ -335,7 +347,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 8.7e-7,
     "atomsInHumanBody": 0.001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "post-transition metal"
   },
   {
     "name": "Silicon",
@@ -361,7 +374,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0.00002,
     "atomsInHumanBody": 0.01,
-    "abundanceInMilkyWay": 0.07
+    "abundanceInMilkyWay": 0.07,
+    "category": "metalloid"
   },
   {
     "name": "Phosphorus",
@@ -387,7 +401,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0.6,
     "atomsInHumanBody": 0.12,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "polyatomic nonmetal"
   },
   {
     "name": "Sulfur",
@@ -413,7 +428,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0.2,
     "atomsInHumanBody": 0.049,
-    "abundanceInMilkyWay": 0.04
+    "abundanceInMilkyWay": 0.04,
+    "category": "polyatomic nonmetal"
   },
   {
     "name": "Chlorine",
@@ -439,7 +455,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0.2,
     "atomsInHumanBody": 0.027,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "diatomic nonmetal"
   },
   {
     "name": "Argon",
@@ -465,7 +482,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 4.25e-12,
     "atomsInHumanBody": 0.0001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "noble gas"
   },
   {
     "name": "Potassium",
@@ -491,7 +509,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0.2,
     "atomsInHumanBody": 0.029,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "alkali metal"
   },
   {
     "name": "Calcium",
@@ -517,7 +536,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 1.5,
     "atomsInHumanBody": 0.21,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "alkaline earth metal"
   },
   {
     "name": "Scandium",
@@ -543,7 +563,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 2e-7,
     "atomsInHumanBody": 0.0001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "transition metal"
   },
   {
     "name": "Titanium",
@@ -569,7 +590,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 1.3e-7,
     "atomsInHumanBody": 0.001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "transition metal"
   },
   {
     "name": "Vanadium",
@@ -595,7 +617,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 2.6e-7,
     "atomsInHumanBody": 0.0001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "transition metal"
   },
   {
     "name": "Chromium",
@@ -621,7 +644,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 2.4e-8,
     "atomsInHumanBody": 0.0001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "transition metal"
   },
   {
     "name": "Manganese",
@@ -647,7 +671,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 1.7e-7,
     "atomsInHumanBody": 0.0001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "transition metal"
   },
   {
     "name": "Iron",
@@ -673,7 +698,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0.0042,
     "atomsInHumanBody": 0.01,
-    "abundanceInMilkyWay": 0.11
+    "abundanceInMilkyWay": 0.11,
+    "category": "transition metal"
   },
   {
     "name": "Cobalt",
@@ -699,7 +725,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 2.1e-8,
     "atomsInHumanBody": 0.0001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "transition metal"
   },
   {
     "name": "Nickel",
@@ -725,7 +752,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 1.4e-7,
     "atomsInHumanBody": 0.0001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "transition metal"
   },
   {
     "name": "Copper",
@@ -751,7 +779,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0.000001,
     "atomsInHumanBody": 0.001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "transition metal"
   },
   {
     "name": "Zinc",
@@ -777,7 +806,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0.000032,
     "atomsInHumanBody": 0.01,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "transition metal"
   },
   {
     "name": "Gallium",
@@ -803,7 +833,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0.0000049,
     "atomsInHumanBody": 0.01,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "post-transition metal"
   },
   {
     "name": "Germanium",
@@ -829,7 +860,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "metalloid"
   },
   {
     "name": "Arsenic",
@@ -855,7 +887,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 2.6e-7,
     "atomsInHumanBody": 0.0001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "metalloid"
   },
   {
     "name": "Selenium",
@@ -881,7 +914,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 1.9e-7,
     "atomsInHumanBody": 0.001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "polyatomic nonmetal"
   },
   {
     "name": "Bromine",
@@ -907,7 +941,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0.0000029,
     "atomsInHumanBody": 0.001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "diatomic nonmetal"
   },
   {
     "name": "Krypton",
@@ -933,7 +968,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 2.125e-12,
     "atomsInHumanBody": 0.0001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "noble gas"
   },
   {
     "name": "Rubidium",
@@ -959,7 +995,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0.0000046,
     "atomsInHumanBody": 0.01,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "alkali metal"
   },
   {
     "name": "Strontium",
@@ -985,7 +1022,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0.0000046,
     "atomsInHumanBody": 0.001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "alkaline earth metal"
   },
   {
     "name": "Yttrium",
@@ -1011,7 +1049,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 6e-7,
     "atomsInHumanBody": 0.0001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "transition metal"
   },
   {
     "name": "Zirconium",
@@ -1037,7 +1076,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 6e-9,
     "atomsInHumanBody": 0.0001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "transition metal"
   },
   {
     "name": "Niobium",
@@ -1063,7 +1103,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0.0000016,
     "atomsInHumanBody": 0.0001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "transition metal"
   },
   {
     "name": "Molybdenum",
@@ -1089,7 +1130,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 1.3e-7,
     "atomsInHumanBody": 0.0001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "transition metal"
   },
   {
     "name": "Technetium",
@@ -1115,7 +1157,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "transition metal"
   },
   {
     "name": "Ruthenium",
@@ -1141,7 +1184,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 2.2e-8,
     "atomsInHumanBody": 0.0001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "transition metal"
   },
   {
     "name": "Rhodium",
@@ -1167,7 +1211,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "transition metal"
   },
   {
     "name": "Palladium",
@@ -1193,7 +1238,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "transition metal"
   },
   {
     "name": "Silver",
@@ -1219,7 +1265,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 1e-8,
     "atomsInHumanBody": 0.0001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "transition metal"
   },
   {
     "name": "Cadmium",
@@ -1245,7 +1292,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 7.2e-7,
     "atomsInHumanBody": 0.001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "transition metal"
   },
   {
     "name": "Indium",
@@ -1271,7 +1319,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 4e-7,
     "atomsInHumanBody": 0.0001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "post-transition metal"
   },
   {
     "name": "Tin",
@@ -1297,7 +1346,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 2.4e-7,
     "atomsInHumanBody": 0.001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "post-transition metal"
   },
   {
     "name": "Antimony",
@@ -1323,7 +1373,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 1.1e-7,
     "atomsInHumanBody": 0.0001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "metalloid"
   },
   {
     "name": "Tellurium",
@@ -1349,7 +1400,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 1.2e-7,
     "atomsInHumanBody": 0.0001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "metalloid"
   },
   {
     "name": "Iodine",
@@ -1375,7 +1427,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 1.6e-7,
     "atomsInHumanBody": 0.001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "diatomic nonmetal"
   },
   {
     "name": "Xenon",
@@ -1401,7 +1454,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "noble gas"
   },
   {
     "name": "Caesium",
@@ -1427,7 +1481,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 2.1e-8,
     "atomsInHumanBody": 0.0001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "alkali metal"
   },
   {
     "name": "Barium",
@@ -1453,7 +1508,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 3.1e-7,
     "atomsInHumanBody": 0.001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "alkaline earth metal"
   },
   {
     "name": "Lanthanum",
@@ -1479,7 +1535,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0.00000137,
     "atomsInHumanBody": 0.0001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "lanthanide"
   },
   {
     "name": "Cerium",
@@ -1505,7 +1562,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 5.7e-7,
     "atomsInHumanBody": 0.001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "lanthanide"
   },
   {
     "name": "Praseodymium",
@@ -1531,7 +1589,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "lanthanide"
   },
   {
     "name": "Neodymium",
@@ -1557,7 +1616,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "lanthanide"
   },
   {
     "name": "Promethium",
@@ -1583,7 +1643,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "lanthanide"
   },
   {
     "name": "Samarium",
@@ -1609,7 +1670,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 5e-8,
     "atomsInHumanBody": 0.0001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "lanthanide"
   },
   {
     "name": "Europium",
@@ -1635,7 +1697,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "lanthanide"
   },
   {
     "name": "Gadolinium",
@@ -1661,7 +1724,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "lanthanide"
   },
   {
     "name": "Terbium",
@@ -1687,7 +1751,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "lanthanide"
   },
   {
     "name": "Dysprosium",
@@ -1713,7 +1778,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "lanthanide"
   },
   {
     "name": "Holmium",
@@ -1739,7 +1805,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "lanthanide"
   },
   {
     "name": "Erbium",
@@ -1765,7 +1832,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "lanthanide"
   },
   {
     "name": "Thulium",
@@ -1791,7 +1859,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "lanthanide"
   },
   {
     "name": "Ytterbium",
@@ -1817,7 +1886,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "lanthanide"
   },
   {
     "name": "Lutetium",
@@ -1843,7 +1913,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "lanthanide"
   },
   {
     "name": "Hafnium",
@@ -1869,7 +1940,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "transition metal"
   },
   {
     "name": "Tantalum",
@@ -1895,7 +1967,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 2e-7,
     "atomsInHumanBody": 0.0001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "transition metal"
   },
   {
     "name": "Tungsten",
@@ -1921,7 +1994,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 2e-8,
     "atomsInHumanBody": 0.0001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "transition metal"
   },
   {
     "name": "Rhenium",
@@ -1947,7 +2021,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "transition metal"
   },
   {
     "name": "Osmium",
@@ -1973,7 +2048,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "transition metal"
   },
   {
     "name": "Iridium",
@@ -1999,7 +2075,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "transition metal"
   },
   {
     "name": "Platinum",
@@ -2025,7 +2102,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "transition metal"
   },
   {
     "name": "Gold",
@@ -2051,7 +2129,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 3e-9,
     "atomsInHumanBody": 0.0001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "transition metal"
   },
   {
     "name": "Mercury",
@@ -2077,7 +2156,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 1.9e-7,
     "atomsInHumanBody": 0.0001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "transition metal"
   },
   {
     "name": "Thallium",
@@ -2103,7 +2183,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 5e-7,
     "atomsInHumanBody": 0.0001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "post-transition metal"
   },
   {
     "name": "Lead",
@@ -2129,7 +2210,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0.0000017,
     "atomsInHumanBody": 0.001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "post-transition metal"
   },
   {
     "name": "Bismuth",
@@ -2155,7 +2237,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 5e-7,
     "atomsInHumanBody": 0.0001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "post-transition metal"
   },
   {
     "name": "Polonium",
@@ -2181,7 +2264,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "post-transition metal"
   },
   {
     "name": "Astatine",
@@ -2205,7 +2289,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "metalloid"
   },
   {
     "name": "Radon",
@@ -2229,7 +2314,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "noble gas"
   },
   {
     "name": "Francium",
@@ -2261,7 +2347,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "alkali metal"
   },
   {
     "name": "Radium",
@@ -2295,7 +2382,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 3e-11,
     "atomsInHumanBody": 0.0001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "alkaline earth metal"
   },
   {
     "name": "Actinium",
@@ -2329,7 +2417,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "actinide"
   },
   {
     "name": "Thorium",
@@ -2363,7 +2452,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 1e-7,
     "atomsInHumanBody": 0.0001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "actinide"
   },
   {
     "name": "Protactinium",
@@ -2397,7 +2487,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "actinide"
   },
   {
     "name": "Uranium",
@@ -2431,7 +2522,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 1e-7,
     "atomsInHumanBody": 0.0001,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "actinide"
   },
   {
     "name": "Neptunium",
@@ -2465,7 +2557,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "actinide"
   },
   {
     "name": "Plutonium",
@@ -2499,7 +2592,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "actinide"
   },
   {
     "name": "Americium",
@@ -2533,7 +2627,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "actinide"
   },
   {
     "name": "Curium",
@@ -2567,7 +2662,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "actinide"
   },
   {
     "name": "Berkelium",
@@ -2601,7 +2697,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "actinide"
   },
   {
     "name": "Californium",
@@ -2634,7 +2731,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "actinide"
   },
   {
     "name": "Einsteinium",
@@ -2668,7 +2766,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "actinide"
   },
   {
     "name": "Fermium",
@@ -2700,7 +2799,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "actinide"
   },
   {
     "name": "Mendelevium",
@@ -2732,7 +2832,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "actinide"
   },
   {
     "name": "Nobelium",
@@ -2764,7 +2865,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "actinide"
   },
   {
     "name": "Lawrencium",
@@ -2796,7 +2898,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "actinide"
   },
   {
     "name": "Rutherfordium",
@@ -2828,7 +2931,8 @@
     "electronConfigurationConfirmed": true,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "transition metal"
   },
   {
     "name": "Dubnium",
@@ -2860,7 +2964,8 @@
     "ionizationEnergy": null,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "transition metal"
   },
   {
     "name": "Seaborgium",
@@ -2892,7 +2997,8 @@
     "ionizationEnergy": null,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "transition metal"
   },
   {
     "name": "Bohrium",
@@ -2924,7 +3030,8 @@
     "ionizationEnergy": null,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "transition metal"
   },
   {
     "name": "Hassium",
@@ -2956,7 +3063,8 @@
     "ionizationEnergy": null,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "transition metal"
   },
   {
     "name": "Meitnerium",
@@ -2988,7 +3096,8 @@
     "ionizationEnergy": null,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "unknown"
   },
   {
     "name": "Darmstadtium",
@@ -3020,7 +3129,8 @@
     "ionizationEnergy": null,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "unknown"
   },
   {
     "name": "Roentgenium",
@@ -3052,7 +3162,8 @@
     "ionizationEnergy": null,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "unknown"
   },
   {
     "name": "Copernicium",
@@ -3084,7 +3195,8 @@
     "ionizationEnergy": null,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "transition metal"
   },
   {
     "name": "Nihonium",
@@ -3116,7 +3228,8 @@
     "ionizationEnergy": null,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "unknown"
   },
   {
     "name": "Flerovium",
@@ -3148,7 +3261,8 @@
     "ionizationEnergy": null,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "post-transition metal"
   },
   {
     "name": "Moscovium",
@@ -3180,7 +3294,8 @@
     "ionizationEnergy": null,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "unknown"
   },
   {
     "name": "Livermorium",
@@ -3212,7 +3327,8 @@
     "ionizationEnergy": null,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "unknown"
   },
   {
     "name": "Tennessine",
@@ -3244,7 +3360,8 @@
     "ionizationEnergy": null,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "unknown"
   },
   {
     "name": "Oganesson",
@@ -3276,6 +3393,7 @@
     "ionizationEnergy": null,
     "massInHumanBody": 0,
     "atomsInHumanBody": 0,
-    "abundanceInMilkyWay": 0
+    "abundanceInMilkyWay": 0,
+    "category": "unknown"
   }
 ]

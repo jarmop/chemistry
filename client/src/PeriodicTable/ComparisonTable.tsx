@@ -17,13 +17,11 @@ export function ComparisonTable(
         <tr>
           <th></th>
           <th style={{ textAlign: "left" }}>element</th>
-          {colorMode !== "abundanceOnEarthCrustRank" && (
-            <th>{colorModes[colorMode]} ({elementUnits[colorMode]})</th>
-          )}
+          <th>{colorModes[colorMode]} ({elementUnits[colorMode]})</th>
         </tr>
       </thead>
       <tbody>
-        {elements.sort((a, b) => {
+        {[...elements].sort((a, b) => {
           const aValue = a[colorMode] as number ?? 0;
           const bValue = b[colorMode] as number ?? 0;
           if (colorMode === "abundanceOnEarthCrustRank") {
@@ -34,9 +32,7 @@ export function ComparisonTable(
           <tr key={el.symbol}>
             <td>{i + 1}</td>
             <td>{el.name}</td>
-            {colorMode !== "abundanceOnEarthCrustRank" && (
-              <td>{el[colorMode] ?? "N/A"}</td>
-            )}
+            <td>{el[colorMode] ?? "N/A"}</td>
           </tr>
         ))}
       </tbody>
