@@ -4,7 +4,10 @@ interface ElementProps {
   element: ElementType;
   isSelected: boolean;
   color: string | undefined;
-  onElementSelected: (element: ElementType) => void;
+  onElementSelected: (
+    element: ElementType | undefined,
+    click?: boolean,
+  ) => void;
 }
 
 export function Element({
@@ -15,7 +18,9 @@ export function Element({
 }: ElementProps) {
   return (
     <td
-      onClick={() => onElementSelected(element)}
+      onClick={() => onElementSelected(element, true)}
+      onMouseOver={() => onElementSelected(element)}
+      onMouseLeave={() => onElementSelected(undefined)}
       style={{
         cursor: "pointer",
         background: color,

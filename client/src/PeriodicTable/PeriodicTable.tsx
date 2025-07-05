@@ -19,7 +19,7 @@ const viewModes = ["simple", "detailed", "image"] as const;
 type ViewMode = (typeof viewModes)[number];
 
 interface PeriodicTableProps {
-  onElementSelected: (element: ElementType) => void;
+  onElementSelected: (element: ElementType | undefined) => void;
 }
 
 export function PeriodicTable(
@@ -30,6 +30,7 @@ export function PeriodicTable(
   const [colorMode, setColorMode] = useState<ColorMode>("category");
   const [viewMode, setViewMode] = useState<ViewMode>("simple");
   const [highlightValue, setHighlightValue] = useState<string>();
+  const [hoverEnabled, setHoverEnabled] = useState(true);
 
   const mainElements: ElementType[][] = [];
   for (let i = 0; i < 7; i++) {
@@ -51,6 +52,25 @@ export function PeriodicTable(
       : getCellColor(element, colorMode);
   }
 
+  function selectElement(
+    element: ElementType | undefined,
+    hover?: boolean | undefined,
+  ) {
+    const elementSelected = element?.protons === selectedZ;
+    if (hover === undefined) {
+      onElementSelected(elementSelected ? undefined : element);
+    } else if (hover === true) {
+      hoverEnabled && onElementSelected(element);
+    } else {
+      if (elementSelected) {
+        onElementSelected(hoverEnabled ? element : undefined);
+        setHoverEnabled(!hoverEnabled);
+      } else {
+        onElementSelected(element);
+      }
+    }
+  }
+
   function renderElementCell(element: ElementType, key: string | number) {
     if (viewMode === "detailed") {
       return (
@@ -59,7 +79,7 @@ export function PeriodicTable(
           element={element}
           isSelected={selectedZ === element.protons}
           color={maybeCellColor(element)}
-          onElementSelected={onElementSelected}
+          onElementSelected={selectElement}
         />
       );
     } else if (viewMode === "image") {
@@ -68,7 +88,7 @@ export function PeriodicTable(
           key={key}
           element={element}
           isSelected={selectedZ === element.protons}
-          onElementSelected={onElementSelected}
+          onElementSelected={selectElement}
         />
       );
     } else {
@@ -78,7 +98,9 @@ export function PeriodicTable(
           element={element}
           isSelected={selectedZ === element.protons}
           color={maybeCellColor(element)}
-          onElementSelected={onElementSelected}
+          onElementSelected={(element, click = false) => {
+            selectElement(element, !click);
+          }}
         />
       );
     }

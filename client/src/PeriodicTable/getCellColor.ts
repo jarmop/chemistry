@@ -49,14 +49,14 @@ const originColors: Colors = {
 };
 
 export const categoryColors: Colors = {
+  "alkali metal": "yellow",
+  "alkaline earth metal": "pink",
   "transition metal": "lightblue",
   "post-transition metal": "lightgreen",
   "metalloid": "violet",
   "polyatomic nonmetal": "orange",
   "diatomic nonmetal": "darkseagreen",
   "noble gas": "deepskyblue",
-  "alkali metal": "yellow",
-  "alkaline earth metal": "pink",
   "lanthanide": "rosybrown",
   "actinide": "turquoise",
   "unknown": "lightgrey",
