@@ -35,9 +35,7 @@ export function Inspect() {
               onElementSelected={(element) =>
                 setState({
                   ...state,
-                  element: state.element === element.protons
-                    ? undefined
-                    : element.protons,
+                  element: element ? element.protons : undefined,
                 })}
             />
           </div>
