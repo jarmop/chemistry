@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { StateContext } from "./StateContext.ts";
-import elements from "./data/elements.ts";
+import elements, { elementUnits } from "./data/elements.ts";
 import {
   getMaximumNumberOfElectronsPerShell,
   maximumNumberOfElectronsPerSubShell,
@@ -54,7 +54,9 @@ export function AtomData() {
           </tr>
           <tr>
             <td>Electronegativity:</td>
-            <td>{element.electronegativity}</td>
+            <td>
+              {element.electronegativity} {elementUnits.electronegativity}
+            </td>
           </tr>
           <tr>
             <td>Origin:</td>
@@ -66,7 +68,7 @@ export function AtomData() {
           </tr>
           <tr>
             <td>Density:</td>
-            <td>{element.density}</td>
+            <td>{element.density} {elementUnits.density}</td>
           </tr>
           <tr>
             <td>
@@ -82,15 +84,15 @@ export function AtomData() {
           </tr>
           <tr>
             <td>Electron affinity:</td>
-            <td>{element.electronAffinity}</td>
+            <td>{element.electronAffinity} {elementUnits.electronAffinity}</td>
           </tr>
           <tr>
             <td>Ionization energy:</td>
-            <td>{element.ionizationEnergy}</td>
+            <td>{element.ionizationEnergy} {elementUnits.ionizationEnergy}</td>
           </tr>
           <tr>
             <td>Atomic radius:</td>
-            <td>{element.atomicRadius}</td>
+            <td>{element.atomicRadius} {elementUnits.atomicRadius}</td>
           </tr>
           <tr>
             <th
@@ -102,23 +104,28 @@ export function AtomData() {
           </tr>
           <tr>
             <td>On earth's crust:</td>
-            <td>{element.abundanceOnEarthCrust} ppm</td>
+            <td>
+              {element.abundanceOnEarthCrust}{" "}
+              {elementUnits.abundanceOnEarthCrust}
+            </td>
           </tr>
           <tr>
             <td>On earth's crust rank:</td>
-            <td>{element.abundanceRank}</td>
+            <td>{element.abundanceOnEarthCrustRank}</td>
           </tr>
           <tr>
             <td>Mass in human body:</td>
-            <td>{element.massInHumanBody} %</td>
+            <td>{element.massInHumanBody} {elementUnits.massInHumanBody}</td>
           </tr>
           <tr>
             <td>Atoms in human body:</td>
-            <td>{element.atomsInHumanBody} %</td>
+            <td>{element.atomsInHumanBody} {elementUnits.atomsInHumanBody}</td>
           </tr>
           <tr>
             <td>In Milky Way:</td>
-            <td>{element.abundanceInMilkyWay} %</td>
+            <td>
+              {element.abundanceInMilkyWay} {elementUnits.abundanceInMilkyWay}
+            </td>
           </tr>
         </tbody>
       </table>

@@ -6,8 +6,21 @@ const elements = elementsJSON
   .map((el, i) => {
     return {
       ...el,
-      abundanceRank: i + 1,
+      abundanceOnEarthCrustRank: i + 1,
     };
   }).sort((a, b) => a.protons - b.protons);
 
 export default elements as unknown as Element[];
+
+export const elementUnits: Partial<Record<keyof Element, string>> = {
+  abundanceOnEarthCrust: "ppm",
+  abundanceOnEarthCrustRank: "rank",
+  massInHumanBody: "%",
+  atomsInHumanBody: "%",
+  abundanceInMilkyWay: "%",
+  ionizationEnergy: "kJ/mol",
+  electronAffinity: "kJ/mol",
+  atomicRadius: "pm",
+  density: "g/cm^3",
+  electronegativity: "Pauling",
+};

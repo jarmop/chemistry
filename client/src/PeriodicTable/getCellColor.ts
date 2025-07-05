@@ -1,22 +1,24 @@
 import elements from "../data/elements.ts";
 import { Element as ElementType } from "../library/types.ts";
 
-export const colorModes = [
-  "block",
-  "phase",
-  "density",
-  "electronegativity",
-  "electron affinity",
-  "ionization energy",
-  "atomic radius",
-  "origin",
-  "abundance on earth's crust",
-  "abundance on earth's crust rank",
-  "mass in human body",
-  "atoms in human body",
-  "abundance in milky way",
-] as const;
-export type ColorMode = (typeof colorModes)[number];
+export const colorModes: Partial<Record<keyof ElementType, string>> = {
+  block: "block",
+  phase: "phase",
+  origin: "origin",
+  density: "density",
+  electronegativity: "electronegativity",
+  electronAffinity: "electron affinity",
+  ionizationEnergy: "ionization energy",
+  atomicRadius: "atomic radius",
+  abundanceOnEarthCrust: "abundance on earth's crust",
+  abundanceOnEarthCrustRank: "abundance on earth's crust rank",
+  massInHumanBody: "mass in human body",
+  atomsInHumanBody: "atoms in human body",
+  abundanceInMilkyWay: "abundance in milky way",
+};
+export type ColorMode = keyof typeof colorModes;
+
+export const discreteColorModes: ColorMode[] = ["block", "phase", "origin"];
 
 const blockColor: Record<string, string> = {
   "s-block": "pink",
@@ -47,18 +49,21 @@ function createColorGetter(
   };
 }
 
-const colorGetters = {
-  "abundance on earth's crust": createColorGetter("abundanceOnEarthCrust"),
-  "abundance on earth's crust rank": createColorGetter("abundanceRank", true),
+const colorGetters: Partial<Record<ColorMode, (element: ElementType) => string>> = {
+  abundanceOnEarthCrust: createColorGetter("abundanceOnEarthCrust"),
+  abundanceOnEarthCrustRank: createColorGetter(
+    "abundanceOnEarthCrustRank",
+    true,
+  ),
   density: createColorGetter("density"),
   electronegativity: createColorGetter("electronegativity"),
-  "electron affinity": createColorGetter("electronAffinity"),
-  "ionization energy": createColorGetter("ionizationEnergy"),
-  "atomic radius": createColorGetter("atomicRadius"),
+  electronAffinity: createColorGetter("electronAffinity"),
+  ionizationEnergy: createColorGetter("ionizationEnergy"),
+  atomicRadius: createColorGetter("atomicRadius"),
   origin: createColorGetter("origin"),
-  "mass in human body": createColorGetter("massInHumanBody"),
-  "atoms in human body": createColorGetter("atomsInHumanBody"),
-  "abundance in milky way": createColorGetter("abundanceInMilkyWay"),
+  massInHumanBody: createColorGetter("massInHumanBody"),
+  atomsInHumanBody: createColorGetter("atomsInHumanBody"),
+  abundanceInMilkyWay: createColorGetter("abundanceInMilkyWay"),
 };
 
 export function getCellColor(element: ElementType, colorMode: ColorMode) {

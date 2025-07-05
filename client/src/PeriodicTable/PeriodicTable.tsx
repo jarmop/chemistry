@@ -5,8 +5,14 @@ import { Element as ElementType } from "../library/types.ts";
 import { Element } from "./Element.tsx";
 import { ElementDetailed } from "./ElementDetailed.tsx";
 import { ElementImage } from "./ElementImage.tsx";
-import { type ColorMode, colorModes, getCellColor } from "./getCellColor.ts";
+import {
+  type ColorMode,
+  colorModes,
+  discreteColorModes,
+  getCellColor,
+} from "./getCellColor.ts";
 import { TableBody } from "./TableBody.tsx";
+import { ComparisonTable } from "./ComparisonTable.tsx";
 
 const viewModes = ["simple", "detailed", "image"] as const;
 type ViewMode = (typeof viewModes)[number];
@@ -96,8 +102,8 @@ export function PeriodicTable(
           onChange={(e) => setColorMode(e.target.value as ColorMode)}
           style={{ marginLeft: "8px" }}
         >
-          {colorModes.map((mode) => (
-            <option key={mode} value={mode}>{mode}</option>
+          {Object.entries(colorModes).map(([key, value]) => (
+            <option key={key} value={key}>{value}</option>
           ))}
         </select>
       </div>
@@ -131,6 +137,9 @@ export function PeriodicTable(
           renderElementCell={renderElementCell}
         />
       </table>
+      {colorMode && !discreteColorModes.includes(colorMode) && (
+        <ComparisonTable colorMode={colorMode} />
+      )}
     </>
   );
 }
