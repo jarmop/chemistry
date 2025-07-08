@@ -80,7 +80,10 @@ export function AtomView() {
     <svg
       width={svgSize}
       height={svgSize}
-      style={{ border: "1px solid black" }}
+      style={{
+        border: "1px solid black",
+        marginTop: "6px",
+      }}
     >
       <Atom x={svgSize / 2} y={svgSize / 2} />
     </svg>

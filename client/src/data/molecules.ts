@@ -199,7 +199,7 @@ export const organicMolecules = [
   {
     name: "DNA",
     formula: "",
-    molarMass: 200000000,
+    molarMass: 660,
     type: "nucleic acid",
     image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Double_helix_of_DNA.svg/1280px-Double_helix_of_DNA.svg.png",

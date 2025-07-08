@@ -1,17 +1,16 @@
 import "./App.css";
 import { Inspect } from "./Inspect.tsx";
-import MoleculeComparison from "./MoleculeComparison.tsx";
+import { Materials } from "./Materials.tsx";
+import { MoleculeComparison } from "./MoleculeComparison.tsx";
 import { MoleculeView } from "./MoleculeView.tsx";
 
 function App() {
   return (
     <div>
-      {/* <MoleculeComparison /> */}
+      <Materials />
+      <MoleculeComparison />
       {/* <MoleculeView /> */}
-
-      <div>
-        <Inspect />
-      </div>
+      <Inspect />
     </div>
   );
 }

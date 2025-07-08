@@ -45,17 +45,21 @@ export function Inspect() {
             style={{
               display: "flex",
               flexDirection: "column",
-              marginLeft: "20px",
+              paddingLeft: "10px",
+              borderLeft: "1px solid black",
               overflowY: "scroll",
               minWidth: "330px",
               height: "100vh",
+              position: "fixed",
+              right: 0,
+              top: 0,
+              background: "white",
             }}
           >
             <div>
               <AtomData />
             </div>
-            <div style={{ marginTop: "14px" }}>
-              <AtomView />
+            <div>
               {element?.thumbnail && (
                 <div>
                   <a
@@ -76,6 +80,7 @@ export function Inspect() {
                   </a>
                 </div>
               )}
+              <AtomView />
             </div>
           </div>
         )}
