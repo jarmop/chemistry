@@ -1,3 +1,5 @@
+/* Deprecated */
+
 import { getElectronsPerSubShell } from "../client/src/library/helpers.ts";
 import oldElements from "../client/src/data/elements.json" with {
   type: "json",
@@ -13,7 +15,7 @@ const elements = rows.slice(1).map((row) => {
   const atomicWeight = parseFloat(cols[6]);
   const electronegativity = parseFloat(cols[9]);
   const abundanceOnEarthCrust = parseFloat(cols[11]);
-  const phase = cols[15].replace("\r", "");
+  const phase = cols[15];
 
   const element = {
     name: cols[2],
@@ -31,7 +33,7 @@ const elements = rows.slice(1).map((row) => {
     abundanceOnEarthCrust: isNaN(abundanceOnEarthCrust)
       ? 0
       : abundanceOnEarthCrust,
-    phase: cols[15].replace("\r", ""),
+    phase,
     density: phase === "unknown phase" ? 0 : parseFloat(cols[14]),
   };
 

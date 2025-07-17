@@ -1,0 +1,432 @@
+[
+  {
+    "symbol": "H",
+    "name": "Hydrogen",
+    "structure": "hcp",
+    "notes": "Solid hydrogen under high pressure."
+  },
+  {
+    "symbol": "He",
+    "name": "Helium",
+    "structure": "hcp",
+    "notes": "Solidifies only under high pressure."
+  },
+  {
+    "symbol": "Li",
+    "name": "Lithium",
+    "structure": "bcc"
+  },
+  {
+    "symbol": "Be",
+    "name": "Beryllium",
+    "structure": "hcp"
+  },
+  {
+    "symbol": "B",
+    "name": "Boron",
+    "structure": "complex",
+    "notes": "Rhombohedral, icosahedral clusters."
+  },
+  {
+    "symbol": "C",
+    "name": "Carbon",
+    "structure": "diamond cubic",
+    "notes": "Can also be hexagonal (graphite)."
+  },
+  {
+    "symbol": "N",
+    "name": "Nitrogen",
+    "structure": "hcp",
+    "notes": "Solidifies at cryogenic temperatures; forms β-N2 phase."
+  },
+  {
+    "symbol": "O",
+    "name": "Oxygen",
+    "structure": "monoclinic",
+    "notes": "Solidifies in several phases; α and β phases are monoclinic."
+  },
+  {
+    "symbol": "Na",
+    "name": "Sodium",
+    "structure": "bcc"
+  },
+  {
+    "symbol": "Mg",
+    "name": "Magnesium",
+    "structure": "hcp"
+  },
+  {
+    "symbol": "Al",
+    "name": "Aluminium",
+    "structure": "fcc"
+  },
+  {
+    "symbol": "Si",
+    "name": "Silicon",
+    "structure": "diamond cubic"
+  },
+  {
+    "symbol": "P",
+    "name": "Phosphorus",
+    "structure": "orthorhombic",
+    "notes": "Depends on allotrope (e.g., black phosphorus is orthorhombic)."
+  },
+  {
+    "symbol": "S",
+    "name": "Sulfur",
+    "structure": "monoclinic",
+    "notes": "Also exists as orthorhombic."
+  },
+  {
+    "symbol": "K",
+    "name": "Potassium",
+    "structure": "bcc"
+  },
+  {
+    "symbol": "Ca",
+    "name": "Calcium",
+    "structure": "fcc"
+  },
+  {
+    "symbol": "Sc",
+    "name": "Scandium",
+    "structure": "hcp"
+  },
+  {
+    "symbol": "Ti",
+    "name": "Titanium",
+    "structure": "hcp"
+  },
+  {
+    "symbol": "V",
+    "name": "Vanadium",
+    "structure": "bcc"
+  },
+  {
+    "symbol": "Cr",
+    "name": "Chromium",
+    "structure": "bcc"
+  },
+  {
+    "symbol": "Mn",
+    "name": "Manganese",
+    "structure": "complex",
+    "notes": "α-Mn is complex cubic."
+  },
+  {
+    "symbol": "Fe",
+    "name": "Iron",
+    "structure": "bcc",
+    "notes": "Ferrite (α-Fe) is bcc; austenite (γ-Fe) is fcc at higher temps."
+  },
+  {
+    "symbol": "Co",
+    "name": "Cobalt",
+    "structure": "hcp",
+    "notes": "Can transform to fcc at high temperature."
+  },
+  {
+    "symbol": "Ni",
+    "name": "Nickel",
+    "structure": "fcc"
+  },
+  {
+    "symbol": "Cu",
+    "name": "Copper",
+    "structure": "fcc"
+  },
+  {
+    "symbol": "Zn",
+    "name": "Zinc",
+    "structure": "hcp"
+  },
+  {
+    "symbol": "Ga",
+    "name": "Gallium",
+    "structure": "orthorhombic",
+    "notes": "Complex structure with covalent bonding."
+  },
+  {
+    "symbol": "Ge",
+    "name": "Germanium",
+    "structure": "diamond cubic"
+  },
+  {
+    "symbol": "As",
+    "name": "Arsenic",
+    "structure": "rhombohedral"
+  },
+  {
+    "symbol": "Se",
+    "name": "Selenium",
+    "structure": "hexagonal",
+    "notes": "Trigonal chains."
+  },
+  {
+    "symbol": "Br",
+    "name": "Bromine",
+    "structure": "orthorhombic",
+    "notes": "Only solidifies under low temperatures."
+  },
+  {
+    "symbol": "Kr",
+    "name": "Krypton",
+    "structure": "fcc",
+    "notes": "Solidifies under pressure."
+  },
+  {
+    "symbol": "Rb",
+    "name": "Rubidium",
+    "structure": "bcc"
+  },
+  {
+    "symbol": "Sr",
+    "name": "Strontium",
+    "structure": "fcc"
+  },
+  {
+    "symbol": "Y",
+    "name": "Yttrium",
+    "structure": "hcp"
+  },
+  {
+    "symbol": "Zr",
+    "name": "Zirconium",
+    "structure": "hcp"
+  },
+  {
+    "symbol": "Nb",
+    "name": "Niobium",
+    "structure": "bcc"
+  },
+  {
+    "symbol": "Mo",
+    "name": "Molybdenum",
+    "structure": "bcc"
+  },
+  {
+    "symbol": "Tc",
+    "name": "Technetium",
+    "structure": "hcp"
+  },
+  {
+    "symbol": "Ru",
+    "name": "Ruthenium",
+    "structure": "hcp"
+  },
+  {
+    "symbol": "Rh",
+    "name": "Rhodium",
+    "structure": "fcc"
+  },
+  {
+    "symbol": "Pd",
+    "name": "Palladium",
+    "structure": "fcc"
+  },
+  {
+    "symbol": "Ag",
+    "name": "Silver",
+    "structure": "fcc"
+  },
+  {
+    "symbol": "Cd",
+    "name": "Cadmium",
+    "structure": "hcp"
+  },
+  {
+    "symbol": "In",
+    "name": "Indium",
+    "structure": "tetragonal"
+  },
+  {
+    "symbol": "Sn",
+    "name": "Tin",
+    "structure": "tetragonal",
+    "notes": "White tin (β-Sn) is metallic; grey tin is diamond cubic."
+  },
+  {
+    "symbol": "Sb",
+    "name": "Antimony",
+    "structure": "rhombohedral"
+  },
+  {
+    "symbol": "Te",
+    "name": "Tellurium",
+    "structure": "hexagonal",
+    "notes": "Helical chains."
+  },
+  {
+    "symbol": "I",
+    "name": "Iodine",
+    "structure": "orthorhombic"
+  },
+  {
+    "symbol": "Xe",
+    "name": "Xenon",
+    "structure": "fcc",
+    "notes": "Solidifies under pressure."
+  },
+  {
+    "symbol": "Cs",
+    "name": "Cesium",
+    "structure": "bcc"
+  },
+  {
+    "symbol": "Ba",
+    "name": "Barium",
+    "structure": "bcc"
+  },
+  {
+    "symbol": "La",
+    "name": "Lanthanum",
+    "structure": "hcp"
+  },
+  {
+    "symbol": "Ce",
+    "name": "Cerium",
+    "structure": "fcc"
+  },
+  {
+    "symbol": "Pr",
+    "name": "Praseodymium",
+    "structure": "hcp"
+  },
+  {
+    "symbol": "Nd",
+    "name": "Neodymium",
+    "structure": "hcp"
+  },
+  {
+    "symbol": "Sm",
+    "name": "Samarium",
+    "structure": "rhombohedral"
+  },
+  {
+    "symbol": "Eu",
+    "name": "Europium",
+    "structure": "bcc"
+  },
+  {
+    "symbol": "Gd",
+    "name": "Gadolinium",
+    "structure": "hcp"
+  },
+  {
+    "symbol": "Tb",
+    "name": "Terbium",
+    "structure": "hcp"
+  },
+  {
+    "symbol": "Dy",
+    "name": "Dysprosium",
+    "structure": "hcp"
+  },
+  {
+    "symbol": "Ho",
+    "name": "Holmium",
+    "structure": "hcp"
+  },
+  {
+    "symbol": "Er",
+    "name": "Erbium",
+    "structure": "hcp"
+  },
+  {
+    "symbol": "Tm",
+    "name": "Thulium",
+    "structure": "hcp"
+  },
+  {
+    "symbol": "Yb",
+    "name": "Ytterbium",
+    "structure": "fcc"
+  },
+  {
+    "symbol": "Lu",
+    "name": "Lutetium",
+    "structure": "hcp"
+  },
+  {
+    "symbol": "Hf",
+    "name": "Hafnium",
+    "structure": "hcp"
+  },
+  {
+    "symbol": "Ta",
+    "name": "Tantalum",
+    "structure": "bcc"
+  },
+  {
+    "symbol": "W",
+    "name": "Tungsten",
+    "structure": "bcc"
+  },
+  {
+    "symbol": "Re",
+    "name": "Rhenium",
+    "structure": "hcp"
+  },
+  {
+    "symbol": "Os",
+    "name": "Osmium",
+    "structure": "hcp"
+  },
+  {
+    "symbol": "Ir",
+    "name": "Iridium",
+    "structure": "fcc"
+  },
+  {
+    "symbol": "Pt",
+    "name": "Platinum",
+    "structure": "fcc"
+  },
+  {
+    "symbol": "Au",
+    "name": "Gold",
+    "structure": "fcc"
+  },
+  {
+    "symbol": "Hg",
+    "name": "Mercury",
+    "structure": "rhombohedral",
+    "notes": "Only metal liquid at room temperature; solidifies below -39°C."
+  },
+  {
+    "symbol": "Tl",
+    "name": "Thallium",
+    "structure": "hcp"
+  },
+  {
+    "symbol": "Pb",
+    "name": "Lead",
+    "structure": "fcc"
+  },
+  {
+    "symbol": "Bi",
+    "name": "Bismuth",
+    "structure": "rhombohedral"
+  },
+  {
+    "symbol": "Po",
+    "name": "Polonium",
+    "structure": "simple cubic"
+  },
+  {
+    "symbol": "Fr",
+    "name": "Francium",
+    "structure": "bcc",
+    "notes": "Highly radioactive, structure extrapolated."
+  },
+  {
+    "symbol": "Ra",
+    "name": "Radium",
+    "structure": "bcc"
+  },
+  {
+    "symbol": "Ac",
+    "name": "Actinium",
+    "structure": "fcc"
+  }
+]

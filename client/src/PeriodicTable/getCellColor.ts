@@ -5,6 +5,7 @@ export const colorModes: Partial<Record<keyof ElementType, string>> = {
   category: "category",
   block: "block",
   phase: "phase",
+  structure: "structure",
   origin: "origin",
   density: "density",
   electronegativity: "electronegativity",
@@ -24,6 +25,7 @@ export const discreteColorModes: ColorMode[] = [
   "category",
   "phase",
   "origin",
+  "structure",
 ];
 
 type Colors = Record<string, string>;
@@ -62,11 +64,30 @@ export const categoryColors: Colors = {
   "unknown": "lightgrey",
 };
 
+export const structureColors: Colors = {
+  // cubic
+  "fcc": "silver",
+  "bcc": "orange",
+  "diamond cubic": "turquoise",
+  "simple cubic": "brown",
+  // hexagonal
+  "hcp": "salmon",
+  "hexagonal": "pink",
+  // other
+  "rhombohedral": "lightblue",
+  "orthorhombic": "palegreen",
+  "monoclinic": "violet",
+  "tetragonal": "yellow",
+  "complex": "blue",
+  "unknown": "white",
+};
+
 export const colorsByMode: Partial<Record<ColorMode, Colors>> = {
   block: blockColors,
   phase: phaseColors,
   origin: originColors,
   category: categoryColors,
+  structure: structureColors,
 };
 
 function createColorGetter(

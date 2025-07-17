@@ -71,6 +71,25 @@ export function AtomData() {
             <td>{element.phase}</td>
           </tr>
           <tr>
+            <td>Structure:</td>
+            <td>{element.structure}</td>
+          </tr>
+          {element.structureNotes &&
+            (
+              <tr>
+                <td
+                  colSpan={2}
+                  style={{
+                    textWrap: "wrap",
+                    paddingBottom: "10px",
+                    fontStyle: "italic",
+                  }}
+                >
+                  {element.structureNotes}
+                </td>
+              </tr>
+            )}
+          <tr>
             <td>Density:</td>
             <td>{element.density} {elementUnits.density}</td>
           </tr>

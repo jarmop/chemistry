@@ -48,7 +48,7 @@ export function Inspect() {
               paddingLeft: "10px",
               borderLeft: "1px solid black",
               overflowY: "scroll",
-              minWidth: "330px",
+              width: "330px",
               height: "100vh",
               position: "fixed",
               right: 0,
@@ -80,7 +80,7 @@ export function Inspect() {
                   </a>
                 </div>
               )}
-              <AtomView />
+              {/* <AtomView /> */}
             </div>
           </div>
         )}

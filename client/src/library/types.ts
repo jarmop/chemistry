@@ -25,4 +25,20 @@ export type Element = {
   atomsInHumanBody: number;
   abundanceInMilkyWay: number;
   category: string;
+  structure: Structure;
+  structureNotes: string;
 };
+
+type Structure =
+  | "hcp"
+  | "bcc"
+  | "complex"
+  | "diamond cubic"
+  | "fcc"
+  | "orthorhombic"
+  | "monoclinic"
+  | "rhombohedral"
+  | "hexagonal"
+  | "tetragonal"
+  | "simple cubic"
+  | "unknown";

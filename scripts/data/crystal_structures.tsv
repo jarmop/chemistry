@@ -1,0 +1,110 @@
+no	element	allotrop	measuring temperature	lattice	parameters				crystal class	Schönflies	Hermann-Mauguin	orbifold	space group	density	note	reference
+20	Ca		ambient	fcc	a=558.84				cubic	Oh5	4/m 3 2/m	*432	Fm3m	1.5253		
+28	Ni		ambient	fcc	a=352.40				cubic	Oh5	4/m 3 2/m	*432	Fm3m	8.9082		
+29	Cu		ambient	fcc	a=361.47				cubic	Oh5	4/m 3 2/m	*432	Fm3m	8.937		
+45	Rh		ambient	fcc	a=380.34				cubic	Oh5	4/m 3 2/m	*432	Fm3m	12.4231		
+77	Ir		ambient	fcc	a=383.92				cubic	Oh5	4/m 3 2/m	*432	Fm3m	22.562		
+46	Pd		ambient	fcc	a=389.02				cubic	Oh5	4/m 3 2/m	*432	Fm3m	12.0065		
+78	Pt		ambient	fcc	a=392.35				cubic	Oh5	4/m 3 2/m	*432	Fm3m	21.4534		
+13	Al		ambient	fcc	a=404.95				cubic	Oh5	4/m 3 2/m	*432	Fm3m	2.6988		
+79	Au		ambient	fcc	a=407.83				cubic	Oh5	4/m 3 2/m	*432	Fm3m	19.287		
+82	Pb		ambient	fcc	a=495.02				cubic	Oh5	4/m 3 2/m	*432	Fm3m	11.345		
+47	Ag		ambient	fcc	a=408.57				cubic	Oh5	4/m 3 2/m	*432	Fm3m	10.5052		
+58	Ce	γ-Ce	ambient	fcc	a=516.01				cubic	Oh5	4/m 3 2/m	*432	Fm3m	6.7736		
+38	Sr		ambient	fcc	a=608.49				cubic	Oh5	4/m 3 2/m	*432	Fm3m	2.583		
+70	Yb		ambient	fcc	a=549.0				cubic	Oh5	4/m 3 2/m	*432	Fm3m	6.946		
+96	Cm	β-Cm	ambient	fcc	a=493.3				cubic	Oh5	4/m 3 2/m	*432	Fm3m	13.73	Cf-249	
+99	Es		ambient	fcc	a=575				cubic	Oh5	4/m 3 2/m	*432	Fm3m	8.84	Es-253	
+25	Mn	γ-Mn		fcc	a=386.24				cubic	Oh5	4/m 3 2/m	*432	Fm3m	6.333		
+90	Th	α-Th	298	fcc	a=508.42				cubic	Oh5	4/m 3 2/m	*432	Fm3m	11.727		
+94	Pu	δ-Pu	593	fcc	a=463.71				cubic	Oh5	4/m 3 2/m	*432	Fm3m	15.924		
+50	Sn	α-tin grey tin	300	diamond	a=648.920				cubic	Oh7	4/m 3 2/m	*432	Fd3m	5.771		
+32	Ge		300	diamond	a=565.791				cubic	Oh7	4/m 3 2/m	*432	Fd3m	5.327	amu=72.63	
+14	Si		300	diamond	a=543.095				cubic	Oh7	4/m 3 2/m	*432	Fd3m	2.3291		
+6	C	diamond	300	diamond	a=356.683				cubic	Oh7	4/m 3 2/m	*432	Fd3m	3.5161		
+3	Li		ambient	bcc	a=350.93				cubic	Oh9	4/m 3 2/m	*432	Im3m	0.5334		
+26	Fe		ambient	bcc	a=286.64				cubic	Oh9	4/m 3 2/m	*432	Im3m	7.875		
+24	Cr		ambient	bcc	a=288.46				cubic	Oh9	4/m 3 2/m	*432	Im3m	7.1944		
+23	V		298	bcc	a=302.31				cubic	Oh9	4/m 3 2/m	*432	Im3m	6.1234		
+42	Mo		ambient	bcc	a=314.69				cubic	Oh9	4/m 3 2/m	*432	Im3m	10.224		
+74	W		ambient	bcc	a=316.50				cubic	Oh9	4/m 3 2/m	*432	Im3m	19.257		
+41	Nb		ambient	bcc	a=330.04				cubic	Oh9	4/m 3 2/m	*432	Im3m	8.5827		
+73	Ta		ambient	bcc	a=330.26				cubic	Oh9	4/m 3 2/m	*432	Im3m	16.6826		
+11	Na		ambient	bcc	a=429.06				cubic	Oh9	4/m 3 2/m	*432	Im3m	0.9666		
+63	Eu		ambient	bcc	a=458.1				cubic	Oh9	4/m 3 2/m	*432	Im3m	5.25		
+56	Ba		ambient	bcc	a=501.9				cubic	Oh9	4/m 3 2/m	*432	Im3m	3.607		
+19	K		ambient	bcc	a=532.8				cubic	Oh9	4/m 3 2/m	*432	Im3m	0.8585		
+37	Rb		ambient	bcc	a=570.50				cubic	Oh9	4/m 3 2/m	*432	Im3m	1.5287		
+55	Cs		ambient	bcc	a=614.1				cubic	Oh9	4/m 3 2/m	*432	Im3m	1.906	dubious a?	
+88	Ra		ambient	bcc	a=514.8				cubic	Oh9	4/m 3 2/m	*432	Im3m	5.502	Ra-226	
+25	Mn	δ-Mn		bcc	a=308.10				cubic	Oh9	4/m 3 2/m	*432	Im3m	6.238		
+90	Th	β-Th	1723	bcc	a=411				cubic	Oh9	4/m 3 2/m	*432	Im3m	11.1		
+92	U	γ-U		bcc	a=352.4				cubic	Oh9	4/m 3 2/m	*432	Im3m	18.06		
+93	Np	γ-Np	873	bcc	a=351.8				cubic	Oh9	4/m 3 2/m	*432	Im3m	18.08	Np-237	
+94	Pu	ε-Pu	763	bcc	a=363.61				cubic	Oh9	4/m 3 2/m	*432	Im3m	16.514		
+25	Mn	β-Mn	ambient	bcc	a=631.45			#=20	cubic	O7	4 3 2002	432	P4132	7.247		
+25	Mn	α-Mn	ambient	bcc	a=891.39			#=58	cubic	Td3	4 3 m	*332	I43m	7.473		
+15	P	α-white P	243	bcc	a=1851			#=58*4	cubic	Td3	4 3 m	*332	I43m	1.8815		
+84	Po	α-Po	ambient	simple cubic	a=335.9				cubic	Oh1	4/m 3 2/m	*432	Pm3m	9.156	Po-209	
+48	Cd		ambient	hcp*	a=297.88		c=561.67	#=2	hexagonal	D6h4	6/m 2/m 2/m	*622	P63mmc	8.6495	ξ=+0.1547 symmetry distorted	
+30	Zn		ambient	hcp*	a=266.49		c=494.68	#=2	hexagonal	D6h4	6/m 2/m 2/m	*622	P63mmc	7.137	ξ=+0.1367 symmetry distorted	
+12	Mg		ambient	hcp	a=320.94		c=521.05	#=2	hexagonal	D6h4	6/m 2/m 2/m	*622	P63mmc	1.7367	ξ=-0.0058	
+27	Co		ambient	hcp	a=250.71		c=406.95	#=2	hexagonal	D6h4	6/m 2/m 2/m	*622	P63mmc	8.8354	ξ=-0.0060	
+75	Re		ambient	hcp	a=276.0		c=445.8	#=2	hexagonal	D6h4	6/m 2/m 2/m	*622	P63mmc	21.03	ξ=-0.0109	
+43	Tc		ambient	hcp	a=273.5		c=438.8	#=2	hexagonal	D6h4	6/m 2/m 2/m	*622	P63mmc	11.43	ξ=-0.0175 Tc-98	
+81	Tl		ambient	hcp	a=345.66		c=552.48	#=2	hexagonal	D6h4	6/m 2/m 2/m	*622	P63mmc	11.8735	ξ=-0.0212	
+21	Sc		ambient	hcp	a=330.9		c=527.33	#=2	hexagonal	D6h4	6/m 2/m 2/m	*622	P63mmc	2.986	ξ=-0.0241	
+40	Zr		ambient	hcp	a=323.2		c=514.7	#=2	hexagonal	D6h4	6/m 2/m 2/m	*622	P63mmc	6.507	ξ=-0.0248	
+64	Gd		ambient	hcp	a=363.6		c=578.26	#=2	hexagonal	D6h4	6/m 2/m 2/m	*622	P63mmc	7.888	ξ=-0.0261	
+22	Ti		ambient	hcp	a=295.03		c=468.31	#=2	hexagonal	D6h4	6/m 2/m 2/m	*622	P63mmc	4.5032	ξ=-0.0280 dubious a,c?	
+71	Lu		ambient	hcp	a=350.31		c=555.09	#=2	hexagonal	D6h4	6/m 2/m 2/m	*622	P63mmc	9.85	ξ=-0.0297	
+44	Ru		ambient	hcp	a=270.55		c=428.16	#=2	hexagonal	D6h4	6/m 2/m 2/m	*622	P63mmc	12.367	ξ=-0.0309	
+65	Tb		ambient	hcp	a=360.1		c=569.36	#=2	hexagonal	D6h4	6/m 2/m 2/m	*622	P63mmc	8.255	ξ=-0.0318	
+72	Hf		ambient	hcp	a=319.64		c=505.11	#=2	hexagonal	D6h4	6/m 2/m 2/m	*622	P63mmc	13.2634	ξ=-0.0323	
+76	Os		ambient	hcp	a=273.43		c=432.00	#=2	hexagonal	D6h4	6/m 2/m 2/m	*622	P63mmc	22.587	ξ=-0.0325	
+66	Dy		ambient	hcp	a=359.3		c=565.37	#=2	hexagonal	D6h4	6/m 2/m 2/m	*622	P63mmc	8.538	ξ=-0.0364	
+39	Y		ambient	hcp	a=364.74		c=573.06	#=2	hexagonal	D6h4	6/m 2/m 2/m	*622	P63mmc	4.4721	ξ=-0.0379	
+69	Tm		ambient	hcp	a=353.75		c=555.46	#=2	hexagonal	D6h4	6/m 2/m 2/m	*622	P63mmc	9.3201	ξ=-0.0384	
+68	Er		ambient	hcp	a=355.88		c=558.74	#=2	hexagonal	D6h4	6/m 2/m 2/m	*622	P63mmc	9.064	ξ=-0.0386	
+67	Ho		ambient	hcp	a=357.73		c=561.58	#=2	hexagonal	D6h4	6/m 2/m 2/m	*622	P63mmc	8.8009	ξ=-0.0387	
+4	Be		ambient	hcp	a=228.56		c=358.32	#=2	hexagonal	D6h4	6/m 2/m 2/m	*622	P63mmc	1.8463	ξ=-0.0400	
+57	La	α-La	ambient	dhcp	a=377.2		c=1214.4	#=4	hexagonal	D6h4	6/m 2/m 2/m	*622	P63mmc	6.166	ξ=-0.0142	
+59	Pr	α-Pr	ambient	dhcp	a=367.21		c=1183.26	#=4	hexagonal	D6h4	6/m 2/m 2/m	*622	P63mmc	6.773	ξ=-0.0134	
+60	Nd	α-Nd	ambient	dhcp	a=365.82		c=1179.66	#=4	hexagonal	D6h4	6/m 2/m 2/m	*622	P63mmc	7.008	ξ=-0.0126	
+61	Pm	α-Pm	ambient	dhcp	a=365		c=1165	#=4	hexagonal	D6h4	6/m 2/m 2/m	*622	P63mmc	7.16	ξ=-0.0227 Pm-145	
+58	Ce	β-Ce	ambient	dhcp	a=368.1		c=1185.7	#=4	hexagonal	D6h4	6/m 2/m 2/m	*622	P63mmc	6.689	ξ=-0.0137	
+95	Am	α-Am		dhcp	a=346.81		c=1124.1	#=4	hexagonal	D6h4	6/m 2/m 2/m	*622	P63mmc	13.675	ξ=-0.0075 Am-241	
+96	Cm	α-Cm	ambient	dhcp	a=348.6		c=1129.7	#=4	hexagonal	D6h4	6/m 2/m 2/m	*622	P63mmc	13.86	ξ=-0.0076 Cm-248	
+97	Bk	α-Bk		dhcp	a=341.6		c=1106.9	#=4	hexagonal	D6h4	6/m 2/m 2/m	*622	P63mmc	14.79	ξ=-0.0079 Bk-249	
+98	Cf	α-Cf		dhcp	a=339.0		c=1101.5	#=4	hexagonal	D6h4	6/m 2/m 2/m	*622	P63mmc	15.09	ξ=-0.0051 Cf-249	
+6	C	grahite	ambient	hexagonal	a=246.12		c=670.79	#=4	hexagonal	D6h4	6/m 2/m 2/m	*622	P63mmc	2.267		
+62	Sm	α-Sm	ambient	trigonal cp	a=362.1		c=2625	#=9	trigonal	D3d5	3 2/m	2*3	R3m	7.539		
+80	Hg	α-Hg	233	rhomboedric	a=300.9		α=β=γ=70.55	#=1	trigonal	D3d5	3 2/m	2*3	R3m	14.118		
+5	B	α-B	ambient	rhomboedric	a=505.66		α=β=γ=58.046	#=12	trigonal	D3d5	3 2/m	2*3	R3m	2.467		
+5	B	β-B	ambient	rhomboedric	a=1014		α=β=γ=65.2	#=320/3	trigonal	D3d5	3 2/m	2*3	R3m	2.341		
+33	As	α-As grey As	ambient	rhomboedric	a=413.18		α=β=γ=54.166	#=2	trigonal	D3d5	3 2/m	2*3	R3m	5.775		
+51	Sb		ambient	rhomboedric	a=449.92		α=β=γ=57.214	#=2	trigonal	D3d5	3 2/m	2*3	R3m	6.7097		
+83	Bi		ambient	rhomboedric	a=474.70		α=β=γ=57.27	#=2	trigonal	D3d5	3 2/m	2*3	R3m	9.792		
+34	Se	grey Se	ambient	rhomboedric	a=301.33		α=β=γ=92.842	#=1	trigonal	D34	3 2	322	P3121	4.8102		
+52	Te		ambient	rhomboedric	a=324.47		α=β=γ=86.761	#=1	trigonal	D34	3 2	322	P3121	6.2315		
+49	In		ambient	fct	a=325.17		c=494.59	#=2	tetragonal	D4h17	4/m 2/m 2/m	*422	I4/mmm	7.2912	c/a=1.521 dubious?	
+91	Pa	α-Pa	ambient	bct	a=392.5		c=323.8	#=2	tetragonal	D4h17	4/m 2/m 2/m	*422	I4/mmm	15.38	c/a=0.825 Pa-231	
+94	Pu	δ'-Pu	738	bct	a=334		c=444	#=2	tetragonal	D4h17	4/m 2/m 2/m	*422	I4/mmm	16.03	c/a=1.33 Pu-239	
+50	Sn	β-tin white tin	ambient	fct	a=583.1		c=318.1	#=4	tetragonal	D4h19	4/m 2/m 2/m	*422	I41/amd	7.29	c/a=0.546	
+92	U	β-U	993		a=565.6		c=1075.9	#=15	tetragonal	D4h14	4/m	*422	P42/mnm	17.23	c/a=1.902	
+93	Np	β-Np	586		a=489.7		c=338.8	#=4	tetragonal	C43	4	44	P42	19.38	c/a=0.692 Np-237	
+15	P	black P	ambient	base c-ortho	a=331.36	b=1047.8	c=437.63	#=8	orthorhombic	D2h18	2/m 2/m 2/m	*222	Cmca	2.7079		
+31	Ga	α-Ga	ambient	base c-ortho	a=452.58	b=451.86	c=765.70	#=8	orthorhombic	D2h18	2/m 2/m 2/m	*222	Cmca	5.915		
+53	J		ambient	base c-ortho	a=726.97	b=479.03	c=979.42	#=8	orthorhombic	D2h18	2/m 2/m 2/m	*222	Cmca	4.9427		
+35	Br		frozen	base c-ortho				#=8	orthorhombic	D2h18	2/m 2/m 2/m	*222	Cmca			
+17	Cl		frozen	base c-ortho				#=8	orthorhombic	D2h18	2/m 2/m 2/m	*222	Cmca			
+92	U	α-U	ambient	c-ortho	a=285.4	b=587	c=495.5	#=4	orthorhombic	D2h17	2/m 2/m 2/m	*222	Cmcm	19.05		
+93	Np	α-Np	ambient	c-ortho	a=666.3	b=472.3	c=488.7	#=8	orthorhombic	D2h16	mmm	*222	Pnma	20.48	Np-237	
+16	S	α-S	ambient	fc-ortho	a=1046.5	b=1286.6	c=2448.6	#=4*8	orthorhombic	D2h24	2/m 2/m 2/m	*222	Fddd	2.0672		
+94	Pu	γ-Pu	508	fc-ortho	a=315.9	b=576.8	c=1016.2	#=8	orthorhombic	D2h24	2/m 2/m 2/m	*222	Fddd	17.15	Pu-239	
+15	P	γ-white P	123		a=917.09	b=833.85	c=543.36 γ=90.311	#=4*4	monoclinic	C2h3	2/m	2*	C 2/m	1.9805		
+15	P	red P	ambient	mono	a=921	b=915 β=106.1	c=2260	#=84	monoclinic	C2h4	2/m	2*	P21/c	2.361		
+94	Pu	α-Pu	294	mono	a=618.3	b=482.2 β=101.79	c=1096.3	#=16	monoclinic	C2h2	2/m	2*	P21/m	19.85	Pu-239	
+94	Pu	β-Pu	463	bc-mono	a=928.4	b=1046.3 β=93.13	c=785.9	#=34	monoclinic	C2h3	2/m	2*	C2/m	17.71	Pu-239	
+16	S	β-S monoclinic S	376	mono	a=1090	b=1096 β=93.27	c=1192	#=6*8	monoclinic	C2h5	2/m	2*	P21/c	1.807		
+15	P	β-white P	88		a=547.88 α=94.285	b=1078.62 β=99.653	c=1096.16 γ=100.680	#=6*4	triclinic	Ci1	1	x	P1	1.9788		
