@@ -42,3 +42,48 @@ type Structure =
   | "tetragonal"
   | "simple cubic"
   | "unknown";
+
+export const tags = [
+  "synthetic",
+  "natural",
+  "biogenic",
+  "organic",
+  "pure substance",
+  "compound",
+  "homogenous",
+  "heterogenous",
+] as const;
+
+export type Tag = typeof tags[number];
+
+export type Matter = {
+  name: string;
+  solid: string;
+  formula?: string;
+  description?: string;
+  image?: string;
+  thumbnail?: string;
+  tags: Tag[];
+};
+
+export type Mixture = {
+  name: string;
+  composition: object | string;
+  solid?: string;
+  formula?: string;
+  description?: string;
+  image?: string;
+  thumbnail?: string;
+  tags: Tag[];
+};
+
+export type Substance = {
+  name: string;
+  composition?: object | string;
+  solid: string;
+  formula?: string;
+  description?: string;
+  image?: string;
+  thumbnail?: string;
+  tags: Tag[];
+};

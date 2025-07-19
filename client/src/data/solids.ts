@@ -1,8 +1,7 @@
-import { Matter, Mixture } from "../library/types.ts";
-import { mixtures } from "./mixtures/index.ts";
-import { substances } from "./substances/index.ts";
+export type Solids = typeof solids;
+export type Solid = Solids[number];
 
-export const materials: Matter[] = [
+export const solids = [
   {
     name: "Metal",
     solid: "polycrystalline",
@@ -13,9 +12,37 @@ export const materials: Matter[] = [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Stainless_kitchen_container_with_cover.jpg/250px-Stainless_kitchen_container_with_cover.jpg",
   },
   {
+    name: "Concrete",
+    solid: "crystalline",
+    tags: ["synthetic"],
+  },
+  {
+    name: "diamond",
+    solid: "crystalline",
+    tags: ["synthetic", "natural"],
+  },
+  {
     name: "Sand",
     formula: "SiO2", // mostly
     solid: "amorphous",
+    tags: ["natural"],
+  },
+  {
+    name: "Glass",
+    formula: "SiO2",
+    solid: "amorphous",
+    tags: ["natural", "synthetic"],
+  },
+  {
+    name: "Clay",
+    formula: "Al2Si2O5(OH)4",
+    solid: "amorphous",
+    tags: ["natural"],
+  },
+  {
+    name: "Ceramics",
+    formula: "SiO2",
+    solid: "crystalline",
     tags: ["natural"],
   },
   {
@@ -35,6 +62,13 @@ export const materials: Matter[] = [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Wooden-pallets_stacked_8.jpg/250px-Wooden-pallets_stacked_8.jpg",
   },
   {
+    name: "rubber",
+    solid: "amorphous",
+    tags: ["organic", "synthetic", "biogenic", "natural"],
+    image: "",
+    thumbnail: "",
+  },
+  {
     name: "Latex",
     solid: "amorphous",
     tags: ["organic", "synthetic", "biogenic"],
@@ -52,13 +86,4 @@ export const materials: Matter[] = [
   },
   { name: "Wax", solid: "amorphous", tags: ["natural"] },
   { name: "Play-Doh", solid: "amorphous", tags: ["synthetic"] },
-  ...substances,
-  ...prepare(mixtures),
 ];
-
-function prepare(objects: Mixture[]) {
-  return objects.map((o) => ({
-    ...o,
-    solid: o.solid ?? "mixture",
-  }));
-}

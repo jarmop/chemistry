@@ -1,8 +1,12 @@
 import { useState } from "react";
-import { Material, materials } from "./data/materials.ts";
+import { materials } from "./data/materials.ts";
+import { Matter, tags } from "./library/types.ts";
 
 export function Materials() {
-  const [sortOrder, setSortOrder] = useState<(keyof Material)[]>([
+  const [sortOrder, setSortOrder] = useState<
+    (keyof Matter | Matter["tags"][number])[]
+  >([
+    "solid",
     "synthetic",
     "natural",
     "biogenic",
@@ -12,7 +16,12 @@ export function Materials() {
     let foo = 0;
     for (let i = 0; i < sortOrder.length; i++) {
       const key = sortOrder[i];
-      foo = Number(b[key] || 0) - Number(a[key] || 0);
+      if (key === "solid") {
+        foo = a[key].localeCompare(b[key]);
+      } else if ((tags as readonly string[]).includes(key)) {
+        foo = Number(b.tags.includes(key as typeof tags[number]) || 0) -
+          Number(a.tags.includes(key as typeof tags[number]) || 0);
+      }
       if (foo !== 0) {
         break;
       }
@@ -21,35 +30,31 @@ export function Materials() {
     return foo;
   });
 
-  const synthetic = materials.filter((m) => m.synthetic);
-  const natural = materials.filter((m) => m.natural);
-  const biogenic = materials.filter((m) => m.biogenic);
-  const organic = materials.filter((m) => m.organic);
+  const synthetic = materials.filter((m) => m.tags?.includes("synthetic"));
+  const natural = materials.filter((m) => m.tags?.includes("natural"));
+  const biogenic = materials.filter((m) => m.tags?.includes("biogenic"));
+  const organic = materials.filter((m) => m.tags?.includes("organic"));
   const materialGroups = { synthetic, natural, biogenic, organic };
 
-  const keyParts: (keyof Material)[] = [
-    "synthetic",
-    "natural",
-    "biogenic",
-    "organic",
+  const keyParts: (keyof Matter)[] = [
+    "solid",
   ];
 
-  const mixedGroups = materials.reduce<Record<string, Material[]>>(
-    (acc, curr) => {
-      const key = keyParts.filter((k) => curr[k]).join(", ");
-      if (!acc[key]) {
-        acc[key] = [];
-      }
-      acc[key].push(curr);
+  // const mixedGroups = materials.reduce<Record<string, Material[]>>(
+  //   (acc, curr) => {
+  //     const key = keyParts.filter((k) => curr[k]).join(", ");
+  //     if (!acc[key]) {
+  //       acc[key] = [];
+  //     }
+  //     acc[key].push(curr);
 
-      return acc;
-    },
-    {},
-  );
+  //     return acc;
+  //   },
+  //   {},
+  // );
+  // console.log(mixedGroups);
 
-  console.log(mixedGroups);
-
-  const tableCols: (keyof Material)[] = ["name", ...keyParts];
+  const tableCols: (keyof Matter)[] = ["name", ...keyParts];
 
   return (
     <>
@@ -77,6 +82,21 @@ export function Materials() {
                 {k}
               </th>
             ))}
+            {tags.map((t) => (
+              <th
+                key={t}
+                style={{
+                  border: "1px solid #ccc",
+                  textTransform: "capitalize",
+                }}
+                onClick={() => {
+                  const newOrder = [t, ...sortOrder.filter((v) => v !== t)];
+                  setSortOrder(newOrder);
+                }}
+              >
+                {t}
+              </th>
+            ))}
           </tr>
         </thead>
         <tbody>
@@ -92,7 +112,17 @@ export function Materials() {
                   key={k}
                   style={{
                     border: "1px solid #ccc",
-                    background: m[k] ? "black" : "",
+                  }}
+                >
+                  {(m as Matter)[k]}
+                </td>
+              ))}
+              {tags.map((t) => (
+                <td
+                  key={t}
+                  style={{
+                    border: "1px solid #ccc",
+                    background: m.tags.includes(t) ? "black" : "",
                   }}
                 >
                 </td>
