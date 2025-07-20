@@ -15,6 +15,19 @@ export const homogenous: Mixture[] = [
     tags: ["biogenic"],
   },
   {
+    name: "Bitumen",
+    composition:
+      "Naphthene aromatics (naphthalene), Polar aromatics, Saturated hydrocarbons,Asphaltenes",
+    description: "An immensely viscous constituent of petroleum.",
+    tags: ["biogenic", "synthetic", "pitch"],
+  },
+  {
+    name: "Amber",
+    composition: "Mixture of organic compounds, predominantly terpenes",
+    description: "A solid or highly viscous liquid that can be converted into a polymer.",
+    tags: ["biogenic", "synthetic", "resin"],
+  },
+  {
     name: "Glass",
     composition: "",
     formula: "SiO2",
@@ -22,5 +35,21 @@ export const homogenous: Mixture[] = [
     tags: ["synthetic"],
     description:
       "Although the atomic-scale structure of glass shares characteristics of the structure of a supercooled liquid, glass exhibits all the mechanical properties of a solid",
+  },
+  {
+    name: "Austenitic stainless steel",
+    composition: {
+      "C": "< 0.07",
+      "Cr": 18.5,
+      "Ni": 9,
+    },
+    solid: "polycrystalline",
+    tags: ["synthetic", "alloy"],
+    description:
+      "Euronorm number 1.4301. A very common austenitic stainless steel grade.",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Stainless_kitchen_container_with_cover.jpg/1280px-Stainless_kitchen_container_with_cover.jpg",
+    thumbnail:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Stainless_kitchen_container_with_cover.jpg/250px-Stainless_kitchen_container_with_cover.jpg",
   },
 ];

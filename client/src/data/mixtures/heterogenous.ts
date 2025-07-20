@@ -1,4 +1,5 @@
 import { Mixture } from "../../library/types.ts";
+import { minerals } from "./minerals.ts";
 
 export const heterogenous: Mixture[] = [
   {
@@ -42,4 +43,5 @@ export const heterogenous: Mixture[] = [
       "Fine-grained natural soil material containing clay minerals (hydrous aluminium phyllosilicates, e.g. kaolinite, Al2Si2O5(OH)4).",
     tags: ["natural"],
   },
+  ...minerals,
 ];

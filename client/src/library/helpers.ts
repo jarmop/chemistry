@@ -40,6 +40,8 @@
  * [2]
  */
 
+import { Tag } from "./types.ts";
+
 export function getMaximumNumberOfElectronsPerShell(numberOfShells = 7) {
   const numberOfElectronsPerShell = [];
   for (let i = 0; i < numberOfShells; i++) {
@@ -256,4 +258,11 @@ export function calculateMolarMassFormatted(
   elements: Array<{ symbol: string; atomicWeight: number }>,
 ): string {
   return calculateMolarMass(formula, elements).toFixed(2);
+}
+
+export function addTag<T extends { tags: Tag[] }>(
+  objects: T[],
+  ...tags: Tag[]
+) {
+  return objects.map((m) => ({ ...m, tags: [...m.tags, ...tags] }));
 }

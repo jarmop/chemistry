@@ -43,6 +43,8 @@ type Structure =
   | "simple cubic"
   | "unknown";
 
+type Solid = "crystalline" | "polycrystalline" | "amorphous";
+
 export const tags = [
   "synthetic",
   "natural",
@@ -52,38 +54,45 @@ export const tags = [
   "compound",
   "homogenous",
   "heterogenous",
+  "alloy",
+  "mineral",
+  "pitch",
+  "resin",
 ] as const;
 
 export type Tag = typeof tags[number];
 
 export type Matter = {
   name: string;
-  solid: string;
+  solid: Solid;
   formula?: string;
   description?: string;
   image?: string;
   thumbnail?: string;
   tags: Tag[];
+  category?: string;
 };
 
 export type Mixture = {
   name: string;
   composition: object | string;
-  solid?: string;
+  solid?: Solid;
   formula?: string;
   description?: string;
   image?: string;
   thumbnail?: string;
   tags: Tag[];
+  category?: string;
 };
 
 export type Substance = {
   name: string;
   composition?: object | string;
-  solid: string;
+  solid: Solid;
   formula?: string;
   description?: string;
   image?: string;
   thumbnail?: string;
   tags: Tag[];
+  category?: string;
 };
