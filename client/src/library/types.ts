@@ -52,7 +52,7 @@ export const tags = [
   "organic",
   "pure substance",
   "compound",
-  "homogenous",
+  "homogeneous",
   "heterogeneous",
   "alloy",
   "mineral",

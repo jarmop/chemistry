@@ -6,7 +6,7 @@ export function MatterComparison() {
   const materialGroups: Partial<Record<Tag, Matter[]>> = ([
     "pure substance",
     "compound",
-    "homogenous",
+    "homogeneous",
     "heterogeneous",
   ] as Tag[]).reduce((acc, tag) => {
     return { ...acc, [tag]: matter.filter((m) => m.tags?.includes(tag)) };
@@ -57,7 +57,7 @@ function MatterTable({ matter }: MatterTableProps) {
     ![
       "pure substance",
       "compound",
-      "homogenous",
+      "homogeneous",
       "heterogeneous",
     ].includes(t)
   );
@@ -98,7 +98,7 @@ function MatterTable({ matter }: MatterTableProps) {
   //   "organic",
   //   // "pure substance",
   //   // "compound",
-  //   // "homogenous",
+  //   // "homogeneous",
   //   // "heterogeneous",
   //   "alloy",
   //   "mineral",

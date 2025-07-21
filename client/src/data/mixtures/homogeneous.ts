@@ -1,6 +1,6 @@
 import { Mixture } from "../../library/types.ts";
 
-export const homogenous: Mixture[] = [
+export const homogeneous: Mixture[] = [
   {
     name: "Petroleum",
     composition: {
@@ -24,7 +24,8 @@ export const homogenous: Mixture[] = [
   {
     name: "Amber",
     composition: "Mixture of organic compounds, predominantly terpenes",
-    description: "A solid or highly viscous liquid that can be converted into a polymer.",
+    description:
+      "A solid or highly viscous liquid that can be converted into a polymer.",
     tags: ["biogenic", "synthetic", "resin"],
   },
   {
