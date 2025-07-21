@@ -11,6 +11,12 @@ export const pureSubstances: Substance[] = [
     name: "Graphite",
     formula: "C",
     solid: "polycrystalline",
-    tags: ["synthetic", "natural"],
+    tags: ["synthetic", "natural", "interstitial"],
+  },
+  {
+    name: "Iron",
+    // formula: "Fe",
+    solid: "polycrystalline",
+    tags: ["natural"],
   },
 ];

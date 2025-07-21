@@ -54,7 +54,12 @@ export const tags = [
   "compound",
   "homogeneous",
   "heterogeneous",
+  //-----
   "alloy",
+  // alloy type
+  "substitutional",
+  "interstitial",
+  //-----
   "mineral",
   "pitch",
   "resin",
@@ -64,8 +69,11 @@ export const tags = [
 
 export type Tag = typeof tags[number];
 
+type Composition = Record<string, string | number> | string;
+
 export type Matter = {
   name: string;
+  composition: Composition;
   solid: Solid;
   formula?: string;
   description?: string;
@@ -77,7 +85,7 @@ export type Matter = {
 
 export type Mixture = {
   name: string;
-  composition: object | string;
+  composition: Composition;
   solid?: Solid;
   formula?: string;
   description?: string;
@@ -89,7 +97,7 @@ export type Mixture = {
 
 export type Substance = {
   name: string;
-  composition?: object | string;
+  composition?: Composition;
   solid: Solid;
   formula?: string;
   description?: string;

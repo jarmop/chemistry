@@ -9,12 +9,17 @@ export function MatterComparison() {
     "homogeneous",
     "heterogeneous",
   ] as Tag[]).reduce((acc, tag) => {
-    return { ...acc, [tag]: matter.filter((m) => m.tags?.includes(tag)) };
+    const matters = matter.filter((m) => m.tags?.includes(tag));
+    return { ...acc, [tag]: matters };
   }, {});
 
   return (
-    <>
-      <h1>Matter</h1>
+    <div
+      style={{
+        padding: "10px",
+      }}
+    >
+      <h1 style={{ marginTop: 0 }}>Matter</h1>
       {/* <MatterTable matter={matter} /> */}
       <div
         style={{
@@ -22,29 +27,27 @@ export function MatterComparison() {
           // gridTemplateColumns: "repeat(auto-fill, minmax(500px, 1fr))",
           gridTemplateColumns: "repeat(2, minmax(min-content, 1fr))",
           // gridTemplateColumns: "repeat(4, min-content)",
-          gap: "10px",
-          padding: "10px",
+          gap: "30px",
+          width: "min-content",
         }}
       >
         {Object.entries(materialGroups).map(([key, value]) => (
           <div
             key={key}
             style={{
-              // border: "1px solid",
-              padding: "10px",
+              // padding: "10px",
             }}
           >
-            <h2 style={{ textTransform: "capitalize" }}>{key}</h2>
-            {
-              /* <ul>
-              {value.map((m) => <li key={m.name}>{m.name}</li>)}
-            </ul> */
-            }
-            <MatterTable matter={value} />
+            <h2 style={{ textTransform: "capitalize", margin: "0 0 10px" }}>
+              {key}
+            </h2>
+            <MatterTable
+              matter={value}
+            />
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 }
 
@@ -53,7 +56,11 @@ interface MatterTableProps {
 }
 
 function MatterTable({ matter }: MatterTableProps) {
-  const tagCols: Tag[] = tags.filter((t) =>
+  const tagColsSet = new Set<Tag>();
+
+  matter.flatMap((m) => m.tags).forEach((t) => tagColsSet.add(t));
+
+  const tagCols = [...tagColsSet].filter((t) =>
     ![
       "pure substance",
       "compound",
@@ -61,6 +68,7 @@ function MatterTable({ matter }: MatterTableProps) {
       "heterogeneous",
     ].includes(t)
   );
+
   const [sortOrder, setSortOrder] = useState<
     (keyof Matter | Matter["tags"][number])[]
   >([
@@ -85,11 +93,14 @@ function MatterTable({ matter }: MatterTableProps) {
     return foo;
   });
 
-  const keyParts: (keyof Matter)[] = [
+  const colKeys = ([
     "solid",
-  ];
+    "composition",
+    "formula",
+    "category",
+  ] as (keyof Matter)[]).filter((k) => matter.some((m) => m[k]));
 
-  const tableCols: (keyof Matter)[] = ["name", ...keyParts];
+  const tableCols: (keyof Matter)[] = ["name", ...colKeys];
 
   // const tagCols: Tag[] = [
   //   "synthetic",
@@ -104,6 +115,25 @@ function MatterTable({ matter }: MatterTableProps) {
   //   "mineral",
   //   "resin",
   // ];
+
+  function formatComposition(value: Matter["composition"]) {
+    let result: string | React.ReactNode = "";
+    if (!value) {
+      value = "-";
+    } else {
+      let description = "";
+      if (typeof value === "object") {
+        Object.entries(value).forEach(([key, value]) => {
+          description += `${key}: ${value}\n`;
+        });
+      } else {
+        description = value;
+      }
+      result = <span title={description}>Show</span>;
+    }
+
+    return result;
+  }
 
   return (
     <>
@@ -153,18 +183,18 @@ function MatterTable({ matter }: MatterTableProps) {
             <tr key={m.name}>
               <td
                 style={{ border: "1px solid #ccc" }}
+                title={m.description}
               >
                 {m.name}
               </td>
-              {keyParts.map((k) => (
+              {colKeys.map((k) => (
                 <td
                   key={k}
                   style={{
                     border: "1px solid #ccc",
-                    textWrap: "nowrap",
                   }}
                 >
-                  {(m as Matter)[k]}
+                  {k === "composition" ? formatComposition(m[k]) : m[k]}
                 </td>
               ))}
               {tagCols.map((t) => (

@@ -22,13 +22,6 @@ export const homogeneous: Mixture[] = [
     tags: ["biogenic", "synthetic", "pitch"],
   },
   {
-    name: "Amber",
-    composition: "Mixture of organic compounds, predominantly terpenes",
-    description:
-      "A solid or highly viscous liquid that can be converted into a polymer.",
-    tags: ["biogenic", "synthetic", "resin"],
-  },
-  {
     name: "Glass",
     composition: "",
     formula: "SiO2",
@@ -45,12 +38,30 @@ export const homogeneous: Mixture[] = [
       "Ni": 9,
     },
     solid: "polycrystalline",
-    tags: ["synthetic", "alloy"],
+    tags: ["synthetic", "alloy", "interstitial"],
     description:
       "Euronorm number 1.4301. A very common austenitic stainless steel grade.",
     image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Stainless_kitchen_container_with_cover.jpg/1280px-Stainless_kitchen_container_with_cover.jpg",
     thumbnail:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Stainless_kitchen_container_with_cover.jpg/250px-Stainless_kitchen_container_with_cover.jpg",
+  },
+  {
+    name: "Brass",
+    composition: "Copper + Zinc",
+    solid: "polycrystalline",
+    tags: ["synthetic", "alloy", "substitutional"],
+  },
+  {
+    name: "Bronze",
+    composition: "Copper + Tin",
+    solid: "polycrystalline",
+    tags: ["synthetic", "alloy", "substitutional"],
+  },
+  {
+    name: "Sterling silver",
+    composition: "Silver + copper",
+    solid: "polycrystalline",
+    tags: ["synthetic", "alloy", "substitutional"],
   },
 ];

@@ -10,7 +10,7 @@ function App() {
     <div>
       <MatterComparison />
       {/* <Materials /> */}
-      <MoleculeComparison />
+      {/* <MoleculeComparison /> */}
       {/* <MoleculeView /> */}
       <Inspect />
     </div>

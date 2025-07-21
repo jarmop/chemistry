@@ -21,7 +21,7 @@ export const heterogeneous: Mixture[] = [
   },
   {
     name: "Concrete",
-    composition: [],
+    composition: "",
     tags: ["synthetic"],
   },
   {
