@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { inorganicMolecules, organicMolecules } from "./data/molecules.ts";
+import { inorganicMolecules, organicMolecules } from "../data/molecules.ts";
 
 export function MoleculeView() {
   const [selectedMolecule, selectMolecule] = useState("");

@@ -1,6 +1,6 @@
-import { inorganicMolecules, organicMolecules } from "./data/molecules.ts";
-import elements from "./data/elements.ts";
-import { calculateMolarMassFormatted } from "./library/helpers.ts";
+import { inorganicMolecules, organicMolecules } from "../data/molecules.ts";
+import elements from "../data/elements.ts";
+import { calculateMolarMassFormatted } from "../library/helpers.ts";
 
 type Molecule = (typeof inorganicMolecules)[number];
 

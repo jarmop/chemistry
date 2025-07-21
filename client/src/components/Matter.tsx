@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { matter } from "./data/matter.ts";
-import { Matter, Tag, tags } from "./library/types.ts";
+import { matter } from "../data/matter.ts";
+import { Matter, Tag, tags } from "../library/types.ts";
 
 export function MatterComparison() {
   const materialGroups: Partial<Record<Tag, Matter[]>> = ([

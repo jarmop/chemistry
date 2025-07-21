@@ -4,7 +4,7 @@ import { defaultState, StateContext } from "./StateContext.ts";
 import { AtomView } from "./AtomView.tsx";
 // import { AtomView } from "./LewisStructure.tsx";
 import { AtomData } from "./AtomData.tsx";
-import elements from "./data/elements.ts";
+import elements from "../data/elements.ts";
 
 // Mass number, A = protons + neutrons --> Isotopes
 // Atomic numer, Z, = protons

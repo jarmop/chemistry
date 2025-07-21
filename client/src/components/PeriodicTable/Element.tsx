@@ -1,4 +1,4 @@
-import { Element as ElementType } from "../library/types.ts";
+import { Element as ElementType } from "../../library/types.ts";
 
 interface ElementProps {
   element: ElementType;

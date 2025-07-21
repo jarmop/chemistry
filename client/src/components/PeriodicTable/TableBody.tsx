@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { Element as ElementType } from "../library/types.ts";
-import allElements from "../data/elements.ts";
+import { Element as ElementType } from "../../library/types.ts";
+import allElements from "../../data/elements.ts";
 
 function getElementPosition(
   elements: ElementType[][],

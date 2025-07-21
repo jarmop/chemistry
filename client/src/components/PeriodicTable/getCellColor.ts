@@ -1,5 +1,5 @@
-import elements from "../data/elements.ts";
-import { Element as ElementType } from "../library/types.ts";
+import elements from "../../data/elements.ts";
+import { Element as ElementType } from "../../library/types.ts";
 
 export const colorModes: Partial<Record<keyof ElementType, string>> = {
   category: "category",

@@ -1,11 +1,11 @@
 import { useContext } from "react";
 import { StateContext } from "./StateContext.ts";
-import elements, { elementUnits } from "./data/elements.ts";
+import elements, { elementUnits } from "../data/elements.ts";
 import {
   getMaximumNumberOfElectronsPerShell,
   maximumNumberOfElectronsPerSubShell,
-} from "./library/helpers.ts";
-import { Element } from "./library/types.ts";
+} from "../library/helpers.ts";
+import { Element } from "../library/types.ts";
 
 const subShells = [
   { name: "s", size: 2, color: "pink" },

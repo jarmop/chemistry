@@ -1,10 +1,10 @@
 import { useContext, useState } from "react";
-import elements from "../data/elements.ts";
-import { StateContext } from "../StateContext.ts";
-import { Element as ElementType } from "../library/types.ts";
-import { Element } from "./Element.tsx";
-import { ElementDetailed } from "./ElementDetailed.tsx";
-import { ElementImage } from "./ElementImage.tsx";
+import elements from "../../data/elements.ts";
+import { StateContext } from "../../components/StateContext.ts";
+import { Element as ElementType } from "../../library/types.ts";
+import { Element } from "../../components/PeriodicTable/Element.tsx";
+import { ElementDetailed } from "../../components/PeriodicTable/ElementDetailed.tsx";
+import { ElementImage } from "../../components/PeriodicTable/ElementImage.tsx";
 import {
   type ColorMode,
   colorModes,
@@ -12,8 +12,8 @@ import {
   getCellColor,
 } from "./getCellColor.ts";
 import { TableBody } from "./TableBody.tsx";
-import { ComparisonTable } from "./ComparisonTable.tsx";
-import { ColorDescription } from "./ColorDescription.tsx";
+import { ComparisonTable } from "../../components/PeriodicTable/ComparisonTable.tsx";
+import { ColorDescription } from "../../components/PeriodicTable/ColorDescription.tsx";
 
 const viewModes = ["simple", "detailed", "image"] as const;
 type ViewMode = (typeof viewModes)[number];

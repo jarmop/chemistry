@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { materials } from "./data/materials.ts";
-import { Matter, tags } from "./library/types.ts";
+import { materials } from "../data/materials.ts";
+import { Matter, tags } from "../library/types.ts";
 
 export function Materials() {
   const [sortOrder, setSortOrder] = useState<

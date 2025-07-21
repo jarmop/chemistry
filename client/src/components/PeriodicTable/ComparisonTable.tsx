@@ -1,4 +1,4 @@
-import elements, { elementUnits } from "../data/elements.ts";
+import elements, { elementUnits } from "../../data/elements.ts";
 import { ColorMode, colorModes } from "./getCellColor.ts";
 
 interface ComparisonTableProps {
