@@ -1,5 +1,6 @@
 import { Mixture } from "../../library/types.ts";
 import { minerals } from "./minerals.ts";
+import { polymer } from "./polymer.ts";
 
 export const heterogeneous: Mixture[] = [
   {
@@ -24,15 +25,6 @@ export const heterogeneous: Mixture[] = [
     tags: ["synthetic"],
   },
   {
-    name: "Natural rubber",
-    tags: ["organic", "biogenic", "natural"],
-    description: "Made of polymer cis-1,4-polyisoprene",
-    composition:
-      "Mostly cis-1,4-polyisoprene. A small percentage (up to 5% of dry mass) of other materials, such as proteins, fatty acids, resins, and inorganic materials (salts).",
-    image: "",
-    thumbnail: "",
-  },
-  {
     name: "Earthenware",
     composition: "25% kaolin, 25% ball clay, 35% quartz and 15% feldspar.",
     tags: ["natural"],
@@ -44,4 +36,5 @@ export const heterogeneous: Mixture[] = [
     tags: ["natural"],
   },
   ...minerals,
+  ...polymer,
 ];

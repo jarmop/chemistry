@@ -58,6 +58,8 @@ export const tags = [
   "mineral",
   "pitch",
   "resin",
+  "polymer",
+  "colloid",
 ] as const;
 
 export type Tag = typeof tags[number];

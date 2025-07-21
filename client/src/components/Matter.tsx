@@ -53,14 +53,19 @@ interface MatterTableProps {
 }
 
 function MatterTable({ matter }: MatterTableProps) {
+  const tagCols: Tag[] = tags.filter((t) =>
+    ![
+      "pure substance",
+      "compound",
+      "homogenous",
+      "heterogeneous",
+    ].includes(t)
+  );
   const [sortOrder, setSortOrder] = useState<
     (keyof Matter | Matter["tags"][number])[]
   >([
     "solid",
-    "synthetic",
-    "natural",
-    "biogenic",
-    "organic",
+    ...tagCols,
   ]);
   matter.sort((a, b) => {
     let foo = 0;
@@ -85,19 +90,20 @@ function MatterTable({ matter }: MatterTableProps) {
   ];
 
   const tableCols: (keyof Matter)[] = ["name", ...keyParts];
-  const tagCols: Tag[] = [
-    "synthetic",
-    "natural",
-    "biogenic",
-    "organic",
-    // "pure substance",
-    // "compound",
-    // "homogenous",
-    // "heterogeneous",
-    "alloy",
-    "mineral",
-    "resin",
-  ];
+
+  // const tagCols: Tag[] = [
+  //   "synthetic",
+  //   "natural",
+  //   "biogenic",
+  //   "organic",
+  //   // "pure substance",
+  //   // "compound",
+  //   // "homogenous",
+  //   // "heterogeneous",
+  //   "alloy",
+  //   "mineral",
+  //   "resin",
+  // ];
 
   return (
     <>
@@ -105,6 +111,7 @@ function MatterTable({ matter }: MatterTableProps) {
         style={{
           // border: "1px solid #ccc",
           borderCollapse: "collapse",
+          fontSize: 14,
         }}
       >
         <thead>
@@ -154,6 +161,7 @@ function MatterTable({ matter }: MatterTableProps) {
                   key={k}
                   style={{
                     border: "1px solid #ccc",
+                    textWrap: "nowrap",
                   }}
                 >
                   {(m as Matter)[k]}
