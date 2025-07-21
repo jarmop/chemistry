@@ -7,7 +7,7 @@ export function MatterComparison() {
     "pure substance",
     "compound",
     "homogenous",
-    "heterogenous",
+    "heterogeneous",
   ] as Tag[]).reduce((acc, tag) => {
     return { ...acc, [tag]: matter.filter((m) => m.tags?.includes(tag)) };
   }, {});
@@ -93,9 +93,10 @@ function MatterTable({ matter }: MatterTableProps) {
     // "pure substance",
     // "compound",
     // "homogenous",
-    // "heterogenous",
+    // "heterogeneous",
     "alloy",
     "mineral",
+    "resin",
   ];
 
   return (

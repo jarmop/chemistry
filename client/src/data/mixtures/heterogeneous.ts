@@ -1,7 +1,7 @@
 import { Mixture } from "../../library/types.ts";
 import { minerals } from "./minerals.ts";
 
-export const heterogenous: Mixture[] = [
+export const heterogeneous: Mixture[] = [
   {
     name: "Pine tar",
     composition: {
