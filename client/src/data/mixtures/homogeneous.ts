@@ -4,11 +4,11 @@ export const homogeneous: Mixture[] = [
   {
     name: "Petroleum",
     composition: {
-      "carbon": "83-85",
-      "hydrogen": "10-14",
-      "nitrogen": "0.1-2",
-      "oxygen": "0.5-1.5",
-      "sulfur": "0.05-6",
+      C: "83-85",
+      H: "10-14",
+      N: "0.1-2",
+      O: "0.5-1.5",
+      S: "0.05-6",
     },
     description:
       "A naturally occurring liquid composed primarily of hydrocarbons, which are uniformly distributed throughout.",
@@ -38,6 +38,7 @@ export const homogeneous: Mixture[] = [
       "Ni": 9,
     },
     solid: "polycrystalline",
+    lattice: "fcc",
     tags: ["synthetic", "alloy", "interstitial"],
     description:
       "Euronorm number 1.4301. A very common austenitic stainless steel grade.",
@@ -47,21 +48,36 @@ export const homogeneous: Mixture[] = [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Stainless_kitchen_container_with_cover.jpg/250px-Stainless_kitchen_container_with_cover.jpg",
   },
   {
-    name: "Brass",
-    composition: "Copper + Zinc",
+    name: "Alpha Brass",
+    description: "Can be worked cold",
+    composition: { Cu: "2/3", Zn: "1/3" },
     solid: "polycrystalline",
+    lattice: "fcc",
+    tags: ["synthetic", "alloy", "substitutional"],
+  },
+  {
+    name: "Beta Brass",
+    description:
+      "Harder and stronger than alpha brass. Can only be worked hot.",
+    composition: { Cu: "50-55", Zn: "45-50" },
+    solid: "polycrystalline",
+    lattice: "bcc",
     tags: ["synthetic", "alloy", "substitutional"],
   },
   {
     name: "Bronze",
-    composition: "Copper + Tin",
+    composition: { Cu: 88, Sb: 12 },
     solid: "polycrystalline",
+    lattice: "fcc",
     tags: ["synthetic", "alloy", "substitutional"],
   },
   {
     name: "Sterling silver",
-    composition: "Silver + copper",
+    description:
+      "Other elements can be used in place of copper, such as germanium, zinc, platinum, silicon, and boron",
+    composition: { Ag: 92.5, Cu: 7.5 },
     solid: "polycrystalline",
+    lattice: "fcc",
     tags: ["synthetic", "alloy", "substitutional"],
   },
 ];

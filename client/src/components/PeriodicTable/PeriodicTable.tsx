@@ -27,7 +27,7 @@ export function PeriodicTable(
 ) {
   const { element: selectedZ } = useContext(StateContext);
 
-  const [colorMode, setColorMode] = useState<ColorMode>("category");
+  const [colorMode, setColorMode] = useState<ColorMode>("structure");
   const [viewMode, setViewMode] = useState<ViewMode>("simple");
   const [highlightValue, setHighlightValue] = useState<string>();
   const [hoverEnabled, setHoverEnabled] = useState(true);
