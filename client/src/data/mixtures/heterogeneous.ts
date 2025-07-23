@@ -27,6 +27,7 @@ export const heterogeneous: Mixture[] = [
   {
     name: "Earthenware",
     composition: "25% kaolin, 25% ball clay, 35% quartz and 15% feldspar.",
+    solid: "polycrystalline",
     tags: ["natural"],
   },
   {

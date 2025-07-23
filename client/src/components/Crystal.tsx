@@ -1,34 +1,75 @@
 import { useState } from "react";
 import { matter } from "../data/matter.ts";
-import { Matter, Tag, tags } from "../library/types.ts";
+import { Matter, Solid, Tag, tags } from "../library/types.ts";
 
-export function MatterComparison() {
-  const materialGroups: Partial<Record<Tag, Matter[]>> = ([
-    "pure substance",
-    "compound",
-    "homogeneous",
-    "heterogeneous",
-  ] as Tag[]).reduce((acc, tag) => {
-    const matters = matter.filter((m) => m.tags?.includes(tag));
-    return { ...acc, [tag]: matters };
-  }, {});
-
+export function CrystalComparison() {
   return (
     <div
       style={{
         padding: "10px",
       }}
     >
-      <h1 style={{ marginTop: 0 }}>Matter</h1>
+      <h1 style={{ marginTop: 0 }}>Crystal</h1>
       {/* <MatterTable matter={matter} /> */}
+
+      <CrystalComparisonSection
+        title="Crystalline"
+        crystals={matter.filter((m) => m.solid === "crystalline")}
+      />
+      <br />
+      <CrystalComparisonSection
+        title="PolyCrystalline"
+        crystals={matter.filter((m) => m.solid === "polycrystalline")}
+      />
+    </div>
+  );
+}
+
+interface CrystalComparisonSectionProps {
+  title: string;
+  crystals: Matter[];
+}
+
+export function CrystalComparisonSection(
+  { title, crystals }: CrystalComparisonSectionProps,
+) {
+  // const materialGroups: Partial<Record<Solid, Matter[]>> = ([
+  //   "crystalline",
+  //   "polycrystalline",
+  // ] as Solid[]).reduce((acc, solid) => {
+  //   const crystalGroup = matter.filter((m) => m.solid === solid);
+  //   return { ...acc, [solid]: crystalGroup };
+  // }, {});
+
+  const materialGroups: Partial<Record<Tag, Matter[]>> = ([
+    "pure substance",
+    "compound",
+    "homogeneous",
+    "heterogeneous",
+  ] as Tag[]).reduce((acc, tag) => {
+    const crystalGroup = crystals.filter((m) => m.tags?.includes(tag));
+    if (crystalGroup.length === 0) {
+      return acc;
+    }
+    return { ...acc, [tag]: crystalGroup };
+  }, {});
+
+  return (
+    <div
+      style={{}}
+    >
+      <h2 style={{ marginBottom: "5px" }}>{title}</h2>
       <div
         style={{
           display: "grid",
           // gridTemplateColumns: "repeat(auto-fill, minmax(500px, 1fr))",
           gridTemplateColumns: "repeat(2, minmax(min-content, 1fr))",
           // gridTemplateColumns: "repeat(4, min-content)",
-          gap: "30px",
+          gap: "40px",
           width: "min-content",
+          border: "1px solid #ddd",
+          padding: "20px",
+          background: "#f6f6f6",
         }}
       >
         {Object.entries(materialGroups).map(([key, value]) => (
@@ -38,9 +79,9 @@ export function MatterComparison() {
               // padding: "10px",
             }}
           >
-            <h2 style={{ textTransform: "capitalize", margin: "0 0 10px" }}>
+            <h3 style={{ textTransform: "capitalize", margin: "0 0 10px" }}>
               {key}
-            </h2>
+            </h3>
             <MatterTable
               matter={value}
             />
@@ -60,21 +101,33 @@ function MatterTable({ matter }: MatterTableProps) {
 
   matter.flatMap((m) => m.tags).forEach((t) => tagColsSet.add(t));
 
-  const tagCols = [...tagColsSet].filter((t) =>
-    ![
-      "pure substance",
-      "compound",
-      "homogeneous",
-      "heterogeneous",
-    ].includes(t)
+  const tableCols = ([
+    "name",
+    "composition",
+    "lattice",
+    "crystal system",
+    "category",
+  ] as (keyof Matter)[]).filter((k) =>
+    k === "composition"
+      ? matter.some((m) => m[k] || m.formula)
+      : matter.some((m) => m[k])
   );
+
+  const tagCols = ([
+    "alloy",
+    "interstitial",
+    "substitutional",
+    "mineral",
+    "polymer",
+  ] as Tag[]).filter((t) => [...tagColsSet].includes(t));
 
   const [sortOrder, setSortOrder] = useState<
     (keyof Matter | Matter["tags"][number])[]
   >([
-    "solid",
+    ...tableCols,
     ...tagCols,
   ]);
+
   matter.sort((a, b) => {
     let foo = 0;
     for (let i = 0; i < sortOrder.length; i++) {
@@ -93,45 +146,26 @@ function MatterTable({ matter }: MatterTableProps) {
     return foo;
   });
 
-  const tableCols = ([
-    "name",
-    "solid",
-    "composition",
-    "formula",
-    "category",
-  ] as (keyof Matter)[]).filter((k) => matter.some((m) => m[k]));
-
-  // const tagCols: Tag[] = [
-  //   "synthetic",
-  //   "natural",
-  //   "biogenic",
-  //   "organic",
-  //   // "pure substance",
-  //   // "compound",
-  //   // "homogeneous",
-  //   // "heterogeneous",
-  //   "alloy",
-  //   "mineral",
-  //   "resin",
-  // ];
-
-  function formatComposition(value: Matter["composition"]) {
-    let result: string | React.ReactNode = "";
-    if (!value) {
-      value = "-";
-    } else {
-      let description = "";
-      if (typeof value === "object") {
-        Object.entries(value).forEach(([key, value]) => {
-          description += `${key}: ${value}\n`;
-        });
-      } else {
-        description = value;
-      }
-      result = <span title={description}>Show</span>;
+  function formatComposition(matter: Matter) {
+    if (!matter.composition) {
+      return matter.formula;
+    }
+    if (typeof matter.composition !== "object") {
+      return matter.composition;
     }
 
-    return result;
+    let result = "";
+    Object.entries(matter.composition).forEach(([key, value]) => {
+      result += `${key}: ${value}\n`;
+    });
+
+    return (
+      <pre
+        style={{ margin: 0, fontFamily: "inherit" }}
+      >
+        {result}
+      </pre>
+    );
   }
 
   return (
@@ -141,6 +175,7 @@ function MatterTable({ matter }: MatterTableProps) {
           // border: "1px solid #ccc",
           borderCollapse: "collapse",
           fontSize: 14,
+          background: "white",
         }}
       >
         <thead>
@@ -151,6 +186,7 @@ function MatterTable({ matter }: MatterTableProps) {
                 style={{
                   border: "1px solid #ccc",
                   textTransform: "capitalize",
+                  padding: "5px",
                 }}
                 onClick={() => {
                   const newOrder = [k, ...sortOrder.filter((v) => v !== k)];
@@ -185,10 +221,12 @@ function MatterTable({ matter }: MatterTableProps) {
                   key={k}
                   style={{
                     border: "1px solid #ccc",
+                    padding: "5px",
                     textWrap: "nowrap",
                   }}
+                  title={k === "name" ? m.description : ""}
                 >
-                  {k === "composition" ? formatComposition(m[k]) : m[k]}
+                  {k === "composition" ? formatComposition(m) : m[k]}
                 </td>
               ))}
               {tagCols.map((t) => (

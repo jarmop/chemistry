@@ -25,11 +25,11 @@ export type Element = {
   atomsInHumanBody: number;
   abundanceInMilkyWay: number;
   category: string;
-  structure: Structure;
+  structure: Lattice;
   structureNotes: string;
 };
 
-type Structure =
+type Lattice =
   | "hcp"
   | "bcc"
   | "complex"
@@ -43,17 +43,21 @@ type Structure =
   | "simple cubic"
   | "unknown";
 
-type Solid = "crystalline" | "polycrystalline" | "amorphous";
+type CrystalSystem = "hexagonal" | "trigonal";
+
+export type Solid = "crystalline" | "polycrystalline" | "amorphous";
 
 export const tags = [
-  "synthetic",
-  "natural",
-  "biogenic",
-  "organic",
+  //type of matter
   "pure substance",
   "compound",
   "homogeneous",
   "heterogeneous",
+  // origin
+  "synthetic",
+  "natural",
+  "biogenic",
+  "organic",
   //-----
   "alloy",
   // alloy type
@@ -71,16 +75,21 @@ export type Tag = typeof tags[number];
 
 type Composition = Record<string, string | number> | string;
 
+type Bond = "covalent" | "ionic" | "metallic" | "hydrogen";
+
 export type Matter = {
   name: string;
-  composition: Composition;
+  tags: Tag[];
   solid: Solid;
+  bonds?: Bond[];
+  composition?: Composition;
   formula?: string;
   description?: string;
   image?: string;
   thumbnail?: string;
-  tags: Tag[];
   category?: string;
+  lattice?: Lattice;
+  "crystal system"?: CrystalSystem;
 };
 
 export type Mixture = {
@@ -93,6 +102,8 @@ export type Mixture = {
   thumbnail?: string;
   tags: Tag[];
   category?: string;
+  lattice?: Lattice;
+  "crystal system"?: CrystalSystem;
 };
 
 export type Substance = {
@@ -105,4 +116,6 @@ export type Substance = {
   thumbnail?: string;
   tags: Tag[];
   category?: string;
+  lattice?: Lattice;
+  "crystal system"?: CrystalSystem;
 };

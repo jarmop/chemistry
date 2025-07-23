@@ -5,7 +5,7 @@ export const minerals: Mixture[] = addTag([
   {
     name: "Feldspar",
     composition: "Major compounds: KAlSi3O8, NaAlSi3O8, CaAl2Si2O8",
-    solid: "crystalline",
+    solid: "polycrystalline",
     tags: ["natural"],
     category: "	Tectosilicate",
   },
