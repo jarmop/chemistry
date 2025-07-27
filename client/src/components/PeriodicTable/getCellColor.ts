@@ -11,6 +11,8 @@ export const colorModes: Partial<Record<keyof ElementType, string>> = {
   electronegativity: "electronegativity",
   electronAffinity: "electron affinity",
   ionizationEnergy: "ionization energy",
+  conductivity: "conductivity",
+  resistivity: "resistivity",
   atomicRadius: "atomic radius",
   abundanceOnEarthCrust: "abundance on earth's crust",
   abundanceOnEarthCrustRank: "abundance on earth's crust rank",
@@ -122,6 +124,8 @@ const colorGetters: Partial<
   massInHumanBody: createColorGetter("massInHumanBody"),
   atomsInHumanBody: createColorGetter("atomsInHumanBody"),
   abundanceInMilkyWay: createColorGetter("abundanceInMilkyWay"),
+  conductivity: createColorGetter("conductivity"),
+  resistivity: createColorGetter("resistivity"),
 };
 
 export function getCellColor(element: ElementType, colorMode: ColorMode) {

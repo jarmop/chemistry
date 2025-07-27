@@ -94,6 +94,14 @@ export function AtomData() {
             <td>{element.density} {elementUnits.density}</td>
           </tr>
           <tr>
+            <td>Conductivity:</td>
+            <td>{element.conductivity} {elementUnits.conductivity}</td>
+          </tr>
+          <tr>
+            <td>Resistivity:</td>
+            <td>{element.resistivity} {elementUnits.resistivity}</td>
+          </tr>
+          <tr>
             <td>
               Electron configuration:
             </td>

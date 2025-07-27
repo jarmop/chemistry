@@ -23,4 +23,6 @@ export const elementUnits: Partial<Record<keyof Element, string>> = {
   atomicRadius: "pm",
   density: "g/cm^3",
   electronegativity: "Pauling",
+  conductivity: "σ, at 20 °C (S/m)",
+  resistivity: "ρ,  at 20 °C (Ω·m)",
 };

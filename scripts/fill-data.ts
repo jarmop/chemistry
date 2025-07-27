@@ -53,32 +53,26 @@ type Data3 = {
 const data3 = await getData<Data3>(
   "./data/element_crystal_structures.json",
 );
-// .then((data) => {
-//   return data.filter((d) => {
-//     const el = oldElements.find((el) => el.symbol === d.symbol);
-//     return el?.phase === "solid";
-//   });
-// });
 const data3BySymbol = getDataMap(data3, "symbol");
 
-// type Data4 = {
-//   no: number;
-//   element: string;
-//   allotrop: string;
-//   measuring_temperature: string;
-//   lattice: string;
-//   parameters: string[];
-//   crystal_class: string;
-//   Schönflies: string;
-//   "Hermann-Mauguin": string;
-//   orbifold: string;
-//   space_group: string;
-//   density: number;
-//   note: string;
-//   reference: string;
-// };
-// const data4 = await getData("./data/crystal_structures.json") as Data4[];
-// const data4ByElement = getDataMap(data3, "symbol");
+type Data4 = {
+  Material: string;
+  "Resistivity, ρ,  at 20 °C (Ω·m)": string | number;
+  "Conductivity, σ,  at 20 °C (S/m)": string | number;
+  "Temperature  coefficient (K−1)": string;
+};
+const data4 = await getData<Data4>(
+  "./data/conductivity.json",
+);
+const data4ByName = getDataMap(data4, "Material");
+
+function formatConductivityAndResistivity(rawCond: string | number) {
+  const conductivity = typeof rawCond === "string"
+    ? parseFloat(rawCond.replace("×10", "e"))
+    : rawCond ?? 0;
+
+  return conductivity;
+}
 
 const newElements = oldElements.map((oldElement) => {
   return {
@@ -88,6 +82,12 @@ const newElements = oldElements.map((oldElement) => {
     abundanceInMilkyWay: data2ByName[oldElement.name]?.percentage ?? 0,
     structure: data3BySymbol[oldElement.symbol]?.structure ?? "unknown",
     structureNotes: data3BySymbol[oldElement.symbol]?.notes ?? undefined,
+    conductivity: formatConductivityAndResistivity(
+      data4ByName[oldElement.name]?.["Conductivity, σ,  at 20 °C (S/m)"],
+    ),
+    resistivity: formatConductivityAndResistivity(
+      data4ByName[oldElement.name]?.["Resistivity, ρ,  at 20 °C (Ω·m)"],
+    ),
   };
 });
 

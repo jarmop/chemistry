@@ -26,7 +26,9 @@
     "abundanceInMilkyWay": 73.97,
     "category": "diatomic nonmetal",
     "structure": "hcp",
-    "structureNotes": "Solid hydrogen under high pressure."
+    "structureNotes": "Solid hydrogen under high pressure.",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Helium",
@@ -55,7 +57,9 @@
     "abundanceInMilkyWay": 24.02,
     "category": "noble gas",
     "structure": "hcp",
-    "structureNotes": "Solidifies only under high pressure."
+    "structureNotes": "Solidifies only under high pressure.",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Lithium",
@@ -83,7 +87,9 @@
     "atomsInHumanBody": 0.0001,
     "abundanceInMilkyWay": 0,
     "category": "alkali metal",
-    "structure": "bcc"
+    "structure": "bcc",
+    "conductivity": 10800000,
+    "resistivity": 9.28
   },
   {
     "name": "Beryllium",
@@ -111,7 +117,9 @@
     "atomsInHumanBody": 0.0001,
     "abundanceInMilkyWay": 0,
     "category": "alkaline earth metal",
-    "structure": "hcp"
+    "structure": "hcp",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Boron",
@@ -140,7 +148,9 @@
     "abundanceInMilkyWay": 0,
     "category": "metalloid",
     "structure": "complex",
-    "structureNotes": "Rhombohedral, icosahedral clusters."
+    "structureNotes": "Rhombohedral, icosahedral clusters.",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Carbon",
@@ -169,7 +179,9 @@
     "abundanceInMilkyWay": 0.46,
     "category": "polyatomic nonmetal",
     "structure": "diamond cubic",
-    "structureNotes": "Can also be hexagonal (graphite)."
+    "structureNotes": "Can also be hexagonal (graphite).",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Nitrogen",
@@ -198,7 +210,9 @@
     "abundanceInMilkyWay": 0.1,
     "category": "diatomic nonmetal",
     "structure": "hcp",
-    "structureNotes": "Solidifies at cryogenic temperatures; forms β-N2 phase."
+    "structureNotes": "Solidifies at cryogenic temperatures; forms β-N2 phase.",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Oxygen",
@@ -227,7 +241,9 @@
     "abundanceInMilkyWay": 1.04,
     "category": "diatomic nonmetal",
     "structure": "monoclinic",
-    "structureNotes": "Solidifies in several phases; α and β phases are monoclinic."
+    "structureNotes": "Solidifies in several phases; α and β phases are monoclinic.",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Fluorine",
@@ -255,7 +271,9 @@
     "atomsInHumanBody": 0.01,
     "abundanceInMilkyWay": 0,
     "category": "diatomic nonmetal",
-    "structure": "unknown"
+    "structure": "unknown",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Neon",
@@ -283,7 +301,9 @@
     "atomsInHumanBody": 0.0001,
     "abundanceInMilkyWay": 0.13,
     "category": "noble gas",
-    "structure": "unknown"
+    "structure": "unknown",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Sodium",
@@ -311,7 +331,9 @@
     "atomsInHumanBody": 0.041,
     "abundanceInMilkyWay": 0,
     "category": "alkali metal",
-    "structure": "bcc"
+    "structure": "bcc",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Magnesium",
@@ -339,7 +361,9 @@
     "atomsInHumanBody": 0.01,
     "abundanceInMilkyWay": 0.06,
     "category": "alkaline earth metal",
-    "structure": "hcp"
+    "structure": "hcp",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Aluminium",
@@ -367,7 +391,9 @@
     "atomsInHumanBody": 0.001,
     "abundanceInMilkyWay": 0,
     "category": "post-transition metal",
-    "structure": "fcc"
+    "structure": "fcc",
+    "conductivity": 37700000,
+    "resistivity": 2.65
   },
   {
     "name": "Silicon",
@@ -395,7 +421,9 @@
     "atomsInHumanBody": 0.01,
     "abundanceInMilkyWay": 0.07,
     "category": "metalloid",
-    "structure": "diamond cubic"
+    "structure": "diamond cubic",
+    "conductivity": 4.35,
+    "resistivity": 2300
   },
   {
     "name": "Phosphorus",
@@ -424,7 +452,9 @@
     "abundanceInMilkyWay": 0,
     "category": "polyatomic nonmetal",
     "structure": "orthorhombic",
-    "structureNotes": "Depends on allotrope (e.g., black phosphorus is orthorhombic)."
+    "structureNotes": "Depends on allotrope (e.g., black phosphorus is orthorhombic).",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Sulfur",
@@ -453,7 +483,9 @@
     "abundanceInMilkyWay": 0.04,
     "category": "polyatomic nonmetal",
     "structure": "monoclinic",
-    "structureNotes": "Also exists as orthorhombic."
+    "structureNotes": "Also exists as orthorhombic.",
+    "conductivity": 10,
+    "resistivity": 1015
   },
   {
     "name": "Chlorine",
@@ -481,7 +513,9 @@
     "atomsInHumanBody": 0.027,
     "abundanceInMilkyWay": 0,
     "category": "diatomic nonmetal",
-    "structure": "unknown"
+    "structure": "unknown",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Argon",
@@ -509,7 +543,9 @@
     "atomsInHumanBody": 0.0001,
     "abundanceInMilkyWay": 0,
     "category": "noble gas",
-    "structure": "unknown"
+    "structure": "unknown",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Potassium",
@@ -537,7 +573,9 @@
     "atomsInHumanBody": 0.029,
     "abundanceInMilkyWay": 0,
     "category": "alkali metal",
-    "structure": "bcc"
+    "structure": "bcc",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Calcium",
@@ -565,7 +603,9 @@
     "atomsInHumanBody": 0.21,
     "abundanceInMilkyWay": 0,
     "category": "alkaline earth metal",
-    "structure": "fcc"
+    "structure": "fcc",
+    "conductivity": 29800000,
+    "resistivity": 3.36
   },
   {
     "name": "Scandium",
@@ -593,7 +633,9 @@
     "atomsInHumanBody": 0.0001,
     "abundanceInMilkyWay": 0,
     "category": "transition metal",
-    "structure": "hcp"
+    "structure": "hcp",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Titanium",
@@ -621,7 +663,9 @@
     "atomsInHumanBody": 0.001,
     "abundanceInMilkyWay": 0,
     "category": "transition metal",
-    "structure": "hcp"
+    "structure": "hcp",
+    "conductivity": 2380000,
+    "resistivity": 42
   },
   {
     "name": "Vanadium",
@@ -649,7 +693,9 @@
     "atomsInHumanBody": 0.0001,
     "abundanceInMilkyWay": 0,
     "category": "transition metal",
-    "structure": "bcc"
+    "structure": "bcc",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Chromium",
@@ -677,7 +723,9 @@
     "atomsInHumanBody": 0.0001,
     "abundanceInMilkyWay": 0,
     "category": "transition metal",
-    "structure": "bcc"
+    "structure": "bcc",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Manganese",
@@ -706,7 +754,9 @@
     "abundanceInMilkyWay": 0,
     "category": "transition metal",
     "structure": "complex",
-    "structureNotes": "α-Mn is complex cubic."
+    "structureNotes": "α-Mn is complex cubic.",
+    "conductivity": 694000,
+    "resistivity": 144
   },
   {
     "name": "Iron",
@@ -735,7 +785,9 @@
     "abundanceInMilkyWay": 0.11,
     "category": "transition metal",
     "structure": "bcc",
-    "structureNotes": "Ferrite (α-Fe) is bcc; austenite (γ-Fe) is fcc at higher temps."
+    "structureNotes": "Ferrite (α-Fe) is bcc; austenite (γ-Fe) is fcc at higher temps.",
+    "conductivity": 10300000,
+    "resistivity": 9.7
   },
   {
     "name": "Cobalt",
@@ -764,7 +816,9 @@
     "abundanceInMilkyWay": 0,
     "category": "transition metal",
     "structure": "hcp",
-    "structureNotes": "Can transform to fcc at high temperature."
+    "structureNotes": "Can transform to fcc at high temperature.",
+    "conductivity": 16000000,
+    "resistivity": 6.24
   },
   {
     "name": "Nickel",
@@ -792,7 +846,9 @@
     "atomsInHumanBody": 0.0001,
     "abundanceInMilkyWay": 0,
     "category": "transition metal",
-    "structure": "fcc"
+    "structure": "fcc",
+    "conductivity": 14300000,
+    "resistivity": 6.99
   },
   {
     "name": "Copper",
@@ -820,7 +876,9 @@
     "atomsInHumanBody": 0.001,
     "abundanceInMilkyWay": 0,
     "category": "transition metal",
-    "structure": "fcc"
+    "structure": "fcc",
+    "conductivity": 59600000,
+    "resistivity": 1.68
   },
   {
     "name": "Zinc",
@@ -848,7 +906,9 @@
     "atomsInHumanBody": 0.01,
     "abundanceInMilkyWay": 0,
     "category": "transition metal",
-    "structure": "hcp"
+    "structure": "hcp",
+    "conductivity": 16900000,
+    "resistivity": 5.9
   },
   {
     "name": "Gallium",
@@ -877,7 +937,9 @@
     "abundanceInMilkyWay": 0,
     "category": "post-transition metal",
     "structure": "orthorhombic",
-    "structureNotes": "Complex structure with covalent bonding."
+    "structureNotes": "Complex structure with covalent bonding.",
+    "conductivity": 7100000,
+    "resistivity": 14
   },
   {
     "name": "Germanium",
@@ -905,7 +967,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "metalloid",
-    "structure": "diamond cubic"
+    "structure": "diamond cubic",
+    "conductivity": 2.17,
+    "resistivity": 4.6
   },
   {
     "name": "Arsenic",
@@ -933,7 +997,9 @@
     "atomsInHumanBody": 0.0001,
     "abundanceInMilkyWay": 0,
     "category": "metalloid",
-    "structure": "rhombohedral"
+    "structure": "rhombohedral",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Selenium",
@@ -962,7 +1028,9 @@
     "abundanceInMilkyWay": 0,
     "category": "polyatomic nonmetal",
     "structure": "hexagonal",
-    "structureNotes": "Trigonal chains."
+    "structureNotes": "Trigonal chains.",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Bromine",
@@ -991,7 +1059,9 @@
     "abundanceInMilkyWay": 0,
     "category": "diatomic nonmetal",
     "structure": "orthorhombic",
-    "structureNotes": "Only solidifies under low temperatures."
+    "structureNotes": "Only solidifies under low temperatures.",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Krypton",
@@ -1020,7 +1090,9 @@
     "abundanceInMilkyWay": 0,
     "category": "noble gas",
     "structure": "fcc",
-    "structureNotes": "Solidifies under pressure."
+    "structureNotes": "Solidifies under pressure.",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Rubidium",
@@ -1048,7 +1120,9 @@
     "atomsInHumanBody": 0.01,
     "abundanceInMilkyWay": 0,
     "category": "alkali metal",
-    "structure": "bcc"
+    "structure": "bcc",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Strontium",
@@ -1076,7 +1150,9 @@
     "atomsInHumanBody": 0.001,
     "abundanceInMilkyWay": 0,
     "category": "alkaline earth metal",
-    "structure": "fcc"
+    "structure": "fcc",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Yttrium",
@@ -1104,7 +1180,9 @@
     "atomsInHumanBody": 0.0001,
     "abundanceInMilkyWay": 0,
     "category": "transition metal",
-    "structure": "hcp"
+    "structure": "hcp",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Zirconium",
@@ -1132,7 +1210,9 @@
     "atomsInHumanBody": 0.0001,
     "abundanceInMilkyWay": 0,
     "category": "transition metal",
-    "structure": "hcp"
+    "structure": "hcp",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Niobium",
@@ -1160,7 +1240,9 @@
     "atomsInHumanBody": 0.0001,
     "abundanceInMilkyWay": 0,
     "category": "transition metal",
-    "structure": "bcc"
+    "structure": "bcc",
+    "conductivity": 7000000,
+    "resistivity": 14
   },
   {
     "name": "Molybdenum",
@@ -1188,7 +1270,9 @@
     "atomsInHumanBody": 0.0001,
     "abundanceInMilkyWay": 0,
     "category": "transition metal",
-    "structure": "bcc"
+    "structure": "bcc",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Technetium",
@@ -1216,7 +1300,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "transition metal",
-    "structure": "hcp"
+    "structure": "hcp",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Ruthenium",
@@ -1244,7 +1330,9 @@
     "atomsInHumanBody": 0.0001,
     "abundanceInMilkyWay": 0,
     "category": "transition metal",
-    "structure": "hcp"
+    "structure": "hcp",
+    "conductivity": 14100000,
+    "resistivity": 7.1
   },
   {
     "name": "Rhodium",
@@ -1272,7 +1360,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "transition metal",
-    "structure": "fcc"
+    "structure": "fcc",
+    "conductivity": 23100000,
+    "resistivity": 4.33
   },
   {
     "name": "Palladium",
@@ -1300,7 +1390,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "transition metal",
-    "structure": "fcc"
+    "structure": "fcc",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Silver",
@@ -1328,7 +1420,9 @@
     "atomsInHumanBody": 0.0001,
     "abundanceInMilkyWay": 0,
     "category": "transition metal",
-    "structure": "fcc"
+    "structure": "fcc",
+    "conductivity": 63000000,
+    "resistivity": 1.59
   },
   {
     "name": "Cadmium",
@@ -1356,7 +1450,9 @@
     "atomsInHumanBody": 0.001,
     "abundanceInMilkyWay": 0,
     "category": "transition metal",
-    "structure": "hcp"
+    "structure": "hcp",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Indium",
@@ -1384,7 +1480,9 @@
     "atomsInHumanBody": 0.0001,
     "abundanceInMilkyWay": 0,
     "category": "post-transition metal",
-    "structure": "tetragonal"
+    "structure": "tetragonal",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Tin",
@@ -1413,7 +1511,9 @@
     "abundanceInMilkyWay": 0,
     "category": "post-transition metal",
     "structure": "tetragonal",
-    "structureNotes": "White tin (β-Sn) is metallic; grey tin is diamond cubic."
+    "structureNotes": "White tin (β-Sn) is metallic; grey tin is diamond cubic.",
+    "conductivity": 9170000,
+    "resistivity": 10.9
   },
   {
     "name": "Antimony",
@@ -1441,7 +1541,9 @@
     "atomsInHumanBody": 0.0001,
     "abundanceInMilkyWay": 0,
     "category": "metalloid",
-    "structure": "rhombohedral"
+    "structure": "rhombohedral",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Tellurium",
@@ -1470,7 +1572,9 @@
     "abundanceInMilkyWay": 0,
     "category": "metalloid",
     "structure": "hexagonal",
-    "structureNotes": "Helical chains."
+    "structureNotes": "Helical chains.",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Iodine",
@@ -1498,7 +1602,9 @@
     "atomsInHumanBody": 0.001,
     "abundanceInMilkyWay": 0,
     "category": "diatomic nonmetal",
-    "structure": "orthorhombic"
+    "structure": "orthorhombic",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Xenon",
@@ -1527,7 +1633,9 @@
     "abundanceInMilkyWay": 0,
     "category": "noble gas",
     "structure": "fcc",
-    "structureNotes": "Solidifies under pressure."
+    "structureNotes": "Solidifies under pressure.",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Caesium",
@@ -1555,7 +1663,9 @@
     "atomsInHumanBody": 0.0001,
     "abundanceInMilkyWay": 0,
     "category": "alkali metal",
-    "structure": "bcc"
+    "structure": "bcc",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Barium",
@@ -1583,7 +1693,9 @@
     "atomsInHumanBody": 0.001,
     "abundanceInMilkyWay": 0,
     "category": "alkaline earth metal",
-    "structure": "bcc"
+    "structure": "bcc",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Lanthanum",
@@ -1611,7 +1723,9 @@
     "atomsInHumanBody": 0.0001,
     "abundanceInMilkyWay": 0,
     "category": "lanthanide",
-    "structure": "hcp"
+    "structure": "hcp",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Cerium",
@@ -1639,7 +1753,9 @@
     "atomsInHumanBody": 0.001,
     "abundanceInMilkyWay": 0,
     "category": "lanthanide",
-    "structure": "fcc"
+    "structure": "fcc",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Praseodymium",
@@ -1667,7 +1783,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "lanthanide",
-    "structure": "hcp"
+    "structure": "hcp",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Neodymium",
@@ -1695,7 +1813,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "lanthanide",
-    "structure": "hcp"
+    "structure": "hcp",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Promethium",
@@ -1723,7 +1843,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "lanthanide",
-    "structure": "unknown"
+    "structure": "unknown",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Samarium",
@@ -1751,7 +1873,9 @@
     "atomsInHumanBody": 0.0001,
     "abundanceInMilkyWay": 0,
     "category": "lanthanide",
-    "structure": "rhombohedral"
+    "structure": "rhombohedral",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Europium",
@@ -1779,7 +1903,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "lanthanide",
-    "structure": "bcc"
+    "structure": "bcc",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Gadolinium",
@@ -1807,7 +1933,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "lanthanide",
-    "structure": "hcp"
+    "structure": "hcp",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Terbium",
@@ -1835,7 +1963,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "lanthanide",
-    "structure": "hcp"
+    "structure": "hcp",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Dysprosium",
@@ -1863,7 +1993,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "lanthanide",
-    "structure": "hcp"
+    "structure": "hcp",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Holmium",
@@ -1891,7 +2023,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "lanthanide",
-    "structure": "hcp"
+    "structure": "hcp",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Erbium",
@@ -1919,7 +2053,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "lanthanide",
-    "structure": "hcp"
+    "structure": "hcp",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Thulium",
@@ -1947,7 +2083,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "lanthanide",
-    "structure": "hcp"
+    "structure": "hcp",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Ytterbium",
@@ -1975,7 +2113,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "lanthanide",
-    "structure": "fcc"
+    "structure": "fcc",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Lutetium",
@@ -2003,7 +2143,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "lanthanide",
-    "structure": "hcp"
+    "structure": "hcp",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Hafnium",
@@ -2031,7 +2173,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "transition metal",
-    "structure": "hcp"
+    "structure": "hcp",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Tantalum",
@@ -2059,7 +2203,9 @@
     "atomsInHumanBody": 0.0001,
     "abundanceInMilkyWay": 0,
     "category": "transition metal",
-    "structure": "bcc"
+    "structure": "bcc",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Tungsten",
@@ -2087,7 +2233,9 @@
     "atomsInHumanBody": 0.0001,
     "abundanceInMilkyWay": 0,
     "category": "transition metal",
-    "structure": "bcc"
+    "structure": "bcc",
+    "conductivity": 17900000,
+    "resistivity": 5.6
   },
   {
     "name": "Rhenium",
@@ -2115,7 +2263,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "transition metal",
-    "structure": "hcp"
+    "structure": "hcp",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Osmium",
@@ -2143,7 +2293,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "transition metal",
-    "structure": "hcp"
+    "structure": "hcp",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Iridium",
@@ -2171,7 +2323,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "transition metal",
-    "structure": "fcc"
+    "structure": "fcc",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Platinum",
@@ -2199,7 +2353,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "transition metal",
-    "structure": "fcc"
+    "structure": "fcc",
+    "conductivity": 9430000,
+    "resistivity": 10.6
   },
   {
     "name": "Gold",
@@ -2227,7 +2383,9 @@
     "atomsInHumanBody": 0.0001,
     "abundanceInMilkyWay": 0,
     "category": "transition metal",
-    "structure": "fcc"
+    "structure": "fcc",
+    "conductivity": 41100000,
+    "resistivity": 2.44
   },
   {
     "name": "Mercury",
@@ -2256,7 +2414,9 @@
     "abundanceInMilkyWay": 0,
     "category": "transition metal",
     "structure": "rhombohedral",
-    "structureNotes": "Only metal liquid at room temperature; solidifies below -39°C."
+    "structureNotes": "Only metal liquid at room temperature; solidifies below -39°C.",
+    "conductivity": 1020000,
+    "resistivity": 98
   },
   {
     "name": "Thallium",
@@ -2284,7 +2444,9 @@
     "atomsInHumanBody": 0.0001,
     "abundanceInMilkyWay": 0,
     "category": "post-transition metal",
-    "structure": "hcp"
+    "structure": "hcp",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Lead",
@@ -2312,7 +2474,9 @@
     "atomsInHumanBody": 0.001,
     "abundanceInMilkyWay": 0,
     "category": "post-transition metal",
-    "structure": "fcc"
+    "structure": "fcc",
+    "conductivity": 4550000,
+    "resistivity": 22
   },
   {
     "name": "Bismuth",
@@ -2340,7 +2504,9 @@
     "atomsInHumanBody": 0.0001,
     "abundanceInMilkyWay": 0,
     "category": "post-transition metal",
-    "structure": "rhombohedral"
+    "structure": "rhombohedral",
+    "conductivity": 775000,
+    "resistivity": 129
   },
   {
     "name": "Polonium",
@@ -2368,7 +2534,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "post-transition metal",
-    "structure": "simple cubic"
+    "structure": "simple cubic",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Astatine",
@@ -2394,7 +2562,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "metalloid",
-    "structure": "unknown"
+    "structure": "unknown",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Radon",
@@ -2420,7 +2590,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "noble gas",
-    "structure": "unknown"
+    "structure": "unknown",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Francium",
@@ -2455,7 +2627,9 @@
     "abundanceInMilkyWay": 0,
     "category": "alkali metal",
     "structure": "bcc",
-    "structureNotes": "Highly radioactive, structure extrapolated."
+    "structureNotes": "Highly radioactive, structure extrapolated.",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Radium",
@@ -2491,7 +2665,9 @@
     "atomsInHumanBody": 0.0001,
     "abundanceInMilkyWay": 0,
     "category": "alkaline earth metal",
-    "structure": "bcc"
+    "structure": "bcc",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Actinium",
@@ -2527,7 +2703,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "actinide",
-    "structure": "fcc"
+    "structure": "fcc",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Thorium",
@@ -2563,7 +2741,9 @@
     "atomsInHumanBody": 0.0001,
     "abundanceInMilkyWay": 0,
     "category": "actinide",
-    "structure": "unknown"
+    "structure": "unknown",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Protactinium",
@@ -2599,7 +2779,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "actinide",
-    "structure": "unknown"
+    "structure": "unknown",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Uranium",
@@ -2635,7 +2817,9 @@
     "atomsInHumanBody": 0.0001,
     "abundanceInMilkyWay": 0,
     "category": "actinide",
-    "structure": "unknown"
+    "structure": "unknown",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Neptunium",
@@ -2671,7 +2855,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "actinide",
-    "structure": "unknown"
+    "structure": "unknown",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Plutonium",
@@ -2707,7 +2893,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "actinide",
-    "structure": "unknown"
+    "structure": "unknown",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Americium",
@@ -2743,7 +2931,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "actinide",
-    "structure": "unknown"
+    "structure": "unknown",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Curium",
@@ -2779,7 +2969,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "actinide",
-    "structure": "unknown"
+    "structure": "unknown",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Berkelium",
@@ -2815,7 +3007,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "actinide",
-    "structure": "unknown"
+    "structure": "unknown",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Californium",
@@ -2850,7 +3044,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "actinide",
-    "structure": "unknown"
+    "structure": "unknown",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Einsteinium",
@@ -2886,7 +3082,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "actinide",
-    "structure": "unknown"
+    "structure": "unknown",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Fermium",
@@ -2920,7 +3118,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "actinide",
-    "structure": "unknown"
+    "structure": "unknown",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Mendelevium",
@@ -2954,7 +3154,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "actinide",
-    "structure": "unknown"
+    "structure": "unknown",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Nobelium",
@@ -2988,7 +3190,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "actinide",
-    "structure": "unknown"
+    "structure": "unknown",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Lawrencium",
@@ -3022,7 +3226,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "actinide",
-    "structure": "unknown"
+    "structure": "unknown",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Rutherfordium",
@@ -3056,7 +3262,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "transition metal",
-    "structure": "unknown"
+    "structure": "unknown",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Dubnium",
@@ -3090,7 +3298,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "transition metal",
-    "structure": "unknown"
+    "structure": "unknown",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Seaborgium",
@@ -3124,7 +3334,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "transition metal",
-    "structure": "unknown"
+    "structure": "unknown",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Bohrium",
@@ -3158,7 +3370,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "transition metal",
-    "structure": "unknown"
+    "structure": "unknown",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Hassium",
@@ -3192,7 +3406,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "transition metal",
-    "structure": "unknown"
+    "structure": "unknown",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Meitnerium",
@@ -3226,7 +3442,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "unknown",
-    "structure": "unknown"
+    "structure": "unknown",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Darmstadtium",
@@ -3260,7 +3478,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "unknown",
-    "structure": "unknown"
+    "structure": "unknown",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Roentgenium",
@@ -3294,7 +3514,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "unknown",
-    "structure": "unknown"
+    "structure": "unknown",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Copernicium",
@@ -3328,7 +3550,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "transition metal",
-    "structure": "unknown"
+    "structure": "unknown",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Nihonium",
@@ -3362,7 +3586,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "unknown",
-    "structure": "unknown"
+    "structure": "unknown",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Flerovium",
@@ -3396,7 +3622,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "post-transition metal",
-    "structure": "unknown"
+    "structure": "unknown",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Moscovium",
@@ -3430,7 +3658,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "unknown",
-    "structure": "unknown"
+    "structure": "unknown",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Livermorium",
@@ -3464,7 +3694,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "unknown",
-    "structure": "unknown"
+    "structure": "unknown",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Tennessine",
@@ -3498,7 +3730,9 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "unknown",
-    "structure": "unknown"
+    "structure": "unknown",
+    "conductivity": 0,
+    "resistivity": 0
   },
   {
     "name": "Oganesson",
@@ -3532,6 +3766,8 @@
     "atomsInHumanBody": 0,
     "abundanceInMilkyWay": 0,
     "category": "unknown",
-    "structure": "unknown"
+    "structure": "unknown",
+    "conductivity": 0,
+    "resistivity": 0
   }
 ]

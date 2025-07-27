@@ -27,6 +27,8 @@ export type Element = {
   category: string;
   structure: Lattice;
   structureNotes: string;
+  conductivity?: number;
+  resistivity?: number;
 };
 
 type Lattice =

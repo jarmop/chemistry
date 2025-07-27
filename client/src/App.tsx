@@ -9,10 +9,10 @@ import { MoleculeView } from "./components/MoleculeView.tsx";
 function App() {
   return (
     <div>
-      <CrystalComparison />
-      <hr />
-      <MatterComparison />
-      <hr />
+      {/* <CrystalComparison /> */}
+      {/* <hr /> */}
+      {/* <MatterComparison /> */}
+      {/* <hr /> */}
       {/* <Materials /> */}
       {/* <MoleculeComparison /> */}
       {/* <MoleculeView /> */}
