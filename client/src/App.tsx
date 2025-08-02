@@ -11,7 +11,7 @@ function App() {
   return (
     <div>
       <Molecules3D />
-      {/* <CrystalComparison /> */}
+      <CrystalComparison />
       {/* <hr /> */}
       {/* <MatterComparison /> */}
       {/* <hr /> */}

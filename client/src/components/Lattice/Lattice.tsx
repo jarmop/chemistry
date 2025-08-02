@@ -3,7 +3,7 @@ import { init } from "./lattice.ts";
 import { WebGLRenderer } from "three";
 import { UnitCell } from "./structures.ts";
 
-const size = 200;
+const size = 300;
 
 interface LatticeProps {
   unitCell: UnitCell;
