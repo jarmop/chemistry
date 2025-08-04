@@ -9,8 +9,19 @@ function sizeOfObject(obj: THREE.Object3D) {
   return sizeOfObject;
 }
 
-// Only works if the group position is the same as the position (center) of the first child
 export function centerGroup(group: THREE.Group) {
+  const sizeOfGroup = sizeOfObject(group);
+  const adjustment = new THREE.Vector3();
+  adjustment.copy(sizeOfGroup)
+    .multiplyScalar(-1 / 2)
+    .addScalar(75);
+  group.children.forEach((c) => {
+    c.position.add(adjustment);
+  });
+}
+
+// Only works if the group position is the same as the position (center) of the first child
+export function centerGroup2(group: THREE.Group) {
   const firstChild = group.children[0];
   if (!firstChild.position.equals(group.position)) {
     return;
@@ -29,4 +40,16 @@ export function centerGroup(group: THREE.Group) {
     newPosition.y,
     newPosition.z,
   );
+
+  //   group.localToWorld;
+
+  //   console.log(group.children.map((c) => {
+  //     const v = new THREE.Vector3();
+  //     c.getWorldPosition(v);
+  //     return v;
+  //   }));
+
+  //   group.worldToLocal
+
+  //   group.children.forEach((c) => c.position.setfr c.localToWorld(c.position));
 }

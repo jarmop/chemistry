@@ -158,6 +158,26 @@ const hcpBallMap = [
   // hcpLayerB,
 ];
 
+function centerVectorArray(vectors: THREE.Vector3[]) {
+  const max = new THREE.Vector3();
+  vectors.forEach((v) => {
+    if (v.x > max.x) {
+      max.x = v.x;
+    }
+    if (v.y > max.y) {
+      max.y = v.y;
+    }
+    if (v.z > max.z) {
+      max.z = v.z;
+    }
+  });
+
+  const adjustment = new THREE.Vector3();
+  adjustment.copy(max).multiplyScalar(-1 / 2);
+
+  vectors.forEach((v) => v.add(adjustment));
+}
+
 function getHCP() {
   const HCP: THREE.Vector3[] = [];
   const layerA = {
@@ -165,8 +185,12 @@ function getHCP() {
     cols: 2,
     offsetIncrementX: R,
     distanceX: 2 * R,
-    distanceY: triangleHeight(2 * R),
+    distanceZ: triangleHeight(2 * R),
   };
+  // function getStartValue(length: number) {
+  //   return -(length - 1) / 2;
+  //   // return 0;
+  // }
   for (let i = 0; i < layerA.cols; i++) {
     HCP.push(new THREE.Vector3(i * layerA.distanceX, 0, 0));
   }
@@ -175,11 +199,13 @@ function getHCP() {
     HCP.push(
       new THREE.Vector3(
         layerA.offsetIncrementX + i * layerA.distanceX,
-        layerA.distanceY,
         0,
+        layerA.distanceZ,
       ),
     );
   }
+
+  centerVectorArray(HCP);
 
   return HCP;
 }

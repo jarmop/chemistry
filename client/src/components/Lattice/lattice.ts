@@ -51,7 +51,7 @@ export function init(
 
   // controls = new OrbitControls(camera, renderer.domElement);
   // controls = new ArcballControls(camera, renderer.domElement);
-  // const controls = new TransformControls(camera, renderer.domElement);
+  const transformControls = new TransformControls(camera, renderer.domElement);
 
   const controls = new TrackballControls(camera, renderer.domElement);
   controls.minDistance = 100;
@@ -100,7 +100,25 @@ export function init(
     molecule.add(ball);
   });
 
-  centerGroup(molecule);
+  // console.log(molecule2.children.map((c) => {
+  //   const v = new THREE.Vector3();
+  //   c.getWorldPosition(v);
+  //   return v;
+  // }));
+
+  // centerGroup(molecule2);
+
+  // const molecule = new THREE.Group();
+  // molecule2.children.forEach((c) => {
+  //   const v = new THREE.Vector3();
+  //   c.localToWorld(c.position);
+  //   // c.worldToLocal(v);
+  //   // console.log()
+  //   // c.position.set(v.x)
+  // });
+  // const children = molecule2.children;
+  // molecule.add(...children);
+
   // const boundingBox = new THREE.Box3();
   // boundingBox.setFromObject(molecule);
   // const sizeOfMolecule = new THREE.Vector3();
@@ -153,20 +171,25 @@ export function init(
 
   scene.add(molecule);
 
+  transformControls.attach(molecule);
+  transformControls.setMode("rotate");
+  transformControls.setSize(2);
+  const gizmo = transformControls.getHelper();
+  gizmo.visible = false;
+  transformControls.enabled = false;
+  scene.add(gizmo);
+
   // controls.attach(molecule);
-  // controls.setMode("rotate");
-  // controls.setSize(2);
+
   // controls.showX = true;
   // controls.showY = true;
   // controls.showZ = true;
-  // const gizmo = controls.getHelper();
   // gizmo.rotateOnWorldAxis(new THREE.Vector3(1, 0, 0), Math.PI / 4);
   // gizmo.rotateOnAxis(new THREE.Vector3(1, 1, 0), Math.PI / 6);
   // gizmo.setRotationFromAxisAngle(new THREE.Vector3(1, 0, 0), Math.PI / 4);
   // gizmo.rotation.set(Math.PI / 2, 0, 0);
   // gizmo.visible = false;
   // gizmo.position.set(width / 2, height / 2, 0);
-  // scene.add(gizmo);
 
   // controls.addEventListener("dragging-changed", function (event) {
   //   console.log(event);
@@ -194,7 +217,7 @@ export function init(
   renderer.domElement.addEventListener(
     "pointermove",
     (e) => {
-      if (pointerDown) {
+      if (pointerDown && !transformControls.enabled) {
         const deltaX = e.movementX;
         const deltaY = e.movementY;
         const rotateSpeed = Math.PI * 0.002;
@@ -206,6 +229,26 @@ export function init(
           new THREE.Vector3(0, 1, 0),
           deltaX * rotateSpeed,
         );
+      }
+    },
+  );
+
+  globalThis.addEventListener(
+    "keydown",
+    (e) => {
+      if (e.key === "r") {
+        gizmo.visible = true;
+        transformControls.enabled = true;
+      }
+    },
+  );
+
+  globalThis.addEventListener(
+    "keyup",
+    (e) => {
+      if (e.key === "r") {
+        gizmo.visible = false;
+        transformControls.enabled = false;
       }
     },
   );
