@@ -1,3 +1,4 @@
+import { start } from "node:repl";
 import * as THREE from "three";
 
 const R = 1;
@@ -183,27 +184,49 @@ function getHCP() {
   const layerA = {
     rows: 2,
     cols: 2,
-    offsetIncrementX: R,
+    startX: 0,
+    startZ: 0,
     distanceX: 2 * R,
     distanceZ: triangleHeight(2 * R),
+    offsetIncrementX: R,
   };
-  // function getStartValue(length: number) {
-  //   return -(length - 1) / 2;
-  //   // return 0;
-  // }
-  for (let i = 0; i < layerA.cols; i++) {
-    HCP.push(new THREE.Vector3(i * layerA.distanceX, 0, 0));
+  const layerB = {
+    rows: 1,
+    cols: 1,
+    startX: R,
+    startZ: R * Math.sqrt(3) / 3,
+    distanceX: 2 * R,
+    distanceZ: triangleHeight(2 * R),
+    offsetIncrementX: 0,
+  };
+
+  const layers = [layerA, layerB];
+
+  const offsetIncrementY = tetrahedronHeight(2 * R);
+  for (let i = 0; i < layers.length; i++) {
+    const y = i * offsetIncrementY;
+    const layer = layers[i];
+    for (let row = 0; row < layer.rows; row++) {
+      for (let col = 0; col < layer.cols; col++) {
+        HCP.push(
+          new THREE.Vector3(
+            layer.startX + row * layer.offsetIncrementX +
+              col * layer.distanceX,
+            y,
+            layer.startZ + row * layer.distanceZ,
+          ),
+        );
+      }
+    }
   }
 
-  for (let i = 0; i < layerA.cols; i++) {
-    HCP.push(
-      new THREE.Vector3(
-        layerA.offsetIncrementX + i * layerA.distanceX,
-        0,
-        layerA.distanceZ,
-      ),
-    );
-  }
+  // HCP.push(
+  //   new THREE.Vector3(
+  //     R,
+  //     tetrahedronHeight(2 * R),
+  //     R * Math.sqrt(3) / 3,
+  //   ),
+  // );
 
   centerVectorArray(HCP);
 
