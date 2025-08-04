@@ -10,7 +10,7 @@ import { UnitCell, unitCells } from "./structures.ts";
 const near = 1;
 const far = 5000;
 const FOV = 70;
-const zoom = 700;
+const zoom = 600;
 const posMultiplier = 100;
 const scaleMultiplier = 100;
 
@@ -53,7 +53,7 @@ export function init(
   // const controls = new TransformControls(camera, renderer.domElement);
 
   const controls = new TrackballControls(camera, renderer.domElement);
-  controls.minDistance = 500;
+  controls.minDistance = 100;
   controls.maxDistance = 2000;
   controls.rotateSpeed = 5;
   controls.noPan = true;
@@ -98,6 +98,9 @@ export function init(
     ball.scale.multiplyScalar(scaleMultiplier);
     molecule.add(ball);
   });
+
+  // molecule.rotateOnWorldAxis(new THREE.Vector3(1, 0, 0), Math.PI * 0.17);
+  molecule.rotateOnWorldAxis(new THREE.Vector3(1, 0, 0), Math.PI / 2);
 
   // const dragControls = new DragControls(
   //   [molecule],

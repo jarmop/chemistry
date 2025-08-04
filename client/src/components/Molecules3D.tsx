@@ -13,6 +13,7 @@ export function Molecules3D() {
       <Lattice unitCell="PC" />
       <Lattice unitCell="BCC" />
       <Lattice unitCell="FCC" />
+      <Lattice unitCell="HCP" />
     </div>
   );
 }

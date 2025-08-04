@@ -12,9 +12,9 @@ function App() {
     <div>
       <Molecules3D />
       <CrystalComparison />
-      {/* <hr /> */}
-      {/* <MatterComparison /> */}
-      {/* <hr /> */}
+      <hr />
+      <MatterComparison />
+      <hr />
       {/* <Materials /> */}
       {/* <MoleculeComparison /> */}
       {/* <MoleculeView /> */}
