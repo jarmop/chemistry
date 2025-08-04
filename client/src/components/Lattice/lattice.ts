@@ -6,6 +6,7 @@ import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { TransformControls } from "three/addons/controls/TransformControls.js";
 import { DragControls } from "three/addons/controls/DragControls.js";
 import { UnitCell, unitCells } from "./structures.ts";
+import { centerGroup } from "./threeHelpers.ts";
 
 const near = 1;
 const far = 5000;
@@ -99,8 +100,45 @@ export function init(
     molecule.add(ball);
   });
 
+  centerGroup(molecule);
+  // const boundingBox = new THREE.Box3();
+  // boundingBox.setFromObject(molecule);
+  // const sizeOfMolecule = new THREE.Vector3();
+  // boundingBox.getSize(sizeOfMolecule);
+
+  // console.log(sizeOfMolecule);
+  // const centerOfMolecule = new THREE.Vector3();
+  // centerOfMolecule.copy(sizeOfMolecule);
+
+  // // centerOfMolecule.multiplyScalar(-1 / 4);
+  // centerOfMolecule.multiplyScalar(-1 / 2);
+  // const sizeOfFirstChild = new THREE.Vector3();
+  // const firstChild = molecule.children[0];
+  // boundingBox.setFromObject(firstChild);
+  // boundingBox.getSize(sizeOfFirstChild);
+  // // centerOfMolecule.add(sizeOfFirstChild);
+  // centerOfMolecule.add(
+  //   new THREE.Vector3(
+  //     sizeOfFirstChild.x,
+  //     sizeOfFirstChild.y,
+  //     sizeOfFirstChild.z,
+  //   ).multiplyScalar(1 / 2),
+  // );
+
+  // console.log(centerOfMolecule);
+  // console.log(molecule.position);
+  // // camera.lookAt(centerOfMolecule);
+
+  // molecule.position.set(
+  //   centerOfMolecule.x,
+  //   centerOfMolecule.y,
+  //   centerOfMolecule.z,
+  // );
+
+  // console.log(molecule.position);
+
   // molecule.rotateOnWorldAxis(new THREE.Vector3(1, 0, 0), Math.PI * 0.17);
-  molecule.rotateOnWorldAxis(new THREE.Vector3(1, 0, 0), Math.PI / 2);
+  // molecule.rotateOnWorldAxis(new THREE.Vector3(1, 0, 0), Math.PI / 2);
 
   // const dragControls = new DragControls(
   //   [molecule],

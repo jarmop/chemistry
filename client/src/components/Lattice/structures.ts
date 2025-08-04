@@ -7,6 +7,7 @@ function getCubicPositions(ballMap: number[][][], size: number) {
 
   function getStartValue(length: number) {
     return -(length - 1) / 2;
+    // return 0;
   }
   let y = getStartValue(ballMap.length);
   ballMap.forEach((layer) => {
@@ -157,7 +158,34 @@ const hcpBallMap = [
   // hcpLayerB,
 ];
 
-const HCP = getHexagonalPositions(hcpBallMap, x, y, z);
+function getHCP() {
+  const HCP: THREE.Vector3[] = [];
+  const layerA = {
+    rows: 2,
+    cols: 2,
+    offsetIncrementX: R,
+    distanceX: 2 * R,
+    distanceY: triangleHeight(2 * R),
+  };
+  for (let i = 0; i < layerA.cols; i++) {
+    HCP.push(new THREE.Vector3(i * layerA.distanceX, 0, 0));
+  }
+
+  for (let i = 0; i < layerA.cols; i++) {
+    HCP.push(
+      new THREE.Vector3(
+        layerA.offsetIncrementX + i * layerA.distanceX,
+        layerA.distanceY,
+        0,
+      ),
+    );
+  }
+
+  return HCP;
+}
+
+// const HCP = getHexagonalPositions(hcpBallMap, x, y, z);
+const HCP = getHCP();
 
 export const unitCells = {
   PC,
