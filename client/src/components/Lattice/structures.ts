@@ -72,72 +72,6 @@ const B = [
 const fccBallMap = [A, B, A];
 const FCC = getCubicPositions(fccBallMap, Math.SQRT2);
 
-function getHexagonalPositions(
-  ballMap: number[][][],
-  sizeX: number,
-  sizeY: number,
-  sizeZ: number,
-) {
-  const offsetXB = -0.34;
-  const positions: THREE.Vector3[] = [];
-
-  function getStartValue(length: number) {
-    return -(length - 1) / 2;
-  }
-  let y = getStartValue(ballMap.length);
-  ballMap.forEach((layer, i) => {
-    let z = getStartValue(layer.length);
-    layer.forEach((row) => {
-      const offsetX = i === 1 ? offsetXB : 0;
-      let x = getStartValue(row.length) + offsetX;
-      row.forEach((hasBall) => {
-        if (hasBall) {
-          const position = new THREE.Vector3(sizeX * x, sizeY * y, sizeZ * z);
-          // position.multiplyScalar(sizeX);
-          positions.push(position);
-        }
-        x++;
-      });
-      z++;
-    });
-    y++;
-  });
-
-  return positions;
-}
-
-// const hcpLayerA = [
-//   [0, 0, 1, 0, 0],
-//   [1, 0, 0, 0, 1],
-//   [0, 0, 1, 0, 0],
-//   [1, 0, 0, 0, 1],
-//   [0, 0, 1, 0, 0],
-// ];
-
-const hcpLayerA = [
-  [0, 0, 1, 0, 0],
-  [1, 0, 0, 0, 1],
-  [0, 0, 1, 0, 0],
-  [1, 0, 0, 0, 1],
-  [0, 0, 1, 0, 0],
-];
-
-// const hcpLayerB = [
-//   [0, 0, 0, 0, 0],
-//   [0, 0, 0, 1, 0],
-//   [0, 1, 0, 0, 0],
-//   [0, 0, 0, 1, 0],
-//   [0, 0, 0, 0, 0],
-// ];
-
-const hcpLayerB = [
-  [0, 0, 0, 0, 0],
-  [0, 0, 0, 1, 0],
-  [0, 1, 0, 0, 0],
-  [0, 0, 0, 1, 0],
-  [0, 0, 0, 0, 0],
-];
-
 function triangleHeight(sideLength: number) {
   return sideLength * Math.sqrt(3) / 2;
   // return sideLength * Math.sin(Math.PI / 3);
@@ -146,20 +80,6 @@ function triangleHeight(sideLength: number) {
 function tetrahedronHeight(edgeLength: number) {
   return edgeLength * Math.sqrt(2 / 3);
 }
-
-// const x = Math.sin(Math.PI / 3);
-const x = triangleHeight(2 * R) / 2;
-// const y = Math.sqrt(3);
-// const y = 1.5;
-// const y = 1.7;
-// const y = 2 * Math.sin(Math.acos(1 / (2 * Math.sin(Math.PI / 3))));
-// const y = 2 * Math.sqrt(6) / 3; // according to wiki (https://en.wikipedia.org/wiki/Close-packing_of_equal_spheres)
-const y = tetrahedronHeight(2 * R); // According to wiki: https://en.wikipedia.org/wiki/Tetrahedron
-const z = R;
-const hcpBallMap = [
-  hcpLayerA,
-  // hcpLayerB,
-];
 
 function centerVectorArray(vectors: THREE.Vector3[]) {
   const max = new THREE.Vector3();
@@ -184,41 +104,46 @@ function centerVectorArray(vectors: THREE.Vector3[]) {
 function getHCP() {
   const HCP: Ball[] = [];
   const layerA = {
-    rows: 2,
+    rows: [2, 3, 2],
     cols: 2,
     startX: 0,
     startZ: 0,
     distanceX: 2 * R,
     distanceZ: triangleHeight(2 * R),
-    offsetIncrementX: R,
+    offsetX: [R, 0, R],
     color: "red",
   };
   const layerB = {
-    rows: 1,
+    rows: [1, 2],
     cols: 1,
     startX: R,
     startZ: R * Math.sqrt(3) / 3,
     distanceX: 2 * R,
     distanceZ: triangleHeight(2 * R),
-    offsetIncrementX: 0,
+    offsetX: [R, 0],
     color: "blue",
   };
 
-  const layers = [layerA, layerB, layerA];
+  const layers = [
+    layerA,
+    layerB,
+    layerA,
+  ];
 
   const offsetIncrementY = tetrahedronHeight(2 * R);
   for (let i = 0; i < layers.length; i++) {
     const y = i * offsetIncrementY;
     const layer = layers[i];
     const color = i % 2 === 0 ? "red" : "blue";
-    for (let row = 0; row < layer.rows; row++) {
-      for (let col = 0; col < layer.cols; col++) {
+    for (let rowI = 0; rowI < layer.rows.length; rowI++) {
+      const cols = layer.rows[rowI];
+      for (let col = 0; col < cols; col++) {
         HCP.push({
           position: new THREE.Vector3(
-            layer.startX + row * layer.offsetIncrementX +
+            layer.startX + layer.offsetX[rowI] +
               col * layer.distanceX,
             y,
-            layer.startZ + row * layer.distanceZ,
+            layer.startZ + rowI * layer.distanceZ,
           ),
           color,
         });
@@ -226,23 +151,16 @@ function getHCP() {
     }
   }
 
-  // HCP.push(
-  //   new THREE.Vector3(
-  //     R,
-  //     tetrahedronHeight(2 * R),
-  //     R * Math.sqrt(3) / 3,
-  //   ),
-  // );
+  // console.log(HCP.map((b) => b.position));
 
   centerVectorArray(HCP.map((b) => b.position));
 
   return HCP;
 }
 
-// const HCP = getHexagonalPositions(hcpBallMap, x, y, z);
 const HCP = getHCP();
 
-export const unitCells: Record<string, Ball[]> = {
+export const unitCells = {
   PC,
   BCC,
   FCC,

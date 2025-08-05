@@ -1,4 +1,12 @@
 import { Lattice } from "./Lattice/Lattice.tsx";
+import { UnitCell } from "./Lattice/structures.ts";
+
+const unitCellIds: (keyof UnitCell)[] = [
+  "PC",
+  "BCC",
+  "FCC",
+  "HCP",
+];
 
 export function Molecules3D() {
   return (
@@ -10,10 +18,7 @@ export function Molecules3D() {
         gap: 10,
       }}
     >
-      <Lattice unitCellId="PC" />
-      <Lattice unitCellId="BCC" />
-      <Lattice unitCellId="FCC" />
-      <Lattice unitCellId="HCP" />
+      {unitCellIds.map((id) => <Lattice key={id} unitCellId={id} />)}
     </div>
   );
 }

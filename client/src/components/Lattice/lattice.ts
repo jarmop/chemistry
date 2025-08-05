@@ -11,7 +11,7 @@ import { centerGroup } from "./threeHelpers.ts";
 const near = 1;
 const far = 5000;
 const FOV = 70;
-const zoom = 600;
+const zoom = 800;
 const posMultiplier = 100;
 const scaleMultiplier = 100;
 
