@@ -1,17 +1,19 @@
-import { start } from "node:repl";
 import * as THREE from "three";
 
 const R = 1;
 
+type Ball = { position: THREE.Vector3; color: string };
+
 function getCubicPositions(ballMap: number[][][], size: number) {
-  const positions: THREE.Vector3[] = [];
+  const positions: Ball[] = [];
 
   function getStartValue(length: number) {
     return -(length - 1) / 2;
     // return 0;
   }
   let y = getStartValue(ballMap.length);
-  ballMap.forEach((layer) => {
+  ballMap.forEach((layer, i) => {
+    const color = i % 2 === 0 ? "red" : "blue";
     let z = getStartValue(layer.length);
     layer.forEach((row) => {
       let x = getStartValue(row.length);
@@ -19,7 +21,7 @@ function getCubicPositions(ballMap: number[][][], size: number) {
         if (hasBall) {
           const position = new THREE.Vector3(x, y, z);
           position.multiplyScalar(size);
-          positions.push(position);
+          positions.push({ position, color });
         }
         x++;
       });
@@ -180,7 +182,7 @@ function centerVectorArray(vectors: THREE.Vector3[]) {
 }
 
 function getHCP() {
-  const HCP: THREE.Vector3[] = [];
+  const HCP: Ball[] = [];
   const layerA = {
     rows: 2,
     cols: 2,
@@ -189,6 +191,7 @@ function getHCP() {
     distanceX: 2 * R,
     distanceZ: triangleHeight(2 * R),
     offsetIncrementX: R,
+    color: "red",
   };
   const layerB = {
     rows: 1,
@@ -198,24 +201,27 @@ function getHCP() {
     distanceX: 2 * R,
     distanceZ: triangleHeight(2 * R),
     offsetIncrementX: 0,
+    color: "blue",
   };
 
-  const layers = [layerA, layerB];
+  const layers = [layerA, layerB, layerA];
 
   const offsetIncrementY = tetrahedronHeight(2 * R);
   for (let i = 0; i < layers.length; i++) {
     const y = i * offsetIncrementY;
     const layer = layers[i];
+    const color = i % 2 === 0 ? "red" : "blue";
     for (let row = 0; row < layer.rows; row++) {
       for (let col = 0; col < layer.cols; col++) {
-        HCP.push(
-          new THREE.Vector3(
+        HCP.push({
+          position: new THREE.Vector3(
             layer.startX + row * layer.offsetIncrementX +
               col * layer.distanceX,
             y,
             layer.startZ + row * layer.distanceZ,
           ),
-        );
+          color,
+        });
       }
     }
   }
@@ -228,7 +234,7 @@ function getHCP() {
   //   ),
   // );
 
-  centerVectorArray(HCP);
+  centerVectorArray(HCP.map((b) => b.position));
 
   return HCP;
 }
@@ -236,11 +242,11 @@ function getHCP() {
 // const HCP = getHexagonalPositions(hcpBallMap, x, y, z);
 const HCP = getHCP();
 
-export const unitCells = {
+export const unitCells: Record<string, Ball[]> = {
   PC,
   BCC,
   FCC,
   HCP,
 } as const;
 
-export type UnitCell = keyof typeof unitCells;
+export type UnitCell = typeof unitCells;

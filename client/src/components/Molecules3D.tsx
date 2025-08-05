@@ -10,10 +10,10 @@ export function Molecules3D() {
         gap: 10,
       }}
     >
-      <Lattice unitCell="PC" />
-      <Lattice unitCell="BCC" />
-      <Lattice unitCell="FCC" />
-      <Lattice unitCell="HCP" />
+      <Lattice unitCellId="PC" />
+      <Lattice unitCellId="BCC" />
+      <Lattice unitCellId="FCC" />
+      <Lattice unitCellId="HCP" />
     </div>
   );
 }

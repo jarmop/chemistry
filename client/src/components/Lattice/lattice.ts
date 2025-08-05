@@ -38,7 +38,7 @@ let pointerDown = false;
 export function init(
   container: HTMLDivElement,
   renderer: THREE.WebGLRenderer,
-  unitCell: UnitCell = "FCC",
+  unitCellId: keyof UnitCell = "FCC",
 ) {
   const width = container.clientWidth;
   const height = container.clientHeight;
@@ -81,23 +81,22 @@ export function init(
   light2.position.set(-1, -1, 1);
   scene.add(light2);
 
-  // const boxGeometry = new THREE.BoxGeometry(1, 1, 1);
-  const geometry = new THREE.IcosahedronGeometry(1, 3);
+  const icosahedron = new THREE.IcosahedronGeometry(1, 3);
 
-  //   const material = new THREE.MeshNormalMaterial();
-  const material = new THREE.MeshPhongMaterial({
-    color: "red",
-  });
-
-  const ballPositions = unitCells[unitCell];
+  const unitCell = unitCells[unitCellId];
 
   const molecule = new THREE.Group();
-  ballPositions.forEach((pos) => {
-    const ball = new THREE.Mesh(geometry, material);
-    ball.position.copy(pos);
-    ball.position.multiplyScalar(posMultiplier);
-    ball.scale.multiplyScalar(scaleMultiplier);
-    molecule.add(ball);
+  unitCell.forEach((ball) => {
+    const ballMesh = new THREE.Mesh(
+      icosahedron,
+      new THREE.MeshPhongMaterial({
+        color: ball.color || "red",
+      }),
+    );
+    ballMesh.position.copy(ball.position);
+    ballMesh.position.multiplyScalar(posMultiplier);
+    ballMesh.scale.multiplyScalar(scaleMultiplier);
+    molecule.add(ballMesh);
   });
 
   // console.log(molecule2.children.map((c) => {
