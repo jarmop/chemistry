@@ -5,6 +5,8 @@ const unitCellIds: (keyof UnitCell)[] = [
   "PC",
   "BCC",
   "FCC",
+  "CCP",
+  "CCP/FCC",
   "HCP",
 ];
 
@@ -14,7 +16,7 @@ export function Molecules3D() {
       style={{
         margin: 10,
         display: "grid",
-        gridTemplateColumns: "repeat(3, min-content)",
+        gridTemplateColumns: "repeat(4, min-content)",
         gap: 10,
       }}
     >
