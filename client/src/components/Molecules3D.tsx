@@ -6,7 +6,7 @@ const unitCellIds: (keyof UnitCell)[] = [
   "BCC",
   "FCC",
   "CCP",
-  "CCP/FCC",
+  "CCP=FCC",
   "HCP",
 ];
 

@@ -1,12 +1,7 @@
 import * as THREE from "three";
-import GUI from "lil-gui";
 import { TrackballControls } from "three/addons/controls/TrackballControls.js";
-import { ArcballControls } from "three/addons/controls/ArcballControls.js";
-import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { TransformControls } from "three/addons/controls/TransformControls.js";
-import { DragControls } from "three/addons/controls/DragControls.js";
 import { UnitCell, unitCells } from "./structures.ts";
-import { centerGroup } from "./threeHelpers.ts";
 
 const near = 1;
 const far = 5000;
@@ -14,24 +9,6 @@ const FOV = 70;
 const zoom = 800;
 const posMultiplier = 100;
 const scaleMultiplier = 100;
-
-type HelperLight = THREE.HemisphereLight;
-
-// class ColorGUIHelper {
-//   object: HelperLight;
-//   prop: "color" | "groundColor";
-
-//   constructor(object: HelperLight, prop: typeof this.prop) {
-//     this.object = object;
-//     this.prop = prop;
-//   }
-//   get value() {
-//     return `#${this.object[this.prop].getHexString()}`;
-//   }
-//   set value(hexString) {
-//     this.object[this.prop].set(hexString);
-//   }
-// }
 
 let pointerDown = false;
 
@@ -45,13 +22,6 @@ export function init(
 
   const camera = new THREE.PerspectiveCamera(FOV, width / height, near, far);
   camera.position.z = zoom;
-  // camera.position.x = 1600;
-  // camera.position.y = 1600;
-  // camera.lookAt(new THREE.Vector3(0, 0, 0));
-
-  // controls = new OrbitControls(camera, renderer.domElement);
-  // controls = new ArcballControls(camera, renderer.domElement);
-  const transformControls = new TransformControls(camera, renderer.domElement);
 
   const controls = new TrackballControls(camera, renderer.domElement);
   controls.minDistance = 100;
@@ -61,17 +31,6 @@ export function init(
   controls.noRotate = true;
 
   const scene = new THREE.Scene();
-
-  //   const skyColor = 0xB1E1FF; // light blue
-  //   const groundColor = 0xB97A20;
-  //   const light = new THREE.HemisphereLight(skyColor, groundColor, 1);
-
-  //   const gui = new GUI();
-  //   gui.addColor(new ColorGUIHelper(light, "color"), "value").name("skyColor");
-  //   gui.addColor(new ColorGUIHelper(light, "groundColor"), "value").name(
-  //     "groundColor",
-  //   );
-  //   scene.add(light);
 
   const light1 = new THREE.DirectionalLight(0xffffff, 2.5);
   light1.position.set(1, 1, 1);
@@ -99,76 +58,9 @@ export function init(
     molecule.add(ballMesh);
   });
 
-  // console.log(molecule2.children.map((c) => {
-  //   const v = new THREE.Vector3();
-  //   c.getWorldPosition(v);
-  //   return v;
-  // }));
-
-  // centerGroup(molecule2);
-
-  // const molecule = new THREE.Group();
-  // molecule2.children.forEach((c) => {
-  //   const v = new THREE.Vector3();
-  //   c.localToWorld(c.position);
-  //   // c.worldToLocal(v);
-  //   // console.log()
-  //   // c.position.set(v.x)
-  // });
-  // const children = molecule2.children;
-  // molecule.add(...children);
-
-  // const boundingBox = new THREE.Box3();
-  // boundingBox.setFromObject(molecule);
-  // const sizeOfMolecule = new THREE.Vector3();
-  // boundingBox.getSize(sizeOfMolecule);
-
-  // console.log(sizeOfMolecule);
-  // const centerOfMolecule = new THREE.Vector3();
-  // centerOfMolecule.copy(sizeOfMolecule);
-
-  // // centerOfMolecule.multiplyScalar(-1 / 4);
-  // centerOfMolecule.multiplyScalar(-1 / 2);
-  // const sizeOfFirstChild = new THREE.Vector3();
-  // const firstChild = molecule.children[0];
-  // boundingBox.setFromObject(firstChild);
-  // boundingBox.getSize(sizeOfFirstChild);
-  // // centerOfMolecule.add(sizeOfFirstChild);
-  // centerOfMolecule.add(
-  //   new THREE.Vector3(
-  //     sizeOfFirstChild.x,
-  //     sizeOfFirstChild.y,
-  //     sizeOfFirstChild.z,
-  //   ).multiplyScalar(1 / 2),
-  // );
-
-  // console.log(centerOfMolecule);
-  // console.log(molecule.position);
-  // // camera.lookAt(centerOfMolecule);
-
-  // molecule.position.set(
-  //   centerOfMolecule.x,
-  //   centerOfMolecule.y,
-  //   centerOfMolecule.z,
-  // );
-
-  // console.log(molecule.position);
-
-  // molecule.rotateOnWorldAxis(new THREE.Vector3(1, 0, 0), Math.PI * 0.17);
-  // molecule.rotateOnWorldAxis(new THREE.Vector3(1, 0, 0), Math.PI / 2);
-
-  // const dragControls = new DragControls(
-  //   [molecule],
-  //   camera,
-  //   renderer.domElement,
-  // );
-  // dragControls.addEventListener("drag", function (e) {
-  //   console.log("tyj");
-  // });
-  // dragControls.transformGroup = true;
-  // dragControls.rotateSpeed = 2;
-
   scene.add(molecule);
+
+  const transformControls = new TransformControls(camera, renderer.domElement);
 
   transformControls.attach(molecule);
   transformControls.setMode("rotate");
@@ -178,22 +70,6 @@ export function init(
   transformControls.enabled = false;
   scene.add(gizmo);
 
-  // controls.attach(molecule);
-
-  // controls.showX = true;
-  // controls.showY = true;
-  // controls.showZ = true;
-  // gizmo.rotateOnWorldAxis(new THREE.Vector3(1, 0, 0), Math.PI / 4);
-  // gizmo.rotateOnAxis(new THREE.Vector3(1, 1, 0), Math.PI / 6);
-  // gizmo.setRotationFromAxisAngle(new THREE.Vector3(1, 0, 0), Math.PI / 4);
-  // gizmo.rotation.set(Math.PI / 2, 0, 0);
-  // gizmo.visible = false;
-  // gizmo.position.set(width / 2, height / 2, 0);
-
-  // controls.addEventListener("dragging-changed", function (event) {
-  //   console.log(event);
-  // });
-
   renderer.setSize(width, height);
   renderer.setAnimationLoop(() => {
     controls.update();
@@ -201,7 +77,6 @@ export function init(
   });
 
   controls.addEventListener("change", () => {
-    // controls.update();
     renderer.render(scene, camera);
   });
 

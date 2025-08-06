@@ -101,8 +101,44 @@ function centerVectorArray(vectors: THREE.Vector3[]) {
   vectors.forEach((v) => v.add(adjustment));
 }
 
+type Layer = {
+  rows: number[];
+  startX: number;
+  startZ: number;
+  distanceX: number;
+  distanceZ: number;
+  offsetX: number[];
+  color: string;
+};
+
+function getHexagonalBalls(layers: Layer[]) {
+  const balls: Ball[] = [];
+  const offsetIncrementY = tetrahedronHeight(2 * R);
+  for (let i = 0; i < layers.length; i++) {
+    const y = i * offsetIncrementY;
+    const layer = layers[i];
+    for (let rowI = 0; rowI < layer.rows.length; rowI++) {
+      const cols = layer.rows[rowI];
+      for (let col = 0; col < cols; col++) {
+        balls.push({
+          position: new THREE.Vector3(
+            layer.startX + layer.offsetX[rowI] +
+              col * layer.distanceX,
+            y,
+            layer.startZ + rowI * layer.distanceZ,
+          ),
+          color: layer.color,
+        });
+      }
+    }
+  }
+
+  centerVectorArray(balls.map((b) => b.position));
+
+  return balls;
+}
+
 function getHCP() {
-  const HCP: Ball[] = [];
   const layerA = {
     rows: [2, 3, 2],
     startX: 0,
@@ -128,35 +164,10 @@ function getHCP() {
     layerA,
   ];
 
-  const offsetIncrementY = tetrahedronHeight(2 * R);
-  for (let i = 0; i < layers.length; i++) {
-    const y = i * offsetIncrementY;
-    const layer = layers[i];
-    for (let rowI = 0; rowI < layer.rows.length; rowI++) {
-      const cols = layer.rows[rowI];
-      for (let col = 0; col < cols; col++) {
-        HCP.push({
-          position: new THREE.Vector3(
-            layer.startX + layer.offsetX[rowI] +
-              col * layer.distanceX,
-            y,
-            layer.startZ + rowI * layer.distanceZ,
-          ),
-          color: layer.color,
-        });
-      }
-    }
-  }
-
-  // console.log(HCP.map((b) => b.position));
-
-  centerVectorArray(HCP.map((b) => b.position));
-
-  return HCP;
+  return getHexagonalBalls(layers);
 }
 
 function getCCP() {
-  const CCP: Ball[] = [];
   const layerA = {
     rows: [2, 3, 2],
     startX: 0,
@@ -192,33 +203,10 @@ function getCCP() {
     layerA,
   ];
 
-  const offsetIncrementY = tetrahedronHeight(2 * R);
-  for (let i = 0; i < layers.length; i++) {
-    const y = i * offsetIncrementY;
-    const layer = layers[i];
-    for (let rowI = 0; rowI < layer.rows.length; rowI++) {
-      const cols = layer.rows[rowI];
-      for (let col = 0; col < cols; col++) {
-        CCP.push({
-          position: new THREE.Vector3(
-            layer.startX + layer.offsetX[rowI] +
-              col * layer.distanceX,
-            y,
-            layer.startZ + rowI * layer.distanceZ,
-          ),
-          color: layer.color,
-        });
-      }
-    }
-  }
-
-  centerVectorArray(CCP.map((b) => b.position));
-
-  return CCP;
+  return getHexagonalBalls(layers);
 }
 
-function getCCPFCC() {
-  const CCP: Ball[] = [];
+function getCcpIsFcc() {
   const layerA = {
     rows: [1],
     startX: 2 * R,
@@ -255,29 +243,7 @@ function getCCPFCC() {
     layerA,
   ];
 
-  const offsetIncrementY = tetrahedronHeight(2 * R);
-  for (let i = 0; i < layers.length; i++) {
-    const y = i * offsetIncrementY;
-    const layer = layers[i];
-    for (let rowI = 0; rowI < layer.rows.length; rowI++) {
-      const cols = layer.rows[rowI];
-      for (let col = 0; col < cols; col++) {
-        CCP.push({
-          position: new THREE.Vector3(
-            layer.startX + layer.offsetX[rowI] +
-              col * layer.distanceX,
-            y,
-            layer.startZ + rowI * layer.distanceZ,
-          ),
-          color: layer.color,
-        });
-      }
-    }
-  }
-
-  centerVectorArray(CCP.map((b) => b.position));
-
-  return CCP;
+  return getHexagonalBalls(layers);
 }
 
 export const unitCells = {
@@ -286,7 +252,7 @@ export const unitCells = {
   FCC,
   HCP: getHCP(),
   CCP: getCCP(),
-  "CCP/FCC": getCCPFCC(),
+  "CCP=FCC": getCcpIsFcc(),
 } as const;
 
 export type UnitCell = typeof unitCells;

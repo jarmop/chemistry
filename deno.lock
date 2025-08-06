@@ -23,7 +23,6 @@
     "npm:@types/react@^19.1.2": "19.1.2",
     "npm:@types/three@~0.178.1": "0.178.1",
     "npm:@vitejs/plugin-react@^4.4.1": "4.4.1_vite@6.3.2__picomatch@4.0.2_@babel+core@7.26.10",
-    "npm:lil-gui@0.20": "0.20.0",
     "npm:path-to-regexp@^6.3.0": "6.3.0",
     "npm:react-dom@^19.1.0": "19.1.0_react@19.1.0",
     "npm:react-router-dom@^7.5.1": "7.5.1_react@19.1.0_react-dom@19.1.0__react@19.1.0",
@@ -683,9 +682,6 @@
       "integrity": "sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==",
       "bin": true
     },
-    "lil-gui@0.20.0": {
-      "integrity": "sha512-k7Ipr0ztqslMA2XvM5z5ZaWhxQtnEOwJBfI/hmSuRh6q4iMG9L0boqqrnZSzBR1jzyJ28OMl47l65ILzRe1TdA=="
-    },
     "lru-cache@5.1.1": {
       "integrity": "sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==",
       "dependencies": [
@@ -848,7 +844,6 @@
       "npm:@types/react@^19.1.2",
       "npm:@types/three@~0.178.1",
       "npm:@vitejs/plugin-react@^4.4.1",
-      "npm:lil-gui@0.20",
       "npm:react-dom@^19.1.0",
       "npm:react-router-dom@^7.5.1",
       "npm:react@^19.1.0",
