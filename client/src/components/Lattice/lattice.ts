@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import { TrackballControls } from "three/addons/controls/TrackballControls.js";
 import { TransformControls } from "three/addons/controls/TransformControls.js";
-import { UnitCell, unitCells } from "./structures.ts";
+import { Ball } from "./structures.ts";
 
 const near = 1;
 const far = 5000;
@@ -10,12 +10,19 @@ const zoom = 800;
 const posMultiplier = 100;
 const scaleMultiplier = 100;
 
-let pointerDown = false;
+const icosahedron = new THREE.IcosahedronGeometry(1, 3);
+
+export type RenderingContext = {
+  scene: THREE.Scene;
+  camera: THREE.Camera;
+  molecule: THREE.Group;
+  transformControls: TransformControls;
+};
 
 export function init(
   container: HTMLDivElement,
   renderer: THREE.WebGLRenderer,
-  unitCellId: keyof UnitCell = "FCC",
+  balls: Ball[],
 ) {
   const width = container.clientWidth;
   const height = container.clientHeight;
@@ -40,23 +47,7 @@ export function init(
   light2.position.set(-1, -1, 1);
   scene.add(light2);
 
-  const icosahedron = new THREE.IcosahedronGeometry(1, 3);
-
-  const unitCell = unitCells[unitCellId];
-
-  const molecule = new THREE.Group();
-  unitCell.forEach((ball) => {
-    const ballMesh = new THREE.Mesh(
-      icosahedron,
-      new THREE.MeshPhongMaterial({
-        color: ball.color || "red",
-      }),
-    );
-    ballMesh.position.copy(ball.position);
-    ballMesh.position.multiplyScalar(posMultiplier);
-    ballMesh.scale.multiplyScalar(scaleMultiplier);
-    molecule.add(ballMesh);
-  });
+  const molecule = getMolecule(balls);
 
   scene.add(molecule);
 
@@ -65,9 +56,10 @@ export function init(
   transformControls.attach(molecule);
   transformControls.setMode("rotate");
   transformControls.setSize(2);
+  transformControls.enabled = false;
+
   const gizmo = transformControls.getHelper();
   gizmo.visible = false;
-  transformControls.enabled = false;
   scene.add(gizmo);
 
   renderer.setSize(width, height);
@@ -79,33 +71,6 @@ export function init(
   controls.addEventListener("change", () => {
     renderer.render(scene, camera);
   });
-
-  container.addEventListener("pointerdown", () => {
-    pointerDown = true;
-  });
-
-  container.addEventListener("pointerup", () => {
-    pointerDown = false;
-  });
-
-  renderer.domElement.addEventListener(
-    "pointermove",
-    (e) => {
-      if (pointerDown && !transformControls.enabled) {
-        const deltaX = e.movementX;
-        const deltaY = e.movementY;
-        const rotateSpeed = Math.PI * 0.002;
-        molecule.rotateOnWorldAxis(
-          new THREE.Vector3(1, 0, 0),
-          deltaY * rotateSpeed,
-        );
-        molecule.rotateOnWorldAxis(
-          new THREE.Vector3(0, 1, 0),
-          deltaX * rotateSpeed,
-        );
-      }
-    },
-  );
 
   globalThis.addEventListener(
     "keydown",
@@ -128,4 +93,24 @@ export function init(
   );
 
   container.appendChild(renderer.domElement);
+
+  return { scene, camera, molecule, transformControls };
+}
+
+export function getMolecule(balls: Ball[]) {
+  const molecule = new THREE.Group();
+  balls.forEach((ball) => {
+    const ballMesh = new THREE.Mesh(
+      icosahedron,
+      new THREE.MeshPhongMaterial({
+        color: ball.color || "red",
+      }),
+    );
+    ballMesh.position.copy(ball.position);
+    ballMesh.position.multiplyScalar(posMultiplier);
+    ballMesh.scale.multiplyScalar(scaleMultiplier);
+    molecule.add(ballMesh);
+  });
+
+  return molecule;
 }

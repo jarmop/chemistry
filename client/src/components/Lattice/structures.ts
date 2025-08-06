@@ -2,9 +2,9 @@ import * as THREE from "three";
 
 const R = 1;
 
-type Ball = { position: THREE.Vector3; color: string };
+export type Ball = { position: THREE.Vector3; color: string };
 
-function getCubicPositions(ballMap: number[][][], size: number) {
+function getCubicBalls(ballMap: number[][][], size: number) {
   const positions: Ball[] = [];
 
   function getStartValue(length: number) {
@@ -41,7 +41,7 @@ const pcBallMap = [
   pcBallsA,
   pcBallsA,
 ];
-const PC = getCubicPositions(
+const PC = getCubicBalls(
   pcBallMap,
   2,
 );
@@ -57,7 +57,7 @@ const bccBallsB = [
   [0, 0, 0],
 ];
 const bccBallMap = [bccBallsA, bccBallsB, bccBallsA];
-const BCC = getCubicPositions(bccBallMap, 2 / Math.sqrt(3));
+const BCC = getCubicBalls(bccBallMap, 2 / Math.sqrt(3));
 
 const A = [
   [1, 0, 1],
@@ -70,7 +70,7 @@ const B = [
   [0, 1, 0],
 ];
 const fccBallMap = [A, B, A];
-const FCC = getCubicPositions(fccBallMap, Math.SQRT2);
+const FCC = getCubicBalls(fccBallMap, Math.SQRT2);
 
 function triangleHeight(sideLength: number) {
   return sideLength * Math.sqrt(3) / 2;
@@ -246,7 +246,7 @@ function getCcpIsFcc() {
   return getHexagonalBalls(layers);
 }
 
-export const unitCells = {
+export const structures = {
   PC,
   BCC,
   FCC,
@@ -255,4 +255,14 @@ export const unitCells = {
   "CCP=FCC": getCcpIsFcc(),
 } as const;
 
-export type UnitCell = typeof unitCells;
+export type UnitCell = typeof structures;
+
+const squareLayer = [[[1, 1], [1, 1]]];
+
+const square = getCubicBalls(squareLayer, 2);
+
+// Show what layers make up the structure
+export const layers: Partial<Record<keyof UnitCell, Ball[]>> = { PC: square };
+
+// Show how a single atom is connected to others
+export const connections = {};

@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from "react";
-import { init } from "./lattice.ts";
-import { WebGLRenderer } from "three";
-import { UnitCell } from "./structures.ts";
+import { getMolecule, init, RenderingContext } from "./lattice.ts";
+import { Vector3, WebGLRenderer } from "three";
+import { Ball, layers, structures, UnitCell } from "./structures.ts";
 
 const size = 300;
+
+let pointerDown = false;
 
 interface LatticeProps {
   unitCellId: keyof UnitCell;
@@ -11,19 +13,118 @@ interface LatticeProps {
 
 export function Lattice({ unitCellId }: LatticeProps) {
   const [renderer] = useState(new WebGLRenderer({ antialias: true }));
-  const ref = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const contextRef = useRef<RenderingContext>(null);
+  const eventListenerRef = useRef<(e: PointerEvent) => void>(undefined);
+
+  const balls = structures[unitCellId];
+  const views: Record<string, Ball[]> = { unitCell: balls };
+
+  if (layers[unitCellId]) {
+    views["layer"] = layers[unitCellId];
+  }
+
+  const [view, setView] = useState<keyof typeof views>("unitCell");
 
   useEffect(() => {
-    if (ref.current) {
-      init(ref.current, renderer, unitCellId);
+    if (containerRef.current && !contextRef.current) {
+      contextRef.current = init(
+        containerRef.current,
+        renderer,
+        views[view],
+      );
+      setEventListeners();
     }
   }, []);
 
+  function changeView(newView: typeof view) {
+    setView(newView);
+    if (!contextRef.current) {
+      return;
+    }
+    const { scene, molecule, transformControls } = contextRef.current;
+
+    scene.remove(molecule);
+    transformControls.detach();
+
+    const newMolecule = getMolecule(views[newView]);
+    scene.add(newMolecule);
+    transformControls.attach(newMolecule);
+    transformControls.getHelper().visible = false;
+
+    contextRef.current.molecule = newMolecule;
+
+    setPointerMoveListener(transformControls, newMolecule);
+  }
+
+  function setPointerMoveListener(
+    transformControls: RenderingContext["transformControls"],
+    molecule: RenderingContext["molecule"],
+  ) {
+    if (eventListenerRef.current) {
+      renderer.domElement.removeEventListener(
+        "pointermove",
+        eventListenerRef.current,
+      );
+    }
+
+    function handlePointerMove(e: PointerEvent) {
+      if (pointerDown && !transformControls.enabled) {
+        const deltaX = e.movementX;
+        const deltaY = e.movementY;
+        const rotateSpeed = Math.PI * 0.002;
+        molecule.rotateOnWorldAxis(
+          new Vector3(1, 0, 0),
+          deltaY * rotateSpeed,
+        );
+        molecule.rotateOnWorldAxis(
+          new Vector3(0, 1, 0),
+          deltaX * rotateSpeed,
+        );
+      }
+    }
+
+    renderer.domElement.addEventListener(
+      "pointermove",
+      handlePointerMove,
+    );
+
+    eventListenerRef.current = handlePointerMove;
+  }
+
+  function setEventListeners() {
+    if (!contextRef.current) return;
+    const { transformControls, molecule } = contextRef.current;
+
+    renderer.domElement.addEventListener("pointerdown", () => {
+      pointerDown = true;
+    });
+
+    renderer.domElement.addEventListener("pointerup", () => {
+      pointerDown = false;
+    });
+
+    setPointerMoveListener(transformControls, molecule);
+  }
+
   return (
     <div>
-      <h3 style={{ margin: 0 }}>{unitCellId}</h3>
       <div
-        ref={ref}
+        style={{ display: "flex", alignItems: "center", marginBottom: "5px" }}
+      >
+        <h3 style={{ margin: 0 }}>{unitCellId}</h3>
+        <select
+          value={view}
+          onChange={(e) => changeView(e.target.value as typeof view)}
+          style={{ marginLeft: "8px" }}
+        >
+          {Object.keys(views).map((key) => (
+            <option key={key} value={key}>{key}</option>
+          ))}
+        </select>
+      </div>
+      <div
+        ref={containerRef}
         // style={{ width: globalThis.innerWidth, height: globalThis.innerHeight }}
         // style={{ width: "60%", height: .5 * globalThis.innerHeight }}
         style={{ width: size, height: size }}
