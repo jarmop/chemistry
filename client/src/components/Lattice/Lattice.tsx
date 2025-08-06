@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import { getMolecule, init, RenderingContext } from "./lattice.ts";
 import { Vector3, WebGLRenderer } from "three";
-import { Ball, layers, structures, UnitCell } from "./structures.ts";
+import { Structure, structures } from "./structures.ts";
 
 const size = 300;
 
 let pointerDown = false;
 
 interface LatticeProps {
-  unitCellId: keyof UnitCell;
+  unitCellId: Structure;
 }
 
 export function Lattice({ unitCellId }: LatticeProps) {
@@ -17,12 +17,8 @@ export function Lattice({ unitCellId }: LatticeProps) {
   const contextRef = useRef<RenderingContext>(null);
   const eventListenerRef = useRef<(e: PointerEvent) => void>(undefined);
 
-  const balls = structures[unitCellId];
-  const views: Record<string, Ball[]> = { unitCell: balls };
-
-  if (layers[unitCellId]) {
-    views["layer"] = layers[unitCellId];
-  }
+  const views = structures[unitCellId];
+  // const views: Record<string, Ball[]> = { unitCell: unitCell };
 
   const [view, setView] = useState<keyof typeof views>("unitCell");
 

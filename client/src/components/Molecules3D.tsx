@@ -1,12 +1,10 @@
 import { Lattice } from "./Lattice/Lattice.tsx";
-import { UnitCell } from "./Lattice/structures.ts";
+import { Structure } from "./Lattice/structures.ts";
 
-const unitCellIds: (keyof UnitCell)[] = [
+const unitCellIds: (Structure)[] = [
   "PC",
   "BCC",
   "FCC",
-  "CCP",
-  "CCP=FCC",
   "HCP",
 ];
 

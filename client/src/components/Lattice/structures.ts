@@ -4,74 +4,6 @@ const R = 1;
 
 export type Ball = { position: THREE.Vector3; color: string };
 
-function getCubicBalls(ballMap: number[][][], size: number) {
-  const positions: Ball[] = [];
-
-  function getStartValue(length: number) {
-    return -(length - 1) / 2;
-    // return 0;
-  }
-  let y = getStartValue(ballMap.length);
-  ballMap.forEach((layer, i) => {
-    const color = i % 2 === 0 ? "red" : "blue";
-    let z = getStartValue(layer.length);
-    layer.forEach((row) => {
-      let x = getStartValue(row.length);
-      row.forEach((hasBall) => {
-        if (hasBall) {
-          const position = new THREE.Vector3(x, y, z);
-          position.multiplyScalar(size);
-          positions.push({ position, color });
-        }
-        x++;
-      });
-      z++;
-    });
-    y++;
-  });
-
-  return positions;
-}
-
-const pcBallsA = [
-  [1, 1],
-  [1, 1],
-];
-const pcBallMap = [
-  pcBallsA,
-  pcBallsA,
-];
-const PC = getCubicBalls(
-  pcBallMap,
-  2,
-);
-
-const bccBallsA = [
-  [1, 0, 1],
-  [0, 0, 0],
-  [1, 0, 1],
-];
-const bccBallsB = [
-  [0, 0, 0],
-  [0, 1, 0],
-  [0, 0, 0],
-];
-const bccBallMap = [bccBallsA, bccBallsB, bccBallsA];
-const BCC = getCubicBalls(bccBallMap, 2 / Math.sqrt(3));
-
-const A = [
-  [1, 0, 1],
-  [0, 1, 0],
-  [1, 0, 1],
-];
-const B = [
-  [0, 1, 0],
-  [1, 0, 1],
-  [0, 1, 0],
-];
-const fccBallMap = [A, B, A];
-const FCC = getCubicBalls(fccBallMap, Math.SQRT2);
-
 function triangleHeight(sideLength: number) {
   return sideLength * Math.sqrt(3) / 2;
   // return sideLength * Math.sin(Math.PI / 3);
@@ -79,6 +11,14 @@ function triangleHeight(sideLength: number) {
 
 function tetrahedronHeight(edgeLength: number) {
   return edgeLength * Math.sqrt(2 / 3);
+}
+
+function squareDiameterToSide(diameter: number) {
+  return diameter / Math.SQRT2;
+}
+
+function cubeDiameterToEdge(diameter: number) {
+  return diameter / Math.sqrt(3);
 }
 
 function centerVectorArray(vectors: THREE.Vector3[]) {
@@ -111,11 +51,10 @@ type Layer = {
   color: string;
 };
 
-function getHexagonalBalls(layers: Layer[]) {
+function getBalls(layers: Layer[], layerDistance: number = 0) {
   const balls: Ball[] = [];
-  const offsetIncrementY = tetrahedronHeight(2 * R);
   for (let i = 0; i < layers.length; i++) {
-    const y = i * offsetIncrementY;
+    const y = i * layerDistance;
     const layer = layers[i];
     for (let rowI = 0; rowI < layer.rows.length; rowI++) {
       const cols = layer.rows[rowI];
@@ -138,22 +77,33 @@ function getHexagonalBalls(layers: Layer[]) {
   return balls;
 }
 
+function getHexagonalBalls(layers: Layer[]) {
+  const layerDistance = tetrahedronHeight(2 * R);
+  return getBalls(layers, layerDistance);
+}
+
+function getLayerBalls(layer: Layer) {
+  const singleLayer = { ...layer, startX: 0, startZ: 0 };
+  return getBalls([singleLayer]);
+}
+
+const hexagonLayer = {
+  rows: [2, 3, 2],
+  startX: 0,
+  startZ: 0,
+  distanceX: 2 * R,
+  distanceZ: triangleHeight(2 * R),
+  offsetX: [R, 0, R],
+  color: "red",
+};
+
 function getHCP() {
-  const layerA = {
-    rows: [2, 3, 2],
-    startX: 0,
-    startZ: 0,
-    distanceX: 2 * R,
-    distanceZ: triangleHeight(2 * R),
-    offsetX: [R, 0, R],
-    color: "red",
-  };
+  const layerA = hexagonLayer;
   const layerB = {
+    ...hexagonLayer,
     rows: [1, 2],
     startX: R,
     startZ: R * Math.sqrt(3) / 3,
-    distanceX: 2 * R,
-    distanceZ: triangleHeight(2 * R),
     offsetX: [R, 0],
     color: "blue",
   };
@@ -164,19 +114,14 @@ function getHCP() {
     layerA,
   ];
 
-  return getHexagonalBalls(layers);
+  return {
+    unitCell: getHexagonalBalls(layers),
+    layer: getLayerBalls(hexagonLayer),
+  };
 }
 
 function getCCP() {
-  const layerA = {
-    rows: [2, 3, 2],
-    startX: 0,
-    startZ: 0,
-    distanceX: 2 * R,
-    distanceZ: triangleHeight(2 * R),
-    offsetX: [R, 0, R],
-    color: "red",
-  };
+  const layerA = hexagonLayer;
   const layerB = {
     rows: [2, 1],
     startX: R,
@@ -203,7 +148,10 @@ function getCCP() {
     layerA,
   ];
 
-  return getHexagonalBalls(layers);
+  return {
+    unitCell: getHexagonalBalls(layers),
+    layer: getLayerBalls(hexagonLayer),
+  };
 }
 
 function getCcpIsFcc() {
@@ -243,26 +191,96 @@ function getCcpIsFcc() {
     layerA,
   ];
 
-  return getHexagonalBalls(layers);
+  return {
+    unitCell: getHexagonalBalls(layers),
+    layer: getLayerBalls(hexagonLayer),
+  };
 }
 
-export const structures = {
-  PC,
-  BCC,
-  FCC,
+function getLayer(layer: Partial<Layer>): Layer {
+  const defaultLayer = {
+    rows: [],
+    startX: 0,
+    startZ: 0,
+    distanceX: 2 * R,
+    distanceZ: 2 * R,
+    offsetX: layer.rows?.map((_) => 0) || [],
+    color: "red",
+  };
+
+  return { ...defaultLayer, ...layer };
+}
+
+function getPC() {
+  const layerA = getLayer({
+    rows: [2, 2],
+  });
+
+  return {
+    unitCell: getBalls([layerA, layerA], 2),
+    layer: getLayerBalls(layerA),
+  };
+}
+
+function getBCC() {
+  const distance = cubeDiameterToEdge(2 * R);
+
+  const layerA = getLayer({
+    rows: [2, 2],
+    distanceX: 2 * distance,
+    distanceZ: 2 * distance,
+  });
+
+  const layerB = getLayer({
+    rows: [1],
+    startX: distance,
+    startZ: distance,
+    color: "blue",
+  });
+
+  return {
+    unitCell: getBalls([layerA, layerB, layerA], distance),
+    layer: getLayerBalls(layerA),
+  };
+}
+
+function getFCC() {
+  const distance = squareDiameterToSide(2 * R);
+
+  const layerA = getLayer({
+    rows: [2, 2],
+    distanceX: 2 * distance,
+    distanceZ: 2 * distance,
+  });
+
+  const layerB = getLayer({
+    rows: [1, 2, 1],
+    distanceX: 2 * distance,
+    distanceZ: distance,
+    offsetX: [distance, 0, distance],
+    color: "blue",
+  });
+
+  return {
+    unitCell: getBalls([layerA, layerB, layerA], distance),
+    layerA: getLayerBalls(layerA),
+    layerB: getLayerBalls(layerB),
+    CCP: getCCP().unitCell,
+    "CCP=FCC": getCcpIsFcc().unitCell,
+  };
+}
+
+export type Structure =
+  | "PC"
+  | "BCC"
+  | "FCC"
+  | "HCP";
+
+export type Structures = Record<Structure, Record<string, Ball[]>>;
+
+export const structures: Structures = {
+  PC: getPC(),
+  BCC: getBCC(),
+  FCC: getFCC(),
   HCP: getHCP(),
-  CCP: getCCP(),
-  "CCP=FCC": getCcpIsFcc(),
-} as const;
-
-export type UnitCell = typeof structures;
-
-const squareLayer = [[[1, 1], [1, 1]]];
-
-const square = getCubicBalls(squareLayer, 2);
-
-// Show what layers make up the structure
-export const layers: Partial<Record<keyof UnitCell, Ball[]>> = { PC: square };
-
-// Show how a single atom is connected to others
-export const connections = {};
+};

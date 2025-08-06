@@ -10,8 +10,6 @@ const zoom = 800;
 const posMultiplier = 100;
 const scaleMultiplier = 100;
 
-const icosahedron = new THREE.IcosahedronGeometry(1, 3);
-
 export type RenderingContext = {
   scene: THREE.Scene;
   camera: THREE.Camera;
@@ -97,14 +95,25 @@ export function init(
   return { scene, camera, molecule, transformControls };
 }
 
+const sphereGeometry = new THREE.SphereGeometry();
+
+const colors: Record<string, THREE.MeshPhongMaterial> = {};
+
+function getMeshPhongMaterial(ball: Ball) {
+  if (!colors[ball.color]) {
+    colors[ball.color] = new THREE.MeshPhongMaterial({
+      color: ball.color || "red",
+    });
+  }
+  return colors[ball.color];
+}
+
 export function getMolecule(balls: Ball[]) {
   const molecule = new THREE.Group();
   balls.forEach((ball) => {
     const ballMesh = new THREE.Mesh(
-      icosahedron,
-      new THREE.MeshPhongMaterial({
-        color: ball.color || "red",
-      }),
+      sphereGeometry,
+      getMeshPhongMaterial(ball),
     );
     ballMesh.position.copy(ball.position);
     ballMesh.position.multiplyScalar(posMultiplier);
