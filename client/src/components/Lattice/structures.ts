@@ -42,12 +42,12 @@ function centerVectorArray(vectors: THREE.Vector3[]) {
 }
 
 type Layer = {
-  rows: number[];
-  startX: number;
-  startZ: number;
+  rows: { offsetX: number; cols: number }[];
+  // rows: number[];
+  // offsetX: number[];
+  offsetZ: number;
   distanceX: number;
   distanceZ: number;
-  offsetX: number[];
   color: string;
 };
 
@@ -55,18 +55,15 @@ function getBalls(layers: Layer[], layerDistance: number = 0) {
   const balls: Ball[] = [];
   for (let i = 0; i < layers.length; i++) {
     const y = i * layerDistance;
-    const layer = layers[i];
-    for (let rowI = 0; rowI < layer.rows.length; rowI++) {
-      const cols = layer.rows[rowI];
+    const { rows, distanceX, distanceZ, offsetZ, color } = layers[i];
+    for (let rowI = 0; rowI < rows.length; rowI++) {
+      const { offsetX, cols } = rows[rowI];
       for (let col = 0; col < cols; col++) {
+        const x = offsetX + col * distanceX;
+        const z = offsetZ + rowI * distanceZ;
         balls.push({
-          position: new THREE.Vector3(
-            layer.startX + layer.offsetX[rowI] +
-              col * layer.distanceX,
-            y,
-            layer.startZ + rowI * layer.distanceZ,
-          ),
-          color: layer.color,
+          position: new THREE.Vector3(x, y, z),
+          color: color,
         });
       }
     }
@@ -87,24 +84,37 @@ function getLayerBalls(layer: Layer) {
   return getBalls([singleLayer]);
 }
 
-const hexagonLayer = {
-  rows: [2, 3, 2],
-  startX: 0,
-  startZ: 0,
+const hexagonLayer = getLayer({
+  rows: [
+    { offsetX: R, cols: 2 },
+    { offsetX: 0, cols: 3 },
+    { offsetX: R, cols: 2 },
+  ],
   distanceX: 2 * R,
   distanceZ: triangleHeight(2 * R),
-  offsetX: [R, 0, R],
   color: "red",
-};
+});
+
+function getPyramidRows(
+  height: number,
+  offsetXStart = 0,
+) {
+  const offsetXIncrement = R;
+  const rows: Layer["rows"] = [];
+  for (let i = 0; i < height; i++) {
+    rows.push(
+      { offsetX: offsetXStart + i * offsetXIncrement, cols: height - i },
+    );
+  }
+  return rows;
+}
 
 function getHCP() {
   const layerA = hexagonLayer;
   const layerB = {
     ...hexagonLayer,
-    rows: [1, 2],
-    startX: R,
-    startZ: R * Math.sqrt(3) / 3,
-    offsetX: [R, 0],
+    rows: getPyramidRows(2, R).toReversed(),
+    offsetZ: R * Math.sqrt(3) / 3,
     color: "blue",
   };
 
@@ -123,21 +133,15 @@ function getHCP() {
 function getCCP() {
   const layerA = hexagonLayer;
   const layerB = {
-    rows: [2, 1],
-    startX: R,
-    startZ: 2 * R * Math.sqrt(3) / 3,
-    distanceX: 2 * R,
-    distanceZ: triangleHeight(2 * R),
-    offsetX: [0, R],
+    ...layerA,
+    rows: getPyramidRows(2, R),
+    offsetZ: 2 * R * Math.sqrt(3) / 3,
     color: "blue",
   };
   const layerC = {
-    rows: [1, 2],
-    startX: R,
-    startZ: R * Math.sqrt(3) / 3,
-    distanceX: 2 * R,
-    distanceZ: triangleHeight(2 * R),
-    offsetX: [R, 0],
+    ...layerA,
+    rows: getPyramidRows(2, R).toReversed(),
+    offsetZ: R * Math.sqrt(3) / 3,
     color: "yellow",
   };
 
@@ -155,32 +159,20 @@ function getCCP() {
 }
 
 function getCcpIsFcc() {
-  const layerA = {
-    rows: [1],
-    startX: 2 * R,
-    startZ: 4 * triangleHeight(2 * R) / 3,
-    // startZ: 4 * R * Math.sqrt(3) / 3,
-    distanceX: 0,
-    distanceZ: 0,
-    offsetX: [0],
+  const layerA = getLayer({
+    rows: [{ offsetX: 2 * R, cols: 1 }],
+    offsetZ: 4 * triangleHeight(2 * R) / 3,
     color: "red",
-  };
-  const layerB = {
-    rows: [1, 2, 3],
-    startX: 0,
-    startZ: 0,
-    distanceX: 2 * R,
-    distanceZ: triangleHeight(2 * R),
-    offsetX: [2 * R, R, 0],
+  });
+  const layerB = getLayer({
+    ...hexagonLayer,
+    rows: getPyramidRows(3).toReversed(),
     color: "blue",
-  };
+  });
   const layerC = {
-    rows: [3, 2, 1],
-    startX: 0,
-    startZ: 2 * R * Math.sqrt(3) / 3,
-    distanceX: 2 * R,
-    distanceZ: triangleHeight(2 * R),
-    offsetX: [0, R, 2 * R],
+    ...hexagonLayer,
+    rows: getPyramidRows(3),
+    offsetZ: 2 * R * Math.sqrt(3) / 3,
     color: "yellow",
   };
 
@@ -200,20 +192,22 @@ function getCcpIsFcc() {
 function getLayer(layer: Partial<Layer>): Layer {
   const defaultLayer = {
     rows: [],
-    startX: 0,
-    startZ: 0,
+    offsetZ: 0,
     distanceX: 2 * R,
     distanceZ: 2 * R,
-    offsetX: layer.rows?.map((_) => 0) || [],
     color: "red",
   };
 
   return { ...defaultLayer, ...layer };
 }
 
+function getRowObjects(rows: number[]): Layer["rows"] {
+  return rows.map((cols) => ({ offsetX: 0, cols }));
+}
+
 function getPC() {
   const layerA = getLayer({
-    rows: [2, 2],
+    rows: getRowObjects([2, 2]),
   });
 
   return {
@@ -226,15 +220,14 @@ function getBCC() {
   const distance = cubeDiameterToEdge(2 * R);
 
   const layerA = getLayer({
-    rows: [2, 2],
+    rows: getRowObjects([2, 2]),
     distanceX: 2 * distance,
     distanceZ: 2 * distance,
   });
 
   const layerB = getLayer({
-    rows: [1],
-    startX: distance,
-    startZ: distance,
+    rows: [{ offsetX: distance, cols: 1 }],
+    offsetZ: distance,
     color: "blue",
   });
 
@@ -247,17 +240,26 @@ function getBCC() {
 function getFCC() {
   const distance = squareDiameterToSide(2 * R);
 
+  const rowA = { offsetX: 0, cols: 2 };
+  const rowB = { offsetX: distance, cols: 1 };
+
   const layerA = getLayer({
-    rows: [2, 2],
+    rows: [
+      rowA,
+      rowB,
+      rowA,
+    ],
     distanceX: 2 * distance,
-    distanceZ: 2 * distance,
+    distanceZ: distance,
   });
 
   const layerB = getLayer({
-    rows: [1, 2, 1],
-    distanceX: 2 * distance,
-    distanceZ: distance,
-    offsetX: [distance, 0, distance],
+    ...layerA,
+    rows: [
+      rowB,
+      rowA,
+      rowB,
+    ],
     color: "blue",
   });
 
