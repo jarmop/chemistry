@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import { TrackballControls } from "three/addons/controls/TrackballControls.js";
 import { TransformControls } from "three/addons/controls/TransformControls.js";
-import { Ball } from "./structures.ts";
+import { Ball } from "./types.ts";
 
 const near = 1;
 const far = 5000;

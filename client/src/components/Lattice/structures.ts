@@ -1,8 +1,13 @@
 import * as THREE from "three";
+import { Ball } from "./types.ts";
+import {
+  getFccConnections,
+  getHcpConnections,
+  getPcConnections,
+} from "./connections.ts";
+import { centerVectorArray } from "./latticeHelpers.ts";
 
 const R = 1;
-
-export type Ball = { position: THREE.Vector3; color: string };
 
 function triangleHeight(sideLength: number) {
   return sideLength * Math.sqrt(3) / 2;
@@ -19,26 +24,6 @@ function squareDiameterToSide(diameter: number) {
 
 function cubeDiameterToEdge(diameter: number) {
   return diameter / Math.sqrt(3);
-}
-
-function centerVectorArray(vectors: THREE.Vector3[]) {
-  const max = new THREE.Vector3();
-  vectors.forEach((v) => {
-    if (v.x > max.x) {
-      max.x = v.x;
-    }
-    if (v.y > max.y) {
-      max.y = v.y;
-    }
-    if (v.z > max.z) {
-      max.z = v.z;
-    }
-  });
-
-  const adjustment = new THREE.Vector3();
-  adjustment.copy(max).multiplyScalar(-1 / 2);
-
-  vectors.forEach((v) => v.add(adjustment));
 }
 
 type Layer = {
@@ -127,6 +112,7 @@ function getHCP() {
   return {
     unitCell: getHexagonalBalls(layers),
     layer: getLayerBalls(hexagonLayer),
+    connections: getHcpConnections(),
   };
 }
 
@@ -213,6 +199,7 @@ function getPC() {
   return {
     unitCell: getBalls([layerA, layerA], 2),
     layer: getLayerBalls(layerA),
+    connections: getPcConnections(),
   };
 }
 
@@ -269,6 +256,7 @@ function getFCC() {
     layerB: getLayerBalls(layerB),
     CCP: getCCP().unitCell,
     "CCP=FCC": getCcpIsFcc().unitCell,
+    connections: getFccConnections(),
   };
 }
 

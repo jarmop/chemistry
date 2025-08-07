@@ -18,9 +18,8 @@ export function Lattice({ unitCellId }: LatticeProps) {
   const eventListenerRef = useRef<(e: PointerEvent) => void>(undefined);
 
   const views = structures[unitCellId];
-  // const views: Record<string, Ball[]> = { unitCell: unitCell };
 
-  const [view, setView] = useState<keyof typeof views>("unitCell");
+  const [view, setView] = useState("unitCell");
 
   useEffect(() => {
     if (containerRef.current && !contextRef.current) {
