@@ -14,6 +14,7 @@ import {
 import { TableBody } from "./TableBody.tsx";
 import { ComparisonTable } from "../../components/PeriodicTable/ComparisonTable.tsx";
 import { ColorDescription } from "../../components/PeriodicTable/ColorDescription.tsx";
+import { removeValueFromArray } from "../../library/helpers.ts";
 
 const viewModes = ["simple", "detailed", "image"] as const;
 type ViewMode = (typeof viewModes)[number];
@@ -29,7 +30,7 @@ export function PeriodicTable(
 
   const [colorMode, setColorMode] = useState<ColorMode>("structure");
   const [viewMode, setViewMode] = useState<ViewMode>("simple");
-  const [highlightValue, setHighlightValue] = useState<string>();
+  const [highlightValues, setHighlightValues] = useState<string[]>([]);
   const [hoverEnabled, setHoverEnabled] = useState(true);
 
   const mainElements: ElementType[][] = [];
@@ -47,7 +48,8 @@ export function PeriodicTable(
   ];
 
   function maybeCellColor(element: ElementType) {
-    return (highlightValue && element[colorMode] !== highlightValue)
+    return (highlightValues.length > 0 &&
+        !highlightValues.includes(element[colorMode] as string))
       ? undefined
       : getCellColor(element, colorMode);
   }
@@ -69,6 +71,24 @@ export function PeriodicTable(
         onElementSelected(element);
       }
     }
+  }
+
+  function selectHighlightValue(value?: string | string[]) {
+    if (!value) {
+      setHighlightValues([]);
+      return;
+    }
+
+    if (Array.isArray(value)) {
+      setHighlightValues(value);
+      return;
+    }
+
+    const newHighlightValue = highlightValues.includes(value)
+      ? removeValueFromArray(highlightValues, value)
+      : [...highlightValues, value];
+
+    setHighlightValues(newHighlightValue);
   }
 
   function renderElementCell(element: ElementType, key: string | number) {
@@ -129,7 +149,10 @@ export function PeriodicTable(
         <span>Color by:</span>
         <select
           value={colorMode}
-          onChange={(e) => setColorMode(e.target.value as ColorMode)}
+          onChange={(e) => {
+            setColorMode(e.target.value as ColorMode);
+            setHighlightValues([]);
+          }}
           style={{ marginLeft: "8px" }}
         >
           {Object.entries(colorModes).map(([key, value]) => (
@@ -171,7 +194,9 @@ export function PeriodicTable(
         ? (
           <ColorDescription
             colorMode={colorMode}
-            onSelectValue={setHighlightValue}
+            selectedValues={highlightValues}
+            onClick={selectHighlightValue}
+            // onMouseLeaveContainer={() => {}}
           />
         )
         : (

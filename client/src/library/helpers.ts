@@ -266,3 +266,11 @@ export function addTag<T extends { tags: Tag[] }>(
 ) {
   return objects.map((m) => ({ ...m, tags: [...m.tags, ...tags] }));
 }
+
+export function removeValueFromArray<T>(arr: T[], value: T) {
+  const index = arr.findIndex((v) => v === value);
+  return [
+    ...arr.slice(0, index),
+    ...arr.slice(index + 1),
+  ];
+}

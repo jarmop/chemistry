@@ -2,11 +2,16 @@ import { ColorMode, colorsByMode } from "./getCellColor.ts";
 
 interface ColorDescriptionProps {
   colorMode: ColorMode;
-  onSelectValue: (value: string | undefined) => void;
+  selectedValues: string[];
+  onClick: (value?: string | string[]) => void;
 }
 
 export function ColorDescription(
-  { colorMode, onSelectValue }: ColorDescriptionProps,
+  {
+    colorMode,
+    selectedValues,
+    onClick,
+  }: ColorDescriptionProps,
 ) {
   const colors = colorsByMode[colorMode];
   if (!colors) return;
@@ -14,11 +19,11 @@ export function ColorDescription(
   return (
     <div
       style={{ marginTop: "20px", maxWidth: "550px" }}
-      onMouseLeave={() => onSelectValue(undefined)}
     >
       {Object.entries(colors).map(([key, color]) => (
         <div
           style={{
+            position: "relative",
             display: "inline-block",
             padding: "5px",
             marginRight: "10px",
@@ -28,11 +33,37 @@ export function ColorDescription(
             cursor: "pointer",
           }}
           key={key}
-          onMouseOver={() => onSelectValue(key)}
+          onClick={() => onClick(key)}
         >
           {key}
+          {selectedValues.includes(key) && (
+            <div
+              style={{
+                position: "absolute",
+                width: "100%",
+                height: "100%",
+                top: 0,
+                left: 0,
+                border: "3px solid black",
+                boxSizing: "border-box",
+              }}
+            >
+            </div>
+          )}
         </div>
       ))}
+      <button type="button" onClick={() => onClick(Object.keys(colors))}>
+        Select all
+      </button>
+      &nbsp;&nbsp;
+      {selectedValues.length > 0 && (
+        <button
+          type="button"
+          onClick={() => onClick()}
+        >
+          Remove selections
+        </button>
+      )}
     </div>
   );
 }
