@@ -11,10 +11,8 @@ const ballFe: Ball = {
 
 export function getIron() {
   const size = 3;
-  const foo = {
-    "3x3": growBcc(ballFe, ballFe, new Vector3(size, size, size)),
+  return {
     unitCell: getBccConnections(ballFe, ballFe),
+    "3x3": growBcc(ballFe, ballFe, new Vector3(size, size, size)),
   };
-
-  return foo;
 }

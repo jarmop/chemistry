@@ -7,23 +7,36 @@ export function degreeToRadius(deg: number) {
   return deg / radInDeg;
 }
 
-export function RadiusToDegree(rad: number) {
+export function radiusToDegree(rad: number) {
   return rad * radInDeg;
 }
 
-export function centerBalls(balls: Ball[]) {
+export function getMinMaxDimensions(vectors: THREE.Vector3[]) {
+  const min = new THREE.Vector3();
   const max = new THREE.Vector3();
-  balls.forEach(({ position }) => {
-    if (position.x > max.x) {
-      max.x = position.x;
+  vectors.forEach((vector) => {
+    if (vector.x > max.x) {
+      max.x = vector.x;
+    } else if (vector.x < min.x) {
+      min.x = vector.x;
     }
-    if (position.y > max.y) {
-      max.y = position.y;
+    if (vector.y > max.y) {
+      max.y = vector.y;
+    } else if (vector.y < min.y) {
+      min.y = vector.y;
     }
-    if (position.z > max.z) {
-      max.z = position.z;
+    if (vector.z > max.z) {
+      max.z = vector.z;
+    } else if (vector.z < min.z) {
+      min.z = vector.z;
     }
   });
+
+  return { min, max };
+}
+
+export function centerBalls(balls: Ball[]) {
+  const { max } = getMinMaxDimensions(balls.map((b) => b.position));
 
   const adjustment = new THREE.Vector3();
   adjustment.copy(max).multiplyScalar(-1 / 2);
@@ -47,10 +60,12 @@ export function getPointOnSphereSurface(
   const polarAngleRad = degreeToRadius(polarAngle);
   const azimuthalAngleRad = degreeToRadius(azimuthalAngle);
 
+  // console.log(center);
+
   const [cx, cy, cz] = center;
 
   const dx = radius * Math.sin(polarAngleRad) * Math.cos(azimuthalAngleRad);
-  const dz = -radius * Math.sin(polarAngleRad) * Math.sin(azimuthalAngleRad);
+  const dz = radius * Math.sin(polarAngleRad) * Math.sin(azimuthalAngleRad);
   const dy = -radius * Math.cos(polarAngleRad);
 
   return new THREE.Vector3(

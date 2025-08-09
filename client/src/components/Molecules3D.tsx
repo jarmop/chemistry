@@ -9,6 +9,7 @@ const unitCellIds: (Structure)[] = [
   // "HCP",
   "NaCl (Rock salt)",
   "Iron",
+  "Diamond",
 ];
 
 export function Molecules3D() {

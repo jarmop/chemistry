@@ -2,6 +2,7 @@ import * as THREE from "three";
 import { TrackballControls } from "three/addons/controls/TrackballControls.js";
 import { TransformControls } from "three/addons/controls/TransformControls.js";
 import { Ball } from "./types.ts";
+import { getMinMaxDimensions } from "./latticeHelpers.ts";
 
 const near = 1;
 const far = 5000;
@@ -125,5 +126,28 @@ export function getMolecule(balls: Ball[]) {
     molecule.add(ballMesh);
   });
 
+  molecule.add(getDimensions(balls));
+
   return molecule;
+}
+
+function getDimensions(balls: Ball[]) {
+  const { min, max } = getMinMaxDimensions(
+    balls.map((b) => b.position),
+  );
+
+  const dimensions = (new THREE.Vector3()).copy(min).multiplyScalar(-1).add(
+    max,
+  );
+
+  const geometry = new THREE.BoxGeometry(
+    ...dimensions,
+  );
+  const edges = new THREE.EdgesGeometry(geometry);
+  const outline = new THREE.LineSegments(
+    edges,
+    new THREE.LineBasicMaterial({ color: 0xffffff }),
+  );
+
+  return outline;
 }

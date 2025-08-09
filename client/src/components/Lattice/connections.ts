@@ -1,16 +1,16 @@
 import { Vector3 } from "three";
 import { Ball } from "./types.ts";
-import { getPointOnSphereSurface, RadiusToDegree } from "./latticeHelpers.ts";
+import { getPointOnSphereSurface, radiusToDegree } from "./latticeHelpers.ts";
 
 const defaultRadius = 100;
 
-const defaultCenter = {
+const defaultCenter: Ball = {
   position: new Vector3(0, 0, 0),
   color: "red",
   radius: defaultRadius,
 };
 
-const defaultConnection = {
+const defaultConnection: Ball = {
   position: new Vector3(0, 0, 0),
   color: "blue",
   radius: defaultRadius,
@@ -66,7 +66,7 @@ export function getPcConnections(
 }
 
 export function getBccConnectionAngles() {
-  const cubeDiameterAngle = RadiusToDegree(Math.acos(1 / Math.sqrt(3)));
+  const cubeDiameterAngle = radiusToDegree(Math.acos(1 / Math.sqrt(3)));
   const angles: [number, number][] = [];
   [cubeDiameterAngle, 180 - cubeDiameterAngle].forEach((polarAngle) => {
     for (let azimuthalAngle = 45; azimuthalAngle < 360; azimuthalAngle += 90) {
@@ -94,7 +94,7 @@ export function getBccConnections(
     };
   }
 
-  const balls = [centerBall];
+  const balls = [{ ...centerBall, color: "red" }];
 
   getBccConnectionAngles().forEach(([polarAngle, azimuthalAngle]) => {
     balls.push(getConnection(polarAngle, azimuthalAngle));
@@ -118,12 +118,12 @@ export function getFccConnections(): Ball[] {
     getConnection(90, 180),
     getConnection(90, 240),
     getConnection(90, 300),
-    getConnection(35, 90, "lightgreen"),
-    getConnection(35, 210, "lightgreen"),
-    getConnection(35, 330, "lightgreen"),
-    getConnection(145, 30, "lightgreen"),
-    getConnection(145, 150, "lightgreen"),
-    getConnection(145, 270, "lightgreen"),
+    getConnection(35, 30, "lightgreen"),
+    getConnection(35, 150, "lightgreen"),
+    getConnection(35, 270, "lightgreen"),
+    getConnection(145, 90, "lightgreen"),
+    getConnection(145, 210, "lightgreen"),
+    getConnection(145, 330, "lightgreen"),
   ];
 }
 
@@ -142,11 +142,73 @@ export function getHcpConnections(): Ball[] {
     getConnection(90, 180),
     getConnection(90, 240),
     getConnection(90, 300),
-    getConnection(35, 30, "lightgreen"),
-    getConnection(35, 150, "lightgreen"),
-    getConnection(35, 270, "lightgreen"),
-    getConnection(145, 30, "lightgreen"),
-    getConnection(145, 150, "lightgreen"),
-    getConnection(145, 270, "lightgreen"),
+    getConnection(35, 90, "lightgreen"),
+    getConnection(35, 210, "lightgreen"),
+    getConnection(35, 330, "lightgreen"),
+    getConnection(145, 90, "lightgreen"),
+    getConnection(145, 210, "lightgreen"),
+    getConnection(145, 330, "lightgreen"),
   ];
+}
+
+const cubicDiamondAngle = radiusToDegree(Math.acos(-1 / 3));
+
+function getDiamondConnectionAngles1(): [number, number][] {
+  const polarAngle = 180 - cubicDiamondAngle;
+  const azimuthalOffset = 30;
+  return [
+    [180, 0],
+    [polarAngle, azimuthalOffset],
+    [polarAngle, azimuthalOffset + 120],
+    [polarAngle, azimuthalOffset + 240],
+  ];
+}
+
+function getDiamondConnectionAngles2(): [number, number][] {
+  const polarAngle = cubicDiamondAngle / 2;
+  const polarAngle2 = 180 - cubicDiamondAngle / 2;
+  const azimuthalOffset = 45;
+
+  return [
+    [polarAngle, azimuthalOffset],
+    [polarAngle, azimuthalOffset + 180],
+    [polarAngle2, azimuthalOffset + 90],
+    [polarAngle2, azimuthalOffset + 270],
+  ];
+}
+
+export function getDiamondConnections(
+  connectionAngles: [number, number][],
+) {
+  const centerBall = defaultCenter;
+  const connectionBall = defaultConnection;
+  const connectionRadius = centerBall.radius + connectionBall.radius;
+
+  function getConnection(polarAngle: number, azimuthalAngle: number): Ball {
+    return {
+      ...connectionBall,
+      position: getPointOnSphereSurface(
+        centerBall.position,
+        connectionRadius,
+        polarAngle,
+        azimuthalAngle,
+      ),
+    };
+  }
+
+  const balls = [{ ...centerBall, color: "red" }];
+
+  connectionAngles.forEach(([polarAngle, azimuthalAngle]) => {
+    balls.push(getConnection(polarAngle, azimuthalAngle));
+  });
+
+  return balls;
+}
+
+export function getDiamondConnectionsAtAngle1() {
+  return getDiamondConnections(getDiamondConnectionAngles1());
+}
+
+export function getDiamondConnectionsAtAngle2() {
+  return getDiamondConnections(getDiamondConnectionAngles2());
 }
