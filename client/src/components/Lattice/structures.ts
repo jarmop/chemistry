@@ -3,11 +3,11 @@ import { Ball } from "./types.ts";
 import {
   getFccConnections,
   getHcpConnections,
-  getNaClConnectionsCl,
-  getNaClConnectionsNa,
   getPcConnections,
 } from "./connections.ts";
-import { centerVectorArray } from "./latticeHelpers.ts";
+import { centerBalls } from "./latticeHelpers.ts";
+import { getNaCl } from "./substances/NaCl.ts";
+import { getIron } from "./substances/iron.ts";
 
 const R = 100;
 
@@ -57,9 +57,7 @@ function getBalls(layers: Layer[], layerDistance: number = 0) {
     }
   }
 
-  centerVectorArray(balls.map((b) => b.position));
-
-  return balls;
+  return centerBalls(balls);
 }
 
 function getHexagonalBalls(layers: Layer[]) {
@@ -263,31 +261,13 @@ function getFCC() {
   };
 }
 
-function getNaCl() {
-  const { unitCell } = getPC();
-  return {
-    connectionsNa: getNaClConnectionsNa(),
-    connectionsCl: getNaClConnectionsCl(),
-    unitCell,
-    unitCellNaAlone: getBCC().unitCell,
-  };
-}
-
-// export type Structure =
-//   | "PC"
-//   | "BCC"
-//   | "FCC"
-//   | "HCP"
-//   | "NaCl (Rock salt)";
-
-// export type Structures = Record<Structure, Record<string, Ball[]>>;
-
 const structures = {
   PC: getPC(),
   BCC: getBCC(),
   FCC: getFCC(),
   HCP: getHCP(),
   "NaCl (Rock salt)": getNaCl(),
+  Iron: getIron(),
 } as const;
 
 export type Structure = keyof typeof structures;

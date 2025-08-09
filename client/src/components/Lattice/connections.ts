@@ -1,5 +1,6 @@
 import { Vector3 } from "three";
 import { Ball } from "./types.ts";
+import { getPointOnSphereSurface, RadiusToDegree } from "./latticeHelpers.ts";
 
 const defaultRadius = 100;
 
@@ -15,29 +16,6 @@ const defaultConnection = {
   radius: defaultRadius,
 };
 
-export function degreeToRadius(deg: number) {
-  return deg / 180 * Math.PI;
-}
-
-/**
- * @param polarAngle Goes 180 degrees, counter-clockwise, along the xy plane, starting from the negative y axis
- * @param azimuthalAngle Goes 360 degrees, clockwise, around the y axis, starting from the xy plane point indicated by the polarAngle
- */
-export function getPointOnSphereSurface(
-  radius: number,
-  polarAngle: number,
-  azimuthalAngle: number,
-) {
-  const polarAngleRad = degreeToRadius(polarAngle);
-  const azimuthalAngleRad = degreeToRadius(azimuthalAngle);
-
-  const x = radius * Math.sin(polarAngleRad) * Math.cos(azimuthalAngleRad);
-  const z = -radius * Math.sin(polarAngleRad) * Math.sin(azimuthalAngleRad);
-  const y = -radius * Math.cos(polarAngleRad);
-
-  return new Vector3(x, y, z);
-}
-
 function getConnection(
   polarAngle: number,
   azimuthalAngle: number,
@@ -48,6 +26,7 @@ function getConnection(
   const distance = centerRadius + connectionRadius;
   return {
     position: getPointOnSphereSurface(
+      defaultCenter.position,
       distance,
       polarAngle,
       azimuthalAngle,
@@ -67,6 +46,7 @@ export function getPcConnections(
     return {
       ...connectionBall,
       position: getPointOnSphereSurface(
+        centerBall.position,
         connectionRadius,
         polarAngle,
         azimuthalAngle,
@@ -83,6 +63,44 @@ export function getPcConnections(
     getConnection(90, 180 + 45),
     getConnection(90, 270 + 45),
   ];
+}
+
+export function getBccConnectionAngles() {
+  const cubeDiameterAngle = RadiusToDegree(Math.acos(1 / Math.sqrt(3)));
+  const angles: [number, number][] = [];
+  [cubeDiameterAngle, 180 - cubeDiameterAngle].forEach((polarAngle) => {
+    for (let azimuthalAngle = 45; azimuthalAngle < 360; azimuthalAngle += 90) {
+      angles.push([polarAngle, azimuthalAngle]);
+    }
+  });
+  return angles;
+}
+
+export function getBccConnections(
+  centerBall: Ball = defaultCenter,
+  connectionBall: Ball = defaultConnection,
+) {
+  const connectionRadius = centerBall.radius + connectionBall.radius;
+
+  function getConnection(polarAngle: number, azimuthalAngle: number): Ball {
+    return {
+      ...connectionBall,
+      position: getPointOnSphereSurface(
+        centerBall.position,
+        connectionRadius,
+        polarAngle,
+        azimuthalAngle,
+      ),
+    };
+  }
+
+  const balls = [centerBall];
+
+  getBccConnectionAngles().forEach(([polarAngle, azimuthalAngle]) => {
+    balls.push(getConnection(polarAngle, azimuthalAngle));
+  });
+
+  return balls;
 }
 
 export function getFccConnections(): Ball[] {
@@ -131,25 +149,4 @@ export function getHcpConnections(): Ball[] {
     getConnection(145, 150, "lightgreen"),
     getConnection(145, 270, "lightgreen"),
   ];
-}
-
-const radiusNa = 116;
-const radiusCl = 167;
-const ballNa = {
-  position: new Vector3(0, 0, 0),
-  color: "purple",
-  radius: radiusNa,
-};
-const ballCl = {
-  position: new Vector3(0, 0, 0),
-  color: "lightgreen",
-  radius: radiusCl,
-};
-
-export function getNaClConnectionsNa() {
-  return getPcConnections(ballNa, ballCl);
-}
-
-export function getNaClConnectionsCl() {
-  return getPcConnections(ballCl, ballNa);
 }
