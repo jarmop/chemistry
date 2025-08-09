@@ -1,12 +1,14 @@
 import { Lattice } from "./Lattice/Lattice.tsx";
-import { Structure } from "./Lattice/structures.ts";
+import { getStructureKeys, Structure } from "./Lattice/structures.ts";
 
-const unitCellIds: (Structure)[] = [
-  "PC",
-  "BCC",
-  "FCC",
-  "HCP",
-];
+const unitCellIds = getStructureKeys();
+// const unitCellIds: (Structure)[] = [
+//   // "PC",
+//   // "BCC",
+//   // "FCC",
+//   // "HCP",
+//   "NaCl (Rock salt)",
+// ];
 
 export function Molecules3D() {
   return (

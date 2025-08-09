@@ -7,8 +7,6 @@ const near = 1;
 const far = 5000;
 const FOV = 70;
 const zoom = 800;
-const posMultiplier = 100;
-const scaleMultiplier = 100;
 
 export type RenderingContext = {
   scene: THREE.Scene;
@@ -29,8 +27,8 @@ export function init(
   camera.position.z = zoom;
 
   const controls = new TrackballControls(camera, renderer.domElement);
-  controls.minDistance = 100;
-  controls.maxDistance = 2000;
+  controls.minDistance = near;
+  controls.maxDistance = far;
   controls.rotateSpeed = 5;
   controls.noPan = true;
   controls.noRotate = true;
@@ -95,29 +93,35 @@ export function init(
   return { scene, camera, molecule, transformControls };
 }
 
-const sphereGeometry = new THREE.SphereGeometry();
+const sphereGeometries: Record<string, THREE.SphereGeometry> = {};
 
-const colors: Record<string, THREE.MeshPhongMaterial> = {};
+function getSphereGeometry(ball: Ball) {
+  if (!sphereGeometries[ball.radius]) {
+    sphereGeometries[ball.radius] = new THREE.SphereGeometry(ball.radius);
+  }
+
+  return sphereGeometries[ball.radius];
+}
+
+const meshPhongMaterials: Record<string, THREE.MeshPhongMaterial> = {};
 
 function getMeshPhongMaterial(ball: Ball) {
-  if (!colors[ball.color]) {
-    colors[ball.color] = new THREE.MeshPhongMaterial({
+  if (!meshPhongMaterials[ball.color]) {
+    meshPhongMaterials[ball.color] = new THREE.MeshPhongMaterial({
       color: ball.color || "red",
     });
   }
-  return colors[ball.color];
+  return meshPhongMaterials[ball.color];
 }
 
 export function getMolecule(balls: Ball[]) {
   const molecule = new THREE.Group();
   balls.forEach((ball) => {
     const ballMesh = new THREE.Mesh(
-      sphereGeometry,
+      getSphereGeometry(ball),
       getMeshPhongMaterial(ball),
     );
     ballMesh.position.copy(ball.position);
-    ballMesh.position.multiplyScalar(posMultiplier);
-    ballMesh.scale.multiplyScalar(scaleMultiplier);
     molecule.add(ballMesh);
   });
 

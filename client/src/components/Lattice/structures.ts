@@ -3,11 +3,13 @@ import { Ball } from "./types.ts";
 import {
   getFccConnections,
   getHcpConnections,
+  getNaClConnectionsCl,
+  getNaClConnectionsNa,
   getPcConnections,
 } from "./connections.ts";
 import { centerVectorArray } from "./latticeHelpers.ts";
 
-const R = 1;
+const R = 100;
 
 function triangleHeight(sideLength: number) {
   return sideLength * Math.sqrt(3) / 2;
@@ -49,6 +51,7 @@ function getBalls(layers: Layer[], layerDistance: number = 0) {
         balls.push({
           position: new THREE.Vector3(x, y, z),
           color: color,
+          radius: R,
         });
       }
     }
@@ -197,7 +200,7 @@ function getPC() {
   });
 
   return {
-    unitCell: getBalls([layerA, layerA], 2),
+    unitCell: getBalls([layerA, layerA], 2 * R),
     layer: getLayerBalls(layerA),
     connections: getPcConnections(),
   };
@@ -260,17 +263,41 @@ function getFCC() {
   };
 }
 
-export type Structure =
-  | "PC"
-  | "BCC"
-  | "FCC"
-  | "HCP";
+function getNaCl() {
+  const { unitCell } = getPC();
+  return {
+    connectionsNa: getNaClConnectionsNa(),
+    connectionsCl: getNaClConnectionsCl(),
+    unitCell,
+    unitCellNaAlone: getBCC().unitCell,
+  };
+}
 
-export type Structures = Record<Structure, Record<string, Ball[]>>;
+// export type Structure =
+//   | "PC"
+//   | "BCC"
+//   | "FCC"
+//   | "HCP"
+//   | "NaCl (Rock salt)";
 
-export const structures: Structures = {
+// export type Structures = Record<Structure, Record<string, Ball[]>>;
+
+const structures = {
   PC: getPC(),
   BCC: getBCC(),
   FCC: getFCC(),
   HCP: getHCP(),
-};
+  "NaCl (Rock salt)": getNaCl(),
+} as const;
+
+export type Structure = keyof typeof structures;
+
+export type Structures = Record<Structure, Record<string, Ball[]>>;
+
+export function getStructures(): Structures {
+  return structures;
+}
+
+export function getStructureKeys() {
+  return Object.keys(structures) as Structure[];
+}

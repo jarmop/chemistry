@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { getMolecule, init, RenderingContext } from "./lattice.ts";
 import { Vector3, WebGLRenderer } from "three";
-import { Structure, structures } from "./structures.ts";
+import { getStructures, Structure } from "./structures.ts";
 
 const size = 300;
 
@@ -17,9 +17,11 @@ export function Lattice({ unitCellId }: LatticeProps) {
   const contextRef = useRef<RenderingContext>(null);
   const eventListenerRef = useRef<(e: PointerEvent) => void>(undefined);
 
-  const views = structures[unitCellId];
+  const views = getStructures()[unitCellId];
 
-  const [view, setView] = useState("unitCell");
+  const [view, setView] = useState(
+    Object.keys(views)[0],
+  );
 
   useEffect(() => {
     if (containerRef.current && !contextRef.current) {
@@ -107,7 +109,7 @@ export function Lattice({ unitCellId }: LatticeProps) {
       <div
         style={{ display: "flex", alignItems: "center", marginBottom: "5px" }}
       >
-        <h3 style={{ margin: 0 }}>{unitCellId}</h3>
+        <h4 style={{ margin: 0 }}>{unitCellId}</h4>
         <select
           value={view}
           onChange={(e) => changeView(e.target.value as typeof view)}
