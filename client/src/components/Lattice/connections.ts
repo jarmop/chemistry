@@ -94,7 +94,7 @@ export function getBccConnections(
     };
   }
 
-  const balls = [{ ...centerBall, color: "red" }];
+  const balls = [centerBall];
 
   getBccConnectionAngles().forEach(([polarAngle, azimuthalAngle]) => {
     balls.push(getConnection(polarAngle, azimuthalAngle));

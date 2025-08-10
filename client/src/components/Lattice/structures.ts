@@ -9,6 +9,7 @@ import { centerBalls } from "./latticeHelpers.ts";
 import { getNaCl } from "./substances/NaCl.ts";
 import { getIron } from "./substances/iron.ts";
 import { getDiamond } from "./substances/carbon.ts";
+import { getCopper } from "./substances/copper.ts";
 
 const R = 100;
 
@@ -270,6 +271,7 @@ const structures = {
   "NaCl (Rock salt)": getNaCl(),
   Iron: getIron(),
   Diamond: getDiamond(),
+  Copper: getCopper(),
 } as const;
 
 export type Structure = keyof typeof structures;

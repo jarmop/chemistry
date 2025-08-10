@@ -12,14 +12,12 @@ const ballC: Ball = {
 };
 
 export function getDiamond() {
-  const foo = {
+  return {
     connections: getDiamondConnections(),
     unitCell: growDiamond(2),
     "3x3": growDiamond(3),
     "5x5": growDiamond(5),
   };
-
-  return foo;
 }
 
 function growDiamond(size: number) {

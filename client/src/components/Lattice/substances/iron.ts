@@ -5,7 +5,7 @@ import { growBcc } from "../grow.ts";
 
 const ballFe: Ball = {
   position: new Vector3(0, 0, 0),
-  color: "chocolate",
+  color: "orangered",
   radius: 126,
 };
 
