@@ -153,18 +153,7 @@ export function getHcpConnections(): Ball[] {
 
 const cubicDiamondAngle = radiusToDegree(Math.acos(-1 / 3));
 
-function getDiamondConnectionAngles1(): [number, number][] {
-  const polarAngle = 180 - cubicDiamondAngle;
-  const azimuthalOffset = 30;
-  return [
-    [180, 0],
-    [polarAngle, azimuthalOffset],
-    [polarAngle, azimuthalOffset + 120],
-    [polarAngle, azimuthalOffset + 240],
-  ];
-}
-
-function getDiamondConnectionAngles2(): [number, number][] {
+function getDiamondConnectionAngles(): [number, number][] {
   const polarAngle = cubicDiamondAngle / 2;
   const polarAngle2 = 180 - cubicDiamondAngle / 2;
   const azimuthalOffset = 45;
@@ -177,9 +166,7 @@ function getDiamondConnectionAngles2(): [number, number][] {
   ];
 }
 
-export function getDiamondConnections(
-  connectionAngles: [number, number][],
-) {
+export function getDiamondConnections() {
   const centerBall = defaultCenter;
   const connectionBall = defaultConnection;
   const connectionRadius = centerBall.radius + connectionBall.radius;
@@ -198,17 +185,9 @@ export function getDiamondConnections(
 
   const balls = [{ ...centerBall, color: "red" }];
 
-  connectionAngles.forEach(([polarAngle, azimuthalAngle]) => {
+  getDiamondConnectionAngles().forEach(([polarAngle, azimuthalAngle]) => {
     balls.push(getConnection(polarAngle, azimuthalAngle));
   });
 
   return balls;
-}
-
-export function getDiamondConnectionsAtAngle1() {
-  return getDiamondConnections(getDiamondConnectionAngles1());
-}
-
-export function getDiamondConnectionsAtAngle2() {
-  return getDiamondConnections(getDiamondConnectionAngles2());
 }

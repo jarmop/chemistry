@@ -13,6 +13,7 @@ export type RenderingContext = {
   scene: THREE.Scene;
   camera: THREE.Camera;
   molecule: THREE.Group;
+  outline: THREE.LineSegments;
   transformControls: TransformControls;
 };
 
@@ -20,6 +21,7 @@ export function init(
   container: HTMLDivElement,
   renderer: THREE.WebGLRenderer,
   balls: Ball[],
+  showOutline: boolean,
 ) {
   const width = container.clientWidth;
   const height = container.clientHeight;
@@ -45,6 +47,11 @@ export function init(
   scene.add(light2);
 
   const molecule = getMolecule(balls);
+  const outline = getOutline(balls);
+
+  if (showOutline) {
+    molecule.add(outline);
+  }
 
   scene.add(molecule);
 
@@ -91,7 +98,7 @@ export function init(
 
   container.appendChild(renderer.domElement);
 
-  return { scene, camera, molecule, transformControls };
+  return { scene, camera, molecule, outline, transformControls };
 }
 
 const sphereGeometries: Record<string, THREE.SphereGeometry> = {};
@@ -126,12 +133,10 @@ export function getMolecule(balls: Ball[]) {
     molecule.add(ballMesh);
   });
 
-  molecule.add(getDimensions(balls));
-
   return molecule;
 }
 
-function getDimensions(balls: Ball[]) {
+export function getOutline(balls: Ball[]) {
   const { min, max } = getMinMaxDimensions(
     balls.map((b) => b.position),
   );

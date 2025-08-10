@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { getMolecule, init, RenderingContext } from "./lattice.ts";
+import { getMolecule, getOutline, init, RenderingContext } from "./lattice.ts";
 import { Vector3, WebGLRenderer } from "three";
 import { getStructures, Structure } from "./structures.ts";
 
@@ -13,6 +13,7 @@ interface LatticeProps {
 
 export function Lattice({ unitCellId }: LatticeProps) {
   const [renderer] = useState(new WebGLRenderer({ antialias: true }));
+  const [showOutline, setShowOutline] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const contextRef = useRef<RenderingContext>(null);
   const eventListenerRef = useRef<(e: PointerEvent) => void>(undefined);
@@ -29,6 +30,7 @@ export function Lattice({ unitCellId }: LatticeProps) {
         containerRef.current,
         renderer,
         views[view],
+        showOutline,
       );
       setEventListeners();
     }
@@ -44,14 +46,36 @@ export function Lattice({ unitCellId }: LatticeProps) {
     scene.remove(molecule);
     transformControls.detach();
 
-    const newMolecule = getMolecule(views[newView]);
+    const balls = views[newView];
+    const newMolecule = getMolecule(balls);
+    const newOutline = getOutline(balls);
+
+    if (showOutline) {
+      newMolecule.add(newOutline);
+    }
+
     scene.add(newMolecule);
     transformControls.attach(newMolecule);
     transformControls.getHelper().visible = false;
 
     contextRef.current.molecule = newMolecule;
+    contextRef.current.outline = newOutline;
 
     setPointerMoveListener(transformControls, newMolecule);
+  }
+
+  function toggleOutline() {
+    if (!contextRef.current) {
+      return;
+    }
+    const { molecule, outline } = contextRef.current;
+    if (showOutline) {
+      molecule.remove(outline);
+      setShowOutline(false);
+    } else {
+      molecule.add(outline);
+      setShowOutline(true);
+    }
   }
 
   function setPointerMoveListener(
@@ -107,23 +131,45 @@ export function Lattice({ unitCellId }: LatticeProps) {
   return (
     <div>
       <div
-        style={{ display: "flex", alignItems: "center", marginBottom: "5px" }}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          marginBottom: "5px",
+          justifyContent: "space-between",
+          fontSize: "14px",
+        }}
       >
-        <h4 style={{ margin: 0 }}>{unitCellId}</h4>
-        <select
-          value={view}
-          onChange={(e) => changeView(e.target.value as typeof view)}
-          style={{ marginLeft: "8px" }}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            marginBottom: "5px",
+            justifyContent: "space-between",
+          }}
         >
-          {Object.keys(views).map((key) => (
-            <option key={key} value={key}>{key}</option>
-          ))}
-        </select>
+          <h4 style={{ margin: 0 }}>{unitCellId}</h4>
+          <select
+            name="view"
+            value={view}
+            onChange={(e) => changeView(e.target.value as typeof view)}
+            style={{ marginLeft: "8px", width: "80px" }}
+          >
+            {Object.keys(views).map((key) => (
+              <option key={key} value={key}>{key}</option>
+            ))}
+          </select>
+        </div>
+        <label>
+          <input
+            name="outline"
+            type="checkbox"
+            onChange={toggleOutline}
+            checked={showOutline}
+          />Show outline
+        </label>
       </div>
       <div
         ref={containerRef}
-        // style={{ width: globalThis.innerWidth, height: globalThis.innerHeight }}
-        // style={{ width: "60%", height: .5 * globalThis.innerHeight }}
         style={{ width: size, height: size }}
       >
       </div>
