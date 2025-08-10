@@ -1,6 +1,7 @@
 import { Vector3 } from "three";
 import { Ball } from "./types.ts";
 import { getPointOnSphereSurface, radiusToDegree } from "./latticeHelpers.ts";
+import { getHcpConnectionAngles } from "./grow.ts";
 
 const defaultRadius = 100;
 
@@ -136,18 +137,13 @@ export function getHcpConnections(): Ball[] {
 
   return [
     center,
-    getConnection(90, 0),
-    getConnection(90, 60),
-    getConnection(90, 120),
-    getConnection(90, 180),
-    getConnection(90, 240),
-    getConnection(90, 300),
-    getConnection(35, 90, "lightgreen"),
-    getConnection(35, 210, "lightgreen"),
-    getConnection(35, 330, "lightgreen"),
-    getConnection(145, 90, "lightgreen"),
-    getConnection(145, 210, "lightgreen"),
-    getConnection(145, 330, "lightgreen"),
+    ...getHcpConnectionAngles().map(([polarAngle, azimuthalAngle]) =>
+      getConnection(
+        polarAngle,
+        azimuthalAngle,
+        polarAngle !== 90 ? "lightgreen" : undefined,
+      )
+    ),
   ];
 }
 

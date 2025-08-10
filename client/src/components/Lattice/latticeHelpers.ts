@@ -60,17 +60,21 @@ export function getPointOnSphereSurface(
   const polarAngleRad = degreeToRadius(polarAngle);
   const azimuthalAngleRad = degreeToRadius(azimuthalAngle);
 
-  // console.log(center);
-
   const [cx, cy, cz] = center;
 
   const dx = radius * Math.sin(polarAngleRad) * Math.cos(azimuthalAngleRad);
   const dz = radius * Math.sin(polarAngleRad) * Math.sin(azimuthalAngleRad);
   const dy = -radius * Math.cos(polarAngleRad);
 
+  // return new THREE.Vector3(
+  //   cx + Math.round(dx),
+  //   cy + Math.round(dy),
+  //   cz + Math.round(dz),
+  // );
+
   return new THREE.Vector3(
-    cx + Math.round(dx),
-    cy + Math.round(dy),
-    cz + Math.round(dz),
+    cx + dx,
+    cy + dy,
+    cz + dz,
   );
 }

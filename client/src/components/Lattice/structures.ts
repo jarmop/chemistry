@@ -10,25 +10,15 @@ import { getNaCl } from "./substances/NaCl.ts";
 import { getIron } from "./substances/iron.ts";
 import { getDiamond } from "./substances/carbon.ts";
 import { getCopper } from "./substances/copper.ts";
+import { getZinc } from "./substances/zinc.ts";
+import {
+  cubeDiameterToEdge,
+  squareDiameterToSide,
+  tetrahedronHeight,
+  triangleHeight,
+} from "./mathHelpers.ts";
 
 const R = 100;
-
-function triangleHeight(sideLength: number) {
-  return sideLength * Math.sqrt(3) / 2;
-  // return sideLength * Math.sin(Math.PI / 3);
-}
-
-function tetrahedronHeight(edgeLength: number) {
-  return edgeLength * Math.sqrt(2 / 3);
-}
-
-function squareDiameterToSide(diameter: number) {
-  return diameter / Math.SQRT2;
-}
-
-function cubeDiameterToEdge(diameter: number) {
-  return diameter / Math.sqrt(3);
-}
 
 type Layer = {
   rows: { offsetX: number; cols: number }[];
@@ -272,6 +262,7 @@ const structures = {
   Iron: getIron(),
   Diamond: getDiamond(),
   Copper: getCopper(),
+  Zinc: getZinc(),
 } as const;
 
 export type Structure = keyof typeof structures;
