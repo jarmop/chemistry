@@ -87,6 +87,11 @@ export function growBcc(atomA: Ball, atomB: Ball, shape: Vector3) {
   );
   const minSize = atomA.position;
 
+  let balls: Ball[] = [atomA];
+  const ballMap: Record<string, true> = {
+    [getBallKey(atomA.position)]: true,
+  };
+
   function addConnections(center: Ball, connection: Ball) {
     getBccConnectionAngles().forEach(([polarAngle, azimuthalAngle]) => {
       const position = getPointOnSphereSurface(
@@ -96,24 +101,21 @@ export function growBcc(atomA: Ball, atomB: Ball, shape: Vector3) {
         azimuthalAngle,
       );
       const key = getBallKey(position);
-      if (!ballMap[key] && isWithin(position, minSize, maxSize)) {
+      if (!ballMap[key]) {
         const ball = {
           ...connection,
           position,
         };
-        ballMap[key] = ball;
-        addConnections(ball, center);
+        ballMap[key] = true;
+        if (isWithin(position, minSize, maxSize)) {
+          balls = [...balls, ball];
+          addConnections(ball, center);
+        }
       }
     });
   }
 
-  const ballMap: Record<string, Ball> = {
-    [getBallKey(atomA.position)]: atomA,
-  };
-
   addConnections(atomA, atomB);
-
-  const balls = Object.values(ballMap);
 
   return centerBalls(balls);
 }
@@ -208,12 +210,8 @@ function getFccConnectionAngles() {
 }
 
 export function growFcc(atom: Ball, shape: Vector3) {
-  // console.log("------- growFcc --------");
-
   const distance = 2 * atom.radius;
   const latticeConstant = 2 * distance / Math.sqrt(2);
-
-  // console.log(latticeConstant);
 
   const maxSize = new Vector3(
     (shape.x - 1) * latticeConstant,
@@ -222,12 +220,9 @@ export function growFcc(atom: Ball, shape: Vector3) {
   );
   const minSize = (new Vector3()).copy(atom.position);
 
-  // console.log(maxSize);
-
   const connectionAngles = getFccConnectionAngles();
 
-  function addConnections(atom: Ball, log = false) {
-    // console.log("------- addConnections --------");
+  function addConnections(atom: Ball) {
     const connections: Ball[] = [];
     connectionAngles.forEach(
       ([polarAngle, azimuthalAngle]) => {
@@ -239,42 +234,17 @@ export function growFcc(atom: Ball, shape: Vector3) {
         );
 
         const key = getBallKey(position);
-        // if (!ballMap[key] && (isWithin(position, minSize, maxSize) || log)) {
         if (!ballMap[key] && isWithin(position, minSize, maxSize)) {
           const ball = {
             ...atom,
             position,
-            color: log
-              ? isWithin(position, minSize, maxSize) ? "lightgreen" : "red"
-              : atom.color,
+            color: atom.color,
           };
           ballMap[key] = ball;
-          // addConnections(ball);
           connections.push(ball);
-
-          // if (log && !isWithin(position, minSize, maxSize)) {
-          //   console.log("------ did not fit --------");
-          //   console.log(position);
-          // }
-
-          // if (log) {
-          //   console.log("pushed ball");
-          //   console.log(position);
-          // }
-          // if (position.z > 210) {
-          //   console.log("-------- getPointOnSphereSurface ---------");
-          //   console.log(key);
-          //   console.log(atom.position, polarAngle, azimuthalAngle);
-          // }
-        } else if (log && !isWithin(position, minSize, maxSize)) {
-          console.log("------ did not fit --------");
-          console.log(position);
         }
       },
     );
-
-    // console.log(connections.length);
-    // console.log(connections.map((c) => c.position));
 
     return connections;
   }
@@ -292,19 +262,7 @@ export function growFcc(atom: Ball, shape: Vector3) {
     connections = newConnections.flat();
   }
 
-  // const connections2 = addConnections(connections[0]);
-
-  // ballMap[getBallKey(connections[0].position)] = {
-  //   ...connections[0],
-  //   color: "blue",
-  // };
-
-  // addConnections(connections2[0], true);
-  // addConnections(connections[1]);
-
   const balls = Object.values(ballMap);
-
-  // console.log(balls.length);
 
   return centerBalls(balls);
 }
