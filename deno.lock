@@ -29,7 +29,8 @@
     "npm:react@^19.1.0": "19.1.0",
     "npm:three@0.178": "0.178.0",
     "npm:vite@*": "6.3.2_picomatch@4.0.2",
-    "npm:vite@^6.3.2": "6.3.2_picomatch@4.0.2"
+    "npm:vite@^6.3.2": "6.3.2_picomatch@4.0.2",
+    "npm:zustand@^5.0.7": "5.0.7_@types+react@19.1.2_react@19.1.0"
   },
   "jsr": {
     "@oak/commons@1.0.0": {
@@ -834,6 +835,17 @@
     },
     "yallist@3.1.1": {
       "integrity": "sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g=="
+    },
+    "zustand@5.0.7_@types+react@19.1.2_react@19.1.0": {
+      "integrity": "sha512-Ot6uqHDW/O2VdYsKLLU8GQu8sCOM1LcoE8RwvLv9uuRT9s6SOHCKs0ZEOhxg+I1Ld+A1Q5lwx+UlKXXUoCZITg==",
+      "dependencies": [
+        "@types/react",
+        "react"
+      ],
+      "optionalPeers": [
+        "@types/react",
+        "react"
+      ]
     }
   },
   "workspace": {
@@ -848,7 +860,8 @@
       "npm:react-router-dom@^7.5.1",
       "npm:react@^19.1.0",
       "npm:three@0.178",
-      "npm:vite@^6.3.2"
+      "npm:vite@^6.3.2",
+      "npm:zustand@^5.0.7"
     ]
   }
 }
