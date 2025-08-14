@@ -8,6 +8,7 @@ const diamondBondLength = 154;
 const ballC: Ball = {
   position: new Vector3(0, 0, 0),
   color: "gray",
+  // this affects the distance of atoms as well
   radius: diamondBondLength / 2,
 };
 
@@ -21,5 +22,5 @@ export function getDiamond() {
 }
 
 function growDiamond(size: number) {
-  return growDiamondCubic(ballC, new Vector3(size, size, size));
+  return growDiamondCubic(ballC, size);
 }

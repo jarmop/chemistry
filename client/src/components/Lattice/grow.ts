@@ -1,13 +1,134 @@
 import { Vector3 } from "three";
-import { Ball } from "./types.ts";
+import { Ball, Connection, Stick } from "./types.ts";
 import {
   centerBalls,
-  degreeToRadius,
+  centerObjects,
+  centerSticks,
   getPointOnSphereSurface,
   radiusToDegree,
 } from "./latticeHelpers.ts";
 import { getBccConnectionAngles } from "./connections.ts";
 import { tetrahedronHeight } from "./mathHelpers.ts";
+import { createHexagonalBoundChecker } from "./crystal-structure-types/hexagonal.ts";
+import { createCubicBoundChecker } from "./crystal-structure-types/cubic.ts";
+
+function getBallKey(position: Vector3) {
+  function roundToTen(v: number) {
+    return Math.round(v / 10) * 10;
+  }
+  return position.toArray().map(roundToTen).join("-");
+}
+
+// the key for two sticks is identical if the sticks occupy the same space
+function getStickKey(stick: Stick) {
+  stick.start.manhattanDistanceTo;
+  return [stick.start, stick.end].map((v) =>
+    v.toArray().map((n) => Math.round(n)).join("-")
+  ).toSorted().join(",");
+}
+
+function grow(
+  center: Ball,
+  distance: number,
+  isWithinBounds: (position: Vector3) => boolean,
+  connectionAnglesDefault: [number, number][],
+  connectionAnglesReverse: [number, number][] = [],
+  isReverse: (reverse: boolean, polarAngle: number) => boolean = () => false,
+  initialReverse: boolean,
+  maxLayers?: number,
+) {
+  const ballMap: Record<string, boolean> = {
+    [getBallKey(center.position)]: true,
+  };
+
+  const stickMap: Record<string, boolean> = {};
+
+  function addConnections(center: Ball, reverse = false) {
+    const connections: Connection[] = [];
+    const connectionAngles = reverse
+      ? connectionAnglesReverse
+      : connectionAnglesDefault;
+
+    connectionAngles.forEach(
+      ([polarAngle, azimuthalAngle]) => {
+        const position = getPointOnSphereSurface(
+          center.position,
+          distance,
+          polarAngle,
+          azimuthalAngle,
+        );
+
+        const key = getBallKey(position);
+
+        if (isWithinBounds(position)) {
+          const connection: Connection = {
+            reverse: isReverse(reverse, polarAngle),
+          };
+          if (!ballMap[key]) {
+            ballMap[key] = true;
+            connection.ball = {
+              ...center,
+              position,
+              color: center.color,
+            };
+          }
+          const stick = { start: center.position, end: position };
+          const stickKey = getStickKey(stick);
+          if (!stickMap[stickKey]) {
+            stickMap[stickKey] = true;
+            connection.stick = stick;
+          }
+
+          connections.push(connection);
+        }
+      },
+    );
+
+    return connections;
+  }
+
+  let layerCount = 0;
+
+  let balls: Ball[] = [center];
+  let connections = addConnections(center, initialReverse);
+  balls = [
+    ...balls,
+    ...connections.filter((c) => c.ball).map((c) => c.ball),
+  ] as Ball[];
+
+  const sticks: Stick[] = [];
+  connections.forEach(({ ball, stick }) => {
+    if (ball) {
+      balls.push(ball);
+    }
+    if (stick) {
+      sticks.push(stick);
+    }
+  });
+
+  layerCount++;
+  while ((!maxLayers || layerCount < maxLayers) && connections.length > 0) {
+    const newConnections: Connection[][] = [];
+    connections.forEach(({ ball, reverse }) => {
+      if (ball) {
+        newConnections.push(addConnections(ball, reverse));
+      }
+    });
+    connections = newConnections.flat();
+    connections.forEach(({ ball, stick }) => {
+      if (ball) {
+        balls.push(ball);
+      }
+      if (stick) {
+        sticks.push(stick);
+      }
+    });
+
+    layerCount++;
+  }
+
+  return { balls, sticks };
+}
 
 const rockSaltConnections: [number, number][] = [
   [0, 0],
@@ -18,32 +139,10 @@ const rockSaltConnections: [number, number][] = [
   [90, 270],
 ];
 
-function isWithin(vectorRaw: Vector3, min: Vector3, max: Vector3) {
-  const vector = new Vector3(
-    Math.round(vectorRaw.x),
-    Math.round(vectorRaw.y),
-    Math.round(vectorRaw.z),
-  );
-  return vector.x >= min.x && vector.x <= max.x &&
-    vector.y >= min.y && vector.y <= max.y &&
-    vector.z >= min.z && vector.z <= max.z;
-}
-
-function getBallKey(position: Vector3) {
-  function roundToTen(v: number) {
-    return Math.round(v / 10) * 10;
-  }
-  return position.toArray().map(roundToTen).join("-");
-}
-
-export function growRockSalt(atomA: Ball, atomB: Ball, shape: Vector3): Ball[] {
+export function growRockSalt(atomA: Ball, atomB: Ball, shape: Vector3) {
   const distance = atomA.radius + atomB.radius;
-  const maxSize = new Vector3(
-    (shape.x - 1) * distance,
-    (shape.y - 1) * distance,
-    (shape.z - 1) * distance,
-  );
-  const minSize = atomA.position;
+
+  const isWithin = createCubicBoundChecker(shape.x, distance);
 
   function addConnections(center: Ball, connection: Ball) {
     rockSaltConnections.forEach(([polarAngle, azimuthalAngle]) => {
@@ -54,7 +153,7 @@ export function growRockSalt(atomA: Ball, atomB: Ball, shape: Vector3): Ball[] {
         azimuthalAngle,
       );
       const key = getBallKey(position);
-      if (!ballMap[key] && isWithin(position, minSize, maxSize)) {
+      if (!ballMap[key] && isWithin(position)) {
         const ball = {
           ...connection,
           position,
@@ -71,26 +170,21 @@ export function growRockSalt(atomA: Ball, atomB: Ball, shape: Vector3): Ball[] {
 
   addConnections(atomA, atomB);
 
-  const balls = Object.values(ballMap);
+  const balls = centerBalls(Object.values(ballMap));
 
-  return centerBalls(balls);
+  return { balls, sticks: [] };
 }
 
 export function growBcc(atomA: Ball, atomB: Ball, shape: Vector3) {
   const distance = atomA.radius + atomB.radius;
   const latticeConstant = Math.ceil(2 * distance / Math.sqrt(3));
 
-  const maxSize = new Vector3(
-    (shape.x - 1) * latticeConstant,
-    (shape.y - 1) * latticeConstant,
-    (shape.z - 1) * latticeConstant,
-  );
-  const minSize = atomA.position;
-
   let balls: Ball[] = [atomA];
   const ballMap: Record<string, true> = {
     [getBallKey(atomA.position)]: true,
   };
+
+  const isWithin = createCubicBoundChecker(shape.x, latticeConstant);
 
   function addConnections(center: Ball, connection: Ball) {
     getBccConnectionAngles().forEach(([polarAngle, azimuthalAngle]) => {
@@ -107,7 +201,7 @@ export function growBcc(atomA: Ball, atomB: Ball, shape: Vector3) {
           position,
         };
         ballMap[key] = true;
-        if (isWithin(position, minSize, maxSize)) {
+        if (isWithin(position)) {
           balls = [...balls, ball];
           addConnections(ball, center);
         }
@@ -117,79 +211,59 @@ export function growBcc(atomA: Ball, atomB: Ball, shape: Vector3) {
 
   addConnections(atomA, atomB);
 
-  return centerBalls(balls);
+  balls = centerBalls(balls);
+
+  return { balls, sticks: [] };
 }
 
 const cubicDiamondAngle = radiusToDegree(Math.acos(-1 / 3));
 
-function getDiamondConnectionAngles(): [number, number][] {
-  const polarAngle = cubicDiamondAngle / 2;
-  const polarAngle2 = 180 - cubicDiamondAngle / 2;
-  return [
-    [polarAngle, 45],
-    [polarAngle, 45 + 180],
-    [polarAngle2, 45 + 90],
-    [polarAngle2, 45 + 270],
-  ];
+function getDiamondConnectionAngles(reverse = false): [number, number][] {
+  const polarAngleBottom = cubicDiamondAngle / 2;
+  const polarAngleTop = 180 - cubicDiamondAngle / 2;
+
+  const azimuthalAngles = [[45, 45 + 180], [45 + 90, 45 + 270]];
+
+  if (reverse) {
+    azimuthalAngles.reverse();
+  }
+
+  const anglesBottom: [number, number][] = azimuthalAngles[0].map((
+    az,
+  ) => [polarAngleBottom, az]);
+  const anglesTop: [number, number][] = azimuthalAngles[1].map((
+    az,
+  ) => [polarAngleTop, az]);
+
+  return [...anglesBottom, ...anglesTop];
 }
 
 function getReverseDiamondConnectionAngles(): [number, number][] {
-  const polarAngle = cubicDiamondAngle / 2;
-  const polarAngle2 = 180 - cubicDiamondAngle / 2;
-  return [
-    [polarAngle, 45 + 90],
-    [polarAngle, 45 + 270],
-    [polarAngle2, 45],
-    [polarAngle2, 45 + 180],
-  ];
+  return getDiamondConnectionAngles(true);
 }
 
-export function growDiamondCubic(atom: Ball, shape: Vector3) {
+export function growDiamondCubic(atom: Ball, size: number) {
   const distance = 2 * atom.radius;
   const edgeLength = distance * Math.sqrt(8 / 3);
   const latticeConstant = Math.ceil(2 * edgeLength / Math.sqrt(2));
 
-  const maxSize = new Vector3(
-    (shape.x - 1) * latticeConstant,
-    (shape.y - 1) * latticeConstant,
-    (shape.z - 1) * latticeConstant,
-  );
-  const minSize = (new Vector3()).copy(atom.position);
+  const isWithinBounds = createCubicBoundChecker(size, latticeConstant);
 
-  function addConnections(atom: Ball, reverse: boolean) {
-    const connectionAngles = reverse
-      ? getReverseDiamondConnectionAngles()
-      : getDiamondConnectionAngles();
-    connectionAngles.forEach(
-      ([polarAngle, azimuthalAngle]) => {
-        const position = getPointOnSphereSurface(
-          atom.position,
-          distance,
-          polarAngle,
-          azimuthalAngle,
-        );
-        const key = getBallKey(position);
-        if (!ballMap[key] && isWithin(position, minSize, maxSize)) {
-          const ball = {
-            ...atom,
-            position,
-          };
-          ballMap[key] = ball;
-          addConnections(ball, !reverse);
-        }
-      },
-    );
+  function isReverse(reverse: boolean) {
+    return !reverse;
   }
 
-  const ballMap: Record<string, Ball> = {
-    [getBallKey(atom.position)]: atom,
-  };
+  const { balls, sticks } = grow(
+    atom,
+    distance,
+    isWithinBounds,
+    getDiamondConnectionAngles(),
+    getReverseDiamondConnectionAngles(),
+    isReverse,
+    true,
+  );
 
-  addConnections(atom, true);
-
-  const balls = Object.values(ballMap);
-
-  return centerBalls(balls);
+  return { balls: centerObjects(balls), sticks: centerSticks(sticks) };
 }
 
 function getFccConnectionAngles() {
@@ -213,14 +287,9 @@ export function growFcc(atom: Ball, shape: Vector3) {
   const distance = 2 * atom.radius;
   const latticeConstant = 2 * distance / Math.sqrt(2);
 
-  const maxSize = new Vector3(
-    (shape.x - 1) * latticeConstant,
-    (shape.y - 1) * latticeConstant,
-    (shape.z - 1) * latticeConstant,
-  );
-  const minSize = (new Vector3()).copy(atom.position);
-
   const connectionAngles = getFccConnectionAngles();
+
+  const isWithin = createCubicBoundChecker(shape.x, latticeConstant);
 
   function addConnections(atom: Ball) {
     const connections: Ball[] = [];
@@ -234,7 +303,7 @@ export function growFcc(atom: Ball, shape: Vector3) {
         );
 
         const key = getBallKey(position);
-        if (!ballMap[key] && isWithin(position, minSize, maxSize)) {
+        if (!ballMap[key] && isWithin(position)) {
           const ball = {
             ...atom,
             position,
@@ -262,31 +331,25 @@ export function growFcc(atom: Ball, shape: Vector3) {
     connections = newConnections.flat();
   }
 
-  const balls = Object.values(ballMap);
+  const balls = centerBalls(Object.values(ballMap));
 
-  return centerBalls(balls);
+  return { balls, sticks: [] };
 }
 
 const tetrahedronPlaneEdgeAngle = radiusToDegree(
   Math.acos(tetrahedronHeight(1)),
 );
 
-const hcpPolar2 = tetrahedronPlaneEdgeAngle;
-const hcpPolar3 = 180 - tetrahedronPlaneEdgeAngle;
+export function getHcpConnectionAngles(reverse = false): [number, number][] {
+  const hcpPolarMiddle = 90;
+  const hcpPolarTop = tetrahedronPlaneEdgeAngle;
+  const hcpPolarBottom = 180 - tetrahedronPlaneEdgeAngle;
 
-function getHcpMiddleAngles() {
-  const angles: [number, number][] = [];
-  const polarAngle = 90;
+  const middleAngles: [number, number][] = [];
   for (let azimuthalAngle = 0; azimuthalAngle < 360; azimuthalAngle += 60) {
-    angles.push([polarAngle, azimuthalAngle]);
+    middleAngles.push([hcpPolarMiddle, azimuthalAngle]);
   }
 
-  return angles;
-}
-
-const hcpMiddleAngles = getHcpMiddleAngles();
-
-export function getHcpConnectionAngles(reverse = false): [number, number][] {
   const topAngles: [number, number][] = [];
   const bottomAngles: [number, number][] = [];
   for (
@@ -294,12 +357,12 @@ export function getHcpConnectionAngles(reverse = false): [number, number][] {
     azimuthalAngle < 360;
     azimuthalAngle += 120
   ) {
-    topAngles.push([hcpPolar2, azimuthalAngle]);
-    bottomAngles.push([hcpPolar3, azimuthalAngle]);
+    topAngles.push([hcpPolarTop, azimuthalAngle]);
+    bottomAngles.push([hcpPolarBottom, azimuthalAngle]);
   }
 
   return [
-    ...hcpMiddleAngles,
+    ...middleAngles,
     ...topAngles,
     ...bottomAngles,
   ];
@@ -318,107 +381,21 @@ export function growHcp(
   const maxLayers = useBounds ? Math.ceil(Math.sqrt(2) * size) : size;
   const { a, c } = latticeConstants;
   const distance = a;
-  const maxDy = size * c / 2;
 
-  const xzBoundaryMax = size * a;
-  const xzBoundaryMin = xzBoundaryMax * Math.cos(Math.PI / 6);
+  const isWithinBounds = createHexagonalBoundChecker(size * a, size * c);
 
-  function isWithinBounds(position: Vector3) {
-    if (!useBounds) {
-      return true;
-    }
-    const { x, y, z } = position;
-    const dx = Math.abs(x);
-    const dz = Math.abs(z);
-    const dxz = Math.sqrt(Math.pow(dx, 2) + Math.pow(dz, 2));
-    const dy = Math.abs(y);
-
-    const xzAngleFromXAxis = radiusToDegree(Math.atan(dz / dx));
-
-    /**
-     * Angle between dxz and the line perpendicular to a side of the hexagon
-     * Side of a hexagon covers 60 degrees. We translate the angle like this:
-     * 0 --> 30
-     * 15 --> 15
-     * 30 --> 0
-     * 45 --> 15
-     * 60 --> 30
-     *
-     * Then we can calculate the max boundary at that angle
-     */
-    const simplifiedAngle = Math.abs(xzAngleFromXAxis % 60 - 30);
-
-    const maxDxz = Math.ceil(
-      xzBoundaryMin / Math.cos(degreeToRadius(simplifiedAngle)),
-    );
-
-    return dxz <= maxDxz && dy <= maxDy;
+  function isReverse(reverse: boolean, polarAngle: number) {
+    return polarAngle === 90 ? reverse : !reverse;
   }
 
-  const ballMap: Record<string, boolean> = {
-    [getBallKey(center.position)]: true,
-  };
-  // const ballMap: Record<string, Ball> = {
-  //   [getBallKey(center.position)]: { ...center, color: "blue" },
-  // };
-
-  function addConnections(atom: Ball, reverse = false) {
-    const connections: { ball: Ball; reverse: boolean }[] = [];
-    const connectionAngles = reverse
-      ? getReverseHcpConnectionAngles()
-      : getHcpConnectionAngles();
-
-    connectionAngles.forEach(
-      ([polarAngle, azimuthalAngle]) => {
-        const position = getPointOnSphereSurface(
-          atom.position,
-          distance,
-          polarAngle,
-          azimuthalAngle,
-        );
-
-        const key = getBallKey(position);
-        // if (!ballMap[key] && isWithinBounds(position)) {
-        if (!ballMap[key]) {
-          ballMap[key] = true;
-
-          if (isWithinBounds(position)) {
-            const ball = {
-              ...atom,
-              position,
-              // color: !isWithinBounds(position) ? "red" : atom.color,
-              color: atom.color,
-            };
-
-            connections.push({
-              ball,
-              reverse: polarAngle === 90 ? reverse : !reverse,
-            });
-          }
-        }
-      },
-    );
-
-    return connections;
-  }
-
-  let layerCount = 0;
-
-  let balls: Ball[] = [{ ...center, color: "blue" }];
-  let connections = addConnections(center);
-  balls = [...balls, ...connections.map((c) => c.ball)];
-
-  layerCount++;
-  while (layerCount < maxLayers && connections.length > 0) {
-    const newConnections: { ball: Ball; reverse: boolean }[][] = [];
-    connections.forEach(({ ball, reverse }) => {
-      newConnections.push(addConnections(ball, reverse));
-    });
-    connections = newConnections.flat();
-    balls = [...balls, ...connections.map((c) => c.ball)];
-
-    layerCount++;
-  }
-
-  return balls;
+  return grow(
+    center,
+    distance,
+    isWithinBounds,
+    getHcpConnectionAngles(),
+    getReverseHcpConnectionAngles(),
+    isReverse,
+    false,
+    maxLayers,
+  );
 }

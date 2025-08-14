@@ -1,7 +1,6 @@
 import { Vector3 } from "three";
 import { Ball } from "../types.ts";
 import { growHcp } from "../grow.ts";
-import { getHcpConnections } from "../connections.ts";
 
 // Lattice constants
 const latticeConstants = {
@@ -20,8 +19,6 @@ const ballZinc: Ball = {
 
 export function getZinc() {
   return {
-    // unitCell: growZinc(1),
-    // connections: getHcpConnections(),
     "1 layer": growZinc(1),
     "2 layers": growZinc(2, false),
     "4 layers": growZinc(4, false),

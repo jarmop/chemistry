@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { getMolecule, getOutline, init, RenderingContext } from "./lattice.ts";
+import { getOutline, getStructure, init, RenderingContext } from "./lattice.ts";
 import { Vector3, WebGLRenderer } from "three";
 import {
   getStructureMap,
@@ -30,12 +30,16 @@ export function Structure3D({ structureMapKey: unitCellId }: LatticeProps) {
 
   useEffect(() => {
     if (containerRef.current && !contextRef.current) {
-      const balls = structureMap[selectedStructureKey];
+      const { balls, sticks } = structureMap[selectedStructureKey];
+      if (!balls) {
+        return;
+      }
 
       contextRef.current = init(
         containerRef.current,
         renderer,
         balls,
+        sticks,
         showOutline,
       );
       setEventListeners();
@@ -47,46 +51,46 @@ export function Structure3D({ structureMapKey: unitCellId }: LatticeProps) {
     if (!contextRef.current) {
       return;
     }
-    const { scene, molecule, transformControls } = contextRef.current;
+    const { scene, structure, transformControls } = contextRef.current;
 
-    scene.remove(molecule);
+    scene.remove(structure);
     transformControls.detach();
 
-    const balls = structureMap[structureKey];
-    const newMolecule = getMolecule(balls);
+    const { balls, sticks } = structureMap[structureKey];
+    const newStructure = getStructure(balls, sticks);
     const newOutline = getOutline(balls);
 
     if (showOutline) {
-      newMolecule.add(newOutline);
+      newStructure.add(newOutline);
     }
 
-    scene.add(newMolecule);
-    transformControls.attach(newMolecule);
+    scene.add(newStructure);
+    transformControls.attach(newStructure);
     transformControls.getHelper().visible = false;
 
-    contextRef.current.molecule = newMolecule;
+    contextRef.current.structure = newStructure;
     contextRef.current.outline = newOutline;
 
-    setPointerMoveListener(transformControls, newMolecule);
+    setPointerMoveListener(transformControls, newStructure);
   }
 
   function toggleOutline() {
     if (!contextRef.current) {
       return;
     }
-    const { molecule, outline } = contextRef.current;
+    const { structure, outline } = contextRef.current;
     if (showOutline) {
-      molecule.remove(outline);
+      structure.remove(outline);
       setShowOutline(false);
     } else {
-      molecule.add(outline);
+      structure.add(outline);
       setShowOutline(true);
     }
   }
 
   function setPointerMoveListener(
     transformControls: RenderingContext["transformControls"],
-    molecule: RenderingContext["molecule"],
+    structure: RenderingContext["structure"],
   ) {
     if (eventListenerRef.current) {
       renderer.domElement.removeEventListener(
@@ -100,11 +104,11 @@ export function Structure3D({ structureMapKey: unitCellId }: LatticeProps) {
         const deltaX = e.movementX;
         const deltaY = e.movementY;
         const rotateSpeed = Math.PI * 0.002;
-        molecule.rotateOnWorldAxis(
+        structure.rotateOnWorldAxis(
           new Vector3(1, 0, 0),
           deltaY * rotateSpeed,
         );
-        molecule.rotateOnWorldAxis(
+        structure.rotateOnWorldAxis(
           new Vector3(0, 1, 0),
           deltaX * rotateSpeed,
         );
@@ -121,7 +125,7 @@ export function Structure3D({ structureMapKey: unitCellId }: LatticeProps) {
 
   function setEventListeners() {
     if (!contextRef.current) return;
-    const { transformControls, molecule } = contextRef.current;
+    const { transformControls, structure } = contextRef.current;
 
     renderer.domElement.addEventListener("pointerdown", () => {
       pointerDown = true;
@@ -131,7 +135,7 @@ export function Structure3D({ structureMapKey: unitCellId }: LatticeProps) {
       pointerDown = false;
     });
 
-    setPointerMoveListener(transformControls, molecule);
+    setPointerMoveListener(transformControls, structure);
   }
 
   return (

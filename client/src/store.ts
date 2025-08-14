@@ -21,7 +21,7 @@ const getStructures3DStore: StateSliceCreator<Structures3DStore> = (
   get,
 ) => {
   return {
-    selectedStructureMapKeys: ["HCP", "Zinc"],
+    selectedStructureMapKeys: [],
     toggleStructureMapKey: (structureMapKey: StructureMapKey) => {
       const selectedStructureMapKeys = get().selectedStructureMapKeys;
       const newSelectedStructureMapKeys =

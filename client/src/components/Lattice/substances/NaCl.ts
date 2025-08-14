@@ -32,7 +32,7 @@ export function getUnitCell() {
 export function getNaCl() {
   const size = 5;
 
-  const NaCl: Record<string, Ball[]> = {
+  const NaCl = {
     unitCell: getUnitCell(),
     connectionsNa: getNaClConnectionsNa(),
     connectionsCl: getNaClConnectionsCl(),

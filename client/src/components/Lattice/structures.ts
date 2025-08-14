@@ -31,7 +31,7 @@ type Layer = {
 };
 
 function getBalls(layers: Layer[], layerDistance: number = 0) {
-  const balls: Ball[] = [];
+  let balls: Ball[] = [];
   for (let i = 0; i < layers.length; i++) {
     const y = i * layerDistance;
     const { rows, distanceX, distanceZ, offsetZ, color } = layers[i];
@@ -49,7 +49,9 @@ function getBalls(layers: Layer[], layerDistance: number = 0) {
     }
   }
 
-  return centerBalls(balls);
+  balls = centerBalls(balls);
+
+  return { balls, sticks: [] };
 }
 
 function getHexagonalBalls(layers: Layer[]) {

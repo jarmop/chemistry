@@ -55,15 +55,18 @@ export function getPcConnections(
     };
   }
 
-  return [
-    centerBall,
-    getConnection(0, 0),
-    getConnection(180, 0),
-    getConnection(90, 45),
-    getConnection(90, 90 + 45),
-    getConnection(90, 180 + 45),
-    getConnection(90, 270 + 45),
-  ];
+  return {
+    balls: [
+      centerBall,
+      getConnection(0, 0),
+      getConnection(180, 0),
+      getConnection(90, 45),
+      getConnection(90, 90 + 45),
+      getConnection(90, 180 + 45),
+      getConnection(90, 270 + 45),
+    ],
+    sticks: [],
+  };
 }
 
 export function getBccConnectionAngles() {
@@ -101,50 +104,56 @@ export function getBccConnections(
     balls.push(getConnection(polarAngle, azimuthalAngle));
   });
 
-  return balls;
+  return { balls, sticks: [] };
 }
 
-export function getFccConnections(): Ball[] {
+export function getFccConnections() {
   const center = {
     position: new Vector3(0, 0, 0),
     color: "red",
     radius: defaultRadius,
   };
 
-  return [
-    center,
-    getConnection(90, 0),
-    getConnection(90, 60),
-    getConnection(90, 120),
-    getConnection(90, 180),
-    getConnection(90, 240),
-    getConnection(90, 300),
-    getConnection(35, 30, "lightgreen"),
-    getConnection(35, 150, "lightgreen"),
-    getConnection(35, 270, "lightgreen"),
-    getConnection(145, 90, "lightgreen"),
-    getConnection(145, 210, "lightgreen"),
-    getConnection(145, 330, "lightgreen"),
-  ];
+  return {
+    balls: [
+      center,
+      getConnection(90, 0),
+      getConnection(90, 60),
+      getConnection(90, 120),
+      getConnection(90, 180),
+      getConnection(90, 240),
+      getConnection(90, 300),
+      getConnection(35, 30, "lightgreen"),
+      getConnection(35, 150, "lightgreen"),
+      getConnection(35, 270, "lightgreen"),
+      getConnection(145, 90, "lightgreen"),
+      getConnection(145, 210, "lightgreen"),
+      getConnection(145, 330, "lightgreen"),
+    ],
+    sticks: [],
+  };
 }
 
-export function getHcpConnections(): Ball[] {
+export function getHcpConnections() {
   const center = {
     position: new Vector3(0, 0, 0),
     color: "red",
     radius: defaultRadius,
   };
 
-  return [
-    center,
-    ...getHcpConnectionAngles().map(([polarAngle, azimuthalAngle]) =>
-      getConnection(
-        polarAngle,
-        azimuthalAngle,
-        polarAngle !== 90 ? "lightgreen" : undefined,
-      )
-    ),
-  ];
+  return {
+    balls: [
+      center,
+      ...getHcpConnectionAngles().map(([polarAngle, azimuthalAngle]) =>
+        getConnection(
+          polarAngle,
+          azimuthalAngle,
+          polarAngle !== 90 ? "lightgreen" : undefined,
+        )
+      ),
+    ],
+    sticks: [],
+  };
 }
 
 const cubicDiamondAngle = radiusToDegree(Math.acos(-1 / 3));
@@ -185,5 +194,5 @@ export function getDiamondConnections() {
     balls.push(getConnection(polarAngle, azimuthalAngle));
   });
 
-  return balls;
+  return { balls, sticks: [] };
 }

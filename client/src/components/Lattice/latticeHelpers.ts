@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { Ball } from "./types.ts";
+import { Ball, Stick } from "./types.ts";
 
 const radInDeg = 180 / Math.PI;
 
@@ -35,7 +35,7 @@ export function getMinMaxDimensions(vectors: THREE.Vector3[]) {
   return { min, max };
 }
 
-export function centerBalls(balls: Ball[]) {
+export function centerBalls(balls: Ball[]): Ball[] {
   const { max } = getMinMaxDimensions(balls.map((b) => b.position));
 
   const adjustment = new THREE.Vector3();
@@ -44,6 +44,32 @@ export function centerBalls(balls: Ball[]) {
   return balls.map((ball) => ({
     ...ball,
     position: new THREE.Vector3().copy(ball.position).add(adjustment),
+  }));
+}
+
+export function centerSticks(sticks: Stick[]): Stick[] {
+  const { max } = getMinMaxDimensions(sticks.flatMap((s) => [s.start, s.end]));
+
+  const adjustment = new THREE.Vector3();
+  adjustment.copy(max).multiplyScalar(-1 / 2);
+
+  return sticks.map((stick) => ({
+    start: new THREE.Vector3().copy(stick.start).add(adjustment),
+    end: new THREE.Vector3().copy(stick.end).add(adjustment),
+  }));
+}
+
+export function centerObjects<T extends { position: THREE.Vector3 }>(
+  objects: T[],
+): T[] {
+  const { max } = getMinMaxDimensions(objects.map((o) => o.position));
+
+  const adjustment = new THREE.Vector3();
+  adjustment.copy(max).multiplyScalar(-1 / 2);
+
+  return objects.map((o) => ({
+    ...o,
+    position: new THREE.Vector3().copy(o.position).add(adjustment),
   }));
 }
 

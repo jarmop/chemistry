@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import { TrackballControls } from "three/addons/controls/TrackballControls.js";
 import { TransformControls } from "three/addons/controls/TransformControls.js";
-import { Ball } from "./types.ts";
+import { Ball, Stick } from "./types.ts";
 import { getMinMaxDimensions } from "./latticeHelpers.ts";
 
 const near = 1;
@@ -12,7 +12,7 @@ const zoom = 800;
 export type RenderingContext = {
   scene: THREE.Scene;
   camera: THREE.Camera;
-  molecule: THREE.Group;
+  structure: THREE.Group;
   outline: THREE.LineSegments;
   transformControls: TransformControls;
 };
@@ -21,6 +21,7 @@ export function init(
   container: HTMLDivElement,
   renderer: THREE.WebGLRenderer,
   balls: Ball[],
+  sticks: Stick[],
   showOutline: boolean,
 ) {
   const width = container.clientWidth;
@@ -46,18 +47,18 @@ export function init(
   light2.position.set(-1, -1, 1);
   scene.add(light2);
 
-  const molecule = getMolecule(balls);
+  const structure = getStructure(balls, sticks);
   const outline = getOutline(balls);
 
   if (showOutline) {
-    molecule.add(outline);
+    structure.add(outline);
   }
 
-  scene.add(molecule);
+  scene.add(structure);
 
   const transformControls = new TransformControls(camera, renderer.domElement);
 
-  transformControls.attach(molecule);
+  transformControls.attach(structure);
   transformControls.setMode("rotate");
   transformControls.setSize(2);
   transformControls.enabled = false;
@@ -98,17 +99,17 @@ export function init(
 
   container.appendChild(renderer.domElement);
 
-  return { scene, camera, molecule, outline, transformControls };
+  return { scene, camera, structure, outline, transformControls };
 }
 
 const sphereGeometries: Record<string, THREE.SphereGeometry> = {};
 
-function getSphereGeometry(ball: Ball) {
-  if (!sphereGeometries[ball.radius]) {
-    sphereGeometries[ball.radius] = new THREE.SphereGeometry(ball.radius);
+function getSphereGeometry(radius: number) {
+  if (!sphereGeometries[radius]) {
+    sphereGeometries[radius] = new THREE.SphereGeometry(radius);
   }
 
-  return sphereGeometries[ball.radius];
+  return sphereGeometries[radius];
 }
 
 const meshPhongMaterials: Record<string, THREE.MeshPhongMaterial> = {};
@@ -122,18 +123,50 @@ function getMeshPhongMaterial(ball: Ball) {
   return meshPhongMaterials[ball.color];
 }
 
-export function getMolecule(balls: Ball[]) {
-  const molecule = new THREE.Group();
+const stickMaterial = new THREE.MeshPhongMaterial({
+  color: "gray",
+});
+
+function createStick(
+  start: THREE.Vector3,
+  end: THREE.Vector3,
+) {
+  const radius = 10;
+
+  const distance = start.distanceTo(end);
+  const cylinderGeometry = new THREE.CylinderGeometry(
+    radius,
+    radius,
+    distance,
+    16,
+  );
+  const cylinderMesh = new THREE.Mesh(cylinderGeometry, stickMaterial);
+
+  cylinderMesh.position.copy(start);
+  cylinderMesh.lookAt(end);
+  // Rotate the cylinder by 90 degrees around the X-axis to align it with the z-axis.
+  cylinderMesh.rotateX(Math.PI * 0.5);
+  // Translate the cylinder up by half its height to center it on the line between points A and B.
+  cylinderMesh.translateY(distance * 0.5);
+  return cylinderMesh;
+}
+
+export function getStructure(balls: Ball[], sticks: Stick[]) {
+  const structure = new THREE.Group();
   balls.forEach((ball) => {
     const ballMesh = new THREE.Mesh(
-      getSphereGeometry(ball),
+      getSphereGeometry(ball.radius / 2),
       getMeshPhongMaterial(ball),
     );
     ballMesh.position.copy(ball.position);
-    molecule.add(ballMesh);
+    structure.add(ballMesh);
   });
 
-  return molecule;
+  sticks.forEach(({ start, end }) => {
+    structure.add(createStick(start, end));
+  });
+
+  return structure;
 }
 
 export function getOutline(balls: Ball[]) {
