@@ -265,14 +265,20 @@ const structures = {
   Zinc: getZinc(),
 } as const;
 
-export type Structure = keyof typeof structures;
+export type StructureMaps = typeof structures;
 
-export type Structures = Record<Structure, Record<string, Ball[]>>;
+export type StructureMapKey = keyof StructureMaps;
 
-export function getStructures(): Structures {
-  return structures;
+// export type StructureMaps = Record<StructureMapKey, Record<string, Ball[]>>;
+
+export type StructureMap = StructureMaps[StructureMapKey];
+
+export function getStructureMap<T extends StructureMapKey>(
+  key: T,
+): StructureMaps[T] {
+  return structures[key];
 }
 
-export function getStructureKeys() {
-  return Object.keys(structures) as Structure[];
+export function getStructureMapKeys() {
+  return Object.keys(structures) as StructureMapKey[];
 }

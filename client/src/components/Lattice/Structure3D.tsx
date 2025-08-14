@@ -1,43 +1,49 @@
 import { useEffect, useRef, useState } from "react";
 import { getMolecule, getOutline, init, RenderingContext } from "./lattice.ts";
 import { Vector3, WebGLRenderer } from "three";
-import { getStructures, Structure } from "./structures.ts";
+import {
+  getStructureMap,
+  StructureMap,
+  StructureMapKey,
+} from "./structures.ts";
 
 const size = 300;
 
 let pointerDown = false;
 
 interface LatticeProps {
-  unitCellId: Structure;
+  structureMapKey: StructureMapKey;
 }
 
-export function Lattice({ unitCellId }: LatticeProps) {
+export function Structure3D({ structureMapKey: unitCellId }: LatticeProps) {
   const [renderer] = useState(new WebGLRenderer({ antialias: true }));
   const [showOutline, setShowOutline] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const contextRef = useRef<RenderingContext>(null);
   const eventListenerRef = useRef<(e: PointerEvent) => void>(undefined);
 
-  const views = getStructures()[unitCellId];
+  const structureMap = getStructureMap(unitCellId);
 
-  const [view, setView] = useState(
-    Object.keys(views)[0],
+  const [selectedStructureKey, selectStructureKey] = useState(
+    Object.keys(structureMap)[0] as keyof StructureMap,
   );
 
   useEffect(() => {
     if (containerRef.current && !contextRef.current) {
+      const balls = structureMap[selectedStructureKey];
+
       contextRef.current = init(
         containerRef.current,
         renderer,
-        views[view],
+        balls,
         showOutline,
       );
       setEventListeners();
     }
   }, []);
 
-  function changeView(newView: typeof view) {
-    setView(newView);
+  function changeStructure(structureKey: keyof StructureMap) {
+    selectStructureKey(structureKey);
     if (!contextRef.current) {
       return;
     }
@@ -46,7 +52,7 @@ export function Lattice({ unitCellId }: LatticeProps) {
     scene.remove(molecule);
     transformControls.detach();
 
-    const balls = views[newView];
+    const balls = structureMap[structureKey];
     const newMolecule = getMolecule(balls);
     const newOutline = getOutline(balls);
 
@@ -149,12 +155,13 @@ export function Lattice({ unitCellId }: LatticeProps) {
         >
           <h4 style={{ margin: 0 }}>{unitCellId}</h4>
           <select
-            name="view"
-            value={view}
-            onChange={(e) => changeView(e.target.value as typeof view)}
+            name="viestructurew"
+            value={selectedStructureKey}
+            onChange={(e) =>
+              changeStructure(e.target.value as keyof StructureMap)}
             style={{ marginLeft: "8px", width: "80px" }}
           >
-            {Object.keys(views).map((key) => (
+            {Object.keys(structureMap).map((key) => (
               <option key={key} value={key}>{key}</option>
             ))}
           </select>

@@ -1,13 +1,13 @@
 import { create, StateCreator } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
-import { Structure } from "./components/Lattice/structures.ts";
+import { StructureMapKey } from "./components/Lattice/structures.ts";
 
-type Molecules3DStore = {
-  selectedMolecule3Ds: Structure[];
-  toggleMolecule3D: (selectedMolecule3D: Structure) => void;
+type Structures3DStore = {
+  selectedStructureMapKeys: StructureMapKey[];
+  toggleStructureMapKey: (structureMapKey: StructureMapKey) => void;
 };
 
-type Store = Molecules3DStore;
+type Store = Structures3DStore;
 
 type StateSliceCreator<StateSlice> = StateCreator<
   StateSlice,
@@ -16,17 +16,21 @@ type StateSliceCreator<StateSlice> = StateCreator<
   StateSlice
 >;
 
-const getMolecules3dStore: StateSliceCreator<Molecules3DStore> = (set, get) => {
+const getStructures3DStore: StateSliceCreator<Structures3DStore> = (
+  set,
+  get,
+) => {
   return {
-    selectedMolecule3Ds: ["HCP", "Zinc"],
-    toggleMolecule3D: (molecule3D: Structure) => {
-      const selectedMolecule3Ds = get().selectedMolecule3Ds;
-      const newSelectedMolecule3Ds = selectedMolecule3Ds.includes(molecule3D)
-        ? [...selectedMolecule3Ds.filter((m) => m !== molecule3D)]
-        : [...selectedMolecule3Ds, molecule3D];
+    selectedStructureMapKeys: ["HCP", "Zinc"],
+    toggleStructureMapKey: (structureMapKey: StructureMapKey) => {
+      const selectedStructureMapKeys = get().selectedStructureMapKeys;
+      const newSelectedStructureMapKeys =
+        selectedStructureMapKeys.includes(structureMapKey)
+          ? [...selectedStructureMapKeys.filter((m) => m !== structureMapKey)]
+          : [...selectedStructureMapKeys, structureMapKey];
 
       set({
-        selectedMolecule3Ds: newSelectedMolecule3Ds,
+        selectedStructureMapKeys: newSelectedStructureMapKeys,
       });
     },
   };
@@ -35,7 +39,7 @@ const getMolecules3dStore: StateSliceCreator<Molecules3DStore> = (set, get) => {
 export const useStore = create<Store>()(
   persist(
     (...a) => ({
-      ...getMolecules3dStore(...a),
+      ...getStructures3DStore(...a),
     }),
     {
       name: "chemistry",
