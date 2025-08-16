@@ -127,6 +127,36 @@ function grow(
     layerCount++;
   }
 
+  // Add sticks to the last layer
+  connections.map(({ ball: center, reverse }) => {
+    if (!center) {
+      return;
+    }
+    const connectionAngles = reverse
+      ? connectionAnglesReverse
+      : connectionAnglesDefault;
+    connectionAngles.forEach(
+      ([polarAngle, azimuthalAngle]) => {
+        const position = getPointOnSphereSurface(
+          center.position,
+          distance,
+          polarAngle,
+          azimuthalAngle,
+        );
+
+        const connectionBall = ballMap[getBallKey(position)];
+        if (connectionBall) {
+          const stick = { start: center.position, end: position };
+          const stickKey = getStickKey(stick);
+          if (!stickMap[stickKey]) {
+            stickMap[stickKey] = true;
+            sticks.push(stick);
+          }
+        }
+      },
+    );
+  });
+
   return { balls, sticks };
 }
 

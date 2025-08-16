@@ -20,13 +20,13 @@ const ballZinc: Ball = {
 export function getZinc() {
   return {
     "1 layer": growZinc(1),
-    "2 layers": growZinc(2, false),
-    "4 layers": growZinc(4, false),
-    "2 layers, pillar": growZinc(2),
-    "4 layers, pillar": growZinc(4),
+    "2 layers": growZinc(2),
+    "4 layers": growZinc(4),
+    "2 layers, pillar": growZinc(2, true),
+    "4 layers, pillar": growZinc(4, true),
   };
 }
 
-function growZinc(size: number, useBounds = true) {
+function growZinc(size: number, useBounds = false) {
   return () => growHcp(ballZinc, latticeConstants, size, useBounds);
 }
