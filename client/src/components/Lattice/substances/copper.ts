@@ -14,12 +14,12 @@ const ballCu: Ball = {
 export function getCopper() {
   return {
     unitCell: growCopper(2),
-    connections: getFccConnections(),
+    connections: () => getFccConnections(),
     "3x3": growCopper(3),
     "5x5": growCopper(5),
   };
 }
 
 function growCopper(size: number) {
-  return growFcc(ballCu, new Vector3(size, size, size));
+  return () => growFcc(ballCu, new Vector3(size, size, size));
 }

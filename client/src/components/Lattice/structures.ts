@@ -105,9 +105,9 @@ function getHCP() {
   ];
 
   return {
-    unitCell: getHexagonalBalls(layers),
-    layer: getLayerBalls(hexagonLayer),
-    connections: getHcpConnections(),
+    unitCell: () => getHexagonalBalls(layers),
+    layer: () => getLayerBalls(hexagonLayer),
+    connections: () => getHcpConnections(),
   };
 }
 
@@ -192,9 +192,9 @@ function getPC() {
   });
 
   return {
-    unitCell: getBalls([layerA, layerA], 2 * R),
-    layer: getLayerBalls(layerA),
-    connections: getPcConnections(),
+    unitCell: () => getBalls([layerA, layerA], 2 * R),
+    layer: () => getLayerBalls(layerA),
+    connections: () => getPcConnections(),
   };
 }
 
@@ -214,8 +214,8 @@ function getBCC() {
   });
 
   return {
-    unitCell: getBalls([layerA, layerB, layerA], distance),
-    layer: getLayerBalls(layerA),
+    unitCell: () => getBalls([layerA, layerB, layerA], distance),
+    layer: () => getLayerBalls(layerA),
   };
 }
 
@@ -246,12 +246,12 @@ function getFCC() {
   });
 
   return {
-    unitCell: getBalls([layerA, layerB, layerA], distance),
-    layerA: getLayerBalls(layerA),
-    layerB: getLayerBalls(layerB),
-    CCP: getCCP().unitCell,
-    "CCP=FCC": getCcpIsFcc().unitCell,
-    connections: getFccConnections(),
+    unitCell: () => getBalls([layerA, layerB, layerA], distance),
+    layerA: () => getLayerBalls(layerA),
+    layerB: () => getLayerBalls(layerB),
+    CCP: () => getCCP().unitCell,
+    "CCP=FCC": () => getCcpIsFcc().unitCell,
+    connections: () => getFccConnections(),
   };
 }
 

@@ -28,5 +28,5 @@ export function getZinc() {
 }
 
 function growZinc(size: number, useBounds = true) {
-  return growHcp(ballZinc, latticeConstants, size, useBounds);
+  return () => growHcp(ballZinc, latticeConstants, size, useBounds);
 }

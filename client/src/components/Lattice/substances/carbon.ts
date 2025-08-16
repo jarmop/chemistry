@@ -14,7 +14,7 @@ const ballC: Ball = {
 
 export function getDiamond() {
   return {
-    connections: getDiamondConnections(),
+    connections: () => getDiamondConnections(),
     unitCell: growDiamond(2),
     "3x3": growDiamond(3),
     "5x5": growDiamond(5),
@@ -22,5 +22,5 @@ export function getDiamond() {
 }
 
 function growDiamond(size: number) {
-  return growDiamondCubic(ballC, size);
+  return () => growDiamondCubic(ballC, size);
 }

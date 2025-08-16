@@ -6,6 +6,7 @@ import {
   StructureMap,
   StructureMapKey,
 } from "./structures.ts";
+import { Ball, Stick } from "./types.ts";
 
 const size = 300;
 
@@ -15,22 +16,31 @@ interface LatticeProps {
   structureMapKey: StructureMapKey;
 }
 
-export function Structure3D({ structureMapKey: unitCellId }: LatticeProps) {
+export function Structure3D(
+  { structureMapKey: structureMapKey }: LatticeProps,
+) {
   const [renderer] = useState(new WebGLRenderer({ antialias: true }));
   const [showOutline, setShowOutline] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const contextRef = useRef<RenderingContext>(null);
   const eventListenerRef = useRef<(e: PointerEvent) => void>(undefined);
 
-  const structureMap = getStructureMap(unitCellId);
+  const structureMap = getStructureMap(structureMapKey);
 
   const [selectedStructureKey, selectStructureKey] = useState(
     Object.keys(structureMap)[0] as keyof StructureMap,
   );
 
+  function getBallsAndSticks(structureKey: keyof StructureMap) {
+    return (structureMap[structureKey] as () => {
+      balls: Ball[];
+      sticks: Stick[];
+    })();
+  }
+
   useEffect(() => {
     if (containerRef.current && !contextRef.current) {
-      const { balls, sticks } = structureMap[selectedStructureKey];
+      const { balls, sticks } = getBallsAndSticks(selectedStructureKey);
       if (!balls) {
         return;
       }
@@ -56,7 +66,7 @@ export function Structure3D({ structureMapKey: unitCellId }: LatticeProps) {
     scene.remove(structure);
     transformControls.detach();
 
-    const { balls, sticks } = structureMap[structureKey];
+    const { balls, sticks } = getBallsAndSticks(structureKey);
     const newStructure = getStructure(balls, sticks);
     const newOutline = getOutline(balls);
 
@@ -157,7 +167,7 @@ export function Structure3D({ structureMapKey: unitCellId }: LatticeProps) {
             justifyContent: "space-between",
           }}
         >
-          <h4 style={{ margin: 0 }}>{unitCellId}</h4>
+          <h4 style={{ margin: 0 }}>{structureMapKey}</h4>
           <select
             name="viestructurew"
             value={selectedStructureKey}

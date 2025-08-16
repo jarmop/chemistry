@@ -33,15 +33,16 @@ export function getNaCl() {
   const size = 5;
 
   const NaCl = {
-    unitCell: getUnitCell(),
-    connectionsNa: getNaClConnectionsNa(),
-    connectionsCl: getNaClConnectionsCl(),
-    unitCellNaAlone: getBccConnections(ballNa, ballCl),
-    [`${size}x${size}`]: growRockSalt(
-      ballNa,
-      ballCl,
-      new Vector3(size, size, size),
-    ),
+    unitCell: () => getUnitCell(),
+    connectionsNa: () => getNaClConnectionsNa(),
+    connectionsCl: () => getNaClConnectionsCl(),
+    unitCellNaAlone: () => getBccConnections(ballNa, ballCl),
+    [`${size}x${size}`]: () =>
+      growRockSalt(
+        ballNa,
+        ballCl,
+        new Vector3(size, size, size),
+      ),
   };
   return NaCl;
 }
