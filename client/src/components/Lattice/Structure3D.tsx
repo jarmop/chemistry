@@ -27,6 +27,10 @@ export function Structure3D(
 
   const structureMap = getStructureMap(structureMapKey);
 
+  if (!structureMap) {
+    return;
+  }
+
   const [selectedStructureKey, selectStructureKey] = useState(
     Object.keys(structureMap)[0] as keyof StructureMap,
   );

@@ -1,7 +1,6 @@
 import { Vector3 } from "three";
 import { Ball } from "../types.ts";
 import { growDiamondCubic } from "../grow.ts";
-import { getDiamondConnections } from "../connections.ts";
 
 const diamondBondLength = 154;
 
@@ -14,7 +13,7 @@ const ballC: Ball = {
 
 export function getDiamond() {
   return {
-    connections: () => getDiamondConnections(),
+    connections: growDiamond(1),
     unitCell: growDiamond(2),
     "3x3": growDiamond(3),
     "5x5": growDiamond(5),

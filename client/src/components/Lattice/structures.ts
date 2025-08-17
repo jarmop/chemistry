@@ -256,14 +256,14 @@ function getFCC() {
 }
 
 const structures = {
-  PC: getPC(),
-  BCC: getBCC(),
-  FCC: getFCC(),
-  HCP: getHCP(),
-  "NaCl (Rock salt)": getNaCl(),
-  Iron: getIron(),
+  // PC: getPC(),
+  // BCC: getBCC(),
+  // FCC: getFCC(),
+  // HCP: getHCP(),
+  // "NaCl (Rock salt)": getNaCl(),
+  // Iron: getIron(),
   Diamond: getDiamond(),
-  Copper: getCopper(),
+  // Copper: getCopper(),
   Zinc: getZinc(),
 } as const;
 

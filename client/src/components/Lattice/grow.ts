@@ -27,18 +27,29 @@ function getStickKey(stick: Stick) {
   ).toSorted().join(",");
 }
 
-function grow(
-  center: Ball,
-  distance: number,
-  isWithinBounds: (position: Vector3) => boolean,
-  connectionAnglesDefault: [number, number][],
-  connectionAnglesReverse: [number, number][] = [],
-  isReverse: (reverse: boolean, polarAngle: number) => boolean = () => false,
-  initialReverse: boolean,
-  maxLayers?: number,
-) {
+interface GrowArgs {
+  startAtom: Ball;
+  distance: number;
+  isWithinBounds: (position: Vector3) => boolean;
+  connectionAnglesDefault: [number, number][];
+  connectionAnglesReverse: [number, number][];
+  isReverse: (reverse: boolean, polarAngle: number) => boolean;
+  initialReverse: boolean;
+  maxLayers?: number;
+}
+
+function grow({
+  startAtom,
+  distance,
+  isWithinBounds,
+  connectionAnglesDefault,
+  connectionAnglesReverse = [],
+  isReverse = () => false,
+  initialReverse,
+  maxLayers,
+}: GrowArgs) {
   const ballMap: Record<string, boolean> = {
-    [getBallKey(center.position)]: true,
+    [getBallKey(startAtom.position)]: true,
   };
 
   const stickMap: Record<string, boolean> = {};
@@ -89,8 +100,9 @@ function grow(
 
   let layerCount = 0;
 
-  let balls: Ball[] = [center];
-  let connections = addConnections(center, initialReverse);
+  let balls: Ball[] = [startAtom];
+  // let balls: Ball[] = [{ ...startAtom, color: "blue" }];
+  let connections = addConnections(startAtom, initialReverse);
   balls = [
     ...balls,
     ...connections.filter((c) => c.ball).map((c) => c.ball),
@@ -272,26 +284,25 @@ function getReverseDiamondConnectionAngles(): [number, number][] {
   return getDiamondConnectionAngles(true);
 }
 
-export function growDiamondCubic(atom: Ball, size: number) {
-  const distance = 2 * atom.radius;
-  const edgeLength = distance * Math.sqrt(8 / 3);
-  const latticeConstant = Math.ceil(2 * edgeLength / Math.sqrt(2));
+export function growDiamondCubic(startAtom: Ball, size: number) {
+  const distance = 2 * startAtom.radius;
+  const edgeLength = Math.ceil(2 * distance / Math.sqrt(3));
 
-  const isWithinBounds = createCubicBoundChecker(size, latticeConstant);
+  const isWithinBounds = createCubicBoundChecker(size * edgeLength);
 
   function isReverse(reverse: boolean) {
     return !reverse;
   }
 
-  const { balls, sticks } = grow(
-    atom,
+  const { balls, sticks } = grow({
+    startAtom,
     distance,
     isWithinBounds,
-    getDiamondConnectionAngles(),
-    getReverseDiamondConnectionAngles(),
+    connectionAnglesDefault: getDiamondConnectionAngles(),
+    connectionAnglesReverse: getReverseDiamondConnectionAngles(),
     isReverse,
-    true,
-  );
+    initialReverse: true,
+  });
 
   return { balls: centerObjects(balls), sticks: centerSticks(sticks) };
 }
@@ -418,14 +429,14 @@ export function growHcp(
     return polarAngle === 90 ? reverse : !reverse;
   }
 
-  return grow(
-    center,
+  return grow({
+    startAtom: center,
     distance,
     isWithinBounds,
-    getHcpConnectionAngles(),
-    getReverseHcpConnectionAngles(),
+    connectionAnglesDefault: getHcpConnectionAngles(),
+    connectionAnglesReverse: getReverseHcpConnectionAngles(),
     isReverse,
-    false,
+    initialReverse: false,
     maxLayers,
-  );
+  });
 }
