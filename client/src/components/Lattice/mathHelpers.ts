@@ -4,7 +4,8 @@ export function triangleHeight(sideLength: number) {
 }
 
 export function tetrahedronHeight(edgeLength: number) {
-  return edgeLength * Math.sqrt(2 / 3);
+  // return edgeLength * Math.sqrt(2 / 3);
+  return edgeLength * Math.sqrt(6) / 3;
 }
 
 export function squareDiameterToSide(diameter: number) {

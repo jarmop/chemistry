@@ -1,7 +1,7 @@
 import { Vector3 } from "three";
 import { Ball } from "./types.ts";
 import { getPointOnSphereSurface, radiusToDegree } from "./latticeHelpers.ts";
-import { getHcpConnectionAngles } from "./grow.ts";
+import { getBccConnectionAngles, getHcpConnectionAngles } from "./grow.ts";
 
 const defaultRadius = 100;
 
@@ -69,16 +69,6 @@ export function getPcConnections(
   };
 }
 
-export function getBccConnectionAngles() {
-  const cubeDiameterAngle = radiusToDegree(Math.acos(1 / Math.sqrt(3)));
-  const angles: [number, number][] = [];
-  [cubeDiameterAngle, 180 - cubeDiameterAngle].forEach((polarAngle) => {
-    for (let azimuthalAngle = 45; azimuthalAngle < 360; azimuthalAngle += 90) {
-      angles.push([polarAngle, azimuthalAngle]);
-    }
-  });
-  return angles;
-}
 
 export function getBccConnections(
   centerBall: Ball = defaultCenter,

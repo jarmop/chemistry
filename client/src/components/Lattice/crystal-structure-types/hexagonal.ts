@@ -9,7 +9,7 @@ function isWithinBounds(
   const { x, y, z } = position;
   const dx = Math.abs(x);
   const dz = Math.abs(z);
-  const dxz = Math.sqrt(Math.pow(dx, 2) + Math.pow(dz, 2));
+  const dxz = Math.floor(Math.sqrt(Math.pow(dx, 2) + Math.pow(dz, 2)));
   const dy = Math.abs(y);
 
   const xzAngleFromXAxis = radiusToDegree(Math.atan(dz / dx));

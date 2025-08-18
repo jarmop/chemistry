@@ -1,7 +1,6 @@
 import { Vector3 } from "three";
 import { Ball } from "../types.ts";
-import { growFcc } from "../grow.ts";
-import { getFccConnections } from "../connections.ts";
+import { growFcc, growFccCentered } from "../grow.ts";
 
 const copperRadius = 128;
 
@@ -13,13 +12,13 @@ const ballCu: Ball = {
 
 export function getCopper() {
   return {
-    unitCell: growCopper(2),
-    connections: () => getFccConnections(),
-    "3x3": growCopper(3),
-    "5x5": growCopper(5),
+    unitCell: growCopper(1),
+    "2x2": growCopper(2),
+    "4x4": growCopper(4),
+    connections: () => growFccCentered(ballCu, 1),
   };
 }
 
 function growCopper(size: number) {
-  return () => growFcc(ballCu, new Vector3(size, size, size));
+  return () => growFcc(ballCu, size);
 }

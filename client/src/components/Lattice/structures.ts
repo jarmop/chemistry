@@ -1,22 +1,21 @@
 import * as THREE from "three";
 import { Ball } from "./types.ts";
-import {
-  getFccConnections,
-  getHcpConnections,
-  getPcConnections,
-} from "./connections.ts";
+import { getFccConnections, getHcpConnections } from "./connections.ts";
 import { centerBalls } from "./latticeHelpers.ts";
 import { getNaCl } from "./substances/NaCl.ts";
 import { getIron } from "./substances/iron.ts";
 import { getDiamond } from "./substances/carbon.ts";
 import { getCopper } from "./substances/copper.ts";
 import { getZinc } from "./substances/zinc.ts";
+import { tetrahedronHeight, triangleHeight } from "./mathHelpers.ts";
 import {
-  cubeDiameterToEdge,
-  squareDiameterToSide,
-  tetrahedronHeight,
-  triangleHeight,
-} from "./mathHelpers.ts";
+  growBcc,
+  growFcc,
+  growFccCentered,
+  growHcp,
+  growPc,
+  growPcCentered,
+} from "./grow.ts";
 
 const R = 100;
 
@@ -105,9 +104,8 @@ function getHCP() {
   ];
 
   return {
+    connections: () => growHcp(),
     unitCell: () => getHexagonalBalls(layers),
-    layer: () => getLayerBalls(hexagonLayer),
-    connections: () => getHcpConnections(),
   };
 }
 
@@ -182,88 +180,38 @@ function getLayer(layer: Partial<Layer>): Layer {
   return { ...defaultLayer, ...layer };
 }
 
-function getRowObjects(rows: number[]): Layer["rows"] {
-  return rows.map((cols) => ({ offsetX: 0, cols }));
-}
-
 function getPC() {
-  const layerA = getLayer({
-    rows: getRowObjects([2, 2]),
-  });
-
   return {
-    unitCell: () => getBalls([layerA, layerA], 2 * R),
-    layer: () => getLayerBalls(layerA),
-    connections: () => getPcConnections(),
+    unitCell: () => growPc(),
+    connections: () => growPcCentered(),
   };
 }
 
 function getBCC() {
-  const distance = cubeDiameterToEdge(2 * R);
-
-  const layerA = getLayer({
-    rows: getRowObjects([2, 2]),
-    distanceX: 2 * distance,
-    distanceZ: 2 * distance,
-  });
-
-  const layerB = getLayer({
-    rows: [{ offsetX: distance, cols: 1 }],
-    offsetZ: distance,
-    color: "blue",
-  });
-
   return {
-    unitCell: () => getBalls([layerA, layerB, layerA], distance),
-    layer: () => getLayerBalls(layerA),
+    unitCell: () => growBcc(),
   };
 }
 
 function getFCC() {
-  const distance = squareDiameterToSide(2 * R);
-
-  const rowA = { offsetX: 0, cols: 2 };
-  const rowB = { offsetX: distance, cols: 1 };
-
-  const layerA = getLayer({
-    rows: [
-      rowA,
-      rowB,
-      rowA,
-    ],
-    distanceX: 2 * distance,
-    distanceZ: distance,
-  });
-
-  const layerB = getLayer({
-    ...layerA,
-    rows: [
-      rowB,
-      rowA,
-      rowB,
-    ],
-    color: "blue",
-  });
-
   return {
-    unitCell: () => getBalls([layerA, layerB, layerA], distance),
-    layerA: () => getLayerBalls(layerA),
-    layerB: () => getLayerBalls(layerB),
+    unitCell: () => growFcc(),
+    connections: () => growFccCentered(),
     CCP: () => getCCP().unitCell,
     "CCP=FCC": () => getCcpIsFcc().unitCell,
-    connections: () => getFccConnections(),
+    connectionsHexagon: () => getFccConnections(),
   };
 }
 
 const structures = {
-  // PC: getPC(),
-  // BCC: getBCC(),
-  // FCC: getFCC(),
-  // HCP: getHCP(),
-  // "NaCl (Rock salt)": getNaCl(),
-  // Iron: getIron(),
+  PC: getPC(),
+  BCC: getBCC(),
+  FCC: getFCC(),
+  HCP: getHCP(),
+  "NaCl (Rock salt)": getNaCl(),
+  Iron: getIron(),
   Diamond: getDiamond(),
-  // Copper: getCopper(),
+  Copper: getCopper(),
   Zinc: getZinc(),
 } as const;
 

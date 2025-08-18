@@ -15,7 +15,11 @@ function isWithinCube(vectorRaw: Vector3, min: Vector3, max: Vector3) {
 }
 
 export function createCubicBoundChecker(size: number) {
-  const maxSize = new Vector3(size, size, size);
+  const maxSize = new Vector3(
+    Math.ceil(size),
+    Math.ceil(size),
+    Math.ceil(size),
+  );
   const minSize = new Vector3();
 
   return (position: Vector3) => isWithinCube(position, minSize, maxSize);

@@ -1,16 +1,22 @@
 import { Vector3 } from "three";
 import { Ball, Connection, Stick } from "./types.ts";
 import {
-  centerBalls,
   centerObjects,
   centerSticks,
   getPointOnSphereSurface,
   radiusToDegree,
 } from "./latticeHelpers.ts";
-import { getBccConnectionAngles } from "./connections.ts";
 import { tetrahedronHeight } from "./mathHelpers.ts";
 import { createHexagonalBoundChecker } from "./crystal-structure-types/hexagonal.ts";
 import { createCubicBoundChecker } from "./crystal-structure-types/cubic.ts";
+
+const defaultRadius = 100;
+
+const defaultAtom: Ball = {
+  position: new Vector3(0, 0, 0),
+  color: "red",
+  radius: defaultRadius,
+};
 
 function getBallKey(position: Vector3) {
   function roundToTen(v: number) {
@@ -29,23 +35,25 @@ function getStickKey(stick: Stick) {
 
 interface GrowArgs {
   startAtom: Ball;
+  atom2?: Ball;
   distance: number;
-  isWithinBounds: (position: Vector3) => boolean;
+  isWithinBounds?: (position: Vector3) => boolean;
   connectionAnglesDefault: [number, number][];
-  connectionAnglesReverse: [number, number][];
-  isReverse: (reverse: boolean, polarAngle: number) => boolean;
-  initialReverse: boolean;
+  connectionAnglesReverse?: [number, number][];
+  isReverse?: (reverse: boolean, polarAngle: number) => boolean;
+  initialReverse?: boolean;
   maxLayers?: number;
 }
 
 function grow({
   startAtom,
+  atom2,
   distance,
-  isWithinBounds,
+  isWithinBounds = () => true,
   connectionAnglesDefault,
   connectionAnglesReverse = [],
   isReverse = () => false,
-  initialReverse,
+  initialReverse = false,
   maxLayers,
 }: GrowArgs) {
   const ballMap: Record<string, boolean> = {
@@ -54,7 +62,11 @@ function grow({
 
   const stickMap: Record<string, boolean> = {};
 
-  function addConnections(center: Ball, reverse = false) {
+  function addConnections(
+    centerAtom: Ball,
+    connectionAtom: Ball,
+    reverse = false,
+  ) {
     const connections: Connection[] = [];
     const connectionAngles = reverse
       ? connectionAnglesReverse
@@ -63,7 +75,7 @@ function grow({
     connectionAngles.forEach(
       ([polarAngle, azimuthalAngle]) => {
         const position = getPointOnSphereSurface(
-          center.position,
+          centerAtom.position,
           distance,
           polarAngle,
           azimuthalAngle,
@@ -78,12 +90,12 @@ function grow({
           if (!ballMap[key]) {
             ballMap[key] = true;
             connection.ball = {
-              ...center,
+              ...connectionAtom,
               position,
-              color: center.color,
+              color: connectionAtom.color,
             };
           }
-          const stick = { start: center.position, end: position };
+          const stick = { start: centerAtom.position, end: position };
           const stickKey = getStickKey(stick);
           if (!stickMap[stickKey]) {
             stickMap[stickKey] = true;
@@ -100,15 +112,16 @@ function grow({
 
   let layerCount = 0;
 
-  let balls: Ball[] = [startAtom];
+  const balls: Ball[] = [startAtom];
   // let balls: Ball[] = [{ ...startAtom, color: "blue" }];
-  let connections = addConnections(startAtom, initialReverse);
-  balls = [
-    ...balls,
-    ...connections.filter((c) => c.ball).map((c) => c.ball),
-  ] as Ball[];
-
   const sticks: Stick[] = [];
+
+  let connections = addConnections(
+    startAtom,
+    atom2 || startAtom,
+    initialReverse,
+  );
+
   connections.forEach(({ ball, stick }) => {
     if (ball) {
       balls.push(ball);
@@ -123,7 +136,13 @@ function grow({
     const newConnections: Connection[][] = [];
     connections.forEach(({ ball, reverse }) => {
       if (ball) {
-        newConnections.push(addConnections(ball, reverse));
+        newConnections.push(
+          addConnections(
+            ball,
+            (atom2 && ball.color === startAtom.color) ? atom2 : startAtom,
+            reverse,
+          ),
+        );
       }
     });
     connections = newConnections.flat();
@@ -172,7 +191,7 @@ function grow({
   return { balls, sticks };
 }
 
-const rockSaltConnections: [number, number][] = [
+const pcConnections: [number, number][] = [
   [0, 0],
   [180, 0],
   [90, 0],
@@ -181,81 +200,71 @@ const rockSaltConnections: [number, number][] = [
   [90, 270],
 ];
 
-export function growRockSalt(atomA: Ball, atomB: Ball, shape: Vector3) {
+export function growPc(
+  atomA: Ball = defaultAtom,
+  atomB: Ball = defaultAtom,
+  size: number = 1,
+) {
   const distance = atomA.radius + atomB.radius;
 
-  const isWithin = createCubicBoundChecker(shape.x, distance);
+  const isWithinBounds = createCubicBoundChecker(size * distance);
 
-  function addConnections(center: Ball, connection: Ball) {
-    rockSaltConnections.forEach(([polarAngle, azimuthalAngle]) => {
-      const position = getPointOnSphereSurface(
-        center.position,
-        distance,
-        polarAngle,
-        azimuthalAngle,
-      );
-      const key = getBallKey(position);
-      if (!ballMap[key] && isWithin(position)) {
-        const ball = {
-          ...connection,
-          position,
-        };
-        ballMap[key] = ball;
-        addConnections(ball, center);
-      }
-    });
-  }
+  const { balls, sticks } = grow({
+    startAtom: atomA,
+    atom2: atomB,
+    distance,
+    isWithinBounds,
+    connectionAnglesDefault: pcConnections,
+  });
 
-  const ballMap: Record<string, Ball> = {
-    [getBallKey(atomA.position)]: atomA,
-  };
-
-  addConnections(atomA, atomB);
-
-  const balls = centerBalls(Object.values(ballMap));
-
-  return { balls, sticks: [] };
+  return { balls: centerObjects(balls), sticks: centerSticks(sticks) };
 }
 
-export function growBcc(atomA: Ball, atomB: Ball, shape: Vector3) {
+export function growPcCentered(
+  atomA: Ball = defaultAtom,
+  atomB: Ball = defaultAtom,
+  layers = 1,
+) {
+  const distance = atomA.radius + atomB.radius;
+
+  return grow({
+    startAtom: atomA,
+    atom2: atomB,
+    distance,
+    connectionAnglesDefault: pcConnections,
+    maxLayers: layers,
+  });
+}
+
+export function getBccConnectionAngles() {
+  const cubeDiameterAngle = radiusToDegree(Math.acos(1 / Math.sqrt(3)));
+  const angles: [number, number][] = [];
+  [cubeDiameterAngle, 180 - cubeDiameterAngle].forEach((polarAngle) => {
+    for (let azimuthalAngle = 45; azimuthalAngle < 360; azimuthalAngle += 90) {
+      angles.push([polarAngle, azimuthalAngle]);
+    }
+  });
+  return angles;
+}
+
+export function growBcc(
+  atomA: Ball = defaultAtom,
+  atomB: Ball = defaultAtom,
+  size: number = 1,
+) {
   const distance = atomA.radius + atomB.radius;
   const latticeConstant = Math.ceil(2 * distance / Math.sqrt(3));
 
-  let balls: Ball[] = [atomA];
-  const ballMap: Record<string, true> = {
-    [getBallKey(atomA.position)]: true,
-  };
+  const isWithinBounds = createCubicBoundChecker(size * latticeConstant);
 
-  const isWithin = createCubicBoundChecker(shape.x, latticeConstant);
+  const { balls, sticks } = grow({
+    startAtom: atomA,
+    distance,
+    isWithinBounds,
+    connectionAnglesDefault: getBccConnectionAngles(),
+  });
 
-  function addConnections(center: Ball, connection: Ball) {
-    getBccConnectionAngles().forEach(([polarAngle, azimuthalAngle]) => {
-      const position = getPointOnSphereSurface(
-        center.position,
-        distance,
-        polarAngle,
-        azimuthalAngle,
-      );
-      const key = getBallKey(position);
-      if (!ballMap[key]) {
-        const ball = {
-          ...connection,
-          position,
-        };
-        ballMap[key] = true;
-        if (isWithin(position)) {
-          balls = [...balls, ball];
-          addConnections(ball, center);
-        }
-      }
-    });
-  }
-
-  addConnections(atomA, atomB);
-
-  balls = centerBalls(balls);
-
-  return { balls, sticks: [] };
+  return { balls: centerObjects(balls), sticks: centerSticks(sticks) };
 }
 
 const cubicDiamondAngle = radiusToDegree(Math.acos(-1 / 3));
@@ -324,57 +333,37 @@ function getFccConnectionAngles() {
   return connectionAngles;
 }
 
-export function growFcc(atom: Ball, shape: Vector3) {
+export function growFcc(
+  atom: Ball = defaultAtom,
+  size = 1,
+) {
   const distance = 2 * atom.radius;
   const latticeConstant = 2 * distance / Math.sqrt(2);
 
-  const connectionAngles = getFccConnectionAngles();
+  const isWithinBounds = createCubicBoundChecker(size * latticeConstant);
 
-  const isWithin = createCubicBoundChecker(shape.x, latticeConstant);
+  const { balls, sticks } = grow({
+    startAtom: atom,
+    distance,
+    isWithinBounds,
+    connectionAnglesDefault: getFccConnectionAngles(),
+  });
 
-  function addConnections(atom: Ball) {
-    const connections: Ball[] = [];
-    connectionAngles.forEach(
-      ([polarAngle, azimuthalAngle]) => {
-        const position = getPointOnSphereSurface(
-          atom.position,
-          distance,
-          polarAngle,
-          azimuthalAngle,
-        );
+  return { balls: centerObjects(balls), sticks: centerSticks(sticks) };
+}
 
-        const key = getBallKey(position);
-        if (!ballMap[key] && isWithin(position)) {
-          const ball = {
-            ...atom,
-            position,
-            color: atom.color,
-          };
-          ballMap[key] = ball;
-          connections.push(ball);
-        }
-      },
-    );
+export function growFccCentered(
+  atom: Ball = defaultAtom,
+  layers = 1,
+) {
+  const distance = 2 * atom.radius;
 
-    return connections;
-  }
-
-  const ballMap: Record<string, Ball> = {
-    [getBallKey(atom.position)]: atom,
-  };
-
-  let connections = addConnections(atom);
-  while (connections.length > 0) {
-    const newConnections: Ball[][] = [];
-    connections.forEach((atom) => {
-      newConnections.push(addConnections(atom));
-    });
-    connections = newConnections.flat();
-  }
-
-  const balls = centerBalls(Object.values(ballMap));
-
-  return { balls, sticks: [] };
+  return grow({
+    startAtom: atom,
+    distance,
+    connectionAnglesDefault: getFccConnectionAngles(),
+    maxLayers: layers,
+  });
 }
 
 const tetrahedronPlaneEdgeAngle = radiusToDegree(
@@ -414,14 +403,17 @@ function getReverseHcpConnectionAngles(): [number, number][] {
 }
 
 export function growHcp(
-  center: Ball,
-  latticeConstants: { a: number; c: number },
-  size: number,
-  useBounds: boolean = true,
+  center: Ball = { ...defaultAtom, radius: 100 },
+  size = 1,
+  useBounds: boolean = false,
 ) {
   const maxLayers = useBounds ? Math.ceil(Math.sqrt(2) * size) : size;
-  const { a, c } = latticeConstants;
+  // const { a, c } = latticeConstants;
+  const a = 2 * center.radius;
+  const c = 2 * tetrahedronHeight(a);
   const distance = a;
+
+  console.log(a, c);
 
   const isWithinBounds = createHexagonalBoundChecker(size * a, size * c);
 
