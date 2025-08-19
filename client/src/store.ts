@@ -5,6 +5,8 @@ import { StructureMapKey } from "./components/Lattice/structures.ts";
 type Structures3DStore = {
   selectedStructureMapKeys: StructureMapKey[];
   toggleStructureMapKey: (structureMapKey: StructureMapKey) => void;
+  showBallAndStick: boolean;
+  toggleShowBallAndStick: () => void;
 };
 
 type Store = Structures3DStore;
@@ -32,6 +34,10 @@ const getStructures3DStore: StateSliceCreator<Structures3DStore> = (
       set({
         selectedStructureMapKeys: newSelectedStructureMapKeys,
       });
+    },
+    showBallAndStick: false,
+    toggleShowBallAndStick: () => {
+      set({ showBallAndStick: !get().showBallAndStick });
     },
   };
 };

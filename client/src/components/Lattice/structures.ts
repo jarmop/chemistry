@@ -1,6 +1,6 @@
 import * as THREE from "three";
 import { Ball } from "./types.ts";
-import { getFccConnections, getHcpConnections } from "./connections.ts";
+import { getFccConnections } from "./connections.ts";
 import { centerBalls } from "./latticeHelpers.ts";
 import { getNaCl } from "./substances/NaCl.ts";
 import { getIron } from "./substances/iron.ts";

@@ -16,19 +16,17 @@ const ballCl: Ball = {
 };
 
 export function getNaCl() {
-  const size = 5;
-
   const NaCl = {
-    unitCell: () => growPc(ballNa, ballCl, 2),
+    unitCell: () => growPc(ballNa, ballCl, 1),
     connectionsNa: () => growPcCentered(ballNa, ballCl, 1),
     connectionsCl: () => growPcCentered(ballCl, ballNa, 1),
     unitCellNaAlone: () => growFcc(ballNa, 1),
     unitCellClAlone: () => growFcc(ballNa, 1),
-    [`${size}x${size}`]: () =>
+    ["5x5"]: () =>
       growPc(
         ballNa,
         ballCl,
-        size,
+        5,
       ),
   };
   return NaCl;

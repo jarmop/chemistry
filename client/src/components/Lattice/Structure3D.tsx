@@ -7,6 +7,7 @@ import {
   StructureMapKey,
 } from "./structures.ts";
 import { Ball, Stick } from "./types.ts";
+import { useStore } from "../../store.ts";
 
 const size = 300;
 
@@ -19,6 +20,7 @@ interface LatticeProps {
 export function Structure3D(
   { structureMapKey: structureMapKey }: LatticeProps,
 ) {
+  const showBallAndStick = useStore((state) => state.showBallAndStick);
   const [renderer] = useState(new WebGLRenderer({ antialias: true }));
   const [showOutline, setShowOutline] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -55,13 +57,13 @@ export function Structure3D(
         balls,
         sticks,
         showOutline,
+        showBallAndStick,
       );
       setEventListeners();
     }
   }, []);
 
-  function changeStructure(structureKey: keyof StructureMap) {
-    selectStructureKey(structureKey);
+  useEffect(() => {
     if (!contextRef.current) {
       return;
     }
@@ -70,8 +72,8 @@ export function Structure3D(
     scene.remove(structure);
     transformControls.detach();
 
-    const { balls, sticks } = getBallsAndSticks(structureKey);
-    const newStructure = getStructure(balls, sticks);
+    const { balls, sticks } = getBallsAndSticks(selectedStructureKey);
+    const newStructure = getStructure(balls, sticks, showBallAndStick);
     const newOutline = getOutline(balls);
 
     if (showOutline) {
@@ -86,6 +88,10 @@ export function Structure3D(
     contextRef.current.outline = newOutline;
 
     setPointerMoveListener(transformControls, newStructure);
+  }, [selectedStructureKey, showBallAndStick]);
+
+  function changeStructure(structureKey: keyof StructureMap) {
+    selectStructureKey(structureKey);
   }
 
   function toggleOutline() {
@@ -173,7 +179,7 @@ export function Structure3D(
         >
           <h4 style={{ margin: 0 }}>{structureMapKey}</h4>
           <select
-            name="viestructurew"
+            name="structure"
             value={selectedStructureKey}
             onChange={(e) =>
               changeStructure(e.target.value as keyof StructureMap)}

@@ -23,6 +23,7 @@ export function init(
   balls: Ball[],
   sticks: Stick[],
   showOutline: boolean,
+  showBallAndStick: boolean,
 ) {
   const width = container.clientWidth;
   const height = container.clientHeight;
@@ -47,7 +48,7 @@ export function init(
   light2.position.set(-1, -1, 1);
   scene.add(light2);
 
-  const structure = getStructure(balls, sticks);
+  const structure = getStructure(balls, sticks, showBallAndStick);
   const outline = getOutline(balls);
 
   if (showOutline) {
@@ -151,20 +152,27 @@ function createStick(
   return cylinderMesh;
 }
 
-export function getStructure(balls: Ball[], sticks: Stick[]) {
+export function getStructure(
+  balls: Ball[],
+  sticks: Stick[],
+  showBallAndStick: boolean,
+) {
   const structure = new THREE.Group();
   balls.forEach((ball) => {
+    const visibleRadius = showBallAndStick ? ball.radius / 2 : ball.radius;
     const ballMesh = new THREE.Mesh(
-      getSphereGeometry(ball.radius / 2),
+      getSphereGeometry(visibleRadius),
       getMeshPhongMaterial(ball),
     );
     ballMesh.position.copy(ball.position);
     structure.add(ballMesh);
   });
 
-  sticks.forEach(({ start, end }) => {
-    structure.add(createStick(start, end));
-  });
+  if (showBallAndStick) {
+    sticks.forEach(({ start, end }) => {
+      structure.add(createStick(start, end));
+    });
+  }
 
   return structure;
 }

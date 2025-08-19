@@ -7,6 +7,10 @@ export function Structures3D() {
   const toggleStructureMapKey = useStore((state) => {
     return state.toggleStructureMapKey;
   });
+  const showBallAndStick = useStore((state) => state.showBallAndStick);
+  const toggleShowBallAndStick = useStore((state) =>
+    state.toggleShowBallAndStick
+  );
 
   return (
     <>
@@ -29,6 +33,19 @@ export function Structures3D() {
           {key}
         </button>
       ))}
+      &nbsp; &nbsp; &nbsp;
+      <span>
+        <label style={{ cursor: "pointer" }}>
+          <input
+            name="show-ball-and-stick"
+            type="checkbox"
+            style={{ cursor: "pointer" }}
+            checked={showBallAndStick}
+            onChange={toggleShowBallAndStick}
+          />
+          Show ball & stick
+        </label>
+      </span>
       <div
         style={{
           margin: 10,
