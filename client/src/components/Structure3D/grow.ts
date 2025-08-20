@@ -413,8 +413,6 @@ export function growHcp(
   const c = 2 * tetrahedronHeight(a);
   const distance = a;
 
-  console.log(a, c);
-
   const isWithinBounds = createHexagonalBoundChecker(size * a, size * c);
 
   function isReverse(reverse: boolean, polarAngle: number) {

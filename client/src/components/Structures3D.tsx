@@ -1,5 +1,6 @@
 import { useStore } from "../store.ts";
 import { Structure3D } from "./Structure3D/Structure3D.tsx";
+import { Structure3DReact } from "./Structure3D/Structure3dReact.tsx";
 import { getStructureMapKeys } from "./Structure3D/structures.ts";
 
 export function Structures3D() {
@@ -54,6 +55,12 @@ export function Structures3D() {
           gap: 10,
         }}
       >
+        {structureMapKeys.map((id) => (
+          <Structure3DReact
+            key={id}
+            structureMapKey={id}
+          />
+        ))}
         {structureMapKeys.map((id) => (
           <Structure3D
             key={id}
