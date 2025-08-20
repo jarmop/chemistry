@@ -1,6 +1,6 @@
 import { create, StateCreator } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
-import { StructureMapKey } from "./components/Lattice/structures.ts";
+import { StructureMapKey } from "./components/Structure3D/structures.ts";
 
 type Structures3DStore = {
   selectedStructureMapKeys: StructureMapKey[];

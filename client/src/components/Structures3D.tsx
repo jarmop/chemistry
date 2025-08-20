@@ -1,6 +1,6 @@
 import { useStore } from "../store.ts";
-import { Structure3D } from "./Lattice/Structure3D.tsx";
-import { getStructureMapKeys } from "./Lattice/structures.ts";
+import { Structure3D } from "./Structure3D/Structure3D.tsx";
+import { getStructureMapKeys } from "./Structure3D/structures.ts";
 
 export function Structures3D() {
   const structureMapKeys = useStore((state) => state.selectedStructureMapKeys);
