@@ -21,7 +21,8 @@ export function Structure3D(
   { structureMapKey: structureMapKey }: LatticeProps,
 ) {
   const showBallAndStick = useStore((state) => state.showBallAndStick);
-  const [renderer] = useState(new WebGLRenderer({ antialias: true }));
+  const showGizmo = useStore((state) => state.showGizmo);
+  const [renderer] = useState(() => new WebGLRenderer({ antialias: true }));
   const [showOutline, setShowOutline] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const contextRef = useRef<RenderingContext>(null);
@@ -89,6 +90,15 @@ export function Structure3D(
 
     setPointerMoveListener(transformControls, newStructure);
   }, [selectedStructureKey, showBallAndStick]);
+
+  useEffect(() => {
+    if (!contextRef.current) {
+      return;
+    }
+    const { transformControls } = contextRef.current;
+    transformControls.getHelper().visible = showGizmo;
+    transformControls.enabled = showGizmo;
+  }, [showGizmo]);
 
   function changeStructure(structureKey: keyof StructureMap) {
     selectStructureKey(structureKey);

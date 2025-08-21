@@ -78,26 +78,6 @@ export function init(
     renderer.render(scene, camera);
   });
 
-  globalThis.addEventListener(
-    "keydown",
-    (e) => {
-      if (e.key === "r") {
-        gizmo.visible = true;
-        transformControls.enabled = true;
-      }
-    },
-  );
-
-  globalThis.addEventListener(
-    "keyup",
-    (e) => {
-      if (e.key === "r") {
-        gizmo.visible = false;
-        transformControls.enabled = false;
-      }
-    },
-  );
-
   container.appendChild(renderer.domElement);
 
   return { scene, camera, structure, outline, transformControls };

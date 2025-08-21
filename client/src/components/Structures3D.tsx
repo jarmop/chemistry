@@ -1,7 +1,9 @@
+import { useEffect } from "react";
 import { useStore } from "../store.ts";
 import { Structure3D } from "./Structure3D/Structure3D.tsx";
-import { Structure3DReact } from "./Structure3D/Structure3dReact.tsx";
 import { getStructureMapKeys } from "./Structure3D/structures.ts";
+
+let isKeyPressed = false;
 
 export function Structures3D() {
   const structureMapKeys = useStore((state) => state.selectedStructureMapKeys);
@@ -12,6 +14,31 @@ export function Structures3D() {
   const toggleShowBallAndStick = useStore((state) =>
     state.toggleShowBallAndStick
   );
+  const toggleGizmo = useStore((state) => state.toggleGizmo);
+
+  useEffect(() => {
+    function keydownListener(e: KeyboardEvent) {
+      if (e.key === "r" && !isKeyPressed && !e.ctrlKey) {
+        isKeyPressed = true;
+        toggleGizmo();
+      }
+    }
+
+    function keyupListener(e: KeyboardEvent) {
+      if (e.key === "r" && isKeyPressed) {
+        isKeyPressed = false;
+        toggleGizmo();
+      }
+    }
+
+    globalThis.addEventListener("keydown", keydownListener);
+    globalThis.addEventListener("keyup", keyupListener);
+
+    return () => {
+      globalThis.removeEventListener("keydown", keydownListener);
+      globalThis.removeEventListener("keyup", keyupListener);
+    };
+  }, []);
 
   return (
     <>
@@ -26,8 +53,6 @@ export function Structures3D() {
               : "lightgrey",
             cursor: "pointer",
             marginRight: 2,
-            // border: "none",
-            // borderRight: "1px solid black",
           }}
           onClick={() => toggleStructureMapKey(key)}
         >
@@ -55,12 +80,6 @@ export function Structures3D() {
           gap: 10,
         }}
       >
-        {structureMapKeys.map((id) => (
-          <Structure3DReact
-            key={id}
-            structureMapKey={id}
-          />
-        ))}
         {structureMapKeys.map((id) => (
           <Structure3D
             key={id}

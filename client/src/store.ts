@@ -7,6 +7,8 @@ type Structures3DStore = {
   toggleStructureMapKey: (structureMapKey: StructureMapKey) => void;
   showBallAndStick: boolean;
   toggleShowBallAndStick: () => void;
+  showGizmo: boolean;
+  toggleGizmo: () => void;
 };
 
 type Store = Structures3DStore;
@@ -30,7 +32,6 @@ const getStructures3DStore: StateSliceCreator<Structures3DStore> = (
         selectedStructureMapKeys.includes(structureMapKey)
           ? [...selectedStructureMapKeys.filter((m) => m !== structureMapKey)]
           : [...selectedStructureMapKeys, structureMapKey];
-
       set({
         selectedStructureMapKeys: newSelectedStructureMapKeys,
       });
@@ -39,8 +40,23 @@ const getStructures3DStore: StateSliceCreator<Structures3DStore> = (
     toggleShowBallAndStick: () => {
       set({ showBallAndStick: !get().showBallAndStick });
     },
+    showGizmo: false,
+    toggleGizmo: () => {
+      set({ showGizmo: !get().showGizmo });
+    },
   };
 };
+
+const keysToNotPersist: (keyof Store)[] = ["showGizmo"];
+
+function sliceObject<T extends object>(o: T, keysToNotInclude: (keyof T)[]) {
+  return Object.fromEntries(
+    Object.entries(o).filter((entry) => {
+      const [key] = entry as [keyof T, unknown];
+      return !keysToNotInclude.includes(key);
+    }),
+  ) as Partial<T>;
+}
 
 export const useStore = create<Store>()(
   persist(
@@ -50,6 +66,8 @@ export const useStore = create<Store>()(
     {
       name: "chemistry",
       storage: createJSONStorage(() => localStorage),
+      // slice off the part of state that should not be persisted
+      partialize: (state) => sliceObject(state, keysToNotPersist),
     },
   ),
 );
