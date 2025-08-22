@@ -1,5 +1,5 @@
 import { Vector3 } from "three";
-import { degreeToRadius, radiusToDegree } from "../latticeHelpers.ts";
+import { degreeToRadius, radiusToDegree } from "../common/latticeHelpers.ts";
 
 function isWithinBounds(
   position: Vector3,

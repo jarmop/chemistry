@@ -3,6 +3,14 @@ export function triangleHeight(sideLength: number) {
   // return sideLength * Math.sin(Math.PI / 3);
 }
 
+export function triangleCornerToCenterDistance(sideLength: number) {
+  return sideLength * Math.sqrt(3) / 3;
+}
+
+export function triangleEdgeToCenterDistance(sideLength: number) {
+  return sideLength * Math.sqrt(3) / 6;
+}
+
 export function tetrahedronHeight(edgeLength: number) {
   // return edgeLength * Math.sqrt(2 / 3);
   return edgeLength * Math.sqrt(6) / 3;

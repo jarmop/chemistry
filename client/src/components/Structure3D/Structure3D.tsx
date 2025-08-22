@@ -6,7 +6,7 @@ import {
   StructureMap,
   StructureMapKey,
 } from "./structures.ts";
-import { Ball, Stick } from "./types.ts";
+import { Ball, Stick } from "./common/types.ts";
 import { useStore } from "../../store.ts";
 
 const size = 300;

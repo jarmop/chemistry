@@ -1,6 +1,9 @@
 import { Vector3 } from "three";
 import { Ball } from "./types.ts";
-import { getPointOnSphereSurface, radiusToDegree } from "./latticeHelpers.ts";
+import {
+  getPointOnSphereSurface,
+  radiusToDegree,
+} from "./common/latticeHelpers.ts";
 import { getBccConnectionAngles, getHcpConnectionAngles } from "./grow.ts";
 
 const defaultRadius = 100;
@@ -68,7 +71,6 @@ export function getPcConnections(
     sticks: [],
   };
 }
-
 
 export function getBccConnections(
   centerBall: Ball = defaultCenter,

@@ -1,12 +1,12 @@
 import { Vector3 } from "three";
-import { Ball, Connection, Stick } from "./types.ts";
+import { Ball, Connection, Stick } from "./common/types.ts";
 import {
   centerObjects,
   centerSticks,
   getPointOnSphereSurface,
   radiusToDegree,
-} from "./latticeHelpers.ts";
-import { tetrahedronHeight } from "./mathHelpers.ts";
+} from "./common/latticeHelpers.ts";
+import { tetrahedronHeight } from "./common/mathHelpers.ts";
 import { createHexagonalBoundChecker } from "./crystal-structure-types/hexagonal.ts";
 import { createCubicBoundChecker } from "./crystal-structure-types/cubic.ts";
 

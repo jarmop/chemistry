@@ -5,11 +5,11 @@ import {
   centerSticks,
   getPointOnSphereSurface,
   radiusToDegree,
-} from "../latticeHelpers.ts";
-import { Ball } from "../types.ts";
+} from "../common/latticeHelpers.ts";
+import { Ball } from "../common/types.ts";
 import { createCubicBoundChecker } from "./cubic.ts";
 import { grow } from "../grow.ts";
-import { tetrahedronPlaneEdgeAngle } from "../mathHelpers.ts";
+import { tetrahedronPlaneEdgeAngle } from "../common/mathHelpers.ts";
 
 const defaultRadius = 100;
 

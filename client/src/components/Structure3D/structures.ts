@@ -1,15 +1,18 @@
 import * as THREE from "three";
-import { Ball } from "./types.ts";
+import { Ball } from "./common/types.ts";
 import { getFccConnections } from "./connections.ts";
-import { centerBalls } from "./latticeHelpers.ts";
+import { centerBalls } from "./common/latticeHelpers.ts";
 import { getNaCl } from "./substances/NaCl.ts";
 import { getIron } from "./substances/iron.ts";
 import { getDiamond } from "./substances/carbon.ts";
 import { getCopper } from "./substances/copper.ts";
 import { getZinc } from "./substances/zinc.ts";
-import { tetrahedronHeight, triangleHeight } from "./mathHelpers.ts";
+import { tetrahedronHeight, triangleHeight } from "./common/mathHelpers.ts";
 import { growBcc, growHcp, growPc, growPcCentered } from "./grow.ts";
 import { getFCC } from "./crystal-structure-types/fcc.ts";
+import { getFCCLayers2 } from "./layers/fccLayers2.ts";
+import { getFCCLayers3 } from "./layers/fccLayers3.ts";
+import { getFCCLayers1 } from "./layers/fccLayers1.ts";
 
 const R = 100;
 
@@ -196,17 +199,15 @@ const structures = {
     "CCP=FCC": () => getCcpIsFcc().unitCell,
     connectionsHexagon: () => getFccConnections(),
   },
+  FCCLayers1: getFCCLayers1(),
+  FccLayers2: getFCCLayers2(),
+  FccLayers3: getFCCLayers3(),
   HCP: getHCP(),
   "NaCl (Rock salt)": getNaCl(),
   Iron: getIron(),
   Diamond: getDiamond(),
   Copper: getCopper(),
   Zinc: getZinc(),
-  Prkl: {
-    CCP: () => getCCP().unitCell,
-
-    connectionsHexagon: () => getFccConnections(),
-  },
 } as const;
 
 export type StructureMaps = typeof structures;
