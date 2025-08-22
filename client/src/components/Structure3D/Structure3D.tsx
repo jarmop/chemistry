@@ -45,29 +45,33 @@ export function Structure3D(
     })();
   }
 
-  useEffect(() => {
-    if (containerRef.current && !contextRef.current) {
-      const { balls, sticks } = getBallsAndSticks(selectedStructureKey);
-      if (!balls) {
-        return;
-      }
-
-      contextRef.current = init(
-        containerRef.current,
-        renderer,
-        balls,
-        sticks,
-        showOutline,
-        showBallAndStick,
-      );
-      setEventListeners();
+  function initStructure() {
+    if (!containerRef.current) {
+      return;
     }
-  }, []);
+
+    const { balls, sticks } = getBallsAndSticks(selectedStructureKey);
+    if (!balls) {
+      return;
+    }
+
+    contextRef.current = init(
+      containerRef.current,
+      renderer,
+      balls,
+      sticks,
+      showOutline,
+      showBallAndStick,
+    );
+    setEventListeners();
+  }
 
   useEffect(() => {
     if (!contextRef.current) {
+      initStructure();
       return;
     }
+
     const { scene, structure, transformControls } = contextRef.current;
 
     scene.remove(structure);

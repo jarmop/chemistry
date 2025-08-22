@@ -1,6 +1,6 @@
 import { Vector3 } from "three";
 import { Ball } from "../types.ts";
-import { growFcc, growFccCentered } from "../grow.ts";
+import { growFcc, growFccCentered } from "../crystal-structure-types/fcc.ts";
 
 const copperRadius = 128;
 

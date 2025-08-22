@@ -8,14 +8,8 @@ import { getDiamond } from "./substances/carbon.ts";
 import { getCopper } from "./substances/copper.ts";
 import { getZinc } from "./substances/zinc.ts";
 import { tetrahedronHeight, triangleHeight } from "./mathHelpers.ts";
-import {
-  growBcc,
-  growFcc,
-  growFccCentered,
-  growHcp,
-  growPc,
-  growPcCentered,
-} from "./grow.ts";
+import { growBcc, growHcp, growPc, growPcCentered } from "./grow.ts";
+import { getFCC } from "./crystal-structure-types/fcc.ts";
 
 const R = 100;
 
@@ -193,26 +187,26 @@ function getBCC() {
   };
 }
 
-function getFCC() {
-  return {
-    unitCell: () => growFcc(),
-    connections: () => growFccCentered(),
-    CCP: () => getCCP().unitCell,
-    "CCP=FCC": () => getCcpIsFcc().unitCell,
-    connectionsHexagon: () => getFccConnections(),
-  };
-}
-
 const structures = {
   PC: getPC(),
   BCC: getBCC(),
-  FCC: getFCC(),
+  FCC: {
+    ...getFCC(),
+    CCP: () => getCCP().unitCell,
+    "CCP=FCC": () => getCcpIsFcc().unitCell,
+    connectionsHexagon: () => getFccConnections(),
+  },
   HCP: getHCP(),
   "NaCl (Rock salt)": getNaCl(),
   Iron: getIron(),
   Diamond: getDiamond(),
   Copper: getCopper(),
   Zinc: getZinc(),
+  Prkl: {
+    CCP: () => getCCP().unitCell,
+
+    connectionsHexagon: () => getFccConnections(),
+  },
 } as const;
 
 export type StructureMaps = typeof structures;

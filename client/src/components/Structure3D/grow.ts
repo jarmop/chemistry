@@ -45,7 +45,7 @@ interface GrowArgs {
   maxLayers?: number;
 }
 
-function grow({
+export function grow({
   startAtom,
   atom2,
   distance,
@@ -314,56 +314,6 @@ export function growDiamondCubic(startAtom: Ball, size: number) {
   });
 
   return { balls: centerObjects(balls), sticks: centerSticks(sticks) };
-}
-
-function getFccConnectionAngles() {
-  const connectionAngles: [number, number][] = [];
-
-  const polarAngle = 90;
-  for (let azimuthalAngle = 45; azimuthalAngle < 360; azimuthalAngle += 90) {
-    connectionAngles.push([polarAngle, azimuthalAngle]);
-  }
-
-  for (let polarAngle = 45; polarAngle < 180; polarAngle += 90) {
-    for (let azimuthalAngle = 0; azimuthalAngle < 360; azimuthalAngle += 90) {
-      connectionAngles.push([polarAngle, azimuthalAngle]);
-    }
-  }
-
-  return connectionAngles;
-}
-
-export function growFcc(
-  atom: Ball = defaultAtom,
-  size = 1,
-) {
-  const distance = 2 * atom.radius;
-  const latticeConstant = 2 * distance / Math.sqrt(2);
-
-  const isWithinBounds = createCubicBoundChecker(size * latticeConstant);
-
-  const { balls, sticks } = grow({
-    startAtom: atom,
-    distance,
-    isWithinBounds,
-    connectionAnglesDefault: getFccConnectionAngles(),
-  });
-
-  return { balls: centerObjects(balls), sticks: centerSticks(sticks) };
-}
-
-export function growFccCentered(
-  atom: Ball = defaultAtom,
-  layers = 1,
-) {
-  const distance = 2 * atom.radius;
-
-  return grow({
-    startAtom: atom,
-    distance,
-    connectionAnglesDefault: getFccConnectionAngles(),
-    maxLayers: layers,
-  });
 }
 
 const tetrahedronPlaneEdgeAngle = radiusToDegree(

@@ -8,6 +8,8 @@ export function tetrahedronHeight(edgeLength: number) {
   return edgeLength * Math.sqrt(6) / 3;
 }
 
+export const tetrahedronPlaneEdgeAngle = Math.acos(tetrahedronHeight(1));
+
 export function squareDiameterToSide(diameter: number) {
   return diameter / Math.SQRT2;
 }

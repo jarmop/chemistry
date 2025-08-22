@@ -1,6 +1,7 @@
 import { Vector3 } from "three";
 import { Ball } from "../types.ts";
-import { growFcc, growPc, growPcCentered } from "../grow.ts";
+import { growPc, growPcCentered } from "../grow.ts";
+import { growFcc } from "../crystal-structure-types/fcc.ts";
 
 const radiusNa = 116;
 const radiusCl = 167;
