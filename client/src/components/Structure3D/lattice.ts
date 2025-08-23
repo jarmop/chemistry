@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import { TrackballControls } from "three/addons/controls/TrackballControls.js";
 import { TransformControls } from "three/addons/controls/TransformControls.js";
-import { Ball, Stick } from "./types.ts";
+import { Ball, Stick } from "./common/types.ts";
 import { getMinMaxDimensions } from "./common/latticeHelpers.ts";
 
 const near = 1;

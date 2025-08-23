@@ -1,7 +1,7 @@
 import {
   cornerToCenter,
   edgeToCenter,
-  getStructure,
+  getFccStructure,
   Layer,
 } from "./fccLayers.ts";
 
@@ -165,7 +165,7 @@ function getStructure2(layer: Layer) {
     edgeToCenter,
   ];
 
-  return getStructure(layer, layerZOffsets);
+  return getFccStructure(layer, layerZOffsets);
 }
 
 export function getFCCLayers2() {

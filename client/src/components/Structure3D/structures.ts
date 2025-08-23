@@ -14,6 +14,7 @@ import { getFCCLayers2 } from "./layers/fccLayers2.ts";
 import { getFCCLayers3 } from "./layers/fccLayers3.ts";
 import { getFCCLayers1 } from "./layers/fccLayers1.ts";
 import { getFCCLayers4 } from "./layers/fccLayers4.ts";
+import { getHCPLayers1 } from "./layers/hcpLayers1.ts";
 
 const R = 100;
 
@@ -205,6 +206,7 @@ const structures = {
   FccLayers3: getFCCLayers3(),
   FccLayers4: getFCCLayers4(),
   HCP: getHCP(),
+  HcpLayers: getHCPLayers1(),
   "NaCl (Rock salt)": getNaCl(),
   Iron: getIron(),
   Diamond: getDiamond(),

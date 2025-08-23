@@ -1,9 +1,6 @@
 import { Vector3 } from "three";
 import { Ball } from "../common/types.ts";
-import {
-  triangleCornerToCenterDistance,
-  triangleEdgeToCenterDistance,
-} from "../common/mathHelpers.ts";
+import { triangleCornerToCenterDistance } from "../common/mathHelpers.ts";
 import { getStructure } from "./getStructure.ts";
 
 const defaultRadius = 100;
@@ -17,15 +14,17 @@ const defaultAtom: Ball = {
 const R = defaultAtom.radius;
 
 export const cornerToCenter = triangleCornerToCenterDistance(2 * R);
-export const edgeToCenter = triangleEdgeToCenterDistance(2 * R);
 
 export type Layer = string[][];
 
-const layerColors = ["red", "blue", "yellow"];
+const layerColors = ["red", "blue"];
+const layerZOffsets = [
+  0,
+  cornerToCenter,
+];
 
-export function getFccStructure(
+export function getHcpStructure(
   layers: string[][],
-  layerZOffsets?: number[],
 ) {
   return getStructure(layers, layerColors, layerZOffsets);
 }

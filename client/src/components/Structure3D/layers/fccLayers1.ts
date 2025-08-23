@@ -1,4 +1,4 @@
-import { getStructure } from "./fccLayers.ts";
+import { getFccStructure } from "./fccLayers.ts";
 
 const structure = [
   [
@@ -187,13 +187,13 @@ const trianglesStackedForward = [[
 
 export function getFCCLayers1() {
   return {
-    structure: () => getStructure(structure),
-    layers: () => getStructure(layers),
-    singleBall: () => getStructure(singleBalls),
-    triangles: () => getStructure(triangles),
-    triangles2: () => getStructure(triangles2),
-    trianglePyramid: () => getStructure(trianglePyramid),
-    squarePyramid: () => getStructure(squarePyramid),
-    "FCC=CCP": () => getStructure(fccIsCpp),
+    structure: () => getFccStructure(structure),
+    layers: () => getFccStructure(layers),
+    singleBall: () => getFccStructure(singleBalls),
+    triangles: () => getFccStructure(triangles),
+    triangles2: () => getFccStructure(triangles2),
+    trianglePyramid: () => getFccStructure(trianglePyramid),
+    squarePyramid: () => getFccStructure(squarePyramid),
+    "FCC=CCP": () => getFccStructure(fccIsCpp),
   };
 }

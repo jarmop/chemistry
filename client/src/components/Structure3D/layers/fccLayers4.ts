@@ -1,4 +1,4 @@
-import { cornerToCenter, edgeToCenter, getStructure } from "./fccLayers.ts";
+import { cornerToCenter, edgeToCenter, getFccStructure } from "./fccLayers.ts";
 
 const structure = [
   [
@@ -40,7 +40,7 @@ const structure2 = [
 
 export function getFCCLayers4() {
   return {
-    structure: () => getStructure(structure),
-    structure2: () => getStructure(structure2, layerZOffsets2),
+    structure: () => getFccStructure(structure),
+    structure2: () => getFccStructure(structure2, layerZOffsets2),
   };
 }
