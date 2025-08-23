@@ -13,6 +13,7 @@ import { getFCC } from "./crystal-structure-types/fcc.ts";
 import { getFCCLayers2 } from "./layers/fccLayers2.ts";
 import { getFCCLayers3 } from "./layers/fccLayers3.ts";
 import { getFCCLayers1 } from "./layers/fccLayers1.ts";
+import { getFCCLayers4 } from "./layers/fccLayers4.ts";
 
 const R = 100;
 
@@ -202,6 +203,7 @@ const structures = {
   FCCLayers1: getFCCLayers1(),
   FccLayers2: getFCCLayers2(),
   FccLayers3: getFCCLayers3(),
+  FccLayers4: getFCCLayers4(),
   HCP: getHCP(),
   "NaCl (Rock salt)": getNaCl(),
   Iron: getIron(),

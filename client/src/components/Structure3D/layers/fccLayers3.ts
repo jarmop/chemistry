@@ -5,6 +5,65 @@ import {
   Layer,
 } from "./fccLayers.ts";
 
+// const middleTriangles = [
+//   [
+//     "#-#",
+//     "-o",
+//   ],
+//   [
+//     "-o-",
+//     "o-o",
+//   ],
+//   [
+//     "-#-",
+//     "o-o",
+//     "-o-",
+//   ],
+//   [
+//     "#-#",
+//     "-o",
+//   ],
+// ];
+
+const middleTriangles = [
+  [
+    "-o-o",
+    "o-o-o",
+    "-o-o",
+  ],
+  [
+    "#-o-",
+    "-o-o",
+  ],
+  [
+    "#-#-",
+    "-o-o",
+    "#-o-",
+  ],
+  [
+    "-o-o",
+    "o-o-o",
+    "-o-o",
+  ],
+];
+
+const structure = [
+  [
+    "-o-o-",
+    "o-o-o",
+    "-o-o",
+  ],
+  [
+    "#-o-",
+    "-o-o",
+  ],
+  [
+    "#-#-",
+    "-o-o",
+    "#-o",
+  ],
+];
+
 const singleBalls = [
   [
     "o",
@@ -41,26 +100,38 @@ const triangles = [
 
 const trianglePyramid = [
   [
-    "o-o-o-o",
-    "-o-o-o",
-    "--o-o",
-    "---o",
+    "o-o-o",
+    "-o-o",
+    "--o",
   ],
   [
-    "-o-o-o",
-    "--o-o",
-    "---o",
+    "-o-o",
+    "#-o",
   ],
   [
-    "------",
-    "--o-o",
-    "---o",
+    "-#-#",
+    "#-o",
+  ],
+];
+
+const fccIsCpp = [
+  [
+    "-#-#",
+    "#-o",
   ],
   [
-    "-------",
-    "---o--",
-    "-----",
-    "----",
+    "o-o-o-#",
+    "-o-o-#-",
+    "#-o-#-#",
+  ],
+  [
+    "#-o-#-#",
+    "-o-o-#-",
+    "o-o-o-#",
+  ],
+  [
+    "-#-#",
+    "#-o",
   ],
 ];
 
@@ -76,8 +147,11 @@ function getStructure3(layer: Layer) {
 
 export function getFCCLayers3() {
   return {
+    middleTriangles: () => getStructure3(middleTriangles),
+    structure: () => getStructure3(structure),
     singleBall: () => getStructure3(singleBalls),
     triangles: () => getStructure3(triangles),
     trianglePyramid: () => getStructure3(trianglePyramid),
+    "FCC=CCP": () => getStructure3(fccIsCpp),
   };
 }
