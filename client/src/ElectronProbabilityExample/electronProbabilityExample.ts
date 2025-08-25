@@ -180,8 +180,8 @@ export function init(
 
   // === GUI ===
   const params = {
-    // orbital: "2p_z",
-    orbital: "1s",
+    orbital: "2p_z",
+    // orbital: "1s",
     samples: 60000,
     step: 0.6,
     thin: 2,
@@ -210,6 +210,7 @@ export function init(
       step: params.step,
       thin: Math.floor(params.thin),
     });
+    console.log(positions.length);
     geometry.setAttribute(
       "position",
       new THREE.BufferAttribute(positions, 3),

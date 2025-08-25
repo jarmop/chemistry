@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Atomic Orbital Isosurface – Three.js</title>
+  <style>
+    html, body { margin: 0; height: 100%; background: #0b0f14; color: #e5e7eb; font-family: ui-sans-serif, system-ui; }
+    #app { position: fixed; inset: 0; }
+    .overlay { position: fixed; left: 12px; top: 12px; padding: 10px 12px; background: rgba(0,0,0,.35); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,.08); border-radius: 12px; font-size: 13px; line-height: 1.35; }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <div class="overlay">
+    <div><strong>Atomic Orbital Isosurface</strong></div>
+    <div>Technique: Marching Cubes over |ψ<sup>H</sup><sub>nℓm</sub>|² (hydrogen-like)</div>
+  </div>
+
+  <script type="module">
+    import * as THREE from 'https://unpkg.com/three@0.161.0/build/three.module.js';
+    import { OrbitControls } from 'https://unpkg.com/three@0.161.0/examples/jsm/controls/OrbitControls.js';
+    import { MarchingCubes } from 'https://unpkg.com/three@0.161.0/examples/jsm/objects/MarchingCubes.js';
+    import GUI from 'https://cdn.jsdelivr.net/npm/lil-gui@0.19/+esm';
+
+    const app = document.getElementById('app');
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setPixelRatio(Math.min(2, window.devicePixelRatio));
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setClearColor(0x0b0f14, 1);
+    app.appendChild(renderer.domElement);
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.01, 200);
+    camera.position.set(1.5, 1.2, 2.5);
+
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+
+    const hemi = new THREE.HemisphereLight(0xffffff, 0x223344, 0.6);
+    scene.add(hemi);
+    const dir = new THREE.DirectionalLight(0xffffff, 0.6);
+    dir.position.set(3,3,3);
+    scene.add(dir);
+
+    // === Orbitals ===
+    const vecLen = (x,y,z) => Math.hypot(x,y,z);
+
+    function psi_1s(x,y,z) {
+      const r = vecLen(x,y,z);
+      return Math.exp(-r);
+    }
+    function psi_2s(x,y,z) {
+      const r = vecLen(x,y,z);
+      return (2 - r) * Math.exp(-r/2);
+    }
+    function psi_2p_z(x,y,z) {
+      const r = vecLen(x,y,z);
+      const theta = Math.acos(r === 0 ? 1 : z/r);
+      return r * Math.exp(-r/2) * Math.cos(theta);
+    }
+    function psi_3d_z2(x,y,z) {
+      const r = vecLen(x,y,z);
+      const theta = Math.acos(r === 0 ? 1 : z/r);
+      return (r*r) * Math.exp(-r/3) * (3*Math.cos(theta)*Math.cos(theta) - 1);
+    }
+
+    const orbitals = { '1s': psi_1s, '2s': psi_2s, '2p_z': psi_2p_z, '3d_z2': psi_3d_z2 };
+
+    // === Marching Cubes setup ===
+    const resolution = 50;
+    const material = new THREE.MeshStandardMaterial({ color: 0x5588ff, roughness: 0.3, metalness: 0.0, side: THREE.DoubleSide });
+    const mc = new MarchingCubes(resolution, material, true, true);
+    mc.isolation = 0.02; // isosurface level
+    mc.position.set(0,0,0);
+    mc.scale.set(2,2,2);
+    scene.add(mc);
+
+    function updateField(psi) {
+      mc.reset();
+      for (let k=0; k<resolution; k++) {
+        for (let j=0; j<resolution; j++) {
+          for (let i=0; i<resolution; i++) {
+            const x = (i/resolution - 0.5) * 6; // scale to [-3,3]
+            const y = (j/resolution - 0.5) * 6;
+            const z = (k/resolution - 0.5) * 6;
+            const val = psi(x,y,z);
+            mc.setCell(i,j,k, val*val); // probability density
+          }
+        }
+      }
+    }
+
+    const params = { orbital: '2p_z', iso: 0.02, resample: () => rebuild() };
+    const gui = new GUI();
+    gui.add(params, 'orbital', Object.keys(orbitals)).onChange(() => rebuild());
+    gui.add(params, 'iso', 0.001, 0.2, 0.001).onChange(v => { mc.isolation = v; rebuild(); });
+    gui.add(params, 'resample');
+
+    function rebuild() {
+      updateField(orbitals[params.orbital]);
+    }
+    rebuild();
+
+    function tick() {
+      controls.update();
+      renderer.render(scene, camera);
+      requestAnimationFrame(tick);
+    }
+    tick();
+
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+  </script>
+</body>
+</html>
