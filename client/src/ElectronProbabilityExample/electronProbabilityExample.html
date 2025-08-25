@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Atomic Orbital Point Cloud – Three.js</title>
+    <style>
+      html, body {
+        margin: 0;
+        height: 100%;
+        background: #0b0f14;
+        color: #e5e7eb;
+        font-family: ui-sans-serif, system-ui;
+      }
+      #app {
+        position: fixed;
+        inset: 0;
+      }
+      .overlay {
+        position: fixed;
+        left: 12px;
+        top: 12px;
+        padding: 10px 12px;
+        background: rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(6px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        font-size: 13px;
+        line-height: 1.35;
+      }
+      .overlay a {
+        color: #9ecbff;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <div class="overlay">
+      <div><strong>Atomic Orbital Visualizer</strong></div>
+      <div>
+        Technique: Metropolis–Hastings sampling of |ψ<sup>H</sup><sub
+        >nℓm</sub>|² (hydrogen-like)
+      </div>
+      <div>Switch orbital / samples / step in the panel (top-right).</div>
+    </div>
+
+    <script type="module">
+      import * as THREE from "https://unpkg.com/three@0.161.0/build/three.module.js";
+      import { OrbitControls } from "https://unpkg.com/three@0.161.0/examples/jsm/controls/OrbitControls.js";
+      import GUI from "https://cdn.jsdelivr.net/npm/lil-gui@0.19/+esm";
+
+      // === Scene & camera ===
+      const app = document.getElementById("app");
+      const renderer = new THREE.WebGLRenderer({
+        antialias: true,
+        alpha: false,
+      });
+      renderer.setPixelRatio(Math.min(2, window.devicePixelRatio));
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setClearColor(0x0b0f14, 1);
+      app.appendChild(renderer.domElement);
+
+      const scene = new THREE.Scene();
+
+      const camera = new THREE.PerspectiveCamera(
+        45,
+        window.innerWidth / window.innerHeight,
+        0.01,
+        200,
+      );
+      camera.position.set(0.8, 0.8, 1.8);
+
+      const controls = new OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+
+      // Subtle lighting for axes/gizmos (points are self-lit via shader)
+      const hemi = new THREE.HemisphereLight(0xffffff, 0x223344, 0.2);
+      scene.add(hemi);
+
+      // Reference axes
+      const axes = new THREE.AxesHelper(1.2);
+      axes.material.transparent = true;
+      axes.material.opacity = 0.25;
+      scene.add(axes);
+
+      // === Math helpers ===
+      const randn = () => {
+        // Box–Muller
+        let u = 0, v = 0;
+        while (u === 0) u = Math.random();
+        while (v === 0) v = Math.random();
+        return Math.sqrt(-2.0 * Math.log(u)) *
+          Math.cos(2.0 * Math.PI * v);
+      };
+
+      const vecLen = (x, y, z) => Math.hypot(x, y, z);
+
+      // Hydrogenic (unnormalized) real orbitals up to 3d.
+      // We omit global constants; shapes (lobes, nodes) are unchanged.
+      // Atomic units (a0 = 1), Z=1. θ is polar angle from +z.
+      function psi_1s(x, y, z) {
+        const r = vecLen(x, y, z);
+        return Math.exp(-r); // signless
+      }
+
+      function psi_2p_z(x, y, z) {
+        const r = vecLen(x, y, z);
+        const theta = Math.acos(r === 0 ? 1 : z / r);
+        const radial = r * Math.exp(-r / 2);
+        const angular = Math.cos(theta); // ∝ Y_10
+        return radial * angular; // signed
+      }
+
+      function psi_2s(x, y, z) {
+        const r = vecLen(x, y, z);
+        // Shape: one radial node near r≈2
+        return (2 - r) * Math.exp(-r / 2);
+      }
+
+      function psi_3d_z2(x, y, z) {
+        const r = vecLen(x, y, z);
+        const theta = Math.acos(r === 0 ? 1 : z / r);
+        const radial = (r * r) * Math.exp(-r / 3);
+        const angular = 3 * Math.cos(theta) * Math.cos(theta) - 1; // ∝ Y_20
+        return radial * angular; // signed
+      }
+
+      // Map name -> function
+      const orbitals = {
+        "1s": psi_1s,
+        "2s": psi_2s,
+        "2p_z": psi_2p_z,
+        "3d_z2": psi_3d_z2,
+      };
+
+      // === Metropolis–Hastings sampler for |ψ|² ===
+      function samplePoints(
+        { psi, count = 50000, step = 0.6, burn = 2000, thin = 3 },
+      ) {
+        const positions = new Float32Array(count * 3);
+        const colors = new Float32Array(count * 3);
+
+        let x = 0, y = 0, z = 0; // start near nucleus
+        let val = psi(x, y, z);
+        let dens = val * val;
+
+        // burn-in
+        for (let i = 0; i < burn; i++) {
+          const nx = x + step * randn();
+          const ny = y + step * randn();
+          const nz = z + step * randn();
+          const nv = psi(nx, ny, nz);
+          const nd = nv * nv;
+          if (Math.random() < Math.min(1, nd / (dens + 1e-12))) {
+            x = nx;
+            y = ny;
+            z = nz;
+            val = nv;
+            dens = nd;
+          }
+        }
+
+        // collect
+        let written = 0;
+        let iThin = 0;
+        while (written < count) {
+          const nx = x + step * randn();
+          const ny = y + step * randn();
+          const nz = z + step * randn();
+          const nv = psi(nx, ny, nz);
+          const nd = nv * nv;
+          if (Math.random() < Math.min(1, nd / (dens + 1e-12))) {
+            x = nx;
+            y = ny;
+            z = nz;
+            val = nv;
+            dens = nd;
+          }
+          if (++iThin >= thin) {
+            const idx = written * 3;
+            positions[idx] = x;
+            positions[idx + 1] = y;
+            positions[idx + 2] = z;
+            // Color by sign (blue for +, red for −). Neutral grey for 1s/2s where sign flips across radial nodes.
+            const s = Math.tanh(val * 2.0); // soften extremes
+            const posSign = s >= 0;
+            const a = Math.abs(s);
+            colors[idx] = posSign ? 0.2 * (1 - a) : 0.9 * a; // R
+            colors[idx + 1] = 0.2 * (1 - a); // G
+            colors[idx + 2] = posSign ? 0.9 * a : 0.2 * (1 - a); // B
+            written++;
+            iThin = 0;
+          }
+        }
+
+        return { positions, colors };
+      }
+
+      // === Points geometry/material ===
+      const geometry = new THREE.BufferGeometry();
+      const material = new THREE.PointsMaterial({
+        size: 0.02,
+        transparent: true,
+        opacity: 0.9,
+        vertexColors: true,
+        depthWrite: false,
+      });
+      const points = new THREE.Points(geometry, material);
+      scene.add(points);
+
+      // nucleus (small glow)
+      const nucleus = new THREE.Mesh(
+        new THREE.SphereGeometry(0.05, 32, 16),
+        new THREE.MeshBasicMaterial({ color: 0xffffff }),
+      );
+      scene.add(nucleus);
+
+      // === GUI ===
+      const params = {
+        orbital: "2p_z",
+        samples: 60000,
+        step: 0.6,
+        thin: 2,
+        size: 0.02,
+        reset: () => rebuild(),
+      };
+      const gui = new GUI({ title: "Orbital Controls" });
+      gui.add(params, "orbital", Object.keys(orbitals)).name("nℓm");
+      gui.add(params, "samples", 10000, 200000, 1000).name("samples");
+      gui.add(params, "step", 0.2, 1.5, 0.05).name("MH step");
+      gui.add(params, "thin", 1, 10, 1).name("thin");
+      gui.add(params, "size", 0.005, 0.05, 0.001).name("point size")
+        .onChange((v) => material.size = v);
+      gui.add(params, "reset").name("resample");
+
+      let rebuilding = false;
+      function rebuild() {
+        if (rebuilding) return;
+        rebuilding = true;
+        const { positions, colors } = samplePoints({
+          psi: orbitals[params.orbital],
+          count: Math.floor(params.samples),
+          step: params.step,
+          thin: Math.floor(params.thin),
+        });
+        geometry.setAttribute(
+          "position",
+          new THREE.BufferAttribute(positions, 3),
+        );
+        geometry.setAttribute(
+          "color",
+          new THREE.BufferAttribute(colors, 3),
+        );
+        geometry.computeBoundingSphere();
+        rebuilding = false;
+      }
+
+      rebuild();
+
+      // === Render loop ===
+      function tick() {
+        controls.update();
+        renderer.render(scene, camera);
+        requestAnimationFrame(tick);
+      }
+      tick();
+
+      // === Resize ===
+      window.addEventListener("resize", () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      });
+
+      // Optional: key bindings to cycle orbitals
+      window.addEventListener("keydown", (e) => {
+        if (e.key.toLowerCase() === "o") {
+          const keys = Object.keys(orbitals);
+          const i = keys.indexOf(params.orbital);
+          params.orbital = keys[(i + 1) % keys.length];
+          gui.controllers[0].setValue(params.orbital);
+          rebuild();
+        }
+      });
+    </script>
+  </body>
+</html>

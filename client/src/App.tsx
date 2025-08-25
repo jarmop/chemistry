@@ -7,12 +7,14 @@ import { MoleculeComparison } from "./components/MoleculeComparison.tsx";
 import { Structures3D } from "./components/Structures3D.tsx";
 import { MoleculeView } from "./components/MoleculeView.tsx";
 import { Bonding } from "./components/Bonding/Bonding.tsx";
+import { ElectronProbabilityDensity } from "./ElectronProbabilityExample/ElectronProbabilityExample.tsx";
 
 function App() {
   return (
     <div>
-      <Structures3D />
-      <Bonding />
+      <ElectronProbabilityDensity />
+      {/* <Structures3D /> */}
+      {/* <Bonding /> */}
       {/* <CrystalComparison /> */}
       {/* <hr /> */}
       {/* <MatterComparison /> */}
@@ -20,7 +22,7 @@ function App() {
       {/* <Materials /> */}
       {/* <MoleculeComparison /> */}
       {/* <MoleculeView /> */}
-      <Inspect />
+      {/* <Inspect /> */}
     </div>
   );
 }
