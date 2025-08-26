@@ -8,12 +8,14 @@ import { Structures3D } from "./components/Structures3D.tsx";
 import { MoleculeView } from "./components/MoleculeView.tsx";
 import { Bonding } from "./components/Bonding/Bonding.tsx";
 import { ElectronProbabilityDensity } from "./ElectronProbabilityExample/ElectronProbabilityExample.tsx";
+import { WaveFunctions } from "./components/WaveFunctions.tsx/WaveFunctions.tsx";
 
 function App() {
   return (
     <div>
-      <ElectronProbabilityDensity />
+      {/* <ElectronProbabilityDensity /> */}
       {/* <Structures3D /> */}
+      <WaveFunctions />
       {/* <Bonding /> */}
       {/* <CrystalComparison /> */}
       {/* <hr /> */}

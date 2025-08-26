@@ -194,9 +194,6 @@ export function init(
       // rebuild fields
       const { fieldPsi, maxAbs } = buildField(psi, params.res, params.extent);
       const iso = params.isoFrac * maxAbs; // auto-scaled iso
-      console.log(params.isoFrac);
-      console.log(maxAbs);
-      console.log(iso);
       mcPos.isolation = iso;
       mcNeg.isolation = iso;
       // fill internal fields
