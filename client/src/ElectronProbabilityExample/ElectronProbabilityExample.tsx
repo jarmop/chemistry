@@ -1,7 +1,9 @@
 import { useEffect, useRef } from "react";
+import { init } from "./marchingCubesScalar.ts";
+// import { init } from "./simpleMarchingCubes.ts";
 // import { init } from "./isoSurfaceExample.ts";
 // import { init } from "./isoSurfaceExample2.js";
-import { init } from "./isoSurfaceExample2.ts";
+// import { init } from "./isoSurfaceExample2.ts";
 // import { init } from "./electronProbabilityExample.ts";
 
 let initialized = false;

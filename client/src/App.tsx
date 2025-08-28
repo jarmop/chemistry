@@ -14,8 +14,8 @@ import { MarchingCubesView } from "./components/Experiments/MarchingCubesView.ts
 function App() {
   return (
     <div>
-      <MarchingCubesView />
-      {/* <ElectronProbabilityDensity /> */}
+      {/* <MarchingCubesView /> */}
+      <ElectronProbabilityDensity />
       {/* <Structures3D /> */}
       {/* <WaveFunctions /> */}
       {/* <Bonding /> */}

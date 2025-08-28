@@ -73,7 +73,6 @@ function rebuild() {
   const res = 5;
   const enableUvs = true;
   const enableColors = true;
-  const extent = 28;
   const maxPolyCount = 8;
 
   const mc = new MarchingCubes(
@@ -92,9 +91,7 @@ function rebuild() {
   const scl = 1;
   mc.scale.set(scl, scl, scl);
   scene.add(mc);
-  // const fieldPsi = buildField();
 
-  console.log(res, extent);
   const N = res * res * res;
   const fieldPsi = new Float32Array(N);
 
@@ -103,8 +100,6 @@ function rebuild() {
   }
 
   fieldPsi[61] = 1;
-
-  console.log(fieldPsi);
 
   mc.reset();
   let maxDen = 0;
@@ -115,9 +110,6 @@ function rebuild() {
     mc.field[i] = d;
     if (d > maxDen) maxDen = d;
   });
-  console.log(maxDen);
-  // mc.isolation = params.isoFrac * maxDen;
-  console.log("maxDen", maxDen);
   mc.isolation = 0.001 * maxDen;
   mc.update();
 }
