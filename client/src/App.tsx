@@ -8,14 +8,16 @@ import { Structures3D } from "./components/Structures3D.tsx";
 import { MoleculeView } from "./components/MoleculeView.tsx";
 import { Bonding } from "./components/Bonding/Bonding.tsx";
 import { ElectronProbabilityDensity } from "./ElectronProbabilityExample/ElectronProbabilityExample.tsx";
-import { WaveFunctions } from "./components/WaveFunctions.tsx/WaveFunctions.tsx";
+import { WaveFunctions } from "./components/WaveFunctions/WaveFunctions.tsx";
+import { MarchingCubesView } from "./components/Experiments/MarchingCubesView.tsx";
 
 function App() {
   return (
     <div>
+      <MarchingCubesView />
       {/* <ElectronProbabilityDensity /> */}
       {/* <Structures3D /> */}
-      <WaveFunctions />
+      {/* <WaveFunctions /> */}
       {/* <Bonding /> */}
       {/* <CrystalComparison /> */}
       {/* <hr /> */}

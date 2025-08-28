@@ -51,7 +51,9 @@ export function createWaveFunctionGetter(n: 1 | 2 = 2, a0 = 1, Z = 1) {
     },
     "2p": (r: number) => {
       const sigma = getSigma(r);
-      return ((2 - sigma) / (2 * Math.sqrt(2))) * getCommonRadial(sigma);
+      // 2-sigma makes it negative, which flips the phase
+      //   return ((2 - sigma) / (2 * Math.sqrt(2))) * getCommonRadial(sigma);
+      return getCommonRadial(sigma);
     },
   };
 

@@ -35,7 +35,8 @@ export function init(
     0.01,
     200,
   );
-  camera.position.set(2.2, 1.6, 3.0);
+  // camera.position.set(2.2, 1.6, 3.0);
+  camera.position.set(5, 5, 0);
 
   const controls = new OrbitControls(camera, renderer.domElement);
   controls.enableDamping = true;
@@ -50,6 +51,21 @@ export function init(
   axes.material.transparent = true;
   axes.material.opacity = 0.25;
   scene.add(axes);
+
+  // const ballMesh = new THREE.Mesh(
+  //   new THREE.SphereGeometry(1),
+  //   new THREE.MeshPhongMaterial({
+  //     color: "red",
+  //   }),
+  // );
+
+  // const cube = new THREE.Mesh(
+  //   new THREE.BoxGeometry(1, 1, 1),
+  //   new THREE.MeshBasicMaterial({ color: 0x00ff00 }),
+  // );
+  // cube.position.set(0.5, 0.5, 0.5);
+
+  // scene.add(cube);
 
   rebuild(true);
 
@@ -77,25 +93,51 @@ function disposeMC(obj: MarchingCubes) {
   if (obj.geometry) obj.geometry.dispose?.();
 }
 
+let maxR: number;
+let minR: number;
+let minV: number;
+let maxV: number;
+
 // --- Field building ---
 function buildField(psi: PSI, res: number, extent: number) {
   const N = res * res * res;
   const fieldPsi = new Float32Array(N);
   let maxAbs = 0;
   let idx = 0;
+
+  function adjustCoord(c: number) {
+    return ((c / (res - 1)) - 0.5) * 2 * extent;
+    // return (c / (res - 1) - 0.5) * 2 * extent;
+    // return (c / (res - 1) - 0.505) * 2 * extent;
+    // return c / res * extent;
+  }
+
   for (let k = 0; k < res; k++) {
-    const z = ((k / (res - 1)) - 0.5) * 2 * extent;
+    const z = adjustCoord(k);
+
     for (let j = 0; j < res; j++) {
-      const y = ((j / (res - 1)) - 0.5) * 2 * extent;
+      const y = adjustCoord(j);
+
       for (let i = 0; i < res; i++) {
-        const x = ((i / (res - 1)) - 0.5) * 2 * extent;
+        const x = adjustCoord(i);
         const v = psi(x, y, z);
         fieldPsi[idx++] = v;
         const a = Math.abs(v);
+
+        const r = Math.hypot(x, y, z);
+        if (maxR === undefined || r > maxR) maxR = r;
+        if (minR === undefined || r < minR) minR = r;
+        if (maxV === undefined || v > maxV) maxV = v;
+        if (minV === undefined || v < minV) minV = v;
+
         if (a > maxAbs) maxAbs = a;
       }
     }
   }
+
+  console.log(minR.toFixed(2), maxR.toFixed(2));
+  console.log(minV.toFixed(2), maxV.toFixed(2));
+
   return { fieldPsi, maxAbs };
 }
 
@@ -106,8 +148,8 @@ let mcPos: MarchingCubes | null = null, // ψ>0
 
 // --- Parameters & GUI ---
 const params = {
-  // orbital: "2p_z",
-  orbital: "3d_z2",
+  orbital: "2p_z_old",
+  // orbital: "3d_z2",
   mode: "psi (± iso)", // or 'density |psi|^2'
   res: 96, // grid resolution per axis
   extent: 28, // half-size of cube in a0 units -> [-extent, +extent]
