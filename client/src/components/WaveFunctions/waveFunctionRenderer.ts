@@ -93,10 +93,10 @@ function disposeMC(obj: MarchingCubes) {
   if (obj.geometry) obj.geometry.dispose?.();
 }
 
-let maxR: number;
-let minR: number;
-let minV: number;
-let maxV: number;
+// let maxR: number;
+// let minR: number;
+// let minV: number;
+// let maxV: number;
 
 // --- Field building ---
 function buildField(psi: PSI, res: number, extent: number) {
@@ -124,19 +124,19 @@ function buildField(psi: PSI, res: number, extent: number) {
         fieldPsi[idx++] = v;
         const a = Math.abs(v);
 
-        const r = Math.hypot(x, y, z);
-        if (maxR === undefined || r > maxR) maxR = r;
-        if (minR === undefined || r < minR) minR = r;
-        if (maxV === undefined || v > maxV) maxV = v;
-        if (minV === undefined || v < minV) minV = v;
+        // const r = Math.hypot(x, y, z);
+        // if (maxR === undefined || r > maxR) maxR = r;
+        // if (minR === undefined || r < minR) minR = r;
+        // if (maxV === undefined || v > maxV) maxV = v;
+        // if (minV === undefined || v < minV) minV = v;
 
         if (a > maxAbs) maxAbs = a;
       }
     }
   }
 
-  console.log(minR.toFixed(2), maxR.toFixed(2));
-  console.log(minV.toFixed(2), maxV.toFixed(2));
+  // console.log(minR.toFixed(2), maxR.toFixed(2));
+  // console.log(minV.toFixed(2), maxV.toFixed(2));
 
   return { fieldPsi, maxAbs };
 }
@@ -151,7 +151,7 @@ const params = {
   orbital: "2p_z_old",
   // orbital: "3d_z2",
   mode: "psi (± iso)", // or 'density |psi|^2'
-  res: 96, // grid resolution per axis
+  res: 48, // grid resolution per axis
   extent: 28, // half-size of cube in a0 units -> [-extent, +extent]
   isoFrac: 0.05, // iso as fraction of max |psi| or max density
   maxTris: 300000, // max triangles per MC mesh
@@ -159,7 +159,7 @@ const params = {
 };
 
 const waveFunctions = createWaveFunctionGetter();
-console.log(waveFunctions);
+// console.log(waveFunctions);
 
 const ORBITALS: Record<string, PSI> = {
   "1s_old": psi_1s,
@@ -237,6 +237,9 @@ function rebuild(recreate: boolean) {
         mc.position.set(0, 0, 0);
         const scl = 1;
         mc.scale.set(scl, scl, scl);
+        const mcSize = scl * 2;
+        const pos = mcSize / params.res / 2;
+        mc.position.set(pos, pos, pos);
         mc.enableUvs = false;
         mc.enableColors = false;
         scene.add(mc);
@@ -258,6 +261,10 @@ function rebuild(recreate: boolean) {
     });
     mcPos.update();
     mcNeg.update();
+
+    // const foo = mcPos.positionArray.filter((v) => v !== 0);
+    // console.log(Math.min(...foo));
+    // console.log(Math.max(...foo));
   } else {
     if (!mcDen) {
       mcDen = new MarchingCubes(

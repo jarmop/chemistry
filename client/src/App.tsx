@@ -15,9 +15,9 @@ function App() {
   return (
     <div>
       {/* <MarchingCubesView /> */}
-      <ElectronProbabilityDensity />
+      {/* <ElectronProbabilityDensity /> */}
       {/* <Structures3D /> */}
-      {/* <WaveFunctions /> */}
+      <WaveFunctions />
       {/* <Bonding /> */}
       {/* <CrystalComparison /> */}
       {/* <hr /> */}
