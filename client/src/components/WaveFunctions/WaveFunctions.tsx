@@ -1,11 +1,14 @@
 import { useEffect, useRef } from "react";
 import { WebGLRenderer } from "three";
-import { init } from "./waveFunctionRenderer.ts";
+// import { init } from "./waveFunctionRenderer.ts";
+import { init } from "./SimpleWaveFunctionRenderer.ts";
 
 const height = 500;
 const width = 800;
 
 // let pointerDown = false;
+
+let initialized = false;
 
 export function WaveFunctions() {
   const rendererRef = useRef<WebGLRenderer>(null);
@@ -14,9 +17,10 @@ export function WaveFunctions() {
   //   const eventListenerRef = useRef<(e: PointerEvent) => void>(undefined);
 
   useEffect(() => {
-    if (containerRef.current) {
+    if (!initialized && containerRef.current) {
       //   contextRef.current = init(containerRef.current, getRenderer());
       init(containerRef.current, getRenderer());
+      initialized = true;
       //   setEventListeners();
     }
   }, []);
@@ -85,7 +89,7 @@ export function WaveFunctions() {
       <h1>Bonding</h1>
       <div
         ref={containerRef}
-        style={{ width, height }}
+        style={{ width, height, position: "relative" }}
       >
       </div>
     </>

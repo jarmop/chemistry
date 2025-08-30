@@ -26,7 +26,7 @@ function App() {
       {/* <Materials /> */}
       {/* <MoleculeComparison /> */}
       {/* <MoleculeView /> */}
-      {/* <Inspect /> */}
+      <Inspect />
     </div>
   );
 }

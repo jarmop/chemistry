@@ -3,7 +3,7 @@ import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { MarchingCubes } from "three/addons/objects/MarchingCubes.js";
 import GUI from "lil-gui";
 import {
-  createWaveFunctionGetter,
+  createWaveFunctions,
   psi_1s,
   psi_2p_z,
   psi_2s,
@@ -158,7 +158,7 @@ const params = {
   rebuild: () => rebuild(true),
 };
 
-const waveFunctions = createWaveFunctionGetter();
+const waveFunctions = createWaveFunctions();
 // console.log(waveFunctions);
 
 const ORBITALS: Record<string, PSI> = {
