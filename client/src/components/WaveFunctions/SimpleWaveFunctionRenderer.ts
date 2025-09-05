@@ -24,8 +24,8 @@ let samplers = {
   ...createWaveFunctions(),
 };
 
-type Params = {
-  rebuild: () => void;
+export type Params = {
+  // rebuild: () => void;
   mcSize: number;
   resolution: number;
   isolation: number;
@@ -36,7 +36,7 @@ type Params = {
 };
 
 const params: Params = {
-  rebuild: () => {},
+  // rebuild: () => {},
   mcSize: 2800,
   //   mcSize: 10,
   resolution: 64,
@@ -87,7 +87,7 @@ export function init(
   guiContainer.style.position = "absolute";
   container.appendChild(guiContainer);
 
-  params.rebuild = rebuild;
+  // params.rebuild = rebuild;
   const gui = new GUI({ title: "Settings", container: guiContainer });
   gui.add(params, "mcSize", 2, 6000, 2).name("Marching cube size").onChange(
     rebuild,
@@ -159,6 +159,8 @@ export function init(
     requestAnimationFrame(tick);
   }
   tick();
+
+  return { params, rebuild };
 }
 
 function disposeMesh<
@@ -320,10 +322,6 @@ function plot(
 
         const [v, origV] = func(dx, dy, dz);
 
-        if (x === 300) {
-          console.log("wtf");
-        }
-
         if (!minV || v < minV) {
           minV = v;
           minVector = [x, y, z];
@@ -370,8 +368,8 @@ function plot(
     }
   }
 
-  console.log("minV", minV, minVector);
-  console.log("maxV", maxV, maxVector);
+  // console.log("minV", minV, minVector);
+  // console.log("maxV", maxV, maxVector);
 
   pointGeometry.setAttribute(
     "position",

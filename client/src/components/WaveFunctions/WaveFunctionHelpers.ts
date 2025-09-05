@@ -144,8 +144,8 @@ export function createWaveFunctions(a0 = 2) {
   const waveFunctions = {
     "1s": (x: number, y: number, z: number) => {
       const r = Math.hypot(x, y, z);
-      // return radials["1s"](r) * angulars.s;
-      return simple1s(r);
+      return radials["1s"](r) * angulars.s;
+      // return simple1s(r);
     },
     "2s": (x: number, y: number, z: number) => {
       const r = Math.hypot(x, y, z);
@@ -245,6 +245,10 @@ export function createWaveFunctions(a0 = 2) {
 
   return waveFunctions;
 }
+
+const waveFunctions = createWaveFunctions();
+
+export type WaveFuntionKey = keyof typeof waveFunctions;
 
 // // 3d_xy wavefunction (Cartesian form) for a hydrogen-like atom
 // // Psi(x,y,z) = C * x * y * exp(-Z * r / (3 * a0))
@@ -416,3 +420,25 @@ export function createWaveFunctions(a0 = 2) {
 // const d = 1e-11; // 0.1 Å
 // console.log("P(cube, center sample):", probInCube(x, y, z, d));
 // console.log("P(cube, averaged):    ", probInCubeAveraged(x, y, z, d));
+
+function R_1s(fraction: number) {
+  let x = 3.0; // initial guess (R/a0)
+  for (let i = 0; i < 20; i++) {
+    const e2x = Math.exp(-2 * x);
+    const h = e2x * (1 + 2 * x + 2 * x * x);
+    const F = 1 - h;
+    const G = F - fraction;
+    if (Math.abs(G) < 1e-12) break;
+    const Gp = 4 * x * x * e2x;
+    x = x - G / Gp;
+  }
+  return x; // meters
+}
+
+const R_90 = R_1s(0.9);
+// console.log("R_90 (bohrs):", R_90);
+// console.log("R_90 (pm):", R_90 * 53);
+
+const R_95 = R_1s(0.95);
+// console.log("R_95 (bohrs):", R_95);
+// console.log("R_95 (pm):", R_95 * 53);

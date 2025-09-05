@@ -1,29 +1,47 @@
 import { useEffect, useRef } from "react";
 import { WebGLRenderer } from "three";
 // import { init } from "./waveFunctionRenderer.ts";
-import { init } from "./SimpleWaveFunctionRenderer.ts";
+import { init, Params } from "./SimpleWaveFunctionRenderer.ts";
+import { WaveFuntionKey } from "./WaveFunctionHelpers.ts";
 
 const height = 500;
-const width = 800;
+const width = 600;
 
 // let pointerDown = false;
 
 let initialized = false;
 
-export function WaveFunctions3D() {
+interface WaveFunctions3DProps {
+  sampler: WaveFuntionKey;
+}
+
+type RenderingContext = {
+  params: Params;
+  rebuild: () => void;
+};
+
+export function WaveFunctions3D({ sampler }: WaveFunctions3DProps) {
   const rendererRef = useRef<WebGLRenderer>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  //   const contextRef = useRef<RenderingContext>(null);
+  const contextRef = useRef<RenderingContext>(null);
   //   const eventListenerRef = useRef<(e: PointerEvent) => void>(undefined);
 
   useEffect(() => {
     if (!initialized && containerRef.current) {
       //   contextRef.current = init(containerRef.current, getRenderer());
-      init(containerRef.current, getRenderer());
+      contextRef.current = init(containerRef.current, getRenderer());
       initialized = true;
       //   setEventListeners();
     }
   }, []);
+
+  useEffect(() => {
+    if (contextRef.current) {
+      const { params, rebuild } = contextRef.current;
+      params.sampler = sampler;
+      rebuild();
+    }
+  }, [sampler]);
 
   function getRenderer() {
     if (!rendererRef.current) {
@@ -85,13 +103,17 @@ export function WaveFunctions3D() {
   //   }
 
   return (
-    <>
-      <h1>Bonding</h1>
-      <div
-        ref={containerRef}
-        style={{ width, height, position: "relative" }}
-      >
+    <div style={{ textAlign: "center" }}>
+      <h2 style={{ margin: "0 0 20px 0" }}>
+        Surface containing 90% of the electrons
+      </h2>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <div
+          ref={containerRef}
+          style={{ width, height, position: "relative" }}
+        >
+        </div>
       </div>
-    </>
+    </div>
   );
 }
