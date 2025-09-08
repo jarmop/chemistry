@@ -161,6 +161,7 @@ export function createWaveFunctions(a0 = 2) {
       // const phi = getPhiX(r, x, theta);
       const phi = getPhi(y, x);
       return radials["2p"](r) * angulars.p_x(theta, phi);
+      // return radials["2p"](r);
     },
     "2p_y": (x: number, y: number, z: number) => {
       const r = Math.hypot(x, y, z);

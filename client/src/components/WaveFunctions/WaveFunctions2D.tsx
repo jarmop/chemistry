@@ -44,6 +44,8 @@ export function WaveFunctions2D({ sampler }: WaveFunctions2DProps) {
       z * coordMultiplier,
     );
 
+    // return v;
+    // return v * v;
     return 4 * Math.PI * Math.pow(r, 2) * Math.pow(
       v,
       2,
@@ -58,16 +60,18 @@ export function WaveFunctions2D({ sampler }: WaveFunctions2DProps) {
     <>
       <div style={{ textAlign: "center" }}>
         <h2 style={{ margin: 0, textAlign: "center" }}>
-          Radial probability distributions
+          Radial probability distributions 2D
         </h2>
         <ContourPlot func={func} size={size} />
       </div>
-      <div style={{ textAlign: "center" }}>
+      {
+        /* <div style={{ textAlign: "center" }}>
         <h2 style={{ margin: 0, textAlign: "center" }}>
           Radial probability distributions
         </h2>
         <LinePlot func={func} />
-      </div>
+      </div> */
+      }
     </>
   );
 }

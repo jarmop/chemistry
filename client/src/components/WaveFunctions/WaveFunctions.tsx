@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { WaveFunctions2D } from "./WaveFunctions2D.tsx";
 import { WaveFunctions3D } from "./WaveFunctions3d.tsx";
+import { WaveFunctions2D } from "./WaveFunctions2D.tsx";
+import { WaveFunctions1D } from "./WaveFunctions1D.tsx";
 import {
   createWaveFunctions,
   WaveFuntionKey,
@@ -39,6 +40,7 @@ export function WaveFunctions() {
         <WaveFunctions3D sampler={sampler} />
         <WaveFunctions2D sampler={sampler} />
       </div>
+      <WaveFunctions1D sampler={sampler} />
     </>
   );
 }

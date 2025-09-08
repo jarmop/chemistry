@@ -105,7 +105,7 @@ export function WaveFunctions3D({ sampler }: WaveFunctions3DProps) {
   return (
     <div style={{ textAlign: "center" }}>
       <h2 style={{ margin: "0 0 20px 0" }}>
-        Surface containing 90% of the electrons
+        Wave function shapes
       </h2>
       <div style={{ display: "flex", justifyContent: "center" }}>
         <div
