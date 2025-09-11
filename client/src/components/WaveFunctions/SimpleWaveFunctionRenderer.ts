@@ -9,6 +9,7 @@ import {
 import GUI from "lil-gui";
 import {
   createWaveFunctions,
+  WaveFuntionKey,
   // psi_1s,
   // psi_2p_z,
   // psi_2s,
@@ -69,6 +70,7 @@ const showFullPoints = false;
 
 let mcPos: MarchingCubes;
 let mcNeg: MarchingCubes;
+let mcs: [MarchingCubes, MarchingCubes][] = [];
 let sampleAreaOutline: THREE.LineSegments | undefined;
 let mcOutline: THREE.LineSegments | undefined;
 let points: THREE.Points;
@@ -204,8 +206,6 @@ function plot(
   scene: THREE.Scene,
   pointGeometry: THREE.BufferGeometry,
 ) {
-  disposeMesh(mcPos);
-  disposeMesh(mcNeg);
   disposeMesh(mcOutline);
   disposeMesh(sampleAreaOutline);
   labels.forEach((label) => {
@@ -241,11 +241,56 @@ function plot(
   scene.add(mcOutline);
   scene.add(sampleAreaOutline);
 
-  //   mcPos = createMarchingCubesObjects(0x7aa6ff);
-  mcPos = createMarchingCubesObjects(0x4ea1ff);
-  mcNeg = createMarchingCubesObjects(0xff5a5a);
-  scene.add(mcPos);
-  scene.add(mcNeg);
+  const samplers1: WaveFuntionKey[] = ["1s"];
+  const samplers2: WaveFuntionKey[] = ["2s", "2p_x", "2p_y", "2p_z"];
+  const samplers3: WaveFuntionKey[] = [
+    "3s",
+    "3p_x",
+    "3p_y",
+    "3p_z",
+    "3d_z2",
+    "3d_x2-y2",
+    "3d_xy",
+    "3d_xz",
+    "3d_yz",
+  ];
+
+  const selectedSamplers: WaveFuntionKey[] = [params.sampler];
+  // const selectedSamplers: WaveFuntionKey[] = samplers1;
+  // const selectedSamplers: WaveFuntionKey[] = samplers2;
+  // const selectedSamplers: WaveFuntionKey[] = samplers3;
+
+  mcs.forEach(([mcPos, mcNeg]) => {
+    disposeMesh(mcPos);
+    disposeMesh(mcNeg);
+  });
+  mcs = [];
+  selectedSamplers.forEach((sampler) => {
+    const mcPos = createMarchingCubesObjects(0x4ea1ff);
+    const mcNeg = createMarchingCubesObjects(0xff5a5a);
+    scene.add(mcPos);
+    scene.add(mcNeg);
+    renderMCs(pointGeometry, step, sampleAreaMax, sampler, mcPos, mcNeg);
+
+    mcs.push([mcPos, mcNeg]);
+  });
+}
+
+function renderMCs(
+  pointGeometry: THREE.BufferGeometry,
+  step: number,
+  sampleAreaMax: number,
+  sampler: WaveFuntionKey,
+  mcPos: MarchingCubes,
+  mcNeg: MarchingCubes,
+) {
+  // disposeMesh(mcPos);
+  // disposeMesh(mcNeg);
+  // //   mcPos = createMarchingCubesObjects(0x7aa6ff);
+  // mcPos = createMarchingCubesObjects(0x4ea1ff);
+  // mcNeg = createMarchingCubesObjects(0xff5a5a);
+  // scene.add(mcPos);
+  // scene.add(mcNeg);
 
   // Bump the mc half a step forward along all axes to center the shape.
   mcPos.position.addScalar(step / 2);
@@ -269,7 +314,28 @@ function plot(
 
   samplers = { ...createWaveFunctions(params.a0 * bohrMultiplier) };
   const func: PlotFunction = (x: number, y: number, z: number) => {
-    const v = samplers[params.sampler](x, y, z) * isoMultiplier;
+    // const samplers1: WaveFuntionKey[] = ["1s"];
+    // const samplers2: WaveFuntionKey[] = ["2s", "2p_x", "2p_y", "2p_z"];
+    // const samplers3: WaveFuntionKey[] = [
+    //   "3s",
+    //   "3p_x",
+    //   "3p_y",
+    //   "3p_z",
+    //   "3d_z2",
+    //   "3d_x2-y2",
+    //   "3d_xy",
+    //   "3d_xz",
+    //   "3d_yz",
+    // ];
+
+    // const v = samplers3.reduce((v, sampler) => {
+    //   v += samplers[sampler](x, y, z) * isoMultiplier;
+
+    //   return v;
+    // }, 0);
+
+    const v = samplers[sampler](x, y, z) * isoMultiplier;
+
     return [params.samplerMode === "waveFunction" ? v : v * v, v];
   };
   let i = 0;
