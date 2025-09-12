@@ -10,22 +10,24 @@ import { Bonding } from "./components/Bonding/Bonding.tsx";
 import { ElectronProbabilityDensity } from "./ElectronProbabilityExample/ElectronProbabilityExample.tsx";
 import { WaveFunctions } from "./components/WaveFunctions/WaveFunctions.tsx";
 import { MarchingCubesView } from "./components/Experiments/MarchingCubesView.tsx";
+import { Molecules } from "./components/Molecules/Molecules.tsx";
 
 function App() {
   return (
     <div>
+      <Molecules />
       {/* <MarchingCubesView /> */}
       {/* <ElectronProbabilityDensity /> */}
       {/* <Structures3D /> */}
-      <WaveFunctions />
+      {/* <WaveFunctions /> */}
       {/* <Bonding /> */}
       {/* <CrystalComparison /> */}
       {/* <hr /> */}
       {/* <MatterComparison /> */}
       <hr />
       {/* <Materials /> */}
-      {/* <MoleculeComparison /> */}
-      {/* <MoleculeView /> */}
+      <MoleculeComparison />
+      <MoleculeView />
       <Inspect />
     </div>
   );
