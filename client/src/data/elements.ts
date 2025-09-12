@@ -1,5 +1,5 @@
 import elementsJSON from "./elements.json" with { type: "json" };
-import { Element } from "../library/types.ts";
+// import { Element } from "../library/types.ts";
 
 const elements = elementsJSON
   .sort((a, b) => b.abundanceOnEarthCrust - a.abundanceOnEarthCrust)
@@ -8,7 +8,12 @@ const elements = elementsJSON
       ...el,
       abundanceOnEarthCrustRank: i + 1,
     };
-  }).sort((a, b) => a.protons - b.protons) as unknown as Element[];
+  }).sort((a, b) => a.protons - b.protons);
+
+// as unknown as Element[];
+
+type Elements = typeof elements;
+export type Element = Elements[number];
 
 export default elements;
 
@@ -26,3 +31,10 @@ export const elementUnits: Partial<Record<keyof Element, string>> = {
   conductivity: "σ, at 20 °C (S/m)",
   resistivity: "ρ,  at 20 °C (Ω·m)",
 };
+
+type ElementMap = Record<Element["symbol"], Element>;
+
+export const elementMap = elements.reduce((acc, curr) => {
+  acc[curr.symbol] = curr;
+  return acc;
+}, {} as ElementMap);

@@ -1,5 +1,5 @@
 import { Vector3 } from "three";
-import { Ball } from "./types.ts";
+import { Ball } from "./common/types.ts";
 import {
   getPointOnSphereSurface,
   radiusToDegree,
