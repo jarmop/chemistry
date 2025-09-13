@@ -1,6 +1,10 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
-import { getPointOnSphereSurface } from "../Structure3D/common/latticeHelpers.ts";
+import {
+  degreeToRadius,
+  getPointOnSphereSurface,
+  radiusToDegree,
+} from "../Structure3D/common/latticeHelpers.ts";
 import { Element, elementMap } from "../../data/elements.ts";
 
 // const BOHR_RADIUS = 5.29177210903e-11; // meters
@@ -175,6 +179,33 @@ const atomMap = extendedAtoms.reduce((acc, atom) => {
   return acc;
 }, {} as AtomMap);
 
+const methane = {
+  formula: "CH4",
+  name: "Methane",
+  center: atomMap["C"],
+  connections: [
+    {
+      polarAngle: 180,
+      azimuthalAngle: 0,
+      atom: atomMap["H"],
+      bondLength: 108.7,
+      connections: [],
+    },
+    ...[0, 120, 240].map((azimuthalAngle) => (
+      {
+        polarAngle: 180 - 109.5,
+        azimuthalAngle: azimuthalAngle + 90,
+        atom: atomMap["H"],
+        bondLength: 108.7,
+        connections: [],
+      }
+    )),
+  ],
+};
+
+const ammoniaPolarAngle = 180 -
+  radiusToDegree(Math.acos(Math.cos(degreeToRadius(107.8))));
+
 const molecules = [
   {
     formula: "H2O",
@@ -196,7 +227,7 @@ const molecules = [
     center: atomMap["N"],
     connections: [0, 120, 240].map((azimuthalAngle) => (
       {
-        polarAngle: 106.7 / 2,
+        polarAngle: ammoniaPolarAngle,
         azimuthalAngle: azimuthalAngle + 90,
         atom: atomMap["H"],
         bondLength: 95.84,
@@ -234,6 +265,45 @@ const molecules = [
         atom: atomMap["H"],
         bondLength: 110,
         connections: [],
+      },
+    ],
+  },
+  methane,
+  {
+    formula: "C3H7NO2",
+    name: "Alanine",
+    center: atomMap["C"],
+    connections: [
+      {
+        polarAngle: 180,
+        azimuthalAngle: 0,
+        atom: atomMap["O"],
+        bondLength: 121,
+        connections: [],
+      },
+      {
+        polarAngle: 180 - 124,
+        azimuthalAngle: 0,
+        atom: atomMap["O"],
+        bondLength: 136,
+        connections: [{
+          polarAngle: 180 - 108 / 2,
+          azimuthalAngle: 0,
+          atom: atomMap["H"],
+          bondLength: 96,
+        }],
+      },
+      {
+        polarAngle: 180 - 113,
+        azimuthalAngle: 180,
+        atom: atomMap["C"],
+        bondLength: 110,
+        connections: [{
+          polarAngle: 106.7 / 2,
+          azimuthalAngle: 0,
+          atom: atomMap["H"],
+          bondLength: 96,
+        }],
       },
     ],
   },

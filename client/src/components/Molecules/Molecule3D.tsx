@@ -1,7 +1,6 @@
-import { ChangeEvent, useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { WebGLRenderer } from "three";
-// import { init } from "./waveFunctionRenderer.ts";
-import { init, Molecule, moleculeNames } from "./moleculeRenderer.ts";
+import { init, Molecule } from "./moleculeRenderer.ts";
 
 const height = 500;
 const width = 600;

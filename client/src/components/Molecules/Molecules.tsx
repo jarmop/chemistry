@@ -3,7 +3,7 @@ import { Molecule3D } from "./Molecule3D.tsx";
 import { Molecule, moleculeNames } from "./moleculeRenderer.ts";
 
 export function Molecules() {
-  const [name, setName] = useState<Molecule["name"]>("Water");
+  const [name, setName] = useState<Molecule["name"]>("Methane");
   const [useRealRadius, setUseRealRadius] = useState(false);
 
   return (
