@@ -1,25 +1,24 @@
 import { useState } from "react";
 import { Molecule3D } from "./Molecule3D.tsx";
-import { formulas, Molecule } from "./moleculeRenderer.ts";
+import { Molecule, moleculeNames } from "./moleculeRenderer.ts";
 
 export function Molecules() {
-  const [formula, setFormula] = useState<Molecule["formula"]>("H2O");
+  const [name, setName] = useState<Molecule["name"]>("Water");
   const [useRealRadius, setUseRealRadius] = useState(false);
 
   return (
     <>
       <h1>Molecules</h1>
       <div style={{ display: "flex" }}>
-        <Molecule3D formula={formula} useRealRadius={useRealRadius} />
+        <Molecule3D name={name} useRealRadius={useRealRadius} />
         <div>
           <div>
             <select
-              value={formula}
-              onChange={(e) =>
-                setFormula(e.target.value as Molecule["formula"])}
+              value={name}
+              onChange={(e) => setName(e.target.value as Molecule["name"])}
               style={{ cursor: "pointer" }}
             >
-              {formulas.map((f) => <option key={f} value={f}>{f}</option>)}
+              {moleculeNames.map((f) => <option key={f} value={f}>{f}</option>)}
             </select>
           </div>
           <div>

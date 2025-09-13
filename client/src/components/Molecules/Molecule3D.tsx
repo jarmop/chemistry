@@ -1,7 +1,7 @@
 import { ChangeEvent, useEffect, useRef, useState } from "react";
 import { WebGLRenderer } from "three";
 // import { init } from "./waveFunctionRenderer.ts";
-import { formulas, init, Molecule } from "./moleculeRenderer.ts";
+import { init, Molecule, moleculeNames } from "./moleculeRenderer.ts";
 
 const height = 500;
 const width = 600;
@@ -11,15 +11,15 @@ const width = 600;
 let initialized = false;
 
 interface Molecule3DProps {
-  formula: Molecule["formula"];
+  name: Molecule["name"];
   useRealRadius: boolean;
 }
 
 type RenderingContext = {
-  rebuild: (formula: Molecule["formula"], useRealRadius: boolean) => void;
+  rebuild: (name: Molecule["name"], useRealRadius: boolean) => void;
 };
 
-export function Molecule3D({ formula, useRealRadius }: Molecule3DProps) {
+export function Molecule3D({ name, useRealRadius }: Molecule3DProps) {
   const rendererRef = useRef<WebGLRenderer>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const contextRef = useRef<RenderingContext>(null);
@@ -29,7 +29,7 @@ export function Molecule3D({ formula, useRealRadius }: Molecule3DProps) {
       contextRef.current = init(
         containerRef.current,
         getRenderer(),
-        formula,
+        name,
         useRealRadius,
       );
       initialized = true;
@@ -39,9 +39,9 @@ export function Molecule3D({ formula, useRealRadius }: Molecule3DProps) {
   useEffect(() => {
     if (contextRef.current) {
       const { rebuild } = contextRef.current;
-      rebuild(formula, useRealRadius);
+      rebuild(name, useRealRadius);
     }
-  }, [formula, useRealRadius]);
+  }, [name, useRealRadius]);
 
   function getRenderer() {
     if (!rendererRef.current) {

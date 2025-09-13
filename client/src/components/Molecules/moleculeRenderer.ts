@@ -14,7 +14,7 @@ let molecule: THREE.Group;
 export function init(
   container: HTMLDivElement,
   renderer: THREE.WebGLRenderer,
-  formula: Molecule["formula"],
+  name: Molecule["name"],
   useRealRadius: boolean,
 ) {
   const width = container.clientWidth;
@@ -45,7 +45,7 @@ export function init(
   //   //   axes.material.opacity = 0.25;
   //   scene.add(axes);
 
-  molecule = getMolecule(formula, useRealRadius);
+  molecule = getMolecule(name, useRealRadius);
 
   scene.add(molecule);
 
@@ -57,9 +57,9 @@ export function init(
   tick();
 
   return {
-    rebuild: (formula: Molecule["formula"], useRealRadius: boolean) => {
+    rebuild: (name: Molecule["name"], useRealRadius: boolean) => {
       disposeMesh(molecule);
-      molecule = getMolecule(formula, useRealRadius);
+      molecule = getMolecule(name, useRealRadius);
       scene.add(molecule);
     },
   };
@@ -204,7 +204,6 @@ const molecules = [
       }
     )),
   },
-
   {
     formula: "HCOOH",
     name: "Formic acid (Carboxylic acid)",
@@ -242,21 +241,21 @@ const molecules = [
 
 type Molecules = typeof molecules;
 export type Molecule = Molecules[number];
-type MoleculeMap = Record<Molecule["formula"], Molecule>;
+type MoleculeMap = Record<Molecule["name"], Molecule>;
 
-export const formulas = molecules.map((m) => m.formula);
+export const moleculeNames = molecules.map((m) => m.name);
 
 const moleculeMap = molecules.reduce((acc, curr) => {
-  acc[curr.formula] = curr;
+  acc[curr.name] = curr;
   return acc;
 }, {} as MoleculeMap);
 
-function getMolecule(formula: Molecule["formula"], useRealRadius: boolean) {
+function getMolecule(name: Molecule["name"], useRealRadius: boolean) {
   function getRadius(radius: number) {
     return useRealRadius ? radius : getReducedRadius(radius);
   }
 
-  const moleculeData = moleculeMap[formula];
+  const moleculeData = moleculeMap[name];
   //   const moleculeData = moleculeMap["NH3"];
   //   const moleculeData = moleculeMap["HCOOH"];
   const molecule = new THREE.Group();
