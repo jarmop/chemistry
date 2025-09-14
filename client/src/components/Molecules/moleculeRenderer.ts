@@ -1,11 +1,9 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
-import {
-  degreeToRadius,
-  getPointOnSphereSurface,
-  radiusToDegree,
-} from "../Structure3D/common/latticeHelpers.ts";
 import { Element, elementMap } from "../../data/elements.ts";
+import { growMolecule } from "./growMolecule.ts";
+import { moleculeByName } from "./mol.ts";
+import { AtomData } from "../AtomData.tsx";
 
 // const BOHR_RADIUS = 5.29177210903e-11; // meters
 
@@ -18,7 +16,7 @@ let molecule: THREE.Group;
 export function init(
   container: HTMLDivElement,
   renderer: THREE.WebGLRenderer,
-  name: Molecule["name"],
+  name: string,
   useRealRadius: boolean,
 ) {
   const width = container.clientWidth;
@@ -32,7 +30,7 @@ export function init(
     45,
     width / height,
     size / 100,
-    size * 4,
+    size * 10,
   );
   camera.position.set(0, 0, size * 2);
 
@@ -49,7 +47,7 @@ export function init(
   //   //   axes.material.opacity = 0.25;
   //   scene.add(axes);
 
-  molecule = getMolecule(name, useRealRadius);
+  molecule = growMolecule(name, useRealRadius);
 
   scene.add(molecule);
 
@@ -61,7 +59,7 @@ export function init(
   tick();
 
   return {
-    rebuild: (name: Molecule["name"], useRealRadius: boolean) => {
+    rebuild: (name: string, useRealRadius: boolean) => {
       disposeMesh(molecule);
       molecule = getMolecule(name, useRealRadius);
       scene.add(molecule);
@@ -140,8 +138,8 @@ const atoms = [
 ] as const;
 
 type Atoms = typeof atoms;
-type Atom = Atoms[number];
-type AtomMap = Record<Atom["id"], Atom & Element & { radius: number }>;
+type AtomData = Atoms[number];
+type AtomMap = Record<string, AtomData & Element & { radius: number }>;
 
 let realRadiusMin = 1000;
 let realRadiusMax = 0;
@@ -179,211 +177,75 @@ const atomMap = extendedAtoms.reduce((acc, atom) => {
   return acc;
 }, {} as AtomMap);
 
-const methane = {
-  formula: "CH4",
-  name: "Methane",
-  center: atomMap["C"],
-  connections: [
-    {
-      polarAngle: 180,
-      azimuthalAngle: 0,
-      atom: atomMap["H"],
-      bondLength: 108.7,
-      connections: [],
-    },
-    ...[0, 120, 240].map((azimuthalAngle) => (
-      {
-        polarAngle: 180 - 109.5,
-        azimuthalAngle: azimuthalAngle + 90,
-        atom: atomMap["H"],
-        bondLength: 108.7,
-        connections: [],
-      }
-    )),
-  ],
-};
-
-const ammoniaPolarAngle = 180 -
-  radiusToDegree(Math.acos(Math.cos(degreeToRadius(107.8))));
-
-const molecules = [
-  {
-    formula: "H2O",
-    name: "Water",
-    center: atomMap["O"],
-    connections: [0, 180].map((azimuthalAngle) => (
-      {
-        polarAngle: 106.7 / 2,
-        azimuthalAngle: azimuthalAngle,
-        atom: atomMap["H"],
-        bondLength: 95.84,
-        connections: [],
-      }
-    )),
-  },
-  {
-    formula: "NH3",
-    name: "Ammonia",
-    center: atomMap["N"],
-    connections: [0, 120, 240].map((azimuthalAngle) => (
-      {
-        polarAngle: ammoniaPolarAngle,
-        azimuthalAngle: azimuthalAngle + 90,
-        atom: atomMap["H"],
-        bondLength: 95.84,
-        connections: [],
-      }
-    )),
-  },
-  {
-    formula: "HCOOH",
-    name: "Formic acid (Carboxylic acid)",
-    center: atomMap["C"],
-    connections: [
-      {
-        polarAngle: 180,
-        azimuthalAngle: 0,
-        atom: atomMap["O"],
-        bondLength: 121,
-        connections: [],
-      },
-      {
-        polarAngle: 180 - 124,
-        azimuthalAngle: 0,
-        atom: atomMap["O"],
-        bondLength: 136,
-        connections: [{
-          polarAngle: 180 - 108 / 2,
-          azimuthalAngle: 0,
-          atom: atomMap["H"],
-          bondLength: 96,
-        }],
-      },
-      {
-        polarAngle: 180 - 113,
-        azimuthalAngle: 180,
-        atom: atomMap["H"],
-        bondLength: 110,
-        connections: [],
-      },
-    ],
-  },
-  methane,
-  {
-    formula: "C3H7NO2",
-    name: "Alanine",
-    center: atomMap["C"],
-    connections: [
-      {
-        polarAngle: 180,
-        azimuthalAngle: 0,
-        atom: atomMap["O"],
-        bondLength: 121,
-        connections: [],
-      },
-      {
-        polarAngle: 180 - 124,
-        azimuthalAngle: 0,
-        atom: atomMap["O"],
-        bondLength: 136,
-        connections: [{
-          polarAngle: 180 - 108 / 2,
-          azimuthalAngle: 0,
-          atom: atomMap["H"],
-          bondLength: 96,
-        }],
-      },
-      {
-        polarAngle: 180 - 113,
-        azimuthalAngle: 180,
-        atom: atomMap["C"],
-        bondLength: 110,
-        connections: [{
-          polarAngle: 106.7 / 2,
-          azimuthalAngle: 0,
-          atom: atomMap["H"],
-          bondLength: 96,
-        }],
-      },
-    ],
-  },
-] as const;
-
-type Molecules = typeof molecules;
-export type Molecule = Molecules[number];
-type MoleculeMap = Record<Molecule["name"], Molecule>;
-
-export const moleculeNames = molecules.map((m) => m.name);
-
-const moleculeMap = molecules.reduce((acc, curr) => {
-  acc[curr.name] = curr;
-  return acc;
-}, {} as MoleculeMap);
-
-function getMolecule(name: Molecule["name"], useRealRadius: boolean) {
+function getMolecule(name: string, useRealRadius: boolean) {
   function getRadius(radius: number) {
     return useRealRadius ? radius : getReducedRadius(radius);
   }
 
-  const moleculeData = moleculeMap[name];
-  //   const moleculeData = moleculeMap["NH3"];
-  //   const moleculeData = moleculeMap["HCOOH"];
+  const moleculeData = moleculeByName[name];
+
   const molecule = new THREE.Group();
-  const center = createBall(
-    getRadius(moleculeData.center.radius),
-    moleculeData.center.color,
-  );
-  molecule.add(center);
+
+  moleculeData.atoms.forEach((atom) => {
+    const atomData = atomMap[atom.symbol];
+    const atomMesh = createBall(
+      getRadius(atomData.radius),
+      atomData.color,
+    );
+    atomMesh.position.set(...atom.position);
+    molecule.add(atomMesh);
+  });
+
+  function getPosition(id: number) {
+    return moleculeData.atoms.find((a) => a.id === id)?.position || [0, 0, 0];
+  }
 
   const stickRadius = 5;
 
-  moleculeData.connections.forEach((connection) => {
-    const atom = createBall(
-      getRadius(connection.atom.radius),
-      connection.atom.color,
-    );
-    atom.position.copy(
-      getPointOnSphereSurface(
-        center.position,
-        connection.bondLength,
-        connection.polarAngle,
-        connection.azimuthalAngle,
-      ),
-    );
+  moleculeData.bonds.forEach((bond) => {
+    const start = getPosition(bond.start);
+    const end = getPosition(bond.end);
+
     const stick = createStick(
       stickRadius,
-      center.position,
-      atom.position,
+      new THREE.Vector3(...start),
+      new THREE.Vector3(...end),
     );
-    molecule.add(atom);
     molecule.add(stick);
-
-    // const additionalConnections = connection.connections;
-
-    const parentAtom = atom;
-
-    connection.connections.forEach((connection) => {
-      const atom = createBall(
-        getRadius(connection.atom.radius),
-        connection.atom.color,
-      );
-      atom.position.copy(
-        getPointOnSphereSurface(
-          parentAtom.position,
-          connection.bondLength,
-          connection.polarAngle,
-          connection.azimuthalAngle,
-        ),
-      );
-      const stick = createStick(
-        stickRadius,
-        parentAtom.position,
-        atom.position,
-      );
-      molecule.add(atom);
-      molecule.add(stick);
-    });
   });
+
+  //   const moleculeData = moleculeMap["NH3"];
+  //   const moleculeData = moleculeMap["HCOOH"];
+  // const molecule = new THREE.Group();
+  // const center = createBall(
+  //   getRadius(moleculeData.center.radius),
+  //   moleculeData.center.color,
+  // );
+  // molecule.add(center);
+
+  // const stickRadius = 5;
+
+  // moleculeData.connections.forEach((connection) => {
+  //   const atom = createBall(
+  //     getRadius(connection.atom.radius),
+  //     connection.atom.color,
+  //   );
+  //   atom.position.copy(
+  //     getPointOnSphereSurface(
+  //       center.position,
+  //       connection.bondLength,
+  //       connection.polarAngle,
+  //       connection.azimuthalAngle,
+  //     ),
+  //   );
+  //   const stick = createStick(
+  //     stickRadius,
+  //     center.position,
+  //     atom.position,
+  //   );
+  //   molecule.add(atom);
+  //   molecule.add(stick);
+  // });
 
   return molecule;
 }

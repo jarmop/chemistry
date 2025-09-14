@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Molecule3D } from "./Molecule3D.tsx";
-import { Molecule, moleculeNames } from "./moleculeRenderer.ts";
+import { MoleculeName, moleculeNames } from "./mol.ts";
 
 export function Molecules() {
-  const [name, setName] = useState<Molecule["name"]>("Methane");
+  const [name, setName] = useState<MoleculeName>(
+    "Formic acid (Carboxylic acid)",
+  );
   const [useRealRadius, setUseRealRadius] = useState(false);
 
   return (
@@ -15,7 +17,7 @@ export function Molecules() {
           <div>
             <select
               value={name}
-              onChange={(e) => setName(e.target.value as Molecule["name"])}
+              onChange={(e) => setName(e.target.value as MoleculeName)}
               style={{ cursor: "pointer" }}
             >
               {moleculeNames.map((f) => <option key={f} value={f}>{f}</option>)}
@@ -35,6 +37,7 @@ export function Molecules() {
           </div>
         </div>
       </div>
+      {/* <MolReader /> */}
     </>
   );
 }
