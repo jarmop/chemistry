@@ -1,0 +1,254 @@
+[{
+    "Number of carbons": 1,
+    "Prefix as in new system": "Meth-",
+    "Common name for alcohol": "Methyl alcohol(wood alcohol)",
+    "Common name for aldehyde": "Formaldehyde",
+    "Common name for acid": "Formic acid",
+    "Common name for ketone ": "NA"
+}, {
+    "Number of carbons": 2,
+    "Prefix as in new system": "Eth-",
+    "Common name for alcohol": "Ethyl alcohol(grain alcohol)",
+    "Common name for aldehyde": "Acetaldehyde",
+    "Common name for acid": "Acetic acid (vinegar)",
+    "Common name for ketone ": "NA"
+}, {
+    "Number of carbons": 3,
+    "Prefix as in new system": "Prop-",
+    "Common name for alcohol": "Propyl alcohol",
+    "Common name for aldehyde": "Propionaldehyde",
+    "Common name for acid": "Propionic acid",
+    "Common name for ketone ": "Acetone/dimethyl ketone"
+}, {
+    "Number of carbons": 4,
+    "Prefix as in new system": "But-",
+    "Common name for alcohol": "Butyl alcohol",
+    "Common name for aldehyde": "Butyraldehyde",
+    "Common name for acid": "Butyric acid",
+    "Common name for ketone ": "Methyl ethyl ketone"
+}, {
+    "Number of carbons": 5,
+    "Prefix as in new system": "Pent-",
+    "Common name for alcohol": "Amyl alcohol",
+    "Common name for aldehyde": "Valeraldehyde",
+    "Common name for acid": "Valeric acid",
+    "Common name for ketone ": "•Methyl propyl ketone •Diethyl ketone "
+}, {
+    "Number of carbons": 6,
+    "Prefix as in new system": "Hex-",
+    "Common name for alcohol": "Caproyl alcohol",
+    "Common name for aldehyde": "Caproaldehyde",
+    "Common name for acid": "Caproic acid",
+    "Common name for ketone ": "•Butyl methyl ketone •Ethyl propyl ketone "
+}, {
+    "Number of carbons": 7,
+    "Prefix as in new system": "Hept-",
+    "Common name for alcohol": "Enanthyl alcohol",
+    "Common name for aldehyde": "Enanthaldehyde",
+    "Common name for acid": "Enanthoic acid",
+    "Common name for ketone ": "•Methyl pentyl ketone •Butyl ethyl ketone  •Dipropyl ketone "
+}, {
+    "Number of carbons": 8,
+    "Prefix as in new system": "Oct-",
+    "Common name for alcohol": "Capryl alcohol",
+    "Common name for aldehyde": "Caprylaldehyde",
+    "Common name for acid": "Caprylic acid",
+    "Common name for ketone ": "•Hexyl methyl ketone •Ethyl pentyl ketone  •Butyl propyl ketone "
+}, {
+    "Number of carbons": 9,
+    "Prefix as in new system": "Non-",
+    "Common name for alcohol": "Pelargonic alcohol",
+    "Common name for aldehyde": "Pelargonaldehyde",
+    "Common name for acid": "Pelargonic acid",
+    "Common name for ketone ": "•Heptyl methyl ketone •Ethyl hexyl ketone  •Pentyl propyl ketone  •Dibutyl ketone "
+}, {
+    "Number of carbons": 10,
+    "Prefix as in new system": "Dec-",
+    "Common name for alcohol": "Capric alcohol",
+    "Common name for aldehyde": "Capraldehyde",
+    "Common name for acid": "Capric acid",
+    "Common name for ketone ": "•Methyl octyl ketone •Ethyl heptyl ketone  •Hexyl propyl ketone  •Butyl pentyl ketone "
+}, {
+    "Number of carbons": 11,
+    "Prefix as in new system": "Undec-",
+    "Common name for alcohol": "-",
+    "Common name for aldehyde": "-",
+    "Common name for acid": "-",
+    "Common name for ketone ": "The same pattern continues (see below) "
+}, {
+    "Number of carbons": 12,
+    "Prefix as in new system": "Dodec-",
+    "Common name for alcohol": "Lauryl alcohol",
+    "Common name for aldehyde": "Lauraldehyde",
+    "Common name for acid": "Lauric acid"
+}, {
+    "Number of carbons": 13,
+    "Prefix as in new system": "Tridec-",
+    "Common name for alcohol": "-",
+    "Common name for aldehyde": "-",
+    "Common name for acid": "-"
+}, {
+    "Number of carbons": 14,
+    "Prefix as in new system": "Tetradec-",
+    "Common name for alcohol": "Myristyl alcohol",
+    "Common name for aldehyde": "Myristaldehyde",
+    "Common name for acid": "Myristic acid"
+}, {
+    "Number of carbons": 15,
+    "Prefix as in new system": "Pentadec-",
+    "Common name for alcohol": "-",
+    "Common name for aldehyde": "-",
+    "Common name for acid": "-"
+}, {
+    "Number of carbons": 16,
+    "Prefix as in new system": "Hexadec-",
+    "Common name for alcohol": "Cetyl alcohol"
+}, {
+    "Number of carbons": "Palmityl alcohol",
+    "Prefix as in new system": "Palmitaldehyde",
+    "Common name for alcohol": "Palmitic acid"
+}, {
+    "Number of carbons": 17,
+    "Prefix as in new system": "Heptadec-",
+    "Common name for alcohol": "-",
+    "Common name for aldehyde": "-",
+    "Common name for acid": "Margaric acid"
+}, {
+    "Number of carbons": 18,
+    "Prefix as in new system": "Octadec-",
+    "Common name for alcohol": "Stearyl alcohol",
+    "Common name for aldehyde": "Stearaldehyde",
+    "Common name for acid": "Stearic acid"
+}, {
+    "Number of carbons": 19,
+    "Prefix as in new system": "Nonadec-",
+    "Common name for alcohol": "-",
+    "Common name for aldehyde": "-",
+    "Common name for acid": "-"
+}, {
+    "Number of carbons": 20,
+    "Prefix as in new system": "Icos-",
+    "Common name for alcohol": "Arachidyl alcohol",
+    "Common name for aldehyde": "-",
+    "Common name for acid": "Arachidic acid"
+}, {
+    "Number of carbons": 21,
+    "Prefix as in new system": "Henicos-",
+    "Common name for alcohol": "-",
+    "Common name for aldehyde": "-",
+    "Common name for acid": "-"
+}, {
+    "Number of carbons": 22,
+    "Prefix as in new system": "Docos-",
+    "Common name for alcohol": "Behenyl alcohol",
+    "Common name for aldehyde": "-",
+    "Common name for acid": "Behenic acid"
+}, {
+    "Number of carbons": 23,
+    "Prefix as in new system": "Tricos-",
+    "Common name for alcohol": "-",
+    "Common name for aldehyde": "-",
+    "Common name for acid": "-"
+}, {
+    "Number of carbons": 24,
+    "Prefix as in new system": "Tetracos-",
+    "Common name for alcohol": "Lignoceryl alcohol",
+    "Common name for aldehyde": "-",
+    "Common name for acid": "Lignoceric acid"
+}, {
+    "Number of carbons": 25,
+    "Prefix as in new system": "Pentacos-",
+    "Common name for alcohol": "-",
+    "Common name for aldehyde": "-",
+    "Common name for acid": "-"
+}, {
+    "Number of carbons": 26,
+    "Prefix as in new system": "Hexacos-",
+    "Common name for alcohol": "Ceryl alcohol",
+    "Common name for aldehyde": "-",
+    "Common name for acid": "Cerotic acid"
+}, {
+    "Number of carbons": 27,
+    "Prefix as in new system": "Heptacos-",
+    "Common name for alcohol": "-",
+    "Common name for aldehyde": "-",
+    "Common name for acid": "-"
+}, {
+    "Number of carbons": 28,
+    "Prefix as in new system": "Octacos-",
+    "Common name for alcohol": "Montanyl alcohol",
+    "Common name for aldehyde": "-",
+    "Common name for acid": "Montanic acid"
+}, {
+    "Number of carbons": 29,
+    "Prefix as in new system": "Nonacos-",
+    "Common name for alcohol": "-",
+    "Common name for aldehyde": "-",
+    "Common name for acid": "-"
+}, {
+    "Number of carbons": 30,
+    "Prefix as in new system": "Triacont-",
+    "Common name for alcohol": "Melissyl alcohol",
+    "Common name for aldehyde": "-",
+    "Common name for acid": "Melissic acid"
+}, {
+    "Number of carbons": 31,
+    "Prefix as in new system": "Hentriacont-",
+    "Common name for alcohol": "-",
+    "Common name for aldehyde": "-",
+    "Common name for acid": "-"
+}, {
+    "Number of carbons": 32,
+    "Prefix as in new system": "Dotriacont-",
+    "Common name for alcohol": "Lacceryl alcohol",
+    "Common name for aldehyde": "-",
+    "Common name for acid": "Lacceroic acid"
+}, {
+    "Number of carbons": 33,
+    "Prefix as in new system": "Tritriacont-",
+    "Common name for alcohol": "Psyllic alcohol",
+    "Common name for aldehyde": "-",
+    "Common name for acid": "Psyllic acid"
+}, {
+    "Number of carbons": 34,
+    "Prefix as in new system": "Tetratriacont-",
+    "Common name for alcohol": "Geddyl alcohol",
+    "Common name for aldehyde": "-",
+    "Common name for acid": "Geddic acid"
+}, {
+    "Number of carbons": 35,
+    "Prefix as in new system": "Pentatriacont-",
+    "Common name for alcohol": "-",
+    "Common name for aldehyde": "-",
+    "Common name for acid": "Ceroplastic acid"
+}, {
+    "Number of carbons": 36,
+    "Prefix as in new system": "Hexatriacont-",
+    "Common name for alcohol": "-",
+    "Common name for aldehyde": "-",
+    "Common name for acid": "-"
+}, {
+    "Number of carbons": 37,
+    "Prefix as in new system": "Heptatriacont-",
+    "Common name for alcohol": "-",
+    "Common name for aldehyde": "-",
+    "Common name for acid": "-"
+}, {
+    "Number of carbons": 38,
+    "Prefix as in new system": "Octatriacont-",
+    "Common name for alcohol": "-",
+    "Common name for aldehyde": "-",
+    "Common name for acid": "-"
+}, {
+    "Number of carbons": 39,
+    "Prefix as in new system": "Nonatriacont-",
+    "Common name for alcohol": "-",
+    "Common name for aldehyde": "-",
+    "Common name for acid": "-"
+}, {
+    "Number of carbons": 40,
+    "Prefix as in new system": "Tetracont-",
+    "Common name for alcohol": "-",
+    "Common name for aldehyde": "-",
+    "Common name for acid": "-"
+}]

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Molecule3D } from "./Molecule3D.tsx";
 import { MoleculeName, moleculeNames } from "./mol.ts";
+import { OrganicMoleculeSelector } from "./OrganicMoleculeSelector.tsx";
 
 export function Molecules() {
   const [name, setName] = useState<MoleculeName>(
@@ -22,6 +23,9 @@ export function Molecules() {
             >
               {moleculeNames.map((f) => <option key={f} value={f}>{f}</option>)}
             </select>
+          </div>
+          <div>
+            <OrganicMoleculeSelector />
           </div>
           <div>
             <input
