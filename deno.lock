@@ -3,7 +3,9 @@
   "specifiers": {
     "jsr:@oak/commons@1": "1.0.1",
     "jsr:@oak/oak@^17.1.6": "17.1.6",
+    "jsr:@std/assert@*": "1.0.14",
     "jsr:@std/assert@1": "1.0.14",
+    "jsr:@std/assert@^1.0.13": "1.0.14",
     "jsr:@std/assert@^1.0.14": "1.0.14",
     "jsr:@std/bytes@1": "1.0.6",
     "jsr:@std/crypto@1": "1.0.5",
@@ -11,8 +13,10 @@
     "jsr:@std/encoding@^1.0.10": "1.0.10",
     "jsr:@std/http@1": "1.0.20",
     "jsr:@std/internal@^1.0.10": "1.0.10",
+    "jsr:@std/internal@^1.0.8": "1.0.10",
     "jsr:@std/media-types@1": "1.1.0",
     "jsr:@std/path@1": "1.1.2",
+    "jsr:@std/testing@*": "1.0.14",
     "npm:@deno/vite-plugin@^1.0.5": "1.0.5_vite@7.1.3__picomatch@4.0.3",
     "npm:@react-three/drei@^10.7.3": "10.7.3_@react-three+fiber@9.3.0__react@19.1.1__react-dom@19.1.1___react@19.1.1__three@0.179.1__@types+react@19.1.10__use-sync-external-store@1.5.0___react@19.1.1_react@19.1.1_react-dom@19.1.1__react@19.1.1_three@0.179.1_@types+three@0.179.0_@types+react@19.1.10_use-sync-external-store@1.5.0__react@19.1.1",
     "npm:@react-three/fiber@^9.3.0": "9.3.0_react@19.1.1_react-dom@19.1.1__react@19.1.1_three@0.179.1_@types+react@19.1.10_use-sync-external-store@1.5.0__react@19.1.1",
@@ -60,13 +64,13 @@
     "@std/assert@1.0.8": {
       "integrity": "ebe0bd7eb488ee39686f77003992f389a06c3da1bbd8022184804852b2fa641b",
       "dependencies": [
-        "jsr:@std/internal"
+        "jsr:@std/internal@^1.0.10"
       ]
     },
     "@std/assert@1.0.14": {
       "integrity": "68d0d4a43b365abc927f45a9b85c639ea18a9fab96ad92281e493e4ed84abaa4",
       "dependencies": [
-        "jsr:@std/internal"
+        "jsr:@std/internal@^1.0.10"
       ]
     },
     "@std/bytes@1.0.6": {
@@ -96,7 +100,14 @@
     "@std/path@1.1.2": {
       "integrity": "c0b13b97dfe06546d5e16bf3966b1cadf92e1cc83e56ba5476ad8b498d9e3038",
       "dependencies": [
-        "jsr:@std/internal"
+        "jsr:@std/internal@^1.0.10"
+      ]
+    },
+    "@std/testing@1.0.14": {
+      "integrity": "144b3737105b9071cb50c957681f58a1b8ec0f3e5b19ad830f401c5fa931e8f0",
+      "dependencies": [
+        "jsr:@std/assert@^1.0.13",
+        "jsr:@std/internal@^1.0.8"
       ]
     }
   },

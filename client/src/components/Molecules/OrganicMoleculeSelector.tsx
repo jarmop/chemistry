@@ -40,6 +40,8 @@ export function OrganicMoleculeSelector() {
 
   const name = a + b + c;
 
+  parseMoleculeName(name);
+
   return (
     <>
       <div>
