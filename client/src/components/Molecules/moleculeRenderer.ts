@@ -4,6 +4,7 @@ import { Element, elementMap } from "../../data/elements.ts";
 import { growMolecule } from "./growMolecule.ts";
 import { AtomData } from "../AtomData.tsx";
 import { getMolecule } from "./getMolecule.ts";
+import { Molecule } from "./types.ts";
 
 // const BOHR_RADIUS = 5.29177210903e-11; // meters
 
@@ -11,12 +12,12 @@ let scene: THREE.Scene;
 
 const size = 280;
 
-let molecule: THREE.Group;
+let moleculeMesh: THREE.Group;
 
 export function init(
   container: HTMLDivElement,
   renderer: THREE.WebGLRenderer,
-  name: string,
+  molecule: Molecule,
   useRealRadius: boolean,
 ) {
   const width = container.clientWidth;
@@ -47,9 +48,10 @@ export function init(
   //   //   axes.material.opacity = 0.25;
   //   scene.add(axes);
 
-  molecule = growMolecule(name, useRealRadius);
+  // moleculeMesh = growMolecule(molecule, useRealRadius);
+  moleculeMesh = getMoleculeMesh(molecule, useRealRadius);
 
-  scene.add(molecule);
+  scene.add(moleculeMesh);
 
   function tick() {
     controls.update();
@@ -59,10 +61,10 @@ export function init(
   tick();
 
   return {
-    rebuild: (name: string, useRealRadius: boolean) => {
-      disposeMesh(molecule);
-      molecule = getMoleculeMesh(name, useRealRadius);
-      scene.add(molecule);
+    rebuild: (molecule: Molecule, useRealRadius: boolean) => {
+      disposeMesh(moleculeMesh);
+      moleculeMesh = getMoleculeMesh(molecule, useRealRadius);
+      scene.add(moleculeMesh);
     },
   };
 }
@@ -177,12 +179,12 @@ const atomMap = extendedAtoms.reduce((acc, atom) => {
   return acc;
 }, {} as AtomMap);
 
-function getMoleculeMesh(name: string, useRealRadius: boolean) {
+function getMoleculeMesh(molecule: Molecule, useRealRadius: boolean) {
   function getRadius(radius: number) {
     return useRealRadius ? radius : getReducedRadius(radius);
   }
 
-  const moleculeData = getMolecule(name);
+  const moleculeData = molecule;
 
   const moleculeMesh = new THREE.Group();
 

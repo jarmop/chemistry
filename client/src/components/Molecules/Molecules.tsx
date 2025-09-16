@@ -1,19 +1,47 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Molecule3D } from "./Molecule3D.tsx";
 import { MoleculeName, moleculeNames } from "./mol.ts";
 import { OrganicMoleculeSelector } from "./OrganicMoleculeSelector.tsx";
+import { fetchMol } from "./pubChemApi.ts";
+import { parse } from "./molParser.ts";
+import { Molecule } from "./types.ts";
+
+let fetched = false;
 
 export function Molecules() {
   const [name, setName] = useState<MoleculeName>(
     "Formic acid (Carboxylic acid)",
   );
+  const [molecule, setMolecule] = useState<Molecule>();
   const [useRealRadius, setUseRealRadius] = useState(false);
+
+  useEffect(() => {
+    if (fetched) {
+      return;
+    }
+    fetchMol("methanol").then((mol) => {
+      if (mol) {
+        const molecule = parse(mol);
+        setMolecule(molecule);
+        console.log(molecule);
+      }
+    });
+    fetched = true;
+  }, []);
 
   return (
     <>
       <h1>Molecules</h1>
       <div style={{ display: "flex" }}>
-        <Molecule3D name={name} useRealRadius={useRealRadius} />
+        {molecule &&
+          (
+            <Molecule3D
+              name={name}
+              molecule={molecule}
+              useRealRadius={useRealRadius}
+            />
+          )}
+
         <div>
           <div>
             <select

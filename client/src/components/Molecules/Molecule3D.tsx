@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { WebGLRenderer } from "three";
 import { init } from "./moleculeRenderer.ts";
+import { Molecule } from "./types.ts";
 
 const height = 500;
 const width = 600;
@@ -11,14 +12,15 @@ let initialized = false;
 
 interface Molecule3DProps {
   name: string;
+  molecule: Molecule;
   useRealRadius: boolean;
 }
 
 type RenderingContext = {
-  rebuild: (name: string, useRealRadius: boolean) => void;
+  rebuild: (molecule: Molecule, useRealRadius: boolean) => void;
 };
 
-export function Molecule3D({ name, useRealRadius }: Molecule3DProps) {
+export function Molecule3D({ name, molecule, useRealRadius }: Molecule3DProps) {
   const rendererRef = useRef<WebGLRenderer>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const contextRef = useRef<RenderingContext>(null);
@@ -28,7 +30,7 @@ export function Molecule3D({ name, useRealRadius }: Molecule3DProps) {
       contextRef.current = init(
         containerRef.current,
         getRenderer(),
-        name,
+        molecule,
         useRealRadius,
       );
       initialized = true;
@@ -38,9 +40,9 @@ export function Molecule3D({ name, useRealRadius }: Molecule3DProps) {
   useEffect(() => {
     if (contextRef.current) {
       const { rebuild } = contextRef.current;
-      rebuild(name, useRealRadius);
+      rebuild(molecule, useRealRadius);
     }
-  }, [name, useRealRadius]);
+  }, [molecule, useRealRadius]);
 
   function getRenderer() {
     if (!rendererRef.current) {
