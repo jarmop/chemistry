@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import iupacPrefixes from "./data/iupacPrefixes.json" with { type: "json" };
 import { parseMoleculeName } from "./moleculeNameParser.ts";
 
@@ -21,6 +21,11 @@ export function OrganicMoleculeSelector() {
     bondType: "-ane",
     functionalGroup: "-ol",
   });
+  const [carbonCount, setCarbonCount] = useState(1);
+
+  useEffect(() => {
+    console.log(carbonCount);
+  }, [carbonCount]);
 
   function handleNamePartChange(key: keyof NameParts, value: string) {
     setNameParts({
@@ -57,6 +62,17 @@ export function OrganicMoleculeSelector() {
         ))}
         <div>{name}</div>
       </div>
+      Carbon count:{" "}
+      <input
+        type="number"
+        min="1"
+        max="10"
+        value={carbonCount}
+        onChange={(e) => setCarbonCount(parseInt(e.target.value))}
+      />
     </>
   );
+}
+
+function buildOrganicMolecule(carbonCount: number) {
 }

@@ -7,13 +7,12 @@ export type Atom = {
 };
 
 export type Bond = {
-  start: number;
-  end: number;
+  start: Atom["id"];
+  end: Atom["id"];
   type: number;
 };
 
 export type Molecule = {
-  name: string;
   atoms: Atom[];
   bonds: Bond[];
 };

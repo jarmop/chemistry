@@ -28,7 +28,6 @@ export function parse(input: string) {
   const rows = input.trim().split("\n");
 
   const molecule: Molecule = {
-    name: rows[0],
     atoms: [],
     bonds: [],
   };

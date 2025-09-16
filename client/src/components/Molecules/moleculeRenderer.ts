@@ -2,8 +2,8 @@ import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { Element, elementMap } from "../../data/elements.ts";
 import { growMolecule } from "./growMolecule.ts";
-import { moleculeByName } from "./mol.ts";
 import { AtomData } from "../AtomData.tsx";
+import { getMolecule } from "./getMolecule.ts";
 
 // const BOHR_RADIUS = 5.29177210903e-11; // meters
 
@@ -61,7 +61,7 @@ export function init(
   return {
     rebuild: (name: string, useRealRadius: boolean) => {
       disposeMesh(molecule);
-      molecule = getMolecule(name, useRealRadius);
+      molecule = getMoleculeMesh(name, useRealRadius);
       scene.add(molecule);
     },
   };
@@ -177,14 +177,14 @@ const atomMap = extendedAtoms.reduce((acc, atom) => {
   return acc;
 }, {} as AtomMap);
 
-function getMolecule(name: string, useRealRadius: boolean) {
+function getMoleculeMesh(name: string, useRealRadius: boolean) {
   function getRadius(radius: number) {
     return useRealRadius ? radius : getReducedRadius(radius);
   }
 
-  const moleculeData = moleculeByName[name];
+  const moleculeData = getMolecule(name);
 
-  const molecule = new THREE.Group();
+  const moleculeMesh = new THREE.Group();
 
   moleculeData.atoms.forEach((atom) => {
     const atomData = atomMap[atom.symbol];
@@ -193,7 +193,7 @@ function getMolecule(name: string, useRealRadius: boolean) {
       atomData.color,
     );
     atomMesh.position.set(...atom.position);
-    molecule.add(atomMesh);
+    moleculeMesh.add(atomMesh);
   });
 
   function getPosition(id: number) {
@@ -211,41 +211,8 @@ function getMolecule(name: string, useRealRadius: boolean) {
       new THREE.Vector3(...start),
       new THREE.Vector3(...end),
     );
-    molecule.add(stick);
+    moleculeMesh.add(stick);
   });
 
-  //   const moleculeData = moleculeMap["NH3"];
-  //   const moleculeData = moleculeMap["HCOOH"];
-  // const molecule = new THREE.Group();
-  // const center = createBall(
-  //   getRadius(moleculeData.center.radius),
-  //   moleculeData.center.color,
-  // );
-  // molecule.add(center);
-
-  // const stickRadius = 5;
-
-  // moleculeData.connections.forEach((connection) => {
-  //   const atom = createBall(
-  //     getRadius(connection.atom.radius),
-  //     connection.atom.color,
-  //   );
-  //   atom.position.copy(
-  //     getPointOnSphereSurface(
-  //       center.position,
-  //       connection.bondLength,
-  //       connection.polarAngle,
-  //       connection.azimuthalAngle,
-  //     ),
-  //   );
-  //   const stick = createStick(
-  //     stickRadius,
-  //     center.position,
-  //     atom.position,
-  //   );
-  //   molecule.add(atom);
-  //   molecule.add(stick);
-  // });
-
-  return molecule;
+  return moleculeMesh;
 }
