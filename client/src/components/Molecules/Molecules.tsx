@@ -4,16 +4,16 @@ import { MoleculeName, moleculeNames } from "./mol.ts";
 import { OrganicMoleculeSelector } from "./OrganicMoleculeSelector.tsx";
 import { useMolecule } from "./useMolecule.ts";
 
+const moleculeNameOptions = [...moleculeNames, "Propene", "Propyne"];
+
 export function Molecules() {
   const [name, setName] = useState(
-    "Ammonia",
+    "Formic acid",
   );
   // const [molecule, setMolecule] = useState<Molecule>();
   const [useRealRadius, setUseRealRadius] = useState(false);
 
   const { molecule } = useMolecule(name);
-
-  console.log(molecule);
 
   return (
     <>
@@ -33,7 +33,9 @@ export function Molecules() {
               onChange={(e) => setName(e.target.value as MoleculeName)}
               style={{ cursor: "pointer" }}
             >
-              {moleculeNames.map((f) => <option key={f} value={f}>{f}</option>)}
+              {moleculeNameOptions.map((f) => (
+                <option key={f} value={f}>{f}</option>
+              ))}
             </select>
           </div>
           <div>

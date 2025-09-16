@@ -9,13 +9,13 @@ export function useMolecule(name: string) {
   const { isPending, isSuccess, error, data } = useQuery({
     queryKey: [name],
     queryFn: () => {
-      return fetchMol(name);
+      return name.length > 0 ? fetchMol(name) : "";
     },
     staleTime: ONE_HOUR_MS,
   });
 
   let molecule: Molecule | undefined;
-  if (isSuccess && data !== undefined) {
+  if (isSuccess && data !== undefined && data.length > 0) {
     molecule = parse(data);
   }
 

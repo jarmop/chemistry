@@ -95,27 +95,55 @@ const stickMaterial = new THREE.MeshPhongMaterial({
   color: "grey",
 });
 
-function createStick(
-  radius: number,
+function createBond(
   start: THREE.Vector3,
   end: THREE.Vector3,
+  type: number,
 ) {
-  const distance = start.distanceTo(end);
+  const radius = 4;
+
+  const bond = new THREE.Group();
+  const length = start.distanceTo(end);
   const cylinderGeometry = new THREE.CylinderGeometry(
     radius,
     radius,
-    distance,
+    length,
     32,
   );
-  const cylinderMesh = new THREE.Mesh(cylinderGeometry, stickMaterial);
 
-  cylinderMesh.position.copy(start);
-  cylinderMesh.lookAt(end);
+  const distance = 3 * radius;
+  for (
+    let i = 1, offset = -((type - 1) * distance / 2);
+    i <= type;
+    i++, offset += distance
+  ) {
+    const cylinderMesh = new THREE.Mesh(cylinderGeometry, stickMaterial);
+    cylinderMesh.position.set(0, 0, offset);
+    bond.add(cylinderMesh);
+  }
+
+  // let offsets = [0];
+  // if (type === 2) {
+  //   const offset = radius + 1;
+  //   offsets = [-offset, offset];
+  // } else if (type === 3) {
+  //   const offset = 2 * (radius + 1);
+  //   offsets = [-offset, 0, offset];
+  // }
+
+  // offsets.forEach((offset) => {
+  //   const cylinderMesh = new THREE.Mesh(cylinderGeometry, stickMaterial);
+  //   cylinderMesh.position.set(0, 0, offset);
+  //   bond.add(cylinderMesh);
+  // });
+
+  bond.position.copy(start);
+  bond.lookAt(end);
   // Rotate the cylinder by 90 degrees around the X-axis to align it with the z-axis.
-  cylinderMesh.rotateX(Math.PI * 0.5);
+  bond.rotateX(Math.PI * 0.5);
   // Translate the cylinder up by half its height to center it on the line between points A and B.
-  cylinderMesh.translateY(distance * 0.5);
-  return cylinderMesh;
+  bond.translateY(length * 0.5);
+  return bond;
 }
 
 const atoms = [
@@ -178,7 +206,6 @@ const atomMap = extendedAtoms.reduce((acc, atom) => {
 }, {} as AtomMap);
 
 function getMoleculeMesh(molecule: Molecule, useRealRadius: boolean) {
-  console.log("getMoleculeMesh", molecule);
   function getRadius(radius: number) {
     return useRealRadius ? radius : getReducedRadius(radius);
   }
@@ -201,18 +228,16 @@ function getMoleculeMesh(molecule: Molecule, useRealRadius: boolean) {
     return moleculeData.atoms.find((a) => a.id === id)?.position || [0, 0, 0];
   }
 
-  const stickRadius = 5;
-
   moleculeData.bonds.forEach((bond) => {
     const start = getPosition(bond.start);
     const end = getPosition(bond.end);
 
-    const stick = createStick(
-      stickRadius,
+    const bondMesh = createBond(
       new THREE.Vector3(...start),
       new THREE.Vector3(...end),
+      bond.type,
     );
-    moleculeMesh.add(stick);
+    moleculeMesh.add(bondMesh);
   });
 
   return moleculeMesh;

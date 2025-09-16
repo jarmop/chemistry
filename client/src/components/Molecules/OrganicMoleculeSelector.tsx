@@ -24,7 +24,6 @@ export function OrganicMoleculeSelector() {
   const [carbonCount, setCarbonCount] = useState(1);
 
   useEffect(() => {
-    console.log(carbonCount);
   }, [carbonCount]);
 
   function handleNamePartChange(key: keyof NameParts, value: string) {
