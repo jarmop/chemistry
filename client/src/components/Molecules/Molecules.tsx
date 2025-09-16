@@ -1,48 +1,32 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Molecule3D } from "./Molecule3D.tsx";
 import { MoleculeName, moleculeNames } from "./mol.ts";
 import { OrganicMoleculeSelector } from "./OrganicMoleculeSelector.tsx";
-import { fetchMol } from "./pubChemApi.ts";
-import { parse } from "./molParser.ts";
-import { Molecule } from "./types.ts";
-
-let fetched = false;
+import { useMolecule } from "./useMolecule.ts";
 
 export function Molecules() {
-  const [name, setName] = useState<MoleculeName>(
-    "Formic acid (Carboxylic acid)",
+  const [name, setName] = useState(
+    "Ammonia",
   );
-  const [molecule, setMolecule] = useState<Molecule>();
+  // const [molecule, setMolecule] = useState<Molecule>();
   const [useRealRadius, setUseRealRadius] = useState(false);
 
-  useEffect(() => {
-    if (fetched) {
-      return;
-    }
-    fetchMol("methanol").then((mol) => {
-      if (mol) {
-        const molecule = parse(mol);
-        setMolecule(molecule);
-        console.log(molecule);
-      }
-    });
-    fetched = true;
-  }, []);
+  const { molecule } = useMolecule(name);
+
+  console.log(molecule);
 
   return (
     <>
       <h1>Molecules</h1>
       <div style={{ display: "flex" }}>
-        {molecule &&
-          (
-            <Molecule3D
-              name={name}
-              molecule={molecule}
-              useRealRadius={useRealRadius}
-            />
-          )}
-
+        <Molecule3D
+          molecule={molecule}
+          useRealRadius={useRealRadius}
+        />
         <div>
+          <div>
+            <input type="text" onBlur={(e) => setName(e.target.value)} />
+          </div>
           <div>
             <select
               value={name}

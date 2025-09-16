@@ -159,9 +159,9 @@ M  END
   `,
   },
   {
-    name: "Formic acid (Carboxylic acid)",
+    name: "Formic acid",
     mol: `
-Formic acid (Carboxylic acid)
+Formic acid
     -OEChem-09142509353D
 
     5  4  0     0  0  0  0  0  0999 V2000

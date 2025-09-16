@@ -11,8 +11,7 @@ const width = 600;
 let initialized = false;
 
 interface Molecule3DProps {
-  name: string;
-  molecule: Molecule;
+  molecule: Molecule | undefined;
   useRealRadius: boolean;
 }
 
@@ -20,25 +19,33 @@ type RenderingContext = {
   rebuild: (molecule: Molecule, useRealRadius: boolean) => void;
 };
 
-export function Molecule3D({ name, molecule, useRealRadius }: Molecule3DProps) {
+export function Molecule3D({ molecule, useRealRadius }: Molecule3DProps) {
+  console.log("Molecule3D");
+
   const rendererRef = useRef<WebGLRenderer>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const contextRef = useRef<RenderingContext>(null);
 
   useEffect(() => {
+    console.log("effect 1 Molecule3D");
+
     if (!initialized && containerRef.current) {
+      console.log("init Molecule3D");
+
       contextRef.current = init(
         containerRef.current,
         getRenderer(),
-        molecule,
-        useRealRadius,
       );
       initialized = true;
     }
   }, []);
 
   useEffect(() => {
-    if (contextRef.current) {
+    console.log("effect 2 Molecule3D");
+
+    if (molecule && contextRef.current) {
+      console.log("rebuild");
+
       const { rebuild } = contextRef.current;
       rebuild(molecule, useRealRadius);
     }
@@ -51,6 +58,8 @@ export function Molecule3D({ name, molecule, useRealRadius }: Molecule3DProps) {
 
     return rendererRef.current;
   }
+
+  console.log("render Molecule3D");
 
   return (
     <>

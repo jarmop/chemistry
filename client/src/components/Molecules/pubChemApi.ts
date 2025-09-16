@@ -4,27 +4,27 @@ const baseUrl = "https://pubchem.ncbi.nlm.nih.gov/rest/pug/";
 //   const cidUrl = baseUrl + `substance/name/${name}/cids/JSON`;
 // }
 
-export async function fetchMol(name: string) {
-  return exampleMol.trim();
-}
-
 // export async function fetchMol(name: string) {
-//   const molUrl = baseUrl +
-//     `compound/name/${name}/SDF/?record_type=3d&response_type=display`;
-
-//   try {
-//     const response = await fetch(molUrl);
-//     if (!response.ok) {
-//       throw new Error(`Response status: ${response.status}`);
-//     }
-
-//     const mol = await response.text();
-
-//     return mol;
-//   } catch (error) {
-//     console.error(error);
-//   }
+//   return exampleMol.trim();
 // }
+
+export async function fetchMol(name: string) {
+  const molUrl = baseUrl +
+    `compound/name/${name}/SDF/?record_type=3d&response_type=display`;
+
+  try {
+    const response = await fetch(molUrl);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+
+    const mol = await response.text();
+
+    return mol;
+  } catch (error) {
+    console.error(error);
+  }
+}
 
 const exampleMol = `
 887

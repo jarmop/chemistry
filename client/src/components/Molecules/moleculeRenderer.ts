@@ -17,8 +17,6 @@ let moleculeMesh: THREE.Group;
 export function init(
   container: HTMLDivElement,
   renderer: THREE.WebGLRenderer,
-  molecule: Molecule,
-  useRealRadius: boolean,
 ) {
   const width = container.clientWidth;
   const height = container.clientHeight;
@@ -49,9 +47,9 @@ export function init(
   //   scene.add(axes);
 
   // moleculeMesh = growMolecule(molecule, useRealRadius);
-  moleculeMesh = getMoleculeMesh(molecule, useRealRadius);
+  // moleculeMesh = getMoleculeMesh(molecule, useRealRadius);
 
-  scene.add(moleculeMesh);
+  // scene.add(moleculeMesh);
 
   function tick() {
     controls.update();
@@ -180,6 +178,7 @@ const atomMap = extendedAtoms.reduce((acc, atom) => {
 }, {} as AtomMap);
 
 function getMoleculeMesh(molecule: Molecule, useRealRadius: boolean) {
+  console.log("getMoleculeMesh", molecule);
   function getRadius(radius: number) {
     return useRealRadius ? radius : getReducedRadius(radius);
   }
