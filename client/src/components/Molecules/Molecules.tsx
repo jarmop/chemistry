@@ -4,7 +4,7 @@ import { MoleculeName, moleculeNames } from "./mol.ts";
 import { OrganicMoleculeSelector } from "./OrganicMoleculeSelector.tsx";
 import { useMolecule } from "./useMolecule.ts";
 
-const moleculeNameOptions = [...moleculeNames, "Propene", "Propyne"];
+const moleculeNameOptions = [...moleculeNames, "Propene", "Propyne", "hexatriene","hexatriyne","cyclohexatriene","benzene"];
 
 export function Molecules() {
   const [name, setName] = useState(
