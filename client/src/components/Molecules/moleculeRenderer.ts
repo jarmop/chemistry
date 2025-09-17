@@ -5,6 +5,7 @@ import { growMolecule } from "./growMolecule.ts";
 import { AtomData } from "../AtomData.tsx";
 import { getMolecule } from "./getMolecule.ts";
 import { Molecule } from "./types.ts";
+import jmolColors from "./data/jmolColors.json" with { type: "json" };
 
 // const BOHR_RADIUS = 5.29177210903e-11; // meters
 
@@ -163,7 +164,45 @@ const atoms = [
     id: "O",
     color: "red",
   },
-] as const;
+  {
+    id: "F",
+    // color: "green",
+    color: "#90e050",
+  },
+  {
+    id: "Si",
+    color: "beige",
+  },
+  {
+    id: "P",
+    // color: "rgb(255,155,0)",
+    color: "orange",
+  },
+  {
+    id: "S",
+    color: "yellow",
+  },
+  {
+    id: "Cl",
+    color: "lightgreen",
+  },
+  {
+    id: "Br",
+    color: "dark red",
+  },
+  {
+    id: "I",
+    // color: "purple",
+    color: "dark violet",
+  },
+];
+
+type ColorBySymbol = Record<string, string>;
+
+const colorBySymbol = jmolColors.reduce((acc, curr) => {
+  acc[curr.symbol] = "#" + curr.hex;
+  return acc;
+}, {} as ColorBySymbol);
 
 type Atoms = typeof atoms;
 type AtomData = Atoms[number];
@@ -174,6 +213,7 @@ let realRadiusMax = 0;
 
 const extendedAtoms = atoms.map((atom) => {
   const element = elementMap[atom.id];
+  const color = colorBySymbol[atom.id];
   const radius = element.atomicRadius || 0;
   if (radius < realRadiusMin) {
     realRadiusMin = radius;
@@ -183,6 +223,7 @@ const extendedAtoms = atoms.map((atom) => {
   return {
     ...atom,
     ...element,
+    color,
     radius,
   };
 });
