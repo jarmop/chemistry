@@ -4,7 +4,43 @@ import { MoleculeName, moleculeNames } from "./mol.ts";
 import { OrganicMoleculeSelector } from "./OrganicMoleculeSelector.tsx";
 import { useMolecule } from "./useMolecule.ts";
 
-const moleculeNameOptions = [...moleculeNames, "Propene", "Propyne", "hexatriene","hexatriyne","cyclohexatriene","benzene"];
+const moleculeNameOptions = [
+  "Ammonia",
+  "Alanine",
+  "Formic acid",
+  "Acetic acid",
+  // Proteins
+  "Glycine", // The simplest amino acid
+  "Diglycine", // The simplest amino acid chain (protein)
+  // GTCA
+  // purine bases
+  "Adenine",
+  "Guanine",
+  // pyrimidine bases
+  "Thymine",
+  "Cytosine",
+  // GTCA ends
+  "D-Ribose",
+  "Phosphate",
+  "AMP" // Adenosine Monophosphate
+];
+
+const hydroCarbonNames = [
+  // Important building blocks
+  "Methane",
+  "Ethene", // Ethylene
+  "Propene", // Propylene
+  "Benzene", // Cyclohexatriene
+  "Dimethylbenzene", // Xylene, 1,2-Dimethylbenzene, 1,2-Dimethylcyclohexatriene
+  // Important building blocks ends
+  "Ethane",
+  "Propane", 
+  "Hexane",
+  "Propene", 
+  "Propyne", 
+  "hexatriene",
+  "hexatriyne",
+];
 
 export function Molecules() {
   const [name, setName] = useState(
@@ -28,6 +64,19 @@ export function Molecules() {
             <input type="text" onBlur={(e) => setName(e.target.value)} />
           </div>
           <div>
+            Hydrocarbons:
+            <select
+              value={name}
+              onChange={(e) => setName(e.target.value as MoleculeName)}
+              style={{ cursor: "pointer" }}
+            >
+              {hydroCarbonNames.map((f) => (
+                <option key={f} value={f}>{f}</option>
+              ))}
+            </select>
+          </div>
+          <div>
+            Other:
             <select
               value={name}
               onChange={(e) => setName(e.target.value as MoleculeName)}
