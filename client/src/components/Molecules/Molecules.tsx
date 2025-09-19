@@ -4,7 +4,22 @@ import { MoleculeName, moleculeNames } from "./mol.ts";
 import { OrganicMoleculeSelector } from "./OrganicMoleculeSelector.tsx";
 import { useMolecule } from "./useMolecule.ts";
 
-const moleculeNameOptions = [...moleculeNames, "Propene", "Propyne", "hexatriene","hexatriyne","cyclohexatriene","benzene"];
+const moleculeNameOptions = [
+  ...moleculeNames,
+  "Sucrose",
+  "Maltose",
+  "Lactose",
+];
+
+const hydroCarbonNames = [
+  "Methane", "Ethane", "Propane", "Hexane",
+  "Propene", 
+  "Propyne", 
+  "hexatriene",
+  "hexatriyne",
+  "cyclohexatriene",
+  "benzene",
+];
 
 export function Molecules() {
   const [name, setName] = useState(
@@ -28,6 +43,19 @@ export function Molecules() {
             <input type="text" onBlur={(e) => setName(e.target.value)} />
           </div>
           <div>
+            Hydrocarbons:
+            <select
+              value={name}
+              onChange={(e) => setName(e.target.value as MoleculeName)}
+              style={{ cursor: "pointer" }}
+            >
+              {hydroCarbonNames.map((f) => (
+                <option key={f} value={f}>{f}</option>
+              ))}
+            </select>
+          </div>
+          <div>
+            Other:
             <select
               value={name}
               onChange={(e) => setName(e.target.value as MoleculeName)}
