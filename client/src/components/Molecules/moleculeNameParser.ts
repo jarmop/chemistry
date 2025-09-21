@@ -6,3 +6,17 @@ const carbonCount = iupacPrefixes.map((o) =>
 
 export function parseMoleculeName(name: string) {
 }
+
+/**
+ * 
+ */
+function moleculeToName() {
+
+}
+
+/**
+ * 
+ */
+function NameToMolecule() {
+  
+}
