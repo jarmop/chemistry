@@ -3,6 +3,7 @@ import { Molecule3D } from "./Molecule3D.tsx";
 import { MoleculeName, moleculeNames } from "./mol.ts";
 import { OrganicMoleculeSelector } from "./OrganicMoleculeSelector.tsx";
 import { useMolecule } from "./useMolecule.ts";
+import aminoAcids from "./data/aminoAcids.json" with {type: "json"}
 
 const moleculeNameOptions = [
   "Ammonia",
@@ -36,11 +37,13 @@ const hydroCarbonNames = [
   "Ethane",
   "Propane", 
   "Hexane",
-  "Propene", 
+  //"Propene", 
   "Propyne", 
   "hexatriene",
   "hexatriyne",
 ];
+
+const aminoAcidNames = aminoAcids.map(a => a.name)
 
 export function Molecules() {
   const [name, setName] = useState(
@@ -62,6 +65,18 @@ export function Molecules() {
         <div>
           <div>
             <input type="text" onBlur={(e) => setName(e.target.value)} />
+          </div>
+          <div>
+            Amino acids:
+            <select
+              value={name}
+              onChange={(e) => setName(e.target.value as MoleculeName)}
+              style={{ cursor: "pointer" }}
+            >
+              {aminoAcidNames.map((f) => (
+                <option key={f} value={f}>{f}</option>
+              ))}
+            </select>
           </div>
           <div>
             Hydrocarbons:
