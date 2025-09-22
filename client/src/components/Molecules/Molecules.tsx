@@ -3,10 +3,10 @@ import { Molecule3D } from "./Molecule3D.tsx";
 import { MoleculeName, moleculeNames } from "./mol.ts";
 import { OrganicMoleculeSelector } from "./OrganicMoleculeSelector.tsx";
 import { useMolecule } from "./useMolecule.ts";
+import aminoAcids from "./data/aminoAcids.json" with { type: "json" };
 
-const moleculeNameOptions = [
+const otherMoleculeNameOptions = [
   "Ammonia",
-  "Alanine",
   "Formic acid",
   "Acetic acid",
   // Proteins
@@ -22,7 +22,8 @@ const moleculeNameOptions = [
   // GTCA ends
   "D-Ribose",
   "Phosphate",
-  "AMP" // Adenosine Monophosphate
+  "AMP", // Adenosine Monophosphate
+  "ATP", // Adenosine Triphosphate
 ];
 
 const hydroCarbonNames = [
@@ -34,13 +35,15 @@ const hydroCarbonNames = [
   "Dimethylbenzene", // Xylene, 1,2-Dimethylbenzene, 1,2-Dimethylcyclohexatriene
   // Important building blocks ends
   "Ethane",
-  "Propane", 
+  "Propane",
   "Hexane",
-  "Propene", 
-  "Propyne", 
+  //"Propene",
+  "Propyne",
   "hexatriene",
   "hexatriyne",
 ];
+
+const aminoAcidNames = aminoAcids.map((a) => a.name);
 
 export function Molecules() {
   const [name, setName] = useState(
@@ -64,6 +67,17 @@ export function Molecules() {
             <input type="text" onBlur={(e) => setName(e.target.value)} />
           </div>
           <div>
+            Amino acids:
+            <select
+              value={name}
+              onChange={(e) => setName(e.target.value as MoleculeName)}
+              style={{ cursor: "pointer" }}
+            >
+              {aminoAcidNames.map((f) => <option key={f} value={f}>{f}
+              </option>)}
+            </select>
+          </div>
+          <div>
             Hydrocarbons:
             <select
               value={name}
@@ -82,7 +96,7 @@ export function Molecules() {
               onChange={(e) => setName(e.target.value as MoleculeName)}
               style={{ cursor: "pointer" }}
             >
-              {moleculeNameOptions.map((f) => (
+              {otherMoleculeNameOptions.map((f) => (
                 <option key={f} value={f}>{f}</option>
               ))}
             </select>
