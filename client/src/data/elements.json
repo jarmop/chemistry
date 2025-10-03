@@ -28,7 +28,9 @@
     "structure": "hcp",
     "structureNotes": "Solid hydrogen under high pressure.",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 14.01,
+    "boilingPoint": 20.28
   },
   {
     "name": "Helium",
@@ -59,7 +61,9 @@
     "structure": "hcp",
     "structureNotes": "Solidifies only under high pressure.",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": null,
+    "boilingPoint": 4.22
   },
   {
     "name": "Lithium",
@@ -89,7 +93,9 @@
     "category": "alkali metal",
     "structure": "bcc",
     "conductivity": 10800000,
-    "resistivity": 9.28
+    "resistivity": 9.28,
+    "meltingPoint": 453.69,
+    "boilingPoint": 1560
   },
   {
     "name": "Beryllium",
@@ -119,7 +125,9 @@
     "category": "alkaline earth metal",
     "structure": "hcp",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 1560,
+    "boilingPoint": 2742
   },
   {
     "name": "Boron",
@@ -150,7 +158,9 @@
     "structure": "complex",
     "structureNotes": "Rhombohedral, icosahedral clusters.",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 2349,
+    "boilingPoint": 4200
   },
   {
     "name": "Carbon",
@@ -181,7 +191,9 @@
     "structure": "diamond cubic",
     "structureNotes": "Can also be hexagonal (graphite).",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": null,
+    "boilingPoint": 4300
   },
   {
     "name": "Nitrogen",
@@ -212,7 +224,9 @@
     "structure": "hcp",
     "structureNotes": "Solidifies at cryogenic temperatures; forms β-N2 phase.",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 63.15,
+    "boilingPoint": 77.36
   },
   {
     "name": "Oxygen",
@@ -243,7 +257,9 @@
     "structure": "monoclinic",
     "structureNotes": "Solidifies in several phases; α and β phases are monoclinic.",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 54.36,
+    "boilingPoint": 90.2
   },
   {
     "name": "Fluorine",
@@ -273,7 +289,9 @@
     "category": "diatomic nonmetal",
     "structure": "unknown",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 53.53,
+    "boilingPoint": 85.03
   },
   {
     "name": "Neon",
@@ -303,7 +321,9 @@
     "category": "noble gas",
     "structure": "unknown",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 24.56,
+    "boilingPoint": 27.07
   },
   {
     "name": "Sodium",
@@ -333,7 +353,9 @@
     "category": "alkali metal",
     "structure": "bcc",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 370.87,
+    "boilingPoint": 1156
   },
   {
     "name": "Magnesium",
@@ -363,7 +385,9 @@
     "category": "alkaline earth metal",
     "structure": "hcp",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 923,
+    "boilingPoint": 1363
   },
   {
     "name": "Aluminium",
@@ -393,7 +417,9 @@
     "category": "post-transition metal",
     "structure": "fcc",
     "conductivity": 37700000,
-    "resistivity": 2.65
+    "resistivity": 2.65,
+    "meltingPoint": 933.47,
+    "boilingPoint": 2792
   },
   {
     "name": "Silicon",
@@ -423,7 +449,9 @@
     "category": "metalloid",
     "structure": "diamond cubic",
     "conductivity": 4.35,
-    "resistivity": 2300
+    "resistivity": 2300,
+    "meltingPoint": 1687,
+    "boilingPoint": 3538
   },
   {
     "name": "Phosphorus",
@@ -454,7 +482,9 @@
     "structure": "orthorhombic",
     "structureNotes": "Depends on allotrope (e.g., black phosphorus is orthorhombic).",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 317.3,
+    "boilingPoint": 550
   },
   {
     "name": "Sulfur",
@@ -485,7 +515,9 @@
     "structure": "monoclinic",
     "structureNotes": "Also exists as orthorhombic.",
     "conductivity": 10,
-    "resistivity": 1015
+    "resistivity": 1015,
+    "meltingPoint": 388.36,
+    "boilingPoint": 717.87
   },
   {
     "name": "Chlorine",
@@ -515,7 +547,9 @@
     "category": "diatomic nonmetal",
     "structure": "unknown",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 171.6,
+    "boilingPoint": 239.11
   },
   {
     "name": "Argon",
@@ -545,7 +579,9 @@
     "category": "noble gas",
     "structure": "unknown",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 83.8,
+    "boilingPoint": 87.3
   },
   {
     "name": "Potassium",
@@ -575,7 +611,9 @@
     "category": "alkali metal",
     "structure": "bcc",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 336.53,
+    "boilingPoint": 1032
   },
   {
     "name": "Calcium",
@@ -605,7 +643,9 @@
     "category": "alkaline earth metal",
     "structure": "fcc",
     "conductivity": 29800000,
-    "resistivity": 3.36
+    "resistivity": 3.36,
+    "meltingPoint": 1115,
+    "boilingPoint": 1757
   },
   {
     "name": "Scandium",
@@ -635,7 +675,9 @@
     "category": "transition metal",
     "structure": "hcp",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 1814,
+    "boilingPoint": 3109
   },
   {
     "name": "Titanium",
@@ -665,7 +707,9 @@
     "category": "transition metal",
     "structure": "hcp",
     "conductivity": 2380000,
-    "resistivity": 42
+    "resistivity": 42,
+    "meltingPoint": 1941,
+    "boilingPoint": 3560
   },
   {
     "name": "Vanadium",
@@ -695,7 +739,9 @@
     "category": "transition metal",
     "structure": "bcc",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 2183,
+    "boilingPoint": 3680
   },
   {
     "name": "Chromium",
@@ -725,7 +771,9 @@
     "category": "transition metal",
     "structure": "bcc",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 2180,
+    "boilingPoint": 2944
   },
   {
     "name": "Manganese",
@@ -756,7 +804,9 @@
     "structure": "complex",
     "structureNotes": "α-Mn is complex cubic.",
     "conductivity": 694000,
-    "resistivity": 144
+    "resistivity": 144,
+    "meltingPoint": 1519,
+    "boilingPoint": 2334
   },
   {
     "name": "Iron",
@@ -787,7 +837,9 @@
     "structure": "bcc",
     "structureNotes": "Ferrite (α-Fe) is bcc; austenite (γ-Fe) is fcc at higher temps.",
     "conductivity": 10300000,
-    "resistivity": 9.7
+    "resistivity": 9.7,
+    "meltingPoint": 1811,
+    "boilingPoint": 3134
   },
   {
     "name": "Cobalt",
@@ -818,7 +870,9 @@
     "structure": "hcp",
     "structureNotes": "Can transform to fcc at high temperature.",
     "conductivity": 16000000,
-    "resistivity": 6.24
+    "resistivity": 6.24,
+    "meltingPoint": 1768,
+    "boilingPoint": 3200
   },
   {
     "name": "Nickel",
@@ -848,7 +902,9 @@
     "category": "transition metal",
     "structure": "fcc",
     "conductivity": 14300000,
-    "resistivity": 6.99
+    "resistivity": 6.99,
+    "meltingPoint": 1728,
+    "boilingPoint": 3186
   },
   {
     "name": "Copper",
@@ -878,7 +934,9 @@
     "category": "transition metal",
     "structure": "fcc",
     "conductivity": 59600000,
-    "resistivity": 1.68
+    "resistivity": 1.68,
+    "meltingPoint": 1357.77,
+    "boilingPoint": 2835
   },
   {
     "name": "Zinc",
@@ -908,7 +966,9 @@
     "category": "transition metal",
     "structure": "hcp",
     "conductivity": 16900000,
-    "resistivity": 5.9
+    "resistivity": 5.9,
+    "meltingPoint": 692.88,
+    "boilingPoint": 1180
   },
   {
     "name": "Gallium",
@@ -939,7 +999,9 @@
     "structure": "orthorhombic",
     "structureNotes": "Complex structure with covalent bonding.",
     "conductivity": 7100000,
-    "resistivity": 14
+    "resistivity": 14,
+    "meltingPoint": 302.9146,
+    "boilingPoint": 2673
   },
   {
     "name": "Germanium",
@@ -969,7 +1031,9 @@
     "category": "metalloid",
     "structure": "diamond cubic",
     "conductivity": 2.17,
-    "resistivity": 4.6
+    "resistivity": 4.6,
+    "meltingPoint": 1211.4,
+    "boilingPoint": 3106
   },
   {
     "name": "Arsenic",
@@ -999,7 +1063,9 @@
     "category": "metalloid",
     "structure": "rhombohedral",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 1090,
+    "boilingPoint": 887
   },
   {
     "name": "Selenium",
@@ -1030,7 +1096,9 @@
     "structure": "hexagonal",
     "structureNotes": "Trigonal chains.",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 453,
+    "boilingPoint": 958
   },
   {
     "name": "Bromine",
@@ -1061,7 +1129,9 @@
     "structure": "orthorhombic",
     "structureNotes": "Only solidifies under low temperatures.",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 265.8,
+    "boilingPoint": 332
   },
   {
     "name": "Krypton",
@@ -1092,7 +1162,9 @@
     "structure": "fcc",
     "structureNotes": "Solidifies under pressure.",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 115.79,
+    "boilingPoint": 119.93
   },
   {
     "name": "Rubidium",
@@ -1122,7 +1194,9 @@
     "category": "alkali metal",
     "structure": "bcc",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 312.46,
+    "boilingPoint": 961
   },
   {
     "name": "Strontium",
@@ -1152,7 +1226,9 @@
     "category": "alkaline earth metal",
     "structure": "fcc",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 1050,
+    "boilingPoint": 1655
   },
   {
     "name": "Yttrium",
@@ -1182,7 +1258,9 @@
     "category": "transition metal",
     "structure": "hcp",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 1799,
+    "boilingPoint": 3609
   },
   {
     "name": "Zirconium",
@@ -1212,7 +1290,9 @@
     "category": "transition metal",
     "structure": "hcp",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 2128,
+    "boilingPoint": 4682
   },
   {
     "name": "Niobium",
@@ -1242,7 +1322,9 @@
     "category": "transition metal",
     "structure": "bcc",
     "conductivity": 7000000,
-    "resistivity": 14
+    "resistivity": 14,
+    "meltingPoint": 2750,
+    "boilingPoint": 5017
   },
   {
     "name": "Molybdenum",
@@ -1272,7 +1354,9 @@
     "category": "transition metal",
     "structure": "bcc",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 2896,
+    "boilingPoint": 4912
   },
   {
     "name": "Technetium",
@@ -1302,7 +1386,9 @@
     "category": "transition metal",
     "structure": "hcp",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 2430,
+    "boilingPoint": 4538
   },
   {
     "name": "Ruthenium",
@@ -1332,7 +1418,9 @@
     "category": "transition metal",
     "structure": "hcp",
     "conductivity": 14100000,
-    "resistivity": 7.1
+    "resistivity": 7.1,
+    "meltingPoint": 2607,
+    "boilingPoint": 4423
   },
   {
     "name": "Rhodium",
@@ -1362,7 +1450,9 @@
     "category": "transition metal",
     "structure": "fcc",
     "conductivity": 23100000,
-    "resistivity": 4.33
+    "resistivity": 4.33,
+    "meltingPoint": 2237,
+    "boilingPoint": 3968
   },
   {
     "name": "Palladium",
@@ -1392,7 +1482,9 @@
     "category": "transition metal",
     "structure": "fcc",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 1828.05,
+    "boilingPoint": 3236
   },
   {
     "name": "Silver",
@@ -1422,7 +1514,9 @@
     "category": "transition metal",
     "structure": "fcc",
     "conductivity": 63000000,
-    "resistivity": 1.59
+    "resistivity": 1.59,
+    "meltingPoint": 1234.93,
+    "boilingPoint": 2435
   },
   {
     "name": "Cadmium",
@@ -1452,7 +1546,9 @@
     "category": "transition metal",
     "structure": "hcp",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 594.22,
+    "boilingPoint": 1040
   },
   {
     "name": "Indium",
@@ -1482,7 +1578,9 @@
     "category": "post-transition metal",
     "structure": "tetragonal",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 429.75,
+    "boilingPoint": 2345
   },
   {
     "name": "Tin",
@@ -1513,7 +1611,9 @@
     "structure": "tetragonal",
     "structureNotes": "White tin (β-Sn) is metallic; grey tin is diamond cubic.",
     "conductivity": 9170000,
-    "resistivity": 10.9
+    "resistivity": 10.9,
+    "meltingPoint": 505.08,
+    "boilingPoint": 2875
   },
   {
     "name": "Antimony",
@@ -1543,7 +1643,9 @@
     "category": "metalloid",
     "structure": "rhombohedral",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 903.78,
+    "boilingPoint": 1860
   },
   {
     "name": "Tellurium",
@@ -1574,7 +1676,9 @@
     "structure": "hexagonal",
     "structureNotes": "Helical chains.",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 722.66,
+    "boilingPoint": 1261
   },
   {
     "name": "Iodine",
@@ -1604,7 +1708,9 @@
     "category": "diatomic nonmetal",
     "structure": "orthorhombic",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 386.85,
+    "boilingPoint": 457.4
   },
   {
     "name": "Xenon",
@@ -1635,7 +1741,9 @@
     "structure": "fcc",
     "structureNotes": "Solidifies under pressure.",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 161.4,
+    "boilingPoint": 165.03
   },
   {
     "name": "Caesium",
@@ -1665,7 +1773,9 @@
     "category": "alkali metal",
     "structure": "bcc",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 301.59,
+    "boilingPoint": 944
   },
   {
     "name": "Barium",
@@ -1695,7 +1805,9 @@
     "category": "alkaline earth metal",
     "structure": "bcc",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 1000,
+    "boilingPoint": 2170
   },
   {
     "name": "Lanthanum",
@@ -1725,7 +1837,9 @@
     "category": "lanthanide",
     "structure": "hcp",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 1193,
+    "boilingPoint": 3737
   },
   {
     "name": "Cerium",
@@ -1755,7 +1869,9 @@
     "category": "lanthanide",
     "structure": "fcc",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 1068,
+    "boilingPoint": 3716
   },
   {
     "name": "Praseodymium",
@@ -1785,7 +1901,9 @@
     "category": "lanthanide",
     "structure": "hcp",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 1208,
+    "boilingPoint": 3793
   },
   {
     "name": "Neodymium",
@@ -1815,7 +1933,9 @@
     "category": "lanthanide",
     "structure": "hcp",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 1297,
+    "boilingPoint": 3347
   },
   {
     "name": "Promethium",
@@ -1845,7 +1965,9 @@
     "category": "lanthanide",
     "structure": "unknown",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 1315,
+    "boilingPoint": 3273
   },
   {
     "name": "Samarium",
@@ -1875,7 +1997,9 @@
     "category": "lanthanide",
     "structure": "rhombohedral",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 1345,
+    "boilingPoint": 2067
   },
   {
     "name": "Europium",
@@ -1905,7 +2029,9 @@
     "category": "lanthanide",
     "structure": "bcc",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 1099,
+    "boilingPoint": 1802
   },
   {
     "name": "Gadolinium",
@@ -1935,7 +2061,9 @@
     "category": "lanthanide",
     "structure": "hcp",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 1585,
+    "boilingPoint": 3546
   },
   {
     "name": "Terbium",
@@ -1965,7 +2093,9 @@
     "category": "lanthanide",
     "structure": "hcp",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 1629,
+    "boilingPoint": 3503
   },
   {
     "name": "Dysprosium",
@@ -1995,7 +2125,9 @@
     "category": "lanthanide",
     "structure": "hcp",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 1680,
+    "boilingPoint": 2840
   },
   {
     "name": "Holmium",
@@ -2025,7 +2157,9 @@
     "category": "lanthanide",
     "structure": "hcp",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 1734,
+    "boilingPoint": 2993
   },
   {
     "name": "Erbium",
@@ -2055,7 +2189,9 @@
     "category": "lanthanide",
     "structure": "hcp",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 1802,
+    "boilingPoint": 3141
   },
   {
     "name": "Thulium",
@@ -2085,7 +2221,9 @@
     "category": "lanthanide",
     "structure": "hcp",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 1818,
+    "boilingPoint": 2223
   },
   {
     "name": "Ytterbium",
@@ -2115,7 +2253,9 @@
     "category": "lanthanide",
     "structure": "fcc",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 1097,
+    "boilingPoint": 1469
   },
   {
     "name": "Lutetium",
@@ -2145,7 +2285,9 @@
     "category": "lanthanide",
     "structure": "hcp",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 1925,
+    "boilingPoint": 3675
   },
   {
     "name": "Hafnium",
@@ -2175,7 +2317,9 @@
     "category": "transition metal",
     "structure": "hcp",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 2506,
+    "boilingPoint": 4876
   },
   {
     "name": "Tantalum",
@@ -2205,7 +2349,9 @@
     "category": "transition metal",
     "structure": "bcc",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 3290,
+    "boilingPoint": 5731
   },
   {
     "name": "Tungsten",
@@ -2235,7 +2381,9 @@
     "category": "transition metal",
     "structure": "bcc",
     "conductivity": 17900000,
-    "resistivity": 5.6
+    "resistivity": 5.6,
+    "meltingPoint": 3695,
+    "boilingPoint": 6203
   },
   {
     "name": "Rhenium",
@@ -2265,7 +2413,9 @@
     "category": "transition metal",
     "structure": "hcp",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 3459,
+    "boilingPoint": 5869
   },
   {
     "name": "Osmium",
@@ -2295,7 +2445,9 @@
     "category": "transition metal",
     "structure": "hcp",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 3306,
+    "boilingPoint": 5285
   },
   {
     "name": "Iridium",
@@ -2325,7 +2477,9 @@
     "category": "transition metal",
     "structure": "fcc",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 2719,
+    "boilingPoint": 4701
   },
   {
     "name": "Platinum",
@@ -2355,7 +2509,9 @@
     "category": "transition metal",
     "structure": "fcc",
     "conductivity": 9430000,
-    "resistivity": 10.6
+    "resistivity": 10.6,
+    "meltingPoint": 2041.4,
+    "boilingPoint": 4098
   },
   {
     "name": "Gold",
@@ -2385,7 +2541,9 @@
     "category": "transition metal",
     "structure": "fcc",
     "conductivity": 41100000,
-    "resistivity": 2.44
+    "resistivity": 2.44,
+    "meltingPoint": 1337.33,
+    "boilingPoint": 3129
   },
   {
     "name": "Mercury",
@@ -2416,7 +2574,9 @@
     "structure": "rhombohedral",
     "structureNotes": "Only metal liquid at room temperature; solidifies below -39°C.",
     "conductivity": 1020000,
-    "resistivity": 98
+    "resistivity": 98,
+    "meltingPoint": 234.43,
+    "boilingPoint": 629.88
   },
   {
     "name": "Thallium",
@@ -2446,7 +2606,9 @@
     "category": "post-transition metal",
     "structure": "hcp",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 577,
+    "boilingPoint": 1746
   },
   {
     "name": "Lead",
@@ -2476,7 +2638,9 @@
     "category": "post-transition metal",
     "structure": "fcc",
     "conductivity": 4550000,
-    "resistivity": 22
+    "resistivity": 22,
+    "meltingPoint": 600.61,
+    "boilingPoint": 2022
   },
   {
     "name": "Bismuth",
@@ -2506,7 +2670,9 @@
     "category": "post-transition metal",
     "structure": "rhombohedral",
     "conductivity": 775000,
-    "resistivity": 129
+    "resistivity": 129,
+    "meltingPoint": 544.7,
+    "boilingPoint": 1837
   },
   {
     "name": "Polonium",
@@ -2536,7 +2702,9 @@
     "category": "post-transition metal",
     "structure": "simple cubic",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 527,
+    "boilingPoint": 1235
   },
   {
     "name": "Astatine",
@@ -2564,7 +2732,9 @@
     "category": "metalloid",
     "structure": "unknown",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 575,
+    "boilingPoint": 610
   },
   {
     "name": "Radon",
@@ -2592,7 +2762,9 @@
     "category": "noble gas",
     "structure": "unknown",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 202,
+    "boilingPoint": 211.3
   },
   {
     "name": "Francium",
@@ -2629,7 +2801,9 @@
     "structure": "bcc",
     "structureNotes": "Highly radioactive, structure extrapolated.",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 281,
+    "boilingPoint": 890
   },
   {
     "name": "Radium",
@@ -2667,7 +2841,9 @@
     "category": "alkaline earth metal",
     "structure": "bcc",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 973,
+    "boilingPoint": 2010
   },
   {
     "name": "Actinium",
@@ -2705,7 +2881,9 @@
     "category": "actinide",
     "structure": "fcc",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 1323,
+    "boilingPoint": 3471
   },
   {
     "name": "Thorium",
@@ -2743,7 +2921,9 @@
     "category": "actinide",
     "structure": "unknown",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 2115,
+    "boilingPoint": 5061
   },
   {
     "name": "Protactinium",
@@ -2781,7 +2961,9 @@
     "category": "actinide",
     "structure": "unknown",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 1841,
+    "boilingPoint": 4300
   },
   {
     "name": "Uranium",
@@ -2819,7 +3001,9 @@
     "category": "actinide",
     "structure": "unknown",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 1405.3,
+    "boilingPoint": 4404
   },
   {
     "name": "Neptunium",
@@ -2857,7 +3041,9 @@
     "category": "actinide",
     "structure": "unknown",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 917,
+    "boilingPoint": 4273
   },
   {
     "name": "Plutonium",
@@ -2895,7 +3081,9 @@
     "category": "actinide",
     "structure": "unknown",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 912.5,
+    "boilingPoint": 3501
   },
   {
     "name": "Americium",
@@ -2933,7 +3121,9 @@
     "category": "actinide",
     "structure": "unknown",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 1449,
+    "boilingPoint": 2880
   },
   {
     "name": "Curium",
@@ -2971,7 +3161,9 @@
     "category": "actinide",
     "structure": "unknown",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 1613,
+    "boilingPoint": 3383
   },
   {
     "name": "Berkelium",
@@ -3009,7 +3201,9 @@
     "category": "actinide",
     "structure": "unknown",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 1259,
+    "boilingPoint": 2900
   },
   {
     "name": "Californium",
@@ -3046,7 +3240,9 @@
     "category": "actinide",
     "structure": "unknown",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 1173,
+    "boilingPoint": 1743
   },
   {
     "name": "Einsteinium",
@@ -3084,7 +3280,9 @@
     "category": "actinide",
     "structure": "unknown",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 1133,
+    "boilingPoint": 1269
   },
   {
     "name": "Fermium",
@@ -3120,7 +3318,9 @@
     "category": "actinide",
     "structure": "unknown",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": null,
+    "boilingPoint": null
   },
   {
     "name": "Mendelevium",
@@ -3156,7 +3356,9 @@
     "category": "actinide",
     "structure": "unknown",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 1100,
+    "boilingPoint": null
   },
   {
     "name": "Nobelium",
@@ -3192,7 +3394,9 @@
     "category": "actinide",
     "structure": "unknown",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 1100,
+    "boilingPoint": null
   },
   {
     "name": "Lawrencium",
@@ -3228,7 +3432,9 @@
     "category": "actinide",
     "structure": "unknown",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 1900,
+    "boilingPoint": null
   },
   {
     "name": "Rutherfordium",
@@ -3264,7 +3470,9 @@
     "category": "transition metal",
     "structure": "unknown",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 2400,
+    "boilingPoint": 5800
   },
   {
     "name": "Dubnium",
@@ -3300,7 +3508,9 @@
     "category": "transition metal",
     "structure": "unknown",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": null,
+    "boilingPoint": null
   },
   {
     "name": "Seaborgium",
@@ -3336,7 +3546,9 @@
     "category": "transition metal",
     "structure": "unknown",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": null,
+    "boilingPoint": null
   },
   {
     "name": "Bohrium",
@@ -3372,7 +3584,9 @@
     "category": "transition metal",
     "structure": "unknown",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": null,
+    "boilingPoint": null
   },
   {
     "name": "Hassium",
@@ -3408,7 +3622,9 @@
     "category": "transition metal",
     "structure": "unknown",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": null,
+    "boilingPoint": null
   },
   {
     "name": "Meitnerium",
@@ -3444,7 +3660,9 @@
     "category": "unknown",
     "structure": "unknown",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": null,
+    "boilingPoint": null
   },
   {
     "name": "Darmstadtium",
@@ -3480,7 +3698,9 @@
     "category": "unknown",
     "structure": "unknown",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": null,
+    "boilingPoint": null
   },
   {
     "name": "Roentgenium",
@@ -3516,7 +3736,9 @@
     "category": "unknown",
     "structure": "unknown",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": null,
+    "boilingPoint": null
   },
   {
     "name": "Copernicium",
@@ -3552,7 +3774,9 @@
     "category": "transition metal",
     "structure": "unknown",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": null,
+    "boilingPoint": null
   },
   {
     "name": "Nihonium",
@@ -3588,7 +3812,9 @@
     "category": "unknown",
     "structure": "unknown",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 700,
+    "boilingPoint": 1400
   },
   {
     "name": "Flerovium",
@@ -3624,7 +3850,9 @@
     "category": "post-transition metal",
     "structure": "unknown",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": null,
+    "boilingPoint": null
   },
   {
     "name": "Moscovium",
@@ -3660,7 +3888,9 @@
     "category": "unknown",
     "structure": "unknown",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 700,
+    "boilingPoint": 1400
   },
   {
     "name": "Livermorium",
@@ -3696,7 +3926,9 @@
     "category": "unknown",
     "structure": "unknown",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 700,
+    "boilingPoint": 1100
   },
   {
     "name": "Tennessine",
@@ -3732,7 +3964,9 @@
     "category": "unknown",
     "structure": "unknown",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": 700,
+    "boilingPoint": 883
   },
   {
     "name": "Oganesson",
@@ -3768,6 +4002,8 @@
     "category": "unknown",
     "structure": "unknown",
     "conductivity": 0,
-    "resistivity": 0
+    "resistivity": 0,
+    "meltingPoint": null,
+    "boilingPoint": null
   }
 ]

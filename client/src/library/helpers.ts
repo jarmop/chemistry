@@ -63,6 +63,12 @@ function getMaximumNumberOfElectronsPerSubShell(numberOfSubShells = 7) {
 export const maximumNumberOfElectronsPerSubShell =
   getMaximumNumberOfElectronsPerSubShell().slice(0, 4);
 
+
+/**
+ * TODO handle exceptional elements in the periodic table that don't follow the aufbau rule exactly
+ * @param numberOfElectrons 
+ * @returns 
+ */
 export function getElectronsPerSubShell(numberOfElectrons: number) {
   const electronsPerSubShell: Record<number, number[]> = {};
 

@@ -71,6 +71,14 @@ export function AtomData() {
             <td>{element.phase}</td>
           </tr>
           <tr>
+            <td>Melting point:</td>
+            <td>{element.meltingPoint}</td>
+          </tr>
+          <tr>
+            <td>Boiling point:</td>
+            <td>{element.boilingPoint}</td>
+          </tr>
+          <tr>
             <td>Structure:</td>
             <td>{element.structure}</td>
           </tr>

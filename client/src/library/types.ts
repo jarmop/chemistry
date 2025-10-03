@@ -29,6 +29,8 @@ export type Element = {
   structureNotes: string;
   conductivity?: number;
   resistivity?: number;
+  meltingPoint?: number;
+  boilingPoint?: number;
 };
 
 type Lattice =
