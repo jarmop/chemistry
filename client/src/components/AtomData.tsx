@@ -106,8 +106,26 @@ export function AtomData() {
             <td>{element.conductivity} {elementUnits.conductivity}</td>
           </tr>
           <tr>
+            <td>Electrical conductivity:</td>
+            <td>
+              {element.electricalConductivity}{" "}
+              {elementUnits.electricalConductivity}
+            </td>
+          </tr>
+          <tr>
             <td>Resistivity:</td>
-            <td>{element.resistivity} {elementUnits.resistivity}</td>
+            <td>
+              {element.resistivity && element.resistivity > 0
+                ? element.resistivity?.toExponential()
+                : 0} {elementUnits.resistivity}
+            </td>
+          </tr>
+          <tr>
+            <td>Electrical resistivity:</td>
+            <td>
+              {Number(element.electricalResistivity?.toPrecision(4))
+                .toExponential()} {elementUnits.electricalResistivity}
+            </td>
           </tr>
           <tr>
             <td>

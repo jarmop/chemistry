@@ -15,7 +15,7 @@ import { Molecules } from "./components/Molecules/Molecules.tsx";
 function App() {
   return (
     <div>
-      <Molecules />
+      {/* <Molecules /> */}
       {/* <MarchingCubesView /> */}
       {/* <ElectronProbabilityDensity /> */}
       {/* <Structures3D /> */}
@@ -26,8 +26,8 @@ function App() {
       {/* <MatterComparison /> */}
       <hr />
       {/* <Materials /> */}
-      <MoleculeComparison />
-      <MoleculeView />
+      {/* <MoleculeComparison /> */}
+      {/* <MoleculeView /> */}
       <Inspect />
     </div>
   );

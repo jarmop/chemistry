@@ -29,6 +29,8 @@ export type Element = {
   structureNotes: string;
   conductivity?: number;
   resistivity?: number;
+  electricalConductivity?: number;
+  electricalResistivity?: number;
   meltingPoint?: number;
   boilingPoint?: number;
 };

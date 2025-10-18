@@ -1,0 +1,704 @@
+[
+    {
+        "Element": "Actinium",
+        "Symbol": "Ac",
+        "Atomic_Number": 89,
+        "Electrical_Conductivity_Sm": 1800000.0
+    },
+    {
+        "Element": "Aluminum",
+        "Symbol": "Al",
+        "Atomic_Number": 13,
+        "Electrical_Conductivity_Sm": 37700000.0
+    },
+    {
+        "Element": "Americium",
+        "Symbol": "Am",
+        "Atomic_Number": 95,
+        "Electrical_Conductivity_Sm": 1470000.0
+    },
+    {
+        "Element": "Antimony",
+        "Symbol": "Sb",
+        "Atomic_Number": 51,
+        "Electrical_Conductivity_Sm": 2500000.0
+    },
+    {
+        "Element": "Argon",
+        "Symbol": "Ar",
+        "Atomic_Number": 18,
+        "Electrical_Conductivity_Sm": null
+    },
+    {
+        "Element": "Arsenic",
+        "Symbol": "As",
+        "Atomic_Number": 33,
+        "Electrical_Conductivity_Sm": 3000000.0
+    },
+    {
+        "Element": "Astatine",
+        "Symbol": "At",
+        "Atomic_Number": 85,
+        "Electrical_Conductivity_Sm": null
+    },
+    {
+        "Element": "Barium",
+        "Symbol": "Ba",
+        "Atomic_Number": 56,
+        "Electrical_Conductivity_Sm": 2900000.0
+    },
+    {
+        "Element": "Beryllium",
+        "Symbol": "Be",
+        "Atomic_Number": 4,
+        "Electrical_Conductivity_Sm": 31300000.0
+    },
+    {
+        "Element": "Bismuth",
+        "Symbol": "Bi",
+        "Atomic_Number": 83,
+        "Electrical_Conductivity_Sm": 870000.0
+    },
+    {
+        "Element": "Bohrium",
+        "Symbol": "Bh",
+        "Atomic_Number": 107,
+        "Electrical_Conductivity_Sm": null
+    },
+    {
+        "Element": "Boron",
+        "Symbol": "B",
+        "Atomic_Number": 5,
+        "Electrical_Conductivity_Sm": 0.0001
+    },
+    {
+        "Element": "Bromine",
+        "Symbol": "Br",
+        "Atomic_Number": 35,
+        "Electrical_Conductivity_Sm": 1e-10
+    },
+    {
+        "Element": "Cadmium",
+        "Symbol": "Cd",
+        "Atomic_Number": 48,
+        "Electrical_Conductivity_Sm": 13800000.0
+    },
+    {
+        "Element": "Calcium",
+        "Symbol": "Ca",
+        "Atomic_Number": 20,
+        "Electrical_Conductivity_Sm": 29800000.0
+    },
+    {
+        "Element": "Californium",
+        "Symbol": "Cf",
+        "Atomic_Number": 98,
+        "Electrical_Conductivity_Sm": null
+    },
+    {
+        "Element": "Carbon",
+        "Symbol": "C",
+        "Atomic_Number": 6,
+        "Electrical_Conductivity_Sm": 30000.0
+    },
+    {
+        "Element": "Cerium",
+        "Symbol": "Ce",
+        "Atomic_Number": 58,
+        "Electrical_Conductivity_Sm": 1350000.0
+    },
+    {
+        "Element": "Cesium",
+        "Symbol": "Cs",
+        "Atomic_Number": 55,
+        "Electrical_Conductivity_Sm": 4800000.0
+    },
+    {
+        "Element": "Chlorine",
+        "Symbol": "Cl",
+        "Atomic_Number": 17,
+        "Electrical_Conductivity_Sm": null
+    },
+    {
+        "Element": "Chromium",
+        "Symbol": "Cr",
+        "Atomic_Number": 24,
+        "Electrical_Conductivity_Sm": 7900000.0
+    },
+    {
+        "Element": "Cobalt",
+        "Symbol": "Co",
+        "Atomic_Number": 27,
+        "Electrical_Conductivity_Sm": 17200000.0
+    },
+    {
+        "Element": "Copernicium",
+        "Symbol": "Cn",
+        "Atomic_Number": 112,
+        "Electrical_Conductivity_Sm": null
+    },
+    {
+        "Element": "Copper",
+        "Symbol": "Cu",
+        "Atomic_Number": 29,
+        "Electrical_Conductivity_Sm": 59600000.0
+    },
+    {
+        "Element": "Curium",
+        "Symbol": "Cm",
+        "Atomic_Number": 96,
+        "Electrical_Conductivity_Sm": 1250000.0
+    },
+    {
+        "Element": "Darmstadtium",
+        "Symbol": "Ds",
+        "Atomic_Number": 110,
+        "Electrical_Conductivity_Sm": null
+    },
+    {
+        "Element": "Dubnium",
+        "Symbol": "Db",
+        "Atomic_Number": 105,
+        "Electrical_Conductivity_Sm": null
+    },
+    {
+        "Element": "Dysprosium",
+        "Symbol": "Dy",
+        "Atomic_Number": 66,
+        "Electrical_Conductivity_Sm": 1100000.0
+    },
+    {
+        "Element": "Einsteinium",
+        "Symbol": "Es",
+        "Atomic_Number": 99,
+        "Electrical_Conductivity_Sm": null
+    },
+    {
+        "Element": "Erbium",
+        "Symbol": "Er",
+        "Atomic_Number": 68,
+        "Electrical_Conductivity_Sm": 1200000.0
+    },
+    {
+        "Element": "Europium",
+        "Symbol": "Eu",
+        "Atomic_Number": 63,
+        "Electrical_Conductivity_Sm": 1100000.0
+    },
+    {
+        "Element": "Fermium",
+        "Symbol": "Fm",
+        "Atomic_Number": 100,
+        "Electrical_Conductivity_Sm": null
+    },
+    {
+        "Element": "Flerovium",
+        "Symbol": "Fl",
+        "Atomic_Number": 114,
+        "Electrical_Conductivity_Sm": null
+    },
+    {
+        "Element": "Fluorine",
+        "Symbol": "F",
+        "Atomic_Number": 9,
+        "Electrical_Conductivity_Sm": null
+    },
+    {
+        "Element": "Francium",
+        "Symbol": "Fr",
+        "Atomic_Number": 87,
+        "Electrical_Conductivity_Sm": null
+    },
+    {
+        "Element": "Gadolinium",
+        "Symbol": "Gd",
+        "Atomic_Number": 64,
+        "Electrical_Conductivity_Sm": 770000.0
+    },
+    {
+        "Element": "Gallium",
+        "Symbol": "Ga",
+        "Atomic_Number": 31,
+        "Electrical_Conductivity_Sm": 7100000.0
+    },
+    {
+        "Element": "Germanium",
+        "Symbol": "Ge",
+        "Atomic_Number": 32,
+        "Electrical_Conductivity_Sm": 2.2
+    },
+    {
+        "Element": "Gold",
+        "Symbol": "Au",
+        "Atomic_Number": 79,
+        "Electrical_Conductivity_Sm": 45200000.0
+    },
+    {
+        "Element": "Hafnium",
+        "Symbol": "Hf",
+        "Atomic_Number": 72,
+        "Electrical_Conductivity_Sm": 3100000.0
+    },
+    {
+        "Element": "Hassium",
+        "Symbol": "Hs",
+        "Atomic_Number": 108,
+        "Electrical_Conductivity_Sm": null
+    },
+    {
+        "Element": "Helium",
+        "Symbol": "He",
+        "Atomic_Number": 2,
+        "Electrical_Conductivity_Sm": null
+    },
+    {
+        "Element": "Holmium",
+        "Symbol": "Ho",
+        "Atomic_Number": 67,
+        "Electrical_Conductivity_Sm": 1100000.0
+    },
+    {
+        "Element": "Hydrogen",
+        "Symbol": "H",
+        "Atomic_Number": 1,
+        "Electrical_Conductivity_Sm": null
+    },
+    {
+        "Element": "Indium",
+        "Symbol": "In",
+        "Atomic_Number": 49,
+        "Electrical_Conductivity_Sm": 11600000.0
+    },
+    {
+        "Element": "Iodine",
+        "Symbol": "I",
+        "Atomic_Number": 53,
+        "Electrical_Conductivity_Sm": 8e-16
+    },
+    {
+        "Element": "Iridium",
+        "Symbol": "Ir",
+        "Atomic_Number": 77,
+        "Electrical_Conductivity_Sm": 19700000.0
+    },
+    {
+        "Element": "Iron",
+        "Symbol": "Fe",
+        "Atomic_Number": 26,
+        "Electrical_Conductivity_Sm": 10000000.0
+    },
+    {
+        "Element": "Krypton",
+        "Symbol": "Kr",
+        "Atomic_Number": 36,
+        "Electrical_Conductivity_Sm": null
+    },
+    {
+        "Element": "Lanthanum",
+        "Symbol": "La",
+        "Atomic_Number": 57,
+        "Electrical_Conductivity_Sm": 1600000.0
+    },
+    {
+        "Element": "Lawrencium",
+        "Symbol": "Lr",
+        "Atomic_Number": 103,
+        "Electrical_Conductivity_Sm": null
+    },
+    {
+        "Element": "Lead",
+        "Symbol": "Pb",
+        "Atomic_Number": 82,
+        "Electrical_Conductivity_Sm": 4800000.0
+    },
+    {
+        "Element": "Lithium",
+        "Symbol": "Li",
+        "Atomic_Number": 3,
+        "Electrical_Conductivity_Sm": 10800000.0
+    },
+    {
+        "Element": "Livermorium",
+        "Symbol": "Lv",
+        "Atomic_Number": 116,
+        "Electrical_Conductivity_Sm": null
+    },
+    {
+        "Element": "Lutetium",
+        "Symbol": "Lu",
+        "Atomic_Number": 71,
+        "Electrical_Conductivity_Sm": 1800000.0
+    },
+    {
+        "Element": "Magnesium",
+        "Symbol": "Mg",
+        "Atomic_Number": 12,
+        "Electrical_Conductivity_Sm": 22600000.0
+    },
+    {
+        "Element": "Manganese",
+        "Symbol": "Mn",
+        "Atomic_Number": 25,
+        "Electrical_Conductivity_Sm": 690000.0
+    },
+    {
+        "Element": "Meitnerium",
+        "Symbol": "Mt",
+        "Atomic_Number": 109,
+        "Electrical_Conductivity_Sm": null
+    },
+    {
+        "Element": "Mendelevium",
+        "Symbol": "Md",
+        "Atomic_Number": 101,
+        "Electrical_Conductivity_Sm": null
+    },
+    {
+        "Element": "Mercury",
+        "Symbol": "Hg",
+        "Atomic_Number": 80,
+        "Electrical_Conductivity_Sm": 1040000.0
+    },
+    {
+        "Element": "Molybdenum",
+        "Symbol": "Mo",
+        "Atomic_Number": 42,
+        "Electrical_Conductivity_Sm": 18700000.0
+    },
+    {
+        "Element": "Moscovium",
+        "Symbol": "Mc",
+        "Atomic_Number": 115,
+        "Electrical_Conductivity_Sm": null
+    },
+    {
+        "Element": "Neodymium",
+        "Symbol": "Nd",
+        "Atomic_Number": 60,
+        "Electrical_Conductivity_Sm": 1600000.0
+    },
+    {
+        "Element": "Neon",
+        "Symbol": "Ne",
+        "Atomic_Number": 10,
+        "Electrical_Conductivity_Sm": null
+    },
+    {
+        "Element": "Neptunium",
+        "Symbol": "Np",
+        "Atomic_Number": 93,
+        "Electrical_Conductivity_Sm": 820000.0
+    },
+    {
+        "Element": "Nickel",
+        "Symbol": "Ni",
+        "Atomic_Number": 28,
+        "Electrical_Conductivity_Sm": 14300000.0
+    },
+    {
+        "Element": "Nihonium",
+        "Symbol": "Nh",
+        "Atomic_Number": 113,
+        "Electrical_Conductivity_Sm": null
+    },
+    {
+        "Element": "Niobium",
+        "Symbol": "Nb",
+        "Atomic_Number": 41,
+        "Electrical_Conductivity_Sm": 6900000.0
+    },
+    {
+        "Element": "Nitrogen",
+        "Symbol": "N",
+        "Atomic_Number": 7,
+        "Electrical_Conductivity_Sm": null
+    },
+    {
+        "Element": "Nobelium",
+        "Symbol": "No",
+        "Atomic_Number": 102,
+        "Electrical_Conductivity_Sm": null
+    },
+    {
+        "Element": "Oganesson",
+        "Symbol": "Og",
+        "Atomic_Number": 118,
+        "Electrical_Conductivity_Sm": null
+    },
+    {
+        "Element": "Osmium",
+        "Symbol": "Os",
+        "Atomic_Number": 76,
+        "Electrical_Conductivity_Sm": 10900000.0
+    },
+    {
+        "Element": "Oxygen",
+        "Symbol": "O",
+        "Atomic_Number": 8,
+        "Electrical_Conductivity_Sm": null
+    },
+    {
+        "Element": "Palladium",
+        "Symbol": "Pd",
+        "Atomic_Number": 46,
+        "Electrical_Conductivity_Sm": 9500000.0
+    },
+    {
+        "Element": "Phosphorus",
+        "Symbol": "P",
+        "Atomic_Number": 15,
+        "Electrical_Conductivity_Sm": 1e-17
+    },
+    {
+        "Element": "Platinum",
+        "Symbol": "Pt",
+        "Atomic_Number": 78,
+        "Electrical_Conductivity_Sm": 9660000.0
+    },
+    {
+        "Element": "Plutonium",
+        "Symbol": "Pu",
+        "Atomic_Number": 94,
+        "Electrical_Conductivity_Sm": 670000.0
+    },
+    {
+        "Element": "Polonium",
+        "Symbol": "Po",
+        "Atomic_Number": 84,
+        "Electrical_Conductivity_Sm": 2200000.0
+    },
+    {
+        "Element": "Potassium",
+        "Symbol": "K",
+        "Atomic_Number": 19,
+        "Electrical_Conductivity_Sm": 13900000.0
+    },
+    {
+        "Element": "Praseodymium",
+        "Symbol": "Pr",
+        "Atomic_Number": 59,
+        "Electrical_Conductivity_Sm": 1500000.0
+    },
+    {
+        "Element": "Promethium",
+        "Symbol": "Pm",
+        "Atomic_Number": 61,
+        "Electrical_Conductivity_Sm": 1300000.0
+    },
+    {
+        "Element": "Protactinium",
+        "Symbol": "Pa",
+        "Atomic_Number": 91,
+        "Electrical_Conductivity_Sm": 5300000.0
+    },
+    {
+        "Element": "Radium",
+        "Symbol": "Ra",
+        "Atomic_Number": 88,
+        "Electrical_Conductivity_Sm": 1000000.0
+    },
+    {
+        "Element": "Radon",
+        "Symbol": "Rn",
+        "Atomic_Number": 86,
+        "Electrical_Conductivity_Sm": null
+    },
+    {
+        "Element": "Rhenium",
+        "Symbol": "Re",
+        "Atomic_Number": 75,
+        "Electrical_Conductivity_Sm": 5400000.0
+    },
+    {
+        "Element": "Rhodium",
+        "Symbol": "Rh",
+        "Atomic_Number": 45,
+        "Electrical_Conductivity_Sm": 21100000.0
+    },
+    {
+        "Element": "Roentgenium",
+        "Symbol": "Rg",
+        "Atomic_Number": 111,
+        "Electrical_Conductivity_Sm": null
+    },
+    {
+        "Element": "Rubidium",
+        "Symbol": "Rb",
+        "Atomic_Number": 37,
+        "Electrical_Conductivity_Sm": 7800000.0
+    },
+    {
+        "Element": "Ruthenium",
+        "Symbol": "Ru",
+        "Atomic_Number": 44,
+        "Electrical_Conductivity_Sm": 13700000.0
+    },
+    {
+        "Element": "Rutherfordium",
+        "Symbol": "Rf",
+        "Atomic_Number": 104,
+        "Electrical_Conductivity_Sm": null
+    },
+    {
+        "Element": "Samarium",
+        "Symbol": "Sm",
+        "Atomic_Number": 62,
+        "Electrical_Conductivity_Sm": 960000.0
+    },
+    {
+        "Element": "Scandium",
+        "Symbol": "Sc",
+        "Atomic_Number": 21,
+        "Electrical_Conductivity_Sm": 1800000.0
+    },
+    {
+        "Element": "Seaborgium",
+        "Symbol": "Sg",
+        "Atomic_Number": 106,
+        "Electrical_Conductivity_Sm": null
+    },
+    {
+        "Element": "Selenium",
+        "Symbol": "Se",
+        "Atomic_Number": 34,
+        "Electrical_Conductivity_Sm": 1e-12
+    },
+    {
+        "Element": "Silicon",
+        "Symbol": "Si",
+        "Atomic_Number": 14,
+        "Electrical_Conductivity_Sm": 0.001
+    },
+    {
+        "Element": "Silver",
+        "Symbol": "Ag",
+        "Atomic_Number": 47,
+        "Electrical_Conductivity_Sm": 63000000.0
+    },
+    {
+        "Element": "Sodium",
+        "Symbol": "Na",
+        "Atomic_Number": 11,
+        "Electrical_Conductivity_Sm": 21000000.0
+    },
+    {
+        "Element": "Strontium",
+        "Symbol": "Sr",
+        "Atomic_Number": 38,
+        "Electrical_Conductivity_Sm": 7600000.0
+    },
+    {
+        "Element": "Sulfur",
+        "Symbol": "S",
+        "Atomic_Number": 16,
+        "Electrical_Conductivity_Sm": 5e-24
+    },
+    {
+        "Element": "Tantalum",
+        "Symbol": "Ta",
+        "Atomic_Number": 73,
+        "Electrical_Conductivity_Sm": 7600000.0
+    },
+    {
+        "Element": "Technetium",
+        "Symbol": "Tc",
+        "Atomic_Number": 43,
+        "Electrical_Conductivity_Sm": 6700000.0
+    },
+    {
+        "Element": "Tellurium",
+        "Symbol": "Te",
+        "Atomic_Number": 52,
+        "Electrical_Conductivity_Sm": 0.0002
+    },
+    {
+        "Element": "Tennessine",
+        "Symbol": "Ts",
+        "Atomic_Number": 117,
+        "Electrical_Conductivity_Sm": null
+    },
+    {
+        "Element": "Terbium",
+        "Symbol": "Tb",
+        "Atomic_Number": 65,
+        "Electrical_Conductivity_Sm": 890000.0
+    },
+    {
+        "Element": "Thallium",
+        "Symbol": "Tl",
+        "Atomic_Number": 81,
+        "Electrical_Conductivity_Sm": 6200000.0
+    },
+    {
+        "Element": "Thorium",
+        "Symbol": "Th",
+        "Atomic_Number": 90,
+        "Electrical_Conductivity_Sm": 6500000.0
+    },
+    {
+        "Element": "Thulium",
+        "Symbol": "Tm",
+        "Atomic_Number": 69,
+        "Electrical_Conductivity_Sm": 1500000.0
+    },
+    {
+        "Element": "Tin",
+        "Symbol": "Sn",
+        "Atomic_Number": 50,
+        "Electrical_Conductivity_Sm": 9170000.0
+    },
+    {
+        "Element": "Titanium",
+        "Symbol": "Ti",
+        "Atomic_Number": 22,
+        "Electrical_Conductivity_Sm": 2340000.0
+    },
+    {
+        "Element": "Tungsten",
+        "Symbol": "W",
+        "Atomic_Number": 74,
+        "Electrical_Conductivity_Sm": 18900000.0
+    },
+    {
+        "Element": "Uranium",
+        "Symbol": "U",
+        "Atomic_Number": 92,
+        "Electrical_Conductivity_Sm": 3800000.0
+    },
+    {
+        "Element": "Vanadium",
+        "Symbol": "V",
+        "Atomic_Number": 23,
+        "Electrical_Conductivity_Sm": 4900000.0
+    },
+    {
+        "Element": "Xenon",
+        "Symbol": "Xe",
+        "Atomic_Number": 54,
+        "Electrical_Conductivity_Sm": null
+    },
+    {
+        "Element": "Ytterbium",
+        "Symbol": "Yb",
+        "Atomic_Number": 70,
+        "Electrical_Conductivity_Sm": 3500000.0
+    },
+    {
+        "Element": "Yttrium",
+        "Symbol": "Y",
+        "Atomic_Number": 39,
+        "Electrical_Conductivity_Sm": 1700000.0
+    },
+    {
+        "Element": "Zinc",
+        "Symbol": "Zn",
+        "Atomic_Number": 30,
+        "Electrical_Conductivity_Sm": 16600000.0
+    },
+    {
+        "Element": "Zirconium",
+        "Symbol": "Zr",
+        "Atomic_Number": 40,
+        "Electrical_Conductivity_Sm": 2400000.0
+    }
+]

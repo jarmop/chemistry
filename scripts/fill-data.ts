@@ -66,13 +66,21 @@ const data4 = await getData<Data4>(
 );
 const data4ByName = getDataMap(data4, "Material");
 
-function formatConductivityAndResistivity(rawCond: string | number) {
-  const conductivity = typeof rawCond === "string"
-    ? parseFloat(rawCond.replace("×10", "e"))
-    : rawCond ?? 0;
-
-  return conductivity;
+function formatConductivityAndResistivity(value: string | number) {
+  return typeof value === "string" ? parseFloat(value) : value ?? 0;
 }
+
+type Data5 = {
+  Element: string;
+  Symbol: string;
+  Atomic_Number: number;
+  Electrical_Conductivity_Sm: number;
+  Electrical_Resistivity_Om: number;
+};
+const data5 = await getData<Data5>(
+  "./data/elements_conductivity_resistivity.json",
+);
+const data5BySymbol = getDataMap(data5, "Symbol");
 
 const newElements = oldElements.map((oldElement) => {
   return {
@@ -88,6 +96,10 @@ const newElements = oldElements.map((oldElement) => {
     resistivity: formatConductivityAndResistivity(
       data4ByName[oldElement.name]?.["Resistivity, ρ,  at 20 °C (Ω·m)"],
     ),
+    electricalConductivity:
+      data5BySymbol[oldElement.symbol]?.Electrical_Conductivity_Sm ?? 0,
+    electricalResistivity:
+      data5BySymbol[oldElement.symbol]?.Electrical_Resistivity_Om ?? 0,
   };
 });
 

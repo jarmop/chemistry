@@ -30,6 +30,8 @@ export const elementUnits: Partial<Record<keyof Element, string>> = {
   electronegativity: "Pauling",
   conductivity: "σ, at 20 °C (S/m)",
   resistivity: "ρ,  at 20 °C (Ω·m)",
+  electricalConductivity: "σ, at 20 °C (S/m)",
+  electricalResistivity: "ρ,  at 20 °C (Ω·m)",
 };
 
 type ElementMap = Record<Element["symbol"], Element>;
