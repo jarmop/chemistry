@@ -31,7 +31,7 @@ export type Element = {
   resistivity?: number;
   electricalConductivity?: number;
   electricalResistivity?: number;
-  meltingPoint?: number;
+  meltingPoint: number | null;
   boilingPoint?: number;
 };
 

@@ -70,9 +70,13 @@ export function AtomData() {
             <td>Phase:</td>
             <td>{element.phase}</td>
           </tr>
+          {/* <tr>
+            <td>Melting point (K):</td>
+            <td>{element.meltingPoint?.toFixed(0)}</td>
+          </tr> */}
           <tr>
-            <td>Melting point:</td>
-            <td>{element.meltingPoint}</td>
+            <td>Melting point (C):</td>
+            <td>{element.meltingPoint !== null && (element.meltingPoint - 273).toFixed(0)}</td>
           </tr>
           <tr>
             <td>Boiling point:</td>
